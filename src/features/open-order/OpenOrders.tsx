@@ -68,7 +68,7 @@ const OpenOrders: FC = () => {
             </div>
             <div className="flex flex-col gap-2 md:gap-5">
               {pending.data.map((order, index) => (
-                <div key={index} className="block text-high-emphesis bg-dark-800 overflow-hidden rounded">
+                <div key={index} className="block text-high-emphesis bg-gray-100 overflow-hidden rounded">
                   <div className="grid items-center grid-flow-col grid-cols-3 md:grid-cols-4 gap-4 px-4 py-3 text-sm align-center text-primary">
                     <div className="flex flex-col">
                       <div className="flex gap-4 font-bold items-center">

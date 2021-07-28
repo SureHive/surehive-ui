@@ -20,7 +20,7 @@ const TokenBalance = ({ farm }: any) => {
   return (
     <>
       {farm.type === 'SLP' && (
-        <Paper className="bg-dark-800">
+        <Paper className="bg-gray-100">
           <div
             className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none"
             onClick={() => Router.push(`zap?poolAddress=${farm.pairAddress}&currencyId=ETH`)}
@@ -76,9 +76,9 @@ const PoolList = () => {
       </Head>
       <div className="container max-w-2xl px-0 mx-auto sm:px-4">
         <Card
-          className="h-full rounded bg-dark-900"
+          className="h-full rounded bg-gray-200"
           header={
-            <CardHeader className="flex items-center justify-between bg-dark-800">
+            <CardHeader className="flex items-center justify-between bg-gray-100">
               <div className="flex flex-col items-center justify-between w-full">
                 <div className="items-center hidden md:flex">
                   {/* <BackButton defaultRoute="/pool" /> */}

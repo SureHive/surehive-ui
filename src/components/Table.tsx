@@ -129,7 +129,7 @@ export default function Table({
                         className={classNames(
                           cI === 0 && 'rounded-l pl-4',
                           cI === row.cells.length - 1 && 'rounded-r pr-4',
-                          'h-16 text-high-emphesis text-sm font-bold bg-dark-900 flex items-center'
+                          'h-16 text-high-emphesis text-sm font-bold bg-gray-200 flex items-center'
                         )}
                       >
                         <div
@@ -160,7 +160,7 @@ export default function Table({
               className="ml-1 bg-transparent"
             >
               {[10, 20, 30, 40, 50].map((pageSize) => (
-                <option className="bg-dark-1000" key={pageSize} value={pageSize}>
+                <option className="bg-gray-300" key={pageSize} value={pageSize}>
                   {pageSize}
                 </option>
               ))}

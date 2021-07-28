@@ -41,7 +41,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, maxWidth, mobile, is
     align-self: ${({ mobile }) => (mobile ? 'flex-end' : 'center')};
     margin: 4rem 0.5rem;
     padding: 0;
-    background-color: #000;
+    background-color: #f5f5f5;
     box-shadow: 0 4px 8px 0 ${() => transparentize(0.95, '#000')};
 
     width: 100vw;
@@ -142,8 +142,8 @@ export default function Modal({
                 maxWidth={maxWidth}
                 mobile={isMobile}
               >
-                <div className="w-full p-px rounded bg-gradient-to-r from-blue to-pink">
-                  <div className={`flex flex-col h-full w-full bg-dark-900 rounded p-6 overflow-y-auto`}>
+                <div className="w-full p-px rounded bg-gradient-to-r from-blue to-yellow">
+                  <div className={`flex flex-col h-full w-full bg-gray-50 rounded p-6 overflow-y-auto`}>
                     {/* prevents the automatic focusing of inputs on mobile by the reach dialog */}
                     {!initialFocusRef && isMobile ? <div tabIndex={1} /> : null}
                     {children}

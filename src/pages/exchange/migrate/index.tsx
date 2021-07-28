@@ -56,7 +56,7 @@ const AmountInput = ({ state }: { state: MigrateState }) => {
         <Typography variant="sm" className="text-secondary">
           Amount of Tokens
         </Typography>
-        <div className="p-3 text-center rounded cursor-not-allowed bg-dark-800">
+        <div className="p-3 text-center rounded cursor-not-allowed bg-gray-100">
           <Typography variant="lg" className="text-secondary">
             {state.mode && state.lpTokens.length === 0 ? 'No LP tokens found' : 'Select an LP Token'}
           </Typography>
@@ -103,7 +103,7 @@ const LPTokenSelect = ({ lpToken, onToggle, isSelected, updating, exchange }: Po
   return (
     <div
       key={lpToken.address}
-      className="flex items-center justify-between px-3 py-5 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
+      className="flex items-center justify-between px-3 py-5 rounded cursor-pointer bg-gray-100 hover:bg-dark-700"
       onClick={() => onToggle(lpToken)}
     >
       <div className="flex items-center space-x-3">
@@ -145,7 +145,7 @@ const MigrateModeSelect = ({ state }: { state: MigrateState }) => {
           acc.push(
             <div
               key={key}
-              className="flex items-center justify-between p-3 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
+              className="flex items-center justify-between p-3 rounded cursor-pointer bg-gray-100 hover:bg-dark-700"
               onClick={() => toggleMode(key)}
             >
               <div>
@@ -318,7 +318,7 @@ export default function Migrate() {
       <div className="mb-8 text-2xl text-center">{i18n._(t`Migrate ${exchange} Liquidity`)}</div>
 
       <DoubleGlowShadow>
-        <div className="w-full max-w-lg p-4 space-y-4 rounded bg-dark-900">
+        <div className="w-full max-w-lg p-4 space-y-4 rounded bg-gray-200">
           {!account ? (
             <Web3Connect color="blue" className="w-full" />
           ) : state.loading ? (

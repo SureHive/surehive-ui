@@ -5,10 +5,10 @@ import { classNames } from '../functions'
 export default function Search({
   term,
   search,
-  className = 'bg-dark-900',
+  className = 'bg-gray-50',
   inputProps = {
     className:
-      'text-baseline bg-transparent w-full py-3 pl-4 pr-14 rounded w-full bg-transparent focus:outline-none bg-dark-700 rounded focus:ring focus:ring-blue',
+      'text-baseline bg-transparent w-full py-3 pl-4 pr-14 rounded w-full bg-transparent focus:outline-none bg-gray-300 rounded focus:ring focus:ring-blue',
   },
   ...rest
 }: {

@@ -30,9 +30,9 @@ export default function RemoveLiquidityReceiveDetails({
   const { chainId } = useActiveWeb3React()
   if (!chainId || !currencyA || !currencyB) throw new Error('missing dependencies')
   return (
-    <div id={id} className="p-5 rounded bg-dark-800">
+    <div id={id} className="p-5 rounded bg-gray-100">
       <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
-        <div className="w-full text-white sm:w-2/5" style={{ margin: 'auto 0px' }}>
+        <div className="w-full text-dark-700 sm:w-2/5" style={{ margin: 'auto 0px' }}>
           <AutoColumn>
             <div>You Will Receive:</div>
             <RowBetween className="text-sm">
@@ -60,17 +60,17 @@ export default function RemoveLiquidityReceiveDetails({
         </div>
         {/* <RowBetween className="space-x-6"> */}
         <div className="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-          <div className="flex flex-row items-center w-full p-3 space-x-4 rounded bg-dark-900">
+          <div className="flex flex-row items-center w-full p-3 space-x-4 rounded bg-gray-200">
             <CurrencyLogo currency={currencyA} size="46px" style={{ marginRight: '12px' }} />
             <AutoColumn>
-              <div className="text-white">{amountA}</div>
+              <div className="text-dark-700">{amountA}</div>
               <div className="text-sm">{currencyA?.symbol}</div>
             </AutoColumn>
           </div>
-          <div className="flex flex-row items-center w-full p-3 space-x-4 rounded bg-dark-900">
+          <div className="flex flex-row items-center w-full p-3 space-x-4 rounded bg-gray-200">
             <CurrencyLogo currency={currencyB} size="46px" style={{ marginRight: '12px' }} />
             <AutoColumn>
-              <div className="text-white">{amountB}</div>
+              <div className="text-dark-700">{amountB}</div>
               <div className="text-sm">{currencyB?.symbol}</div>
             </AutoColumn>
           </div>

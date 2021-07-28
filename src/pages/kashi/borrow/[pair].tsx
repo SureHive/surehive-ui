@@ -59,7 +59,7 @@ function Pair() {
         />
       </Head>
       <Card
-        className="h-full bg-dark-900"
+        className="h-full bg-gray-200"
         header={
           <BorrowCardHeader>
             <div className="flex items-center">
@@ -127,16 +127,16 @@ function Pair() {
           </div>
         </div>
         <Tabs forceRenderTabPanel selectedIndex={tabIndex} onSelect={(index: number) => setTabIndex(index)}>
-          <TabList className="flex p-1 rounded bg-dark-800">
+          <TabList className="flex p-1 rounded bg-gray-100">
             <Tab
               className="flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none"
-              selectedClassName="bg-dark-900 text-high-emphesis"
+              selectedClassName="bg-gray-200 text-high-emphesis"
             >
               {i18n._(t`Borrow`)}
             </Tab>
             <Tab
               className="flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none"
-              selectedClassName="bg-dark-900 text-high-emphesis"
+              selectedClassName="bg-gray-200 text-high-emphesis"
             >
               {i18n._(t`Repay`)}
             </Tab>
@@ -170,8 +170,7 @@ const PairLayout = ({ children }) => {
     <Layout
       left={
         <Card
-          className="h-full bg-dark-900"
-          backgroundImage="/borrow-graphic.png"
+          className="h-full bg-gray-200"
           title={i18n._(t`Add collateral in order to borrow assets`)}
           description={i18n._(
             t`Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements.`
@@ -179,7 +178,7 @@ const PairLayout = ({ children }) => {
         />
       }
       right={
-        <Card className="h-full bg-dark-900">
+        <Card className="h-full bg-gray-200">
           <div className="flex-col space-y-2">
             <div className="flex justify-between">
               <div className="text-xl text-high-emphesis">{i18n._(t`Market`)}</div>
@@ -225,7 +224,7 @@ const PairLayout = ({ children }) => {
             </div>
 
             <div className="flex justify-between pt-3">
-              <div className="text-xl text-high-emphesis">{i18n._(t`BentoBox`)}</div>
+              <div className="text-xl text-high-emphesis">{i18n._(t`SureVault`)}</div>
             </div>
             <div className="flex justify-between">
               <div className="text-lg text-secondary">{i18n._(t`${pair?.collateral.tokenInfo.symbol} Strategy`)}</div>

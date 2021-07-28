@@ -62,7 +62,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   return (
     <>
       {userPoolBalance && JSBI.greaterThan(userPoolBalance.quotient, JSBI.BigInt(0)) ? (
-        <div className="p-5 rounded bg-dark-800 text-high-emphesis">
+        <div className="p-5 rounded bg-gray-200 text-high-emphesis">
           <AutoColumn gap={'md'}>
             <div className="text-lg">Your Position</div>
             <div className="flex flex-col md:flex-row md:justify-between">
@@ -77,7 +77,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 <div className="text-secondary">Pool Tokens</div>
               </RowFixed>
             </div>
-            <div className="flex flex-col w-full p-3 mt-3 space-y-1 text-sm rounded bg-dark-900 text-high-emphesis">
+            <div className="flex flex-col w-full p-3 mt-3 space-y-1 text-sm rounded bg-gray-200 text-high-emphesis">
               <RowBetween>
                 <div>{i18n._(t`Your pool share`)}</div>
                 <div className="font-bold">{poolTokenPercentage ? poolTokenPercentage.toFixed(6) + '%' : '-'}</div>
@@ -152,14 +152,14 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
 
   return (
     <div
-      className="rounded bg-dark-800"
+      className="rounded bg-gray-200"
       // style={{ backgroundColor }}
     >
       <Button
         variant="empty"
         className={classNames(
-          'flex items-center justify-between w-full px-4 py-6 cursor-pointer bg-dark-800 hover:bg-dark-700',
-          showMore && '!bg-dark-700'
+          'flex items-center justify-between w-full px-4 py-6 cursor-pointer bg-gray-200 hover:bg-gray-50',
+          showMore && '!bg-gray-50'
         )}
         style={{ boxShadow: 'none' }}
         onClick={() => setShowMore(!showMore)}
@@ -190,7 +190,7 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
         leaveTo="opacity-0"
       >
         <div className="p-4 space-y-4">
-          <div className="px-4 py-4 space-y-1 text-sm rounded text-high-emphesis bg-dark-900">
+          <div className="px-4 py-4 space-y-1 text-sm rounded text-high-emphesis bg-gray-200">
             <div className="flex items-center justify-between">
               <div>{i18n._(t`Your total pool tokens`)}:</div>
               <div className="font-semibold">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</div>

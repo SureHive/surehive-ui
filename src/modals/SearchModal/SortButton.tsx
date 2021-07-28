@@ -24,7 +24,7 @@ export default function SortButton({
   ascending: boolean
 }) {
   return (
-    <FilterWrapper onClick={toggleSortOrder} className="text-sm bg-dark-800">
+    <FilterWrapper onClick={toggleSortOrder} className="text-sm bg-gray-100">
       {ascending ? '↑' : '↓'}
     </FilterWrapper>
   )

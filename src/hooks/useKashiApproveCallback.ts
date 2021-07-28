@@ -134,7 +134,7 @@ function useKashiApproveCallback(): [
         ethers.constants.HashZero,
         ethers.constants.HashZero
       )
-      dispatch(setKashiApprovalPending('Approve Kashi'))
+      dispatch(setKashiApprovalPending('Approve'))
       await tx.wait()
       dispatch(setKashiApprovalPending(''))
     }
@@ -145,7 +145,7 @@ function useKashiApproveCallback(): [
     let summary
     if (approvalState === BentoApprovalState.NOT_APPROVED && kashiPermit) {
       cooker.approve(kashiPermit)
-      summary = 'Approve Kashi and ' + (await execute(cooker))
+      summary = 'Approve and ' + (await execute(cooker))
     } else {
       summary = await execute(cooker)
     }

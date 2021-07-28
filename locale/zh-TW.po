@@ -86,7 +86,7 @@ msgstr "分析界面"
 msgid "Approve"
 msgstr "批准"
 
-msgid "Approve Kashi"
+msgid "Approve"
 msgstr "批準Kashi"
 
 msgid "Approve Limit Order"
@@ -131,22 +131,22 @@ msgstr ""
 msgid "Bento Balance: {0}"
 msgstr "Bento余额： {0}"
 
-msgid "BentoBox"
-msgstr "BentoBox"
+msgid "SureVault"
+msgstr "SureVault"
 
-msgid "BentoBox Apps"
+msgid "SureVault Apps"
 msgstr "BentoBox應用"
 
-msgid "BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "BentoBox可以實現用很低的gas費用體驗高收益的dapp。"
 
-msgid "BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
+msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
 msgstr "BentoBox通過在集成的dapp中使用閃電貸、策略以及固定和低Gas的轉賬，來提供額外收益"
 
-msgid "BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox."
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
 msgstr "BentoBox策略可以為您的抵押代幣創造收益。這個代幣暫時在BentoBox中沒有策略。"
 
-msgid "BentoBox strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the BentoBox."
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "BentoBox策略可以在未借出資金時為您的流動資金創造收益。該代币在BentoBox中尚無策略。"
 
 msgid "Borrow"
@@ -286,16 +286,16 @@ msgstr ""
 msgid "Deposit"
 msgstr "存款"
 
-msgid "Deposit SUSHI into BentoBox"
+msgid "Deposit SUSHI into SureVault"
 msgstr "將SUSHI存入BentoBox"
 
-msgid "Deposit tokens into BentoBox for all the yields"
+msgid "Deposit tokens into SureVault for all the yields"
 msgstr "將代幣存入BentoBox，以獲得所有收益。"
 
-msgid "Deposit {0} into BentoBox"
+msgid "Deposit {0} into SureVault"
 msgstr ""
 
-msgid "Depositing {0} into BentoBox"
+msgid "Depositing {0} into SureVault"
 msgstr ""
 
 msgid "Dev"
@@ -545,7 +545,7 @@ msgid "MAX"
 msgstr "最大數量"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into BentoBox for double yields and can be\n"
+"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
 

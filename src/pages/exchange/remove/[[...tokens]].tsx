@@ -610,7 +610,7 @@ export default function Remove() {
 
   function modalBottom() {
     return (
-      <div className="p-6 mt-0 -m-6 bg-dark-800">
+      <div className="p-6 mt-0 -m-6 bg-gray-100">
         {pair && (
           <>
             <div className="grid gap-1">
@@ -734,7 +734,7 @@ export default function Remove() {
         </div>
 
         <DoubleGlowShadow>
-          <div className="p-4 space-y-4 rounded bg-dark-900" style={{ zIndex: 1 }}>
+          <div className="p-4 space-y-4 rounded bg-gray-200" style={{ zIndex: 1 }}>
             {/* <AddRemoveTabs
             creating={false}
             adding={false}
@@ -769,17 +769,17 @@ export default function Remove() {
 
                   <AutoColumn justify="space-between" className="py-2.5">
                     <AutoRow justify={'flex-start'} style={{ padding: '0 1rem' }}>
-                      <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-dark-900 p-3px">
-                        <div className="p-3 rounded-full bg-dark-800">
+                      <button className="z-10 -mt-6 -mb-6 rounded-full cursor-default bg-gray-200 p-3px">
+                        <div className="p-3 rounded-full bg-gray-100">
                           <ArrowDownIcon width="32px" height="32px" />
                         </div>
                       </button>
                     </AutoRow>
                   </AutoColumn>
 
-                  <div id="remove-liquidity-output" className="p-5 rounded bg-dark-800">
+                  <div id="remove-liquidity-output" className="p-5 rounded bg-gray-100">
                     <div className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
-                      <div className="w-full text-white sm:w-2/5" style={{ margin: 'auto 0px' }}>
+                      <div className="w-full text-dark-700 sm:w-2/5" style={{ margin: 'auto 0px' }}>
                         <AutoColumn>
                           <div>You Will Receive:</div>
                           {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
@@ -811,17 +811,17 @@ export default function Remove() {
                       </div>
 
                       <div className="flex flex-col space-y-3 md:flex-row md:space-x-6 md:space-y-0">
-                        <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                        <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-gray-200">
                           <CurrencyLogo currency={currencyA} size="46px" />
                           <AutoColumn>
-                            <div className="text-white">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
+                            <div className="text-dark-700">{formattedAmounts[Field.CURRENCY_A] || '-'}</div>
                             <div className="text-sm">{currencyA?.symbol}</div>
                           </AutoColumn>
                         </div>
-                        <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-dark-900">
+                        <div className="flex flex-row items-center w-full p-3 pr-8 space-x-3 rounded bg-gray-200">
                           <CurrencyLogo currency={currencyB} size="46px" />
                           <AutoColumn>
-                            <div className="text-white">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>
+                            <div className="text-dark-700">{formattedAmounts[Field.CURRENCY_B] || '-'}</div>
                             <div className="text-sm">{currencyB?.symbol}</div>
                           </AutoColumn>
                         </div>

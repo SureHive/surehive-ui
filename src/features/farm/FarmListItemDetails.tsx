@@ -76,7 +76,7 @@ const FarmListItem = ({ farm }) => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <Disclosure.Panel className="flex flex-col w-full border-t-0 rounded rounded-t-none bg-dark-800" static>
+      <Disclosure.Panel className="flex flex-col w-full border-t-0 rounded rounded-t-none bg-gray-100" static>
         <div className="grid grid-cols-2 gap-4 p-4">
           <div className="col-span-2 text-center md:col-span-1">
             {account && (

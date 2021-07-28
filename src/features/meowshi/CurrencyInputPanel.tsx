@@ -31,7 +31,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
 
   return (
     <>
-      <div className="bg-dark-800 rounded">
+      <div className="bg-gray-100 rounded">
         <div className="p-5 flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row">
           <div className="flex w-full sm:w-2/5 items-center">
             <div className="flex gap-4 items-center">
@@ -65,7 +65,7 @@ const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, 
               </div>
             </div>
           </div>
-          <div className="flex items-center w-full px-3 py-2 rounded bg-dark-900 sm:w-3/5 justify-between">
+          <div className="flex items-center w-full px-3 py-2 rounded bg-gray-200 sm:w-3/5 justify-between">
             <div className="flex flex-col items-start">
               <div className="w-full">
                 <NumericalInput

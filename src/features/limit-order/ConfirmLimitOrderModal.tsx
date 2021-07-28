@@ -52,29 +52,29 @@ const ConfirmLimitOrderTopContent = () => {
     <div className="py-8">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-3">
-          <div className="text-white text-xl font-bold">{i18n._(t`You Pay:`)}</div>
+          <div className="text-dark-700 text-xl font-bold">{i18n._(t`You Pay:`)}</div>
           <div className="flex justify-between items-center">
             <div className="flex gap-2 items-center">
               <CurrencyLogo size={40} currency={currencies[Field.INPUT]} />
-              <div className="text-xl text-white font-bold">{parsedAmounts[Field.INPUT]?.toSignificant(6)}</div>
-              <div className="text-xl text-white">{currencies[Field.INPUT]?.symbol}</div>
+              <div className="text-xl text-dark-700 font-bold">{parsedAmounts[Field.INPUT]?.toSignificant(6)}</div>
+              <div className="text-xl text-dark-700">{currencies[Field.INPUT]?.symbol}</div>
             </div>
             <div className="text-low-emphesis text-sm">≈ {inputValueUSDC} USDC</div>
           </div>
         </div>
-        <div className="bg-dark-800 rounded flex justify-between py-3 px-5">
+        <div className="bg-gray-200 rounded flex justify-between py-3 px-5">
           <span className="text-secondary font-bold">{i18n._(t`Rate`)}</span>
           <span className="text-primary">
             {limitPrice} {currencies[Field.OUTPUT]?.symbol} per {currencies[Field.INPUT]?.symbol}
           </span>
         </div>
         <div className="flex flex-col gap-3">
-          <div className="text-white text-xl font-bold gap-2 flex">{i18n._(t`You receive`)}</div>
+          <div className="text-dark-700 text-xl font-bold gap-2 flex">{i18n._(t`You receive`)}</div>
           <div className="flex justify-between items-center">
             <div className="flex gap-2 items-center">
               <CurrencyLogo size={40} currency={currencies[Field.OUTPUT]} />
-              <div className="text-xl text-white font-bold">{parsedAmounts[Field.OUTPUT]?.toSignificant(6)}</div>
-              <div className="text-xl text-white">{currencies[Field.OUTPUT]?.symbol}</div>
+              <div className="text-xl text-dark-700 font-bold">{parsedAmounts[Field.OUTPUT]?.toSignificant(6)}</div>
+              <div className="text-xl text-dark-700">{currencies[Field.OUTPUT]?.symbol}</div>
             </div>
             <div className="text-low-emphesis text-sm">≈ {outputValueUSDC} USDC</div>
           </div>
@@ -94,7 +94,7 @@ const ConfirmLimitOrderBottomContent: FC<ConfirmLimitOrderBottomContentProps> = 
   const { currencies, parsedAmounts } = useDerivedLimitOrderInfo()
 
   return (
-    <div className="bg-dark-800 py-8 -m-6 px-6 flex flex-col gap-6">
+    <div className="bg-gray-200 py-8 -m-6 px-6 flex flex-col gap-6">
       <div className="flex flex-col gap-1">
         <div className="flex justify-between items-center">
           <span className="text-secondary">{i18n._(t`Minimum Received`)}</span>

@@ -120,7 +120,7 @@ function CurrencyRow({
     <MenuItem
       id={`token-item-${key}`}
       style={style}
-      className={`hover:bg-dark-800 rounded`}
+      className={`hover:bg-gray-100 rounded`}
       onClick={() => (isSelected ? null : onSelect())}
       disabled={isSelected}
       selected={otherSelected}

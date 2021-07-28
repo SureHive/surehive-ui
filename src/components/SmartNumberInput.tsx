@@ -7,7 +7,7 @@ import React from 'react'
 import { formatNumber } from '../functions/format'
 
 type SmartNumberInputProps = {
-  color: 'blue' | 'pink'
+  color: 'blue' | 'pink' | 'yellow'
   token: any
   value: string
   setValue: any
@@ -68,7 +68,7 @@ export default function SmartNumberInput({
               }}
               disabled={switchDisabled}
             >
-              {useBento ? 'BentoBox' : 'Wallet'}
+              {useBento ? 'SureVault' : 'Wallet'}
             </Button>
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function SmartNumberInput({
       <div className="relative flex items-center w-full mb-4">
         <NumericalInput
           className={
-            'w-full p-3 bg-dark-700 rounded disabled:cursor-not-allowed disabled:bg-dark-1000 disabled:ring disabled:ring-dark-800 focus:ring focus:ring-' +
+            'w-full p-3 bg-gray-50 rounded disabled:cursor-not-allowed disabled:bg-gray-50 disabled:ring disabled:ring-gray-200 focus:ring focus:ring-' +
             color
           }
           value={value}

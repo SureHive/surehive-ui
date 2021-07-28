@@ -47,12 +47,12 @@ function Balances() {
         <meta key="description" name="description" content="" />
       </Head>
       <Card
-        className="h-full bg-dark-900"
+        className="h-full bg-gray-200"
         header={
-          <CardHeader className="flex items-center justify-between bg-dark-800">
+          <CardHeader className="flex items-center justify-between bg-gray-100">
             <div className="flex flex-col items-center justify-between w-full md:flex-row">
               <div className="flex items-baseline">
-                <div className="mr-4 text-3xl text-high-emphesis">{i18n._(t`BentoBox`)}</div>
+                <div className="mr-4 text-3xl text-high-emphesis">{i18n._(t`SureVault`)}</div>
               </div>
               <div className="flex justify-end w-2/3 py-4 md:py-0">
                 <Search search={search} term={term} />
@@ -65,7 +65,7 @@ function Balances() {
           <div className="grid grid-cols-3 px-4 text-sm select-none text-secondary">
             <div>{i18n._(t`Token`)}</div>
             <div className="text-right">{i18n._(t`Wallet`)}</div>
-            <div className="text-right">{i18n._(t`BentoBox`)}</div>
+            <div className="text-right">{i18n._(t`SureVault`)}</div>
           </div>
           {items &&
             items.length > 0 &&
@@ -82,9 +82,8 @@ const BalancesLayout = ({ children }) => {
     <Layout
       left={
         <Card
-          className="h-full bg-dark-900"
-          backgroundImage="bento-illustration.png"
-          title={i18n._(t`Deposit tokens into BentoBox for all the yields`)}
+          className="h-full bg-gray-200"
+          title={i18n._(t`Deposit tokens into SureVault for all the yields`)}
           description={i18n._(
             t`SureVault extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like HoneyStream markets`
           )}
@@ -105,7 +104,7 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
   return (
     <Paper className="space-y-4">
       <div
-        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none bg-dark-800"
+        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none bg-gray-100"
         onClick={() => setExpand(!expand)}
       >
         <div className="flex items-center space-x-3">
@@ -142,10 +141,10 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
         leaveTo="opacity-0"
       >
         <div className="grid grid-cols-2 gap-4 ">
-          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-dark-800">
+          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-gray-100">
             <Deposit token={token} />
           </div>
-          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-dark-800">
+          <div className="col-span-2 p-4 text-center rounded md:col-span-1 bg-gray-100">
             <Withdraw token={token} />
           </div>
         </div>

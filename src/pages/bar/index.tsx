@@ -44,7 +44,7 @@ const StyledNumericalInput = styled(NumericalInput)`
 `
 
 const tabStyle = 'flex justify-center items-center h-full w-full rounded-lg cursor-pointer text-sm md:text-base'
-const activeTabStyle = `${tabStyle} text-high-emphesis font-bold bg-dark-900`
+const activeTabStyle = `${tabStyle} text-high-emphesis font-bold bg-gray-200`
 const inactiveTabStyle = `${tabStyle} text-secondary`
 
 const buttonStyle =
@@ -215,7 +215,7 @@ export default function Stake() {
                         </div> */}
           </div>
           <div className="hidden px-8 ml-6 md:block w-72">
-            <Image src="/xsushi-sign.png" alt="xSUSHI sign" width="100%" height="100%" layout="responsive" />
+            <Image src="/xsushi-sign.png" alt="xSUR sign" width="100%" height="100%" layout="responsive" />
           </div>
         </div>
         <div className="flex flex-col justify-center md:flex-row">
@@ -255,8 +255,8 @@ export default function Stake() {
             </div>
             <div>
               <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
-              <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 md:pb-9 md:pt-4 md:px-8">
-                <div className="flex w-full rounded h-14 bg-dark-800">
+              <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-gray-200 md:pb-9 md:pt-4 md:px-8">
+                <div className="flex w-full rounded h-14 bg-gray-100">
                   <div
                     className="h-full w-6/12 p-0.5"
                     onClick={() => {
@@ -293,7 +293,7 @@ export default function Stake() {
                 <StyledNumericalInput
                   value={input}
                   onUserInput={handleInput}
-                  className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-sm md:text-lg font-bold text-dark-800 whitespace-nowrap${
+                  className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-gray-100 text-sm md:text-lg font-bold text-dark-800 whitespace-nowrap${
                     inputError ? ' pl-9 md:pl-12' : ''
                   }`}
                   placeholder=" "
@@ -380,7 +380,7 @@ export default function Stake() {
             </div>
           </div>
           <div className="w-full max-w-xl mx-auto md:mx-0 md:ml-6 md:block md:w-72">
-            <div className="flex flex-col w-full px-4 pt-6 pb-5 rounded bg-dark-900 md:px-8 md:pt-7 md:pb-9">
+            <div className="flex flex-col w-full px-4 pt-6 pb-5 rounded bg-gray-200 md:px-8 md:pt-7 md:pb-9">
               <div className="flex flex-wrap">
                 <div className="flex flex-col flex-grow md:mb-14">
                   <p className="mb-3 text-lg font-bold md:text-2xl md:font-medium text-high-emphesis">

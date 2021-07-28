@@ -14,7 +14,7 @@ export default function Toggle({ id, isActive, toggle }: ToggleProps) {
       checked={isActive}
       onChange={toggle}
       className={classNames(
-        isActive ? 'bg-blue' : 'bg-dark-800',
+        isActive ? 'bg-blue' : 'bg-gray-100',
         'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
       )}
     >
@@ -22,7 +22,7 @@ export default function Toggle({ id, isActive, toggle }: ToggleProps) {
       <span
         className={classNames(
           isActive ? 'translate-x-5' : 'translate-x-0',
-          'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-dark-900 shadow transform ring-0 transition ease-in-out duration-200'
+          'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-gray-200 shadow transform ring-0 transition ease-in-out duration-200'
         )}
       >
         <span

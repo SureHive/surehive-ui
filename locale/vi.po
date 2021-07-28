@@ -86,7 +86,7 @@ msgstr "Phân tích"
 msgid "Approve"
 msgstr "Phê duyệt"
 
-msgid "Approve Kashi"
+msgid "Approve"
 msgstr "Phê duyệt Kashi"
 
 msgid "Approve Limit Order"
@@ -131,23 +131,23 @@ msgstr ""
 msgid "Bento Balance: {0}"
 msgstr "Số dư Bento: {0}"
 
-msgid "BentoBox"
-msgstr "BentoBox"
+msgid "SureVault"
+msgstr "SureVault"
 
-msgid "BentoBox Apps"
-msgstr "Ứng dụng BentoBox"
+msgid "SureVault Apps"
+msgstr "Ứng dụng SureVault"
 
-msgid "BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "BentoBox là một cách sáng tạo để sử dụng hiệu quả khí các ứng dụng phi tập trung và tăng thêm lợi suất."
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault là một cách sáng tạo để sử dụng hiệu quả khí các ứng dụng phi tập trung và tăng thêm lợi suất."
 
-msgid "BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "BentoBox cung cấp thêm lợi suất ký quỹ với cho vay nhanh, chiến lược và chuyển khoản cố định, tiết kiệm giữa các ứng dụng phi tập trung được tích hợp, như thị trường Kashi"
+msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
+msgstr "SureVault cung cấp thêm lợi suất ký quỹ với cho vay nhanh, chiến lược và chuyển khoản cố định, tiết kiệm giữa các ứng dụng phi tập trung được tích hợp, như thị trường Kashi"
 
-msgid "BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox."
-msgstr "Các chiến lược BentoBox có thể tạo ra lợi suất cho các token thế chấp của bạn. Token này chưa có chiến lược trong BentoBox."
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "Các chiến lược SureVault có thể tạo ra lợi suất cho các token thế chấp của bạn. Token này chưa có chiến lược trong SureVault."
 
-msgid "BentoBox strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the BentoBox."
-msgstr "Chiến lược BentoBox có thể tạo ra lợi suất cho thanh khoản của bạn trong khi không được cho vay. Token này chưa có chiến lược trong BentoBox."
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "Chiến lược SureVault có thể tạo ra lợi suất cho thanh khoản của bạn trong khi không được cho vay. Token này chưa có chiến lược trong SureVault."
 
 msgid "Borrow"
 msgstr "Vay"
@@ -286,16 +286,16 @@ msgstr ""
 msgid "Deposit"
 msgstr "Ký quỹ"
 
-msgid "Deposit SUSHI into BentoBox"
-msgstr "Ký quỹ SUSHI vào BentoBox"
+msgid "Deposit SUSHI into SureVault"
+msgstr "Ký quỹ SUSHI vào SureVault"
 
-msgid "Deposit tokens into BentoBox for all the yields"
-msgstr "Ký quỹ token vào BentoBox để nhận tất cả lợi suất"
+msgid "Deposit tokens into SureVault for all the yields"
+msgstr "Ký quỹ token vào SureVault để nhận tất cả lợi suất"
 
-msgid "Deposit {0} into BentoBox"
+msgid "Deposit {0} into SureVault"
 msgstr ""
 
-msgid "Depositing {0} into BentoBox"
+msgid "Depositing {0} into SureVault"
 msgstr ""
 
 msgid "Dev"
@@ -557,7 +557,7 @@ msgid "MAX"
 msgstr "TỐI ĐA"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into BentoBox for double yields and can be\n"
+"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
 

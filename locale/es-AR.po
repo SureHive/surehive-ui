@@ -86,7 +86,7 @@ msgstr "Analítica"
 msgid "Approve"
 msgstr "Aprobar"
 
-msgid "Approve Kashi"
+msgid "Approve"
 msgstr "Aprobar Kashi"
 
 msgid "Approve Limit Order"
@@ -131,23 +131,23 @@ msgstr ""
 msgid "Bento Balance: {0}"
 msgstr "Saldo de Bento: {0}"
 
-msgid "BentoBox"
-msgstr "BentoBox"
+msgid "SureVault"
+msgstr "SureVault"
 
-msgid "BentoBox Apps"
-msgstr "Aplicaciones de BentoBox"
+msgid "SureVault Apps"
+msgstr "Aplicaciones de SureVault"
 
-msgid "BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "BentoBox es una forma innovadora de utilizar dapps con gas de manera eficiente y obtener un rendimiento adicional."
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault es una forma innovadora de utilizar dapps con gas de manera eficiente y obtener un rendimiento adicional."
 
-msgid "BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "BentoBox proporciona un rendimiento adicional en depósitos con préstamos flash, estrategias y transferencias fijas con poco gas entre dapps integradas, como los mercados de Kashi."
+msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
+msgstr "SureVault proporciona un rendimiento adicional en depósitos con préstamos flash, estrategias y transferencias fijas con poco gas entre dapps integradas, como los mercados de Kashi."
 
-msgid "BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox."
-msgstr "Las estrategias de BentoBox pueden generar rendimiento para sus tokens colaterales. Este token aún no tiene una estrategia en BentoBox."
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "Las estrategias de SureVault pueden generar rendimiento para sus tokens colaterales. Este token aún no tiene una estrategia en SureVault."
 
-msgid "BentoBox strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the BentoBox."
-msgstr "Las estrategias de BentoBox pueden generar rendimiento para su liquidez mientras no se preste. Este token aún no tiene una estrategia en BentoBox."
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "Las estrategias de SureVault pueden generar rendimiento para su liquidez mientras no se preste. Este token aún no tiene una estrategia en SureVault."
 
 msgid "Borrow"
 msgstr "Tomar prestado"
@@ -288,16 +288,16 @@ msgstr ""
 msgid "Deposit"
 msgstr "Depositar"
 
-msgid "Deposit SUSHI into BentoBox"
-msgstr "Deposite SUSHI en BentoBox"
+msgid "Deposit SUSHI into SureVault"
+msgstr "Deposite SUSHI en SureVault"
 
-msgid "Deposit tokens into BentoBox for all the yields"
-msgstr "Deposite tokens en BentoBox para todos los rendimientos"
+msgid "Deposit tokens into SureVault for all the yields"
+msgstr "Deposite tokens en SureVault para todos los rendimientos"
 
-msgid "Deposit {0} into BentoBox"
+msgid "Deposit {0} into SureVault"
 msgstr ""
 
-msgid "Depositing {0} into BentoBox"
+msgid "Depositing {0} into SureVault"
 msgstr ""
 
 msgid "Dev"
@@ -559,7 +559,7 @@ msgid "MAX"
 msgstr "MAX"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into BentoBox for double yields and can be\n"
+"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
 

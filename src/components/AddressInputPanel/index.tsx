@@ -26,7 +26,7 @@ const AddressInputPanel: FC<AddressInputPanelProps> = ({ id, value, onChange }) 
 
   return (
     <div
-      className={`flex flex-row bg-dark-800 rounded items-center h-[68px] ${
+      className={`flex flex-row bg-gray-300 rounded items-center h-[68px] ${
         error ? 'border border-red border-opacity-50' : ''
       }`}
       id={id}
@@ -39,7 +39,7 @@ const AddressInputPanel: FC<AddressInputPanelProps> = ({ id, value, onChange }) 
       </div>
       <div className="flex w-full h-full sm:w-3/5 border-2 border-dark-800 rounded-r">
         <input
-          className="p-3 w-full flex overflow-ellipsis font-bold recipient-address-input bg-dark-900 h-full w-full rounded placeholder-low-emphesis"
+          className="p-3 w-full flex overflow-ellipsis font-bold recipient-address-input bg-gray-200 h-full w-full rounded placeholder-low-emphesis"
           type="text"
           autoComplete="off"
           autoCorrect="off"

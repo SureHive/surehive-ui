@@ -5,7 +5,7 @@ import { classNames } from '../../functions'
 
 const TYPE = {
   information: {
-    color: 'bg-purple bg-opacity-20 text-high-emphesis',
+    color: 'bg-yellow bg-opacity-20 text-high-emphesis',
     icon: (
       <svg
         width="33"
@@ -95,7 +95,7 @@ export default function Alert({
           <button
             type="button"
             onClick={() => setShow(!show)}
-            className="inline-flex opacity-80 hover:opacity-100 focused:opacity-100 rounded p-1.5 text-primary hover:text-high-emphesis focus:text-high-emphesis focus:outline-none focus:ring focus:ring-offset focus:ring-offset-purple focus:ring-purple"
+            className="inline-flex opacity-80 hover:opacity-100 focused:opacity-100 rounded p-1.5 text-primary hover:text-high-emphesis focus:text-high-emphesis focus:outline-none focus:ring focus:ring-offset focus:ring-offset-gray focus:ring-gray"
           >
             <span className="sr-only">Dismiss</span>
             <XIcon className="w-5 h-5" aria-hidden="true" />

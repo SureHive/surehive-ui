@@ -271,7 +271,7 @@ export default function Farm(): JSX.Element {
             term={term}
             inputProps={{
               className:
-                'relative w-full bg-transparent border border-transparent focus:border-gradient-r-blue-pink-dark-900 rounded placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5',
+                'relative w-full bg-transparent border border-transparent focus:border-gradient-r-blue-yellow-gray-200 rounded placeholder-secondary focus:placeholder-primary font-bold text-base px-6 py-3.5',
             }}
           />
 

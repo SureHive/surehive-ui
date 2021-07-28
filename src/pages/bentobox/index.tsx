@@ -27,7 +27,7 @@ export default function BenotBox() {
           className="opacity-50"
           // src="/bentobox-hero.jpg"
           src={bentoBoxHero}
-          alt="BentoBox Hero"
+          alt="SureVault Hero"
           objectFit="contain"
           objectPosition="top"
           layout="responsive"
@@ -38,14 +38,14 @@ export default function BenotBox() {
       <div className="z-10 text-center">
         <Image
           src="/bentobox-logo.png"
-          alt="BentoBox Logo"
+          alt="SureVault Logo"
           className="object-scale-down w-40 h-auto md:w-60"
           width="100%"
           height="auto"
         />
 
         <div className="container max-w-5xl mx-auto">
-          <div className="text-3xl font-bold md:text-5xl text-high-emphesis">{i18n._(t`BentoBox Apps`)}</div>
+          <div className="text-3xl font-bold md:text-5xl text-high-emphesis">{i18n._(t`SureVault Apps`)}</div>
           <div className="p-4 mt-0 mb-8 text-base font-medium md:text-lg lg:text-xltext-high-emphesis md:mt-4">
             {i18n._(t`SureVault is an innovative way to use dapps gas-efficiently and gain extra yield.`)}
           </div>
@@ -53,7 +53,7 @@ export default function BenotBox() {
 
         <div className="container max-w-5xl mx-auto">
           <div className="grid grid-cols-4 gap-4 sm:gap-12 grid-flow-auto">
-            <Card className="w-full col-span-2 rounded cursor-pointer md:col-span-1 bg-dark-800 hover:bg-dark-900 shadow-pink-glow hover:shadow-pink-glow-hovered">
+            <Card className="w-full col-span-2 rounded cursor-pointer md:col-span-1 bg-gray-100 hover:bg-gray-200 shadow-pink-glow hover:shadow-pink-glow-hovered">
               <div className="relative w-full">
                 <Image
                   src="/kashi-neon.png"
@@ -65,7 +65,7 @@ export default function BenotBox() {
                 />
                 {account ? (
                   <Link href="/borrow">
-                    <a className="w-full px-4 py-2 text-center bg-transparent border border-transparent rounded text-high-emphesis border-gradient-r-blue-pink-dark-900">
+                    <a className="w-full px-4 py-2 text-center bg-transparent border border-transparent rounded text-high-emphesis border-gradient-r-blue-yellow-gray-200">
                       {i18n._(t`Enter`)}
                     </a>
                   </Link>
@@ -74,7 +74,7 @@ export default function BenotBox() {
                 )}
               </div>
             </Card>
-            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-dark-800 hover:bg-dark-900 shadow-blue-glow hover:shadow-blue-glow-hovered">
+            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-gray-100 hover:bg-gray-200 shadow-blue-glow hover:shadow-blue-glow-hovered">
               <Image
                 src="/coming-soon.png"
                 alt="Coming Soon"
@@ -84,7 +84,7 @@ export default function BenotBox() {
                 height="auto"
               />
             </Card>
-            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-dark-800 hover:bg-dark-900 shadow-pink-glow hover:shadow-pink-glow-hovered">
+            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-gray-100 hover:bg-gray-200 shadow-pink-glow hover:shadow-pink-glow-hovered">
               <Image
                 src="/coming-soon.png"
                 alt="Coming Soon"
@@ -94,7 +94,7 @@ export default function BenotBox() {
                 height="auto"
               />
             </Card>
-            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-dark-800 hover:bg-dark-900 shadow-blue-glow hover:shadow-blue-glow-hovered">
+            <Card className="flex items-center justify-center col-span-2 transition-colors cursor-pointer md:col-span-1 bg-gray-100 hover:bg-gray-200 shadow-blue-glow hover:shadow-blue-glow-hovered">
               <Image
                 src="/coming-soon.png"
                 alt="Coming Soon"

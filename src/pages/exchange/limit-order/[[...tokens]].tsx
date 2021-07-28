@@ -229,7 +229,7 @@ function LimitOrder() {
         }}
       >
         <DoubleGlowShadow>
-          <div id="limit-order-page" className="flex flex-col p-4 rounded bg-dark-900 gap-4">
+          <div id="limit-order-page" className="flex flex-col p-4 rounded bg-gray-200 gap-4">
             <ExchangeHeader input={currencies[Field.INPUT]} output={currencies[Field.OUTPUT]} />
             <div className="flex flex-col gap-4">
               <CurrencyInputPanel
@@ -260,15 +260,15 @@ function LimitOrder() {
               <div className="flex flex-row gap-5">
                 <div />
                 <div className="flex items-center relative">
-                  <div className="z-0 absolute w-[2px] bg-dark-800 h-[calc(100%+32px)] top-[-16px] left-[calc(50%-1px)]" />
+                  <div className="z-0 absolute w-[2px] bg-gray-100 h-[calc(100%+32px)] top-[-16px] left-[calc(50%-1px)]" />
                   <button
-                    className="rounded-full bg-dark-900 p-3px z-10"
+                    className="rounded-full bg-gray-200 p-3px z-10"
                     onClick={() => {
                       onSwitchTokens()
                     }}
                   >
                     <div
-                      className="p-2 rounded-full bg-dark-800 hover:bg-dark-700"
+                      className="p-2 rounded-full bg-gray-50 hover:bg-gray-50"
                       onMouseEnter={() => setAnimateSwapArrows(true)}
                       onMouseLeave={() => setAnimateSwapArrows(false)}
                     >

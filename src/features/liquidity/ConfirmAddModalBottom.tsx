@@ -23,7 +23,7 @@ export function ConfirmAddModalBottom({
 }) {
   const { i18n } = useLingui()
   return (
-    <div className="p-6 mt-0 -m-6 rounded bg-dark-800">
+    <div className="p-6 mt-0 -m-6 rounded bg-gray-100">
       <div className="grid gap-1">
         <div className="flex items-center justify-between">
           <div className="text-sm text-high-emphesis">{i18n._(t`Rates`)}</div>

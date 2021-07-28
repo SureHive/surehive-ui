@@ -97,7 +97,7 @@ msgstr ""
 msgid "Approve {0}"
 msgstr ""
 
-msgid "Approve Kashi"
+msgid "Approve"
 msgstr ""
 
 msgid "Approved"
@@ -130,22 +130,22 @@ msgstr ""
 msgid "Bento Balance: {0}"
 msgstr ""
 
-msgid "BentoBox"
+msgid "SureVault"
 msgstr ""
 
-msgid "BentoBox Apps"
+msgid "SureVault Apps"
 msgstr ""
 
-msgid "BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr ""
 
-msgid "BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
+msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
 msgstr ""
 
-msgid "BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox."
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
 msgstr ""
 
-msgid "BentoBox strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the BentoBox."
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr ""
 
 msgid "Borrow"
@@ -261,10 +261,10 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-msgid "Deposit SUSHI into BentoBox"
+msgid "Deposit SUSHI into SureVault"
 msgstr ""
 
-msgid "Deposit tokens into BentoBox for all the yields"
+msgid "Deposit tokens into SureVault for all the yields"
 msgstr ""
 
 msgid "Deposited"

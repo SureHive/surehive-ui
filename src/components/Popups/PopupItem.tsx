@@ -27,8 +27,8 @@ export const Popup = styled.div`
 `;
 
 const AnimatedFader = animated(({ children, ...rest }) => (
-  <div className="h-[3px] bg-dark-800 w-full">
-    <div className="h-[3px] bg-gradient-to-r from-blue to-pink " {...rest}>
+  <div className="h-[3px] bg-gray-200 w-full">
+    <div className="h-[3px] bg-gradient-to-r from-blue to-yellow " {...rest}>
       {children}
     </div>
   </div>
@@ -81,7 +81,7 @@ export default function PopupItem({
       <div className="w-full relative rounded overflow-hidden bg-dark-700">
         <div className="flex flex-row p-4">
           {popupContent}
-          <div className="hover:text-white cursor-pointer">
+          <div className="hover:text-dark-700 cursor-pointer">
             <XIcon width={24} height={24} onClick={removeThisPopup} />
           </div>
         </div>

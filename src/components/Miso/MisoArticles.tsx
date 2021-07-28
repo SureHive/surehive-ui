@@ -14,7 +14,7 @@ function MisoArticles({
           {title}
         </div>
       </div>
-      <div className="pr-3 mb-2 text-sm leading-5 text-white md:text-base md:mb-4 md:pr-0 opacity-50">
+      <div className="pr-3 mb-2 text-sm leading-5 text-dark-700 md:text-base md:mb-4 md:pr-0 opacity-50">
         {content}
       </div>
     </div>

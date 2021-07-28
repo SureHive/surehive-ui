@@ -35,7 +35,7 @@ export default function Option({
     <div
       onClick={onClick}
       className={`flex items-center justify-between w-full p-3 rounded cursor-pointer ${
-        !active ? 'bg-dark-800 hover:bg-dark-700' : 'bg-dark-1000'
+        !active ? 'bg-gray-100 hover:bg-dark-700' : 'bg-gray-300'
       }`}
     >
       <div>

@@ -32,7 +32,7 @@ export default function Pair() {
         <meta key="description" name="description" content={`Lend ${pair.asset.tokenInfo.symbol} on HoneyStream`} />
       </Head>
       <Card
-        className="h-full bg-dark-900"
+        className="h-full bg-gray-200"
         header={
           <LendCardHeader>
             <div className="flex items-center">
@@ -94,16 +94,16 @@ export default function Pair() {
         </div>
 
         <Tabs forceRenderTabPanel selectedIndex={tabIndex} onSelect={(index: number) => setTabIndex(index)}>
-          <TabList className="flex p-1 rounded bg-dark-800">
+          <TabList className="flex p-1 rounded bg-gray-100">
             <Tab
               className="flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none"
-              selectedClassName="bg-dark-900 text-high-emphesis"
+              selectedClassName="bg-gray-200 text-high-emphesis"
             >
               Deposit {pair.asset.tokenInfo.symbol}
             </Tab>
             <Tab
               className="flex items-center justify-center flex-1 px-3 py-4 text-lg rounded cursor-pointer select-none text-secondary hover:text-primary focus:outline-none"
-              selectedClassName="bg-dark-900 text-high-emphesis"
+              selectedClassName="bg-gray-200 text-high-emphesis"
             >
               Withdraw {pair.asset.tokenInfo.symbol}
             </Tab>
@@ -130,7 +130,7 @@ const PairLayout = ({ children }) => {
     <Layout
       left={
         <Card
-          className="h-full bg-dark-900"
+          className="h-full bg-gray-200"
           title={i18n._(t`Lend assets for interest from borrowers.`)}
           description={i18n._(
             t`Have assets you want to earn additional interest on? Lend them in isolated markets and earn interest from borrowers.`
@@ -138,7 +138,7 @@ const PairLayout = ({ children }) => {
         />
       }
       right={
-        <Card className="h-full bg-dark-900">
+        <Card className="h-full bg-gray-200">
           <div className="flex-col space-y-2">
             <div className="flex justify-between">
               <div className="text-xl text-high-emphesis">{i18n._(t`Market`)}</div>

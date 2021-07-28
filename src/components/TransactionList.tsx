@@ -13,7 +13,7 @@ export default function TransactionList({ transactions }) {
   return transactions ? (
     <div className="space-y-3">
       {transactions.map((transaction) => (
-        <div key={transaction.tx_hash} className="flex items-center justify-between px-3 py-1 rounded bg-dark-800">
+        <div key={transaction.tx_hash} className="flex items-center justify-between px-3 py-1 rounded bg-gray-100">
           <div className="flex flex-row items-center pr-3 space-x-1">
             <Image src={transaction.token_0.logo_url} alt={transaction.token_0.symbol} width="24px" height="24px" />
             <Image src={transaction.token_1.logo_url} alt={transaction.token_1.symbol} width="24px" height="24px" />
@@ -23,7 +23,7 @@ export default function TransactionList({ transactions }) {
               href={getExplorerLink(chainId, transaction.tx_hash, 'transaction')}
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center flex-1 px-3 py-2 text-sm rounded-lg text-primary text-bold bg-dark-900"
+              className="flex items-center flex-1 px-3 py-2 text-sm rounded-lg text-primary text-bold bg-gray-200"
             >
               <span className="mr-1">{transaction.description}</span>
               <ArrowUpRight strokeWidth={2} size={14} className="text-blue" />

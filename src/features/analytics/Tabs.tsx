@@ -32,7 +32,7 @@ export default function PairTabs({ tabs }: { tabs: any[] }): JSX.Element {
                     <div
                       className={classNames(
                         router.asPath === tab.href &&
-                          'border-gradient-r-blue-pink-dark-900 border bg-transparent border-transparent',
+                          'border-gradient-r-blue-yellow-gray-200 border bg-transparent border-transparent',
                         'w-full'
                       )}
                     />

@@ -55,7 +55,7 @@ const CurrencySelect: FC<CurrencySelectProps> = ({
               <CurrencyLogo currency={currency} size={'54px'} />
             </div>
           ) : (
-            <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
+            <div className="rounded bg-gray-200" style={{ maxWidth: 54, maxHeight: 54 }}>
               <div style={{ width: 54, height: 54 }}>
                 <Lottie animationData={selectCoinAnimation} autoplay loop />
               </div>

@@ -270,7 +270,7 @@ export default function Zap() {
         <PoolList />
       ) : (
         <DoubleGlowShadow>
-          <div className="w-full max-w-xl p-4 rounded bg-dark-900">
+          <div className="w-full max-w-xl p-4 rounded bg-gray-200">
             <CardHeader />
             <AutoColumn>
               <CurrencyInputPanel

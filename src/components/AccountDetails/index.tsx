@@ -135,12 +135,12 @@ const AccountDetails: FC<AccountDetailsProps> = ({
           </div>
           <div id="web3-account-identifier-row" className="flex flex-col justify-center space-y-3">
             {ENSName ? (
-              <div className="bg-dark-800">
+              <div className="bg-gray-200">
                 {getStatusIcon()}
                 <Typography>{ENSName}</Typography>
               </div>
             ) : (
-              <div className="bg-dark-800 py-2 px-3 rounded">
+              <div className="bg-gray-200 py-2 px-3 rounded">
                 {getStatusIcon()}
                 <Typography>{account && shortenAddress(account)}</Typography>
               </div>

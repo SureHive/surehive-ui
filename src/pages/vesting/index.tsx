@@ -109,8 +109,8 @@ export default function Vesting() {
         <div className="flex px-0 sm:px-4 md:flex-row md:space-x-10 lg:space-x-20 md:px-10">
           <div className="hidden space-y-10 md:block">
             <Image src={vault} loader={cloudinaryLoader} width={340} height={300} alt="" />
-            <div className="relative w-full p-4 overflow-hidden rounded bg-dark-900">
-              <div className="font-bold text-white">{i18n._(t`Community Approval`)}</div>
+            <div className="relative w-full p-4 overflow-hidden rounded bg-gray-200">
+              <div className="font-bold text-dark-700">{i18n._(t`Community Approval`)}</div>
               <div
                 className="pt-2 text-sm font-bold text-gray-400"
                 style={{
@@ -140,15 +140,15 @@ export default function Vesting() {
             </div>
           </div>
           <div className="flex flex-col gap-3 max-w-[400px]">
-            <div className="relative w-full overflow-hidden rounded bg-dark-900">
+            <div className="relative w-full overflow-hidden rounded bg-gray-200">
               <div className="flex flex-col gap-3 p-4">
                 <div className="flex flex-row justify-between">
-                  <div className="font-bold text-white">{i18n._(t`Your Claimable SUSHI this Week`)}</div>
+                  <div className="font-bold text-dark-700">{i18n._(t`Your Claimable SUSHI this Week`)}</div>
                   <QuestionHelper text="Your Vested SUSHI will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
                 </div>
                 {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
                 <div className="flex flex-col items-baseline">
-                  <div className="font-bold text-white text-[36px]">
+                  <div className="font-bold text-dark-700 text-[36px]">
                     {unclaimedAmount?.toFixed(4, { groupSeparator: ',' } ?? {})}
                   </div>
                   {account ? (
@@ -194,14 +194,14 @@ export default function Vesting() {
                 </Button>
               </div>
             </div>
-            <div className="relative w-full overflow-hidden rounded bg-dark-900">
+            <div className="relative w-full overflow-hidden rounded bg-gray-200">
               <div className="flex flex-col gap-3 p-4">
-                <div className="font-bold text-white">{i18n._(t`Things you can do with your SUSHI`)}</div>
-                <div className="p-4 rounded bg-dark-800">
+                <div className="font-bold text-dark-700">{i18n._(t`Things you can do with your SUSHI`)}</div>
+                <div className="p-4 rounded bg-gray-100">
                   <Link href="/stake">
                     <a className="flex items-center justify-between gap-3">
                       <div className="flex flex-col gap-1">
-                        <div className="font-bold text-white">{i18n._(t`Stake SUSHI for xSUSHI`)}</div>
+                        <div className="font-bold text-dark-700">{i18n._(t`Stake SUSHI for xSUSHI`)}</div>
                         <div className="text-sm text-secondary">
                           {t`Gain governance rights with xSUSHI and earn 5% APR (0.05% of
                                                             all swaps from all chains)`}
@@ -213,11 +213,11 @@ export default function Vesting() {
                     </a>
                   </Link>
                 </div>
-                <div className="p-4 rounded bg-dark-800">
+                <div className="p-4 rounded bg-gray-100">
                   <Link href={`/saave`}>
                     <a className="flex items-center justify-between gap-3">
                       <div className="flex flex-col gap-1">
-                        <div className="font-bold text-white">{i18n._(t`Stack Yields with SAAVE`)}</div>
+                        <div className="font-bold text-dark-700">{i18n._(t`Stack Yields with SAAVE`)}</div>
                         <div className="text-sm text-secondary">
                           {t`Stake into xSUR add collateral as a xSUR on Aave all in
                                                             one click`}
@@ -229,9 +229,9 @@ export default function Vesting() {
                     </a>
                   </Link>
                 </div>
-                <div className="p-4 rounded bg-dark-800">
+                <div className="p-4 rounded bg-gray-100">
                   <div className="flex flex-col gap-1">
-                    <div className="font-bold text-white">{i18n._(t`Deposit SUR into SureVault`)}</div>
+                    <div className="font-bold text-dark-700">{i18n._(t`Deposit SUR into SureVault`)}</div>
                     <div className="text-sm text-secondary">
                       {t`(COMING SOON) Accrue automatic yield through flash loans and
                                                             SUSHI strategies`}

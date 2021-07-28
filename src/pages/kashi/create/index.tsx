@@ -162,9 +162,9 @@ function Create() {
         <meta key="description" name="description" content="Create Lending Pair on HoneyStream by SureHive" />
       </Head>
       <Card
-        className="h-full bg-dark-900"
+        className="h-full bg-gray-200"
         header={
-          <CardHeader className="bg-dark-800">
+          <CardHeader className="bg-gray-100">
             <div className="text-3xl text-high-emphesis leading-48px">Create a Market</div>
           </CardHeader>
         }
@@ -216,7 +216,7 @@ const CreateLayout = ({ children }) => {
     <Layout
       left={
         <Card
-          className="h-full bg-dark-900"
+          className="h-full bg-gray-200"
           title={i18n._(t`Create a new HoneyStream Market`)}
           description={i18n._(
             t`If you want to supply to a market that is not listed yet, you can use this tool to create a new pair.`

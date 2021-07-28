@@ -426,7 +426,7 @@ export default function Swap() {
   return (
     <>
       <Head>
-        <title>{i18n._(t`SushiSwap`)} | SureHive</title>
+        <title>{i18n._(t`SureHive`)} | Swap</title>
         <meta
           key="description"
           name="description"
@@ -439,7 +439,7 @@ export default function Swap() {
         onConfirm={handleConfirmTokenWarning}
       />
       <DoubleGlowShadow>
-        <div id="swap-page" className="w-full max-w-2xl p-4 space-y-4 rounded bg-dark-900 z-1">
+        <div id="swap-page" className="w-full max-w-2xl p-4 space-y-4 rounded bg-gray-50 z-1">
           <SwapHeader
             input={currencies[Field.INPUT]}
             output={currencies[Field.OUTPUT]}
@@ -486,9 +486,9 @@ export default function Swap() {
                     onSwitchTokens()
                   }}
                 >
-                  <div className="rounded-full bg-dark-900 p-3px">
+                  <div className="rounded-full bg-gray-50 p-3px">
                     <div
-                      className="p-3 rounded-full bg-dark-800 hover:bg-dark-700"
+                      className="p-3 rounded-full bg-gray-50 hover:bg-gray-200"
                       onMouseEnter={() => setAnimateSwapArrows(true)}
                       onMouseLeave={() => setAnimateSwapArrows(false)}
                     >
@@ -536,12 +536,12 @@ export default function Swap() {
                 id="swap-currency-output"
               />
               {Boolean(trade) && (
-                <div className="p-1 -mt-2 cursor-pointer rounded-b-md bg-dark-800">
+                <div className="p-1 -mt-2 cursor-pointer rounded-b-md bg-gray-200">
                   <TradePrice
                     price={trade?.executionPrice}
                     showInverted={showInverted}
                     setShowInverted={setShowInverted}
-                    className="bg-dark-900"
+                    className="bg-gray-200"
                   />
                 </div>
               )}
@@ -563,7 +563,7 @@ export default function Swap() {
           )}
           {/*
           {trade && (
-            <div className="p-5 rounded bg-dark-800">
+            <div className="p-5 rounded bg-gray-100">
               <AdvancedSwapDetails trade={trade} allowedSlippage={allowedSlippage} />
             </div>
           )} */}

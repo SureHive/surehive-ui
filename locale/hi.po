@@ -97,7 +97,7 @@ msgstr "स्वीकृत करें"
 msgid "Approve {0}"
 msgstr "{0} स्वीकृत करें"
 
-msgid "Approve Kashi"
+msgid "Approve"
 msgstr "काशी को स्वीकार करें"
 
 msgid "Approved"
@@ -130,23 +130,23 @@ msgstr "शेषराशि"
 msgid "Bento Balance: {0}"
 msgstr "Bento शेष: {0}"
 
-msgid "BentoBox"
-msgstr "BentoBox"
+msgid "SureVault"
+msgstr "SureVault"
 
-msgid "BentoBox Apps"
-msgstr "BentoBox Apps"
+msgid "SureVault Apps"
+msgstr "SureVault Apps"
 
-msgid "BentoBox is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "BentoBox dapps गैस-कुशलता का उपयोग करने और अतिरिक्त लाभ प्राप्त करने का एक अभिनव तरीका है।"
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault dapps गैस-कुशलता का उपयोग करने और अतिरिक्त लाभ प्राप्त करने का एक अभिनव तरीका है।"
 
-msgid "BentoBox provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "BentoBox जमा पर अतिरिक्त लाभ प्रदान करता है, जिसमें उधार, रणनीतियाँ, और निश्चित, Kashi बाजारों की तरह एकीकृत dapps के बीच कम गैस स्थानान्तरण शामिल हैं।"
+msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
+msgstr "SureVault जमा पर अतिरिक्त लाभ प्रदान करता है, जिसमें उधार, रणनीतियाँ, और निश्चित, Kashi बाजारों की तरह एकीकृत dapps के बीच कम गैस स्थानान्तरण शामिल हैं।"
 
-msgid "BentoBox strategies can create yield for your collateral tokens. This token does not yet have a strategy in the BentoBox."
-msgstr "BentoBox रणनीतियाँ आपके कोलेटरल टोकन के लिए लाभ पैदा कर सकती हैं। इस टोकन में अभी तक BentoBox की रणनीति नहीं है।"
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "SureVault रणनीतियाँ आपके कोलेटरल टोकन के लिए लाभ पैदा कर सकती हैं। इस टोकन में अभी तक SureVault की रणनीति नहीं है।"
 
-msgid "BentoBox strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the BentoBox."
-msgstr "BentoBox रणनीतियाँ आपकी लिक्विडिटी के लिए लाभ पैदा कर सकती हैं जब लिक्विडिटी को उधार नहीं दिया जाता है। इस टोकन में अभी तक BentoBox की रणनीति नहीं है।"
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "SureVault रणनीतियाँ आपकी लिक्विडिटी के लिए लाभ पैदा कर सकती हैं जब लिक्विडिटी को उधार नहीं दिया जाता है। इस टोकन में अभी तक SureVault की रणनीति नहीं है।"
 
 msgid "Borrow"
 msgstr "उधार लें"
@@ -263,11 +263,11 @@ msgstr "पूल और आपूर्ति बनाएँ"
 msgid "Deposit"
 msgstr "जमा करें"
 
-msgid "Deposit SUSHI into BentoBox"
-msgstr "SUSHI को BentoBox में जमा करें"
+msgid "Deposit SUSHI into SureVault"
+msgstr "SUSHI को SureVault में जमा करें"
 
-msgid "Deposit tokens into BentoBox for all the yields"
-msgstr "सभी लाभ के लिए BentoBox में टोकन जमा करें"
+msgid "Deposit tokens into SureVault for all the yields"
+msgstr "सभी लाभ के लिए SureVault में टोकन जमा करें"
 
 msgid "Deposited"
 msgstr "जमा किया गया"

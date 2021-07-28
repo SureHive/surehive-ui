@@ -12,9 +12,9 @@ const Menu = ({ positionsLength }) => {
         <NavLink
           exact
           href={`/farm?filter=portfolio`}
-          activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-pink-dark-900"
+          activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-yellow-gray-200"
         >
-          <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-dark-900 hover:bg-dark-800">
+          <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-gray-200 hover:bg-gray-100">
             Your Farms
           </a>
         </NavLink>
@@ -23,9 +23,9 @@ const Menu = ({ positionsLength }) => {
       <NavLink
         exact
         href="/farm"
-        activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-pink-dark-900"
+        activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-yellow-gray-200"
       >
-        <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-dark-900 hover:bg-dark-800">
+        <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-gray-200 hover:bg-gray-100">
           All Farms
         </a>
       </NavLink>
@@ -35,18 +35,18 @@ const Menu = ({ positionsLength }) => {
           <NavLink
             exact
             href={`/farm?filter=kashi`}
-            activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-pink-dark-900"
+            activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-yellow-gray-200"
           >
-            <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-dark-900 hover:bg-dark-800">
+            <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-gray-200 hover:bg-gray-100">
               HoneyStream Farms
             </a>
           </NavLink>
           <NavLink
             exact
             href={`/farm?filter=sushi`}
-            activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-pink-dark-900"
+            activeClassName="font-bold bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-yellow-gray-200"
           >
-            <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-dark-900 hover:bg-dark-800">
+            <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-gray-200 hover:bg-gray-100">
               SureHive Farms
             </a>
           </NavLink>
@@ -57,9 +57,9 @@ const Menu = ({ positionsLength }) => {
         <NavLink
           exact
           href={`/farm?filter=2x`}
-          activeClassName="bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-pink-dark-900"
+          activeClassName="bg-transparent border rounded text-high-emphesis border-transparent border-gradient-r-blue-yellow-gray-200"
         >
-          <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-dark-900 hover:bg-dark-800">
+          <a className="flex items-center justify-between px-4 py-6 text-base font-bold border border-transparent rounded cursor-pointer bg-gray-200 hover:bg-gray-100">
             2x Reward Farms
           </a>
         </NavLink>

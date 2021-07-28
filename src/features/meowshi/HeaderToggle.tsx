@@ -17,7 +17,7 @@ const HeaderToggle: FC<HeaderToggleProps> = ({ meowshiState }) => {
       <RadioGroup
         value={meow}
         onChange={switchCurrencies}
-        className="flex flex-row bg-dark-800 rounded p-3px cursor-pointer"
+        className="flex flex-row bg-gray-100 rounded p-3px cursor-pointer"
       >
         <RadioGroup.Option
           value={true}

@@ -71,7 +71,7 @@ export default function PoolFinder() {
   )
 
   const prerequisiteMessage = (
-    <div className="p-5 text-center rounded bg-dark-800">{i18n._(t`Select a token to find your liquidity`)}</div>
+    <div className="p-5 text-center rounded bg-gray-50">{i18n._(t`Select a token to find your liquidity`)}</div>
   )
 
   return (
@@ -99,7 +99,7 @@ export default function PoolFinder() {
           type="information"
         />
 
-        <div className="relative p-4 space-y-4 rounded bg-dark-900 shadow-liquidity">
+        <div className="relative p-4 space-y-4 rounded bg-gray-50 shadow-liquidity">
           <AutoColumn gap={'md'}>
             <CurrencySelectPanel
               currency={currency0}
@@ -110,8 +110,8 @@ export default function PoolFinder() {
             />
             <AutoColumn justify="space-between">
               <AutoRow justify={'flex-start'} style={{ padding: '0 1rem' }}>
-                <button className="z-10 -mt-6 -mb-6 rounded-full bg-dark-900 p-3px">
-                  <div className="p-3 rounded-full bg-dark-800 hover:bg-dark-700">
+                <button className="z-10 -mt-6 -mb-6 rounded-full bg-gray-300 p-3px">
+                  <div className="p-3 rounded-full bg-gray-200 hover:bg-gray-50">
                     <Plus size="32" />
                   </div>
                 </button>
@@ -149,7 +149,7 @@ export default function PoolFinder() {
               hasPosition && pair ? (
                 <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
               ) : (
-                <div className="p-5 rounded bg-dark-800">
+                <div className="p-5 rounded bg-gray-50">
                   <AutoColumn gap="sm" justify="center">
                     {i18n._(t`You don’t have liquidity in this pool yet`)}
                     <Link href={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
@@ -161,7 +161,7 @@ export default function PoolFinder() {
                 </div>
               )
             ) : validPairNoLiquidity ? (
-              <div className="p-5 rounded bg-dark-800">
+              <div className="p-5 rounded bg-gray-200">
                 <AutoColumn gap="sm" justify="center">
                   {i18n._(t`No pool found`)}
                   <Link href={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
@@ -170,9 +170,9 @@ export default function PoolFinder() {
                 </AutoColumn>
               </div>
             ) : pairState === PairState.INVALID ? (
-              <div className="p-5 text-center rounded bg-dark-800">{i18n._(t`Invalid pair`)}</div>
+              <div className="p-5 text-center rounded bg-gray-50">{i18n._(t`Invalid pair`)}</div>
             ) : pairState === PairState.LOADING ? (
-              <div className="p-5 text-center rounded bg-dark-800">
+              <div className="p-5 text-center rounded bg-gray-50">
                 <Dots>{i18n._(t`Loading`)}</Dots>
               </div>
             ) : null

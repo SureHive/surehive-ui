@@ -145,17 +145,17 @@ export default function Meowshi() {
           <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
             <InformationCircleIcon width={48} height={48} color="pink" />
             <Typography variant="xs" weight={700}>
-              {i18n._(t`MEOW tokens wrap xSUSHI into BentoBox for double yields and can be
+              {i18n._(t`MEOW tokens wrap xSUSHI into SureVault for double yields and can be
               used to vote in special MEOW governor contracts.`)}
             </Typography>
           </div>
         </div>
-        <div className="relative grid gap-4 p-4 border-2 rounded z-1 bg-dark-900 shadow-swap border-dark-800">
+        <div className="relative grid gap-4 p-4 border-2 rounded z-1 bg-gray-200 shadow-swap border-dark-800">
           <HeaderToggle meowshiState={meowshiState} />
           <CurrencyInputPanel field={Field.INPUT} showMax={true} meowshiState={meowshiState} />
           <div className="relative mt-[-24px] mb-[-24px] ml-[28px] flex items-center">
             <div
-              className="inline-flex p-2 border-2 rounded-full cursor-pointer border-dark-900 bg-dark-800"
+              className="inline-flex p-2 border-2 rounded-full cursor-pointer border-dark-900 bg-gray-100"
               onClick={switchCurrencies}
             >
               <ArrowDownIcon width={24} height={24} />

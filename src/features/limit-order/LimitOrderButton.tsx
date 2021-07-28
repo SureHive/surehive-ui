@@ -136,12 +136,12 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
   if (depositPending)
     button = (
       <Button disabled={disabled} color={disabled ? 'gray' : color} onClick={deposit} {...rest}>
-        <Dots>{i18n._(t`Depositing ${currency.symbol} into BentoBox`)}</Dots>
+        <Dots>{i18n._(t`Depositing ${currency.symbol} into SureVault`)}</Dots>
       </Button>
     )
   else if (!account)
     button = (
-      <Button disabled={disabled} color="pink" onClick={toggleWalletModal} {...rest}>
+      <Button disabled={disabled} color="yellow" onClick={toggleWalletModal} {...rest}>
         {i18n._(t`Connect Wallet`)}
       </Button>
     )
@@ -153,7 +153,7 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
     )
   else if (showTokenApprove)
     button = (
-      <Button disabled={disabled} onClick={tokenApprove} color={disabled ? 'gray' : 'pink'} className="mb-4" {...rest}>
+      <Button disabled={disabled} onClick={tokenApprove} color={disabled ? 'gray' : 'yellow'} className="mb-4" {...rest}>
         {tokenApprovalState === ApprovalState.PENDING ? (
           <Dots>{i18n._(t`Approving ${currency.symbol}`)}</Dots>
         ) : (
@@ -163,7 +163,7 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
     )
   else if (showLimitApprove)
     button = (
-      <Button disabled={disabled} color={disabled ? 'gray' : 'pink'} onClick={onApprove} {...rest}>
+      <Button disabled={disabled} color={disabled ? 'gray' : 'yellow'} onClick={onApprove} {...rest}>
         {approvalState === BentoApprovalState.PENDING ? (
           <Dots>{i18n._(t`Approving Limit Order`)}</Dots>
         ) : (
@@ -177,7 +177,7 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
   )
     button = (
       <Button disabled={disabled} color={disabled ? 'gray' : 'blue'} onClick={deposit} {...rest}>
-        {i18n._(t`Deposit ${currency.symbol} into BentoBox`)}
+        {i18n._(t`Deposit ${currency.symbol} into SureVault`)}
       </Button>
     )
 

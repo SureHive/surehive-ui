@@ -90,7 +90,7 @@ function MisoInfo({
             <div className="font-bold text-base sm:text-xl">
               {'Trident NFT'}
             </div>
-            <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+            <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-dark-700">
               {name}
             </div>
           </div>
@@ -103,24 +103,24 @@ function MisoInfo({
       <div className="gap-4 grid grid-cols-12 mt-6">
         <div className="col-span-4 flex flex-col">
           <div className="text-sm sm:text-lg">{'Auction Type'}</div>
-          <div className="text-base md:text-xl font-bold text-white">{auctionType}</div>
+          <div className="text-base md:text-xl font-bold text-dark-700">{auctionType}</div>
           <div><Image src="/images/miso/trident/trident_auction_type.png" width={25} height={25}/></div>
         </div>
         <div className="col-span-4 flex flex-col mx-auto">
           <div className="text-sm sm:text-lg">{'MIN Raised'}</div>
-          <div className="text-base md:text-xl font-bold text-white">{`${minRaised} $SUSHI`}</div>
+          <div className="text-base md:text-xl font-bold text-dark-700">{`${minRaised} $SUSHI`}</div>
           <div className="text-sm sm:text-base">{`$${minRaisedUsd} USD`}</div>
         </div>
         <div className="col-span-4 flex flex-col ml-auto">
           <div className="text-sm sm:text-lg">{'Token For Sale'}</div>
-          <div className="text-base md:text-xl font-bold text-white">{tokenForSale}</div>
+          <div className="text-base md:text-xl font-bold text-dark-700">{tokenForSale}</div>
           <div className="text-sm sm:text-base">{symbol}</div>
         </div>
       </div>
       <div className="flex flex-row mt-6">
         <div className="flex flex-col">
           <div className="text-sm sm:text-lg">{'Auction starts on'}</div>
-          <div className="text-base md:text-xl font-bold text-white">{formatDate(new Date(auctionStartDate))} GMT</div>
+          <div className="text-base md:text-xl font-bold text-dark-700">{formatDate(new Date(auctionStartDate))} GMT</div>
           {remainingTime != '' && <div className="flex flex-row items-center text-base">
             
             <Image src="/images/miso/trident/trident_timer.png" width={15} height={15}/>

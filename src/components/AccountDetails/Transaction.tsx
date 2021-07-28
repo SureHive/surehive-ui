@@ -81,7 +81,7 @@ const Transaction: FC<{ hash: string }> = ({ hash }) => {
   if (!chainId) return null
 
   return (
-    <div className="flex flex-col gap-2 bg-dark-800 rounded py-1 px-3 w-full">
+    <div className="flex flex-col gap-2 bg-gray-50 rounded py-1 px-3 w-full">
       <ExternalLink href={getExplorerLink(chainId, hash, 'transaction')} className="flex items-center gap-2">
         <Typography variant="sm" className="flex items-center hover:underline py-0.5">
           {summary ?? hash} ↗

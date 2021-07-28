@@ -40,7 +40,7 @@ function Lend() {
           content="HoneyStream is a lending and margin trading platform, built upon SureVault, which allows for anyone to create customized and gas-efficient markets for lending, borrowing, and collateralizing a variety of DeFi tokens, stable coins, and synthetic assets."
         />
       </Head>
-      <Card className="h-full bg-dark-900" header={<MarketHeader type="Lending" lists={[pairs, positions]} />}>
+      <Card className="h-full bg-gray-200" header={<MarketHeader type="Lending" lists={[pairs, positions]} />}>
         {positions.items && positions.items.length > 0 && (
           <div className="pb-4">
             <div>
@@ -90,7 +90,7 @@ function Lend() {
                     <div key={pair.address}>
                       <Link href={'/lend/' + pair.address}>
                         <a className="block text-high-emphesis">
-                          <div className="grid items-center grid-flow-col grid-cols-4 gap-4 px-4 py-4 text-sm rounded md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-blue">
+                          <div className="grid items-center grid-flow-col grid-cols-4 gap-4 px-4 py-4 text-sm rounded md:grid-cols-6 lg:grid-cols-7 align-center bg-gray-100 hover:bg-gray-300">
                             <div className="flex flex-col items-start sm:flex-row sm:items-center">
                               <div className="hidden space-x-2 md:flex">
                                 <Image
@@ -115,12 +115,12 @@ function Lend() {
                                 <div>
                                   <strong>{pair.asset.tokenInfo.symbol}</strong> / {pair.collateral.tokenInfo.symbol}
                                 </div>
-                                <div className="block mt-0 text-xs text-left text-white-500 lg:hidden">
+                                <div className="block mt-0 text-xs text-left text-dark-700-500 lg:hidden">
                                   {pair.oracle.name}
                                 </div>
                               </div>
                             </div>
-                            <div className="hidden text-white md:block">
+                            <div className="hidden text-dark-700 md:block">
                               <strong>{pair.asset.tokenInfo.symbol}</strong>
                             </div>
                             <div className="hidden md:block">{pair.collateral.tokenInfo.symbol}</div>
@@ -195,7 +195,7 @@ function Lend() {
                   <div key={pair.address}>
                     <Link href={'/lend/' + String(pair.address).toLowerCase()}>
                       <a className="block text-high-emphesis">
-                        <div className="grid items-center grid-flow-col grid-cols-3 gap-4 px-4 py-4 text-sm rounded sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 align-center bg-dark-800 hover:bg-dark-blue">
+                        <div className="grid items-center grid-flow-col grid-cols-3 gap-4 px-4 py-4 text-sm rounded sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 align-center bg-gray-100 hover:bg-gray-100">
                           <div className="flex flex-col items-start sm:flex-row sm:items-center">
                             <div className="hidden space-x-2 md:flex">
                               <Image
@@ -221,7 +221,7 @@ function Lend() {
                                 <div className="font-semibold">{pair.asset.tokenInfo.symbol} / </div>
                                 <div>{pair.collateral.tokenInfo.symbol}</div>
                               </div>
-                              <div className="block mt-0 text-xs text-left text-white-500 lg:hidden">
+                              <div className="block mt-0 text-xs text-left text-dark-700-500 lg:hidden">
                                 {pair.oracle.name}
                               </div>
                             </div>
@@ -260,7 +260,7 @@ const LendLayout = ({ children }) => {
     <Layout
       left={
         <Card
-          className="h-full bg-dark-900"
+          className="h-full bg-gray-200"
           title={i18n._(t`Lend your assets, earn yield with no impermanent loss`)}
           description={i18n._(
             t`Isolated lending markets mitigate your risks as an asset lender. Know exactly what collateral is available to you in the event of counter party insolvency.`

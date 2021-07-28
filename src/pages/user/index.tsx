@@ -76,11 +76,11 @@ export default function Me() {
           </Typography>
         </div>
 
-        <div className="w-full max-w-2xl p-4 mb-3 rounded bg-dark-900">
+        <div className="w-full max-w-2xl p-4 mb-3 rounded bg-gray-200">
           <div className="flex justify-between">
             <div className="flex">
-              <div className="p-1.5 bg-dark-800 rounded">
-                <User strokeWidth={1} size={34} className="text-white" />
+              <div className="p-1.5 bg-gray-100 rounded">
+                <User strokeWidth={1} size={34} className="text-dark-700" />
               </div>
               <div className="ml-3">
                 <div className="font-semibold text-gray-300">{account && shortenAddress(account)}</div>
@@ -100,11 +100,11 @@ export default function Me() {
 
             <div className="text-sm font-semibold text-primary">
               {/* <div className="flex items-center">
-                            <Copy strokeWidth={0.5} size={14} className="text-white"/>
+                            <Copy strokeWidth={0.5} size={14} className="text-dark-700"/>
                             <div className="ml-1">Copy Address</div>
                         </div> */}
               <div className="flex items-center">
-                <ExternalLink strokeWidth={0.5} size={14} className="text-white" />
+                <ExternalLink strokeWidth={0.5} size={14} className="text-dark-700" />
                 {/* <div className="ml-1">View on Explorer</div> */}
                 {chainId && account && (
                   <a href={getExplorerLink(chainId, account, 'address')}>
@@ -120,7 +120,7 @@ export default function Me() {
           {i18n._(t`Balance`)}
         </Typography> */}
 
-        <div className="w-full max-w-2xl p-4 rounded bg-dark-900">
+        <div className="w-full max-w-2xl p-4 rounded bg-gray-200">
           <div className="flex flex-col items-center justify-between mb-3 sm:flex-row">
             <Typography component="h2" variant="lg" className="font-medium text-high-emphesis">
               {i18n._(t`Transaction History ${chainId && NETWORK_LABEL[chainId]}`)}

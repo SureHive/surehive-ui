@@ -131,7 +131,7 @@ export default function Borrow({ pair }: BorrowProps) {
   collateralWarnings.add(
     collateralBalance?.lt(collateralValue.toBigNumber(pair.collateral.tokenInfo.decimals)),
     `Please make sure your ${
-      useBentoCollateral ? 'BentoBox' : 'wallet'
+      useBentoCollateral ? 'SureHive' : 'wallet'
     } balance is sufficient to deposit and then try again.`,
     true
   )
@@ -348,7 +348,7 @@ export default function Borrow({ pair }: BorrowProps) {
       <div className="mt-6 mb-4 text-3xl text-high-emphesis">Borrow {pair.asset.tokenInfo.symbol}</div>
 
       <SmartNumberInput
-        color="pink"
+        color="blue"
         token={pair.collateral}
         value={collateralValue}
         setValue={setCollateralValue}
@@ -362,7 +362,7 @@ export default function Borrow({ pair }: BorrowProps) {
       />
 
       <SmartNumberInput
-        color="pink"
+        color="yellow"
         token={pair.asset}
         value={borrowValue}
         setValue={setBorrowValue}
@@ -448,7 +448,7 @@ export default function Borrow({ pair }: BorrowProps) {
       )}
 
       <KashiApproveButton
-        color="pink"
+        color="yellow"
         content={(onCook: any) => (
           <TokenApproveButton value={collateralValue} token={collateralToken} needed={!useBentoCollateral}>
             <Button onClick={() => onCook(pair, onExecute)} disabled={actionDisabled}>

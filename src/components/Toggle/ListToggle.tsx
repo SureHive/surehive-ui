@@ -12,7 +12,7 @@ export default function ListToggle({ id, isActive, bgColor, toggle }: ToggleProp
     <div
       id={id}
       className={`${
-        isActive ? 'bg-dark-700 text-high-emphesis' : 'bg-dark-800 text-primary'
+        isActive ? 'bg-dark-700 text-high-emphesis' : 'bg-gray-100 text-primary'
       } rounded-full flex items-center outline-none cursor-pointer border-none py-1 px-3 space-x-3`}
       onClick={toggle}
     >
