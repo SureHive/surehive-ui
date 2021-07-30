@@ -101,7 +101,6 @@ function AppBar(): JSX.Element {
                     <div className="hidden md:block">
                       <LanguageSwitch />
                     </div>
-                    <More />
                   </div>
                 </div>
                 <div className="flex -mr-2 sm:hidden">
