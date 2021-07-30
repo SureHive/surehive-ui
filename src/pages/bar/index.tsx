@@ -18,7 +18,7 @@ import { tryParseAmount } from '../../functions/parse'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 import useSWR from 'swr'
-import useSureMaker from '../../hooks/useSureMaker'
+import useSushiBar from '../../hooks/useSushiBar'
 import { useSushiPrice } from '../../services/graph'
 import { useTokenBalance } from '../../state/wallet/hooks'
 import { useWalletModalToggle } from '../../state/application/hooks'
@@ -64,7 +64,7 @@ export default function Stake() {
 
   const sushiPrice = useSushiPrice()
 
-  const { enter, leave } = useSureMaker()
+  const { enter, leave } = useSushiBar()
 
   const { data } = useSWR(`{bar(id: "0x8798249c2e607446efb7ad49ec89dd1865ff4272") {ratio, totalSupply}}`, fetcher)
 
@@ -197,7 +197,7 @@ export default function Stake() {
             </div>
             <div className="max-w-lg pr-3 mb-2 text-sm leading-5 text-gray-500 md:text-base md:mb-4 md:pr-0">
               {i18n._(t`For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE
-                                proportional to your share of the SureMaker. When your SURE is staked into the SureMaker, you recieve
+                                proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve
                                 nSURE in return for voting rights and a fully composable token that can interact with other protocols.
                                 Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited
                                 SURE and any additional from fees.`)}
@@ -450,7 +450,7 @@ export default function Stake() {
                                 text-sm font-bold cursor-pointer
                             `}
                     >
-                      {i18n._(t`Your SureMaker Stats`)}
+                      {i18n._(t`Your SushiBar Stats`)}
                     </a>
                   )}
                 </div>

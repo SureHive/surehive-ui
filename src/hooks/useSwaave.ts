@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useSureMakerContract, useSushiContract } from './useContract'
+import { useSushiBarContract, useSushiContract } from './useContract'
 
 import Fraction from '../entities/Fraction'
 import { ethers } from 'ethers'
@@ -8,11 +8,11 @@ import { useTransactionAdder } from '../state/transactions/hooks'
 
 const { BigNumber } = ethers
 
-const useSureMaker = () => {
+const useSushiBar = () => {
   const { account } = useActiveWeb3React()
   const addTransaction = useTransactionAdder()
   const sushiContract = useSushiContract(true) // withSigner
-  const barContract = useSureMakerContract(true) // withSigner
+  const barContract = useSushiBarContract(true) // withSigner
 
   const [allowance, setAllowance] = useState('0')
 
@@ -51,7 +51,7 @@ const useSureMaker = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.enter(ethers.utils.parseUnits(amount))
-        return addTransaction(tx, { summary: 'Enter SureMaker' })
+        return addTransaction(tx, { summary: 'Enter SushiBar' })
       } catch (e) {
         return e
       }
@@ -64,7 +64,7 @@ const useSureMaker = () => {
     async (amount: string) => {
       try {
         const tx = await barContract?.leave(ethers.utils.parseUnits(amount))
-        return addTransaction(tx, { summary: 'Leave SureMaker' })
+        return addTransaction(tx, { summary: 'Leave SushiBar' })
       } catch (e) {
         console.error(e)
         return e
@@ -76,4 +76,4 @@ const useSureMaker = () => {
   return { allowance, approve, enter, leave }
 }
 
-export default useSureMaker
+export default useSushiBar

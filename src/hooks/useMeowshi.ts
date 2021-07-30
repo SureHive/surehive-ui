@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useMeowshiContract, useSureMakerContract, useSushiContract } from './useContract'
+import { useMeowshiContract, useSushiBarContract, useSushiContract } from './useContract'
 
 import { BalanceProps } from './useTokenBalance'
 import Fraction from '../entities/Fraction'
@@ -14,7 +14,7 @@ const useMeowshi = (sushi: boolean) => {
   const { account } = useActiveWeb3React()
   const addTransaction = useTransactionAdder()
   const sushiContract = useSushiContract(true)
-  const barContract = useSureMakerContract(true)
+  const barContract = useSushiBarContract(true)
   const meowshiContract = useMeowshiContract(true)
   const [pendingApproval, setPendingApproval] = useState(false)
 
