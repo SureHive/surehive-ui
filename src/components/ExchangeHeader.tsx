@@ -49,7 +49,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
             {i18n._(t`Swap`)}
           </a>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           activeClassName="font-bold border rounded text-high-emphesis border-dark-800"
           href={{
             pathname: '/limit-order',
@@ -59,7 +59,7 @@ const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippag
           <a className="flex items-center justify-center px-4 text-base font-medium text-center rounded-md text-secondary hover:text-high-emphesis">
             {i18n._(t`Limit`)}
           </a>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           activeClassName="font-bold border rounded text-high-emphesis border-dark-800"
           href={`/${!isRemove ? 'add' : 'remove'}${input ? `/${currencyId(input)}` : ''}${

@@ -499,7 +499,7 @@ const MAINNET_CHAINLINK_TOKENS = [
   },
   {
     symbol: 'nSURE',
-    name: 'SushiBar',
+    name: 'SureMaker',
     address: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     decimals: 18,
   },

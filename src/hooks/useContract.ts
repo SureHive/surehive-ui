@@ -196,7 +196,7 @@ export function useRouterContract(useArcher = false, withSignerIfPossible?: bool
   return useContract(address, abi, withSignerIfPossible)
 }
 
-export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {
+export function useSureMakerContract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
   return useContract(chainId && BAR_ADDRESS[chainId], BAR_ABI, withSignerIfPossible)
 }

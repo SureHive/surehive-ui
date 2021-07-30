@@ -338,26 +338,26 @@ msgstr ""
 #, fuzzy
 msgid ""
 "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE"
-"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you receive"
+"proportional to your share of the SureMaker. When your SURE is staked into the SureMaker, you receive"
 "nSURE in return for voting rights and a fully composable token that can interact with other protocols."
 "Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited"
 "SURE and any additional from fees."
 msgstr ""
 "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE"
-"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve"
+"proportional to your share of the SureMaker. When your SURE is staked into the SureMaker, you recieve"
 "nSURE in return for voting rights and a fully composable token that can interact with other protocols."
 "Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited"
 "SURE and any additional from fees."
 
 msgid ""
 "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE"
-"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve"
+"proportional to your share of the SureMaker. When your SURE is staked into the SureMaker, you recieve"
 "nSURE in return for voting rights and a fully composable token that can interact with other protocols."
 "Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited"
 "SURE and any additional from fees."
 msgstr ""
 
-msgid "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\nproportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve\nxSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\nYour nSURE is continuously compounding, when you unstake you will receive all the originally deposited\nSUSHI and any additional from fees."
+msgid "For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\nproportional to your share of the SureMaker. When your SURE is staked into the SureMaker, you recieve\nxSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\nYour nSURE is continuously compounding, when you unstake you will receive all the originally deposited\nSUSHI and any additional from fees."
 msgstr ""
 
 msgid "From"
@@ -808,10 +808,10 @@ msgstr ""
 msgid "Sushi is a supporter of Open Source."
 msgstr ""
 
-msgid "SushiBar"
+msgid "SureMaker"
 msgstr ""
 
-msgid "SushiBar: Make SURE work for you"
+msgid "SureMaker: Make SURE work for you"
 msgstr ""
 
 msgid "Swap"
@@ -860,7 +860,7 @@ msgstr ""
 msgid "To (estimated)"
 msgstr ""
 
-msgid "To withdraw into SURE, go to Aave and remove axSUSHI as collateral and then to SushiBar to unstake. A full unwind will be avaialble soon."
+msgid "To withdraw into SURE, go to Aave and remove axSUSHI as collateral and then to SureMaker to unstake. A full unwind will be avaialble soon."
 msgstr ""
 
 msgid "Toggle Expert Mode"
@@ -944,7 +944,7 @@ msgstr ""
 msgid "View Stats"
 msgstr ""
 
-msgid "View SushiBar Stats"
+msgid "View SureMaker Stats"
 msgstr ""
 
 msgid "View Your Liquidity Positions"
@@ -953,7 +953,7 @@ msgstr ""
 msgid "View Your Liquidity Positions >"
 msgstr ""
 
-msgid "View your SushiBar Portfolio"
+msgid "View your SureMaker Portfolio"
 msgstr ""
 
 msgid "Wallet"
@@ -982,10 +982,10 @@ msgstr ""
 
 msgid ""
 "nSURE automatically earn fees (0.05% of all swaps, including multichain swaps) proportional"
-"to your share of the SushiBar."
+"to your share of the SureMaker."
 msgstr ""
 
-msgid "nSURE automatically earn fees (0.05% of all swaps, including multichain swaps) proportional\nto your share of the SushiBar."
+msgid "nSURE automatically earn fees (0.05% of all swaps, including multichain swaps) proportional\nto your share of the SureMaker."
 msgstr ""
 
 msgid "nSURE Balance"
@@ -1047,7 +1047,7 @@ msgstr ""
 msgid "Your Staked"
 msgstr ""
 
-msgid "Your SushiBar Stats"
+msgid "Your SureMaker Stats"
 msgstr ""
 
 msgid "Your total pool tokens"

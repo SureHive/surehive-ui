@@ -1,19 +1,19 @@
 import { Currency, CurrencyAmount, Token } from '@sushiswap/sdk'
 
 import { useCallback } from 'react'
-import { useSushiBarContract } from '../hooks/useContract'
+import { useSureMakerContract } from '../hooks/useContract'
 import { useTransactionAdder } from '../state/transactions/hooks'
 
-const useSushiBar = () => {
+const useSureMaker = () => {
   const addTransaction = useTransactionAdder()
-  const barContract = useSushiBarContract()
+  const barContract = useSureMakerContract()
 
   const enter = useCallback(
     async (amount: CurrencyAmount<Token> | undefined) => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.enter(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Enter SushiBar' })
+          return addTransaction(tx, { summary: 'Enter SureMaker' })
         } catch (e) {
           return e
         }
@@ -27,7 +27,7 @@ const useSushiBar = () => {
       if (amount?.quotient) {
         try {
           const tx = await barContract?.leave(amount?.quotient.toString())
-          return addTransaction(tx, { summary: 'Leave SushiBar' })
+          return addTransaction(tx, { summary: 'Leave SureMaker' })
         } catch (e) {
           return e
         }
@@ -39,4 +39,4 @@ const useSushiBar = () => {
   return { enter, leave }
 }
 
-export default useSushiBar
+export default useSureMaker

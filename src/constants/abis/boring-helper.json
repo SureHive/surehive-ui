@@ -214,10 +214,10 @@
         "components": [
           { "internalType": "uint256", "name": "ethBalance", "type": "uint256" },
           { "internalType": "uint256", "name": "sushiBalance", "type": "uint256" },
-          { "internalType": "uint256", "name": "sushiBarBalance", "type": "uint256" },
+          { "internalType": "uint256", "name": "SureMakerBalance", "type": "uint256" },
           { "internalType": "uint256", "name": "xsushiBalance", "type": "uint256" },
           { "internalType": "uint256", "name": "xsushiSupply", "type": "uint256" },
-          { "internalType": "uint256", "name": "sushiBarAllowance", "type": "uint256" },
+          { "internalType": "uint256", "name": "SureMakerAllowance", "type": "uint256" },
           {
             "components": [
               { "internalType": "contract IFactory", "name": "factory", "type": "address" },
