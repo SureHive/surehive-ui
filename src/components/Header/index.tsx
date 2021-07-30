@@ -76,97 +76,12 @@ function AppBar(): JSX.Element {
                           </a>
                         </NavLink>
                       )}
-                      {chainId && [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                        <>
-                          <NavLink href={'/lend'}>
-                            <a
-                              id={`lend-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Lend`)}
-                            </a>
-                          </NavLink>
-                          <NavLink href={'/borrow'}>
-                            <a
-                              id={`borrow-nav-link`}
-                              className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                            >
-                              {i18n._(t`Borrow`)}
-                            </a>
-                          </NavLink>
-                          {/* <Link href={'/bento'}>
-                                                            <a
-                                                                id={`bento-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                            >
-                                                                {i18n._(t`SureVault`)}
-                                                            </a>
-                                                        </Link> */}
-                        </>
-                      )}
-                      {chainId === ChainId.MAINNET && (
-                        <NavLink href={'/stake'}>
-                          <a
-                            id={`stake-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                          >
-                            {i18n._(t`Stake`)}
-                          </a>
-                        </NavLink>
-                      )}
                     </div>
                   </div>
                 </div>
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-gray-300 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
-                      <>
-                        <QuestionHelper text={i18n._(t`Add nSURE to your MetaMask wallet`)}>
-                          <div
-                            className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-gray-200 hover:bg-gray-100"
-                            onClick={() => {
-                              if (library && library.provider.isMetaMask && library.provider.request) {
-                                const params: any = {
-                                  type: 'ERC20',
-                                  options: {
-                                    address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                    symbol: 'nSURE',
-                                    decimals: 18,
-                                    image:
-                                      'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png',
-                                  },
-                                }
-                                library.provider
-                                  .request({
-                                    method: 'wallet_watchAsset',
-                                    params,
-                                  })
-                                  .then((success) => {
-                                    if (success) {
-                                      console.log('Successfully added nSURE to MetaMask')
-                                    } else {
-                                      throw new Error('Something went wrong.')
-                                    }
-                                  })
-                                  .catch(console.error)
-                              }
-                            }}
-                          >
-                            <Image
-                              src="/images/tokens/xsushi-square.jpg"
-                              alt="nSURE"
-                              width="38px"
-                              height="38px"
-                              objectFit="contain"
-                              className="rounded-md"
-                            />
-                          </div>
-                        </QuestionHelper>
-                      </>
-                    )}
-
-
                     {library && library.provider.isMetaMask && (
                       <div className="hidden sm:inline-block">
                         <Web3Network />
@@ -255,49 +170,6 @@ function AppBar(): JSX.Element {
                   </a>
                 </Link>
 
-                {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.HARMONY, ChainId.XDAI].includes(chainId) && (
-                  <Link href={'/farm'}>
-                    <a
-                      id={`farm-nav-link`}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {' '}
-                      {i18n._(t`Farm`)}
-                    </a>
-                  </Link>
-                )}
-
-                {chainId && [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                  <>
-                    <Link href={'/lend'}>
-                      <a
-                        id={`lend-nav-link`}
-                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                      >
-                        {i18n._(t`Lend`)}
-                      </a>
-                    </Link>
-
-                    <Link href={'/borrow'}>
-                      <a
-                        id={`borrow-nav-link`}
-                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                      >
-                        {i18n._(t`Borrow`)}
-                      </a>
-                    </Link>
-                  </>
-                )}
-                {chainId === ChainId.MAINNET && (
-                  <Link href={'/stake'}>
-                    <a
-                      id={`stake-nav-link`}
-                      className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                    >
-                      {i18n._(t`Stake`)}
-                    </a>
-                  </Link>
-                )}
               </div>
             </Popover.Panel>
           </>

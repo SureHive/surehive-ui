@@ -552,7 +552,8 @@ msgstr "Thị trường"
 msgid "Max"
 msgstr "Tối đa"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "Tối đa hóa lợi suất bằng cách đặt cược SURE cho nSURE"
 
 msgid "Maximum sent"

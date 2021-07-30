@@ -552,7 +552,8 @@ msgstr "마켓"
 msgid "Max"
 msgstr "최대"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "xSUSHI에 대한 SURE 스테이킹으로 수익 극대화"
 
 msgid "Maximum sent"

@@ -543,7 +543,8 @@ msgstr ""
 msgid "Max"
 msgstr ""
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr ""
 
 msgid "Maximum sold"

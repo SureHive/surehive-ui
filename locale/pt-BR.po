@@ -540,7 +540,8 @@ msgstr "MAX"
 msgid "Max"
 msgstr "Máx."
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "Maximize o rendimento investindo SURE para nSURE"
 
 msgid "Maximum sold"

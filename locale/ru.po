@@ -554,7 +554,8 @@ msgstr "Рынки"
 msgid "Max"
 msgstr "Максимум"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "Увеличьте доход, ставя SURE на nSURE"
 
 msgid "Maximum sent"

@@ -548,7 +548,8 @@ msgstr "MAX"
 msgid "Max"
 msgstr "अधिकतम"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "XSUSHI के लिए SURE को स्टेक करके लाभ को अधिकतम करें"
 
 msgid "Maximum sold"

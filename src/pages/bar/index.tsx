@@ -188,7 +188,8 @@ export default function Stake() {
           <div className="flex flex-col w-full max-w-xl mt-auto mb-2">
             <div className="flex max-w-lg">
               <div className="self-end mb-3 text-lg font-bold md:text-2xl text-high-emphesis md:mb-7">
-                {i18n._(t`Maximize yield by staking SURE for xSURE`)}
+                {i18n._(t`Maximize yield by staking SURE for nSURE
+`)}
               </div>
               {/* <div className="self-start pl-6 pr-3 mb-1 min-w-max md:hidden">
                                 <img src={XSushiSignSmall} alt="xsushi sign" />

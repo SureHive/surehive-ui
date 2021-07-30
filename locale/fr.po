@@ -554,7 +554,8 @@ msgstr "Marchés"
 msgid "Max"
 msgstr "Max"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "Maximisez vos rendements en stakant SURE pour nSURE"
 
 msgid "Maximum sent"

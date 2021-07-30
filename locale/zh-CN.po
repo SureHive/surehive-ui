@@ -540,7 +540,8 @@ msgstr "市场"
 msgid "Max"
 msgstr "最大数量"
 
-msgid "Maximize yield by staking SURE for xSURE"
+msgid "Maximize yield by staking SURE for nSURE
+"
 msgstr "将SUSHI质押成xSUSHI最大化收益"
 
 msgid "Maximum sent"
