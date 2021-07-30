@@ -1,6 +1,6 @@
 import { ArrowDownIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import { ChainId, Currency, Token } from '@sushiswap/sdk'
-import { MEOW, SUSHI, XSUSHI } from '../../constants'
+import { MEOW, SURE, XSUSHI } from '../../constants'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import CurrencyInputPanel from '../../features/meowshi/CurrencyInputPanel'
@@ -49,7 +49,7 @@ export default function Meowshi() {
   })
 
   const [currencies, setCurrencies] = useState({
-    [Field.INPUT]: SUSHI[ChainId.MAINNET],
+    [Field.INPUT]: SURE[ChainId.MAINNET],
     [Field.OUTPUT]: MEOW,
   })
 
@@ -145,7 +145,7 @@ export default function Meowshi() {
           <div className="bg-[rgba(255,255,255,0.04)] p-4 py-2 rounded flex flex-row items-center gap-4 mb-[54px]">
             <InformationCircleIcon width={48} height={48} color="pink" />
             <Typography variant="xs" weight={700}>
-              {i18n._(t`MEOW tokens wrap xSUSHI into SureVault for double yields and can be
+              {i18n._(t`MEOW tokens wrap nSURE into SureVault for double yields and can be
               used to vote in special MEOW governor contracts.`)}
             </Typography>
           </div>
@@ -162,9 +162,9 @@ export default function Meowshi() {
             </div>
             <Typography variant="sm" className="text-secondary ml-[26px]">
               {currencies[Field.INPUT]?.symbol} →{' '}
-              {(currencies[Field.INPUT] === SUSHI[ChainId.MAINNET] ||
-                currencies[Field.OUTPUT] === SUSHI[ChainId.MAINNET]) &&
-                ' xSUSHI → '}
+              {(currencies[Field.INPUT] === SURE[ChainId.MAINNET] ||
+                currencies[Field.OUTPUT] === SURE[ChainId.MAINNET]) &&
+                ' nSURE → '}
               {currencies[Field.OUTPUT]?.symbol}
             </Typography>
           </div>

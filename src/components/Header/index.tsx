@@ -122,7 +122,7 @@ function AppBar(): JSX.Element {
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {chainId && [ChainId.MAINNET].includes(chainId) && library && library.provider.isMetaMask && (
                       <>
-                        <QuestionHelper text={i18n._(t`Add xSUSHI to your MetaMask wallet`)}>
+                        <QuestionHelper text={i18n._(t`Add nSURE to your MetaMask wallet`)}>
                           <div
                             className="hidden p-0.5 rounded-md cursor-pointer sm:inline-flex bg-gray-200 hover:bg-gray-100"
                             onClick={() => {
@@ -131,7 +131,7 @@ function AppBar(): JSX.Element {
                                   type: 'ERC20',
                                   options: {
                                     address: '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                    symbol: 'XSUR',
+                                    symbol: 'nSURE',
                                     decimals: 18,
                                     image:
                                       'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png',
@@ -144,7 +144,7 @@ function AppBar(): JSX.Element {
                                   })
                                   .then((success) => {
                                     if (success) {
-                                      console.log('Successfully added XSUR to MetaMask')
+                                      console.log('Successfully added nSURE to MetaMask')
                                     } else {
                                       throw new Error('Something went wrong.')
                                     }
@@ -155,7 +155,7 @@ function AppBar(): JSX.Element {
                           >
                             <Image
                               src="/images/tokens/xsushi-square.jpg"
-                              alt="xSUR"
+                              alt="nSURE"
                               width="38px"
                               height="38px"
                               objectFit="contain"

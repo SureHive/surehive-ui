@@ -13,19 +13,19 @@ const items = (i18n: I18n) => [
   {
     name: i18n._(t`Docs`),
     description: i18n._(t`Documentation for users of Sushi.`),
-    href: 'https://docs.sushi.com',
+    href: '#',
     external: true,
   },
   {
     name: i18n._(t`Dev`),
     description: i18n._(t`Documentation for developers of Sushi.`),
-    href: 'https://dev.sushi.com',
+    href: '#',
     external: true,
   },
   {
     name: i18n._(t`Open Source`),
     description: i18n._(t`Sushi is a supporter of Open Source.`),
-    href: 'https://github.com/sushiswap',
+    href: '',
     external: true,
   },
   {

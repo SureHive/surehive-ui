@@ -64,7 +64,7 @@ export default function Me() {
     <>
       <Head>
         <title>My Hive | SureHive</title>
-        <meta key="description" name="description" content="My SUR" />
+        <meta key="description" name="description" content="My SURE" />
       </Head>
 
       <Container maxWidth="2xl" className="p-4 space-y-3">
@@ -72,7 +72,7 @@ export default function Me() {
           <Back />
 
           <Typography component="h1" variant="h2" className=" text-high-emphesis">
-            {i18n._(t`My SUR`)}
+            {i18n._(t`My SURE`)}
           </Typography>
         </div>
 

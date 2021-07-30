@@ -15,10 +15,10 @@ msgstr ""
 
 msgid ""
 "(COMING SOON) Accrue automatic yield through flash loans and\n"
-"SUSHI strategies"
+"SURE strategies"
 msgstr ""
 "(ÎN CURÂND) Acumulați randament automat prin împrumuturi flash și\n"
-"strategii SUSHI"
+"strategii SURE"
 
 msgid "1 Hour"
 msgstr ""
@@ -32,7 +32,7 @@ msgstr ""
 msgid "30 Days"
 msgstr ""
 
-msgid "A portion of each trade (0.05%) goes to xSUSHI holders as a protocol incentive."
+msgid "A portion of each trade (0.05%) goes to nSURE holders as a protocol incentive."
 msgstr ""
 
 msgid "A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive."
@@ -50,16 +50,13 @@ msgstr "Adăugați"
 msgid "Add Liquidity"
 msgstr "Adăugați lichidități"
 
-msgid "Add SUSHI to your MetaMask wallet"
-msgstr ""
-
 msgid "Add collateral in order to borrow assets"
 msgstr "Adăugați garanții reale pentru a împrumuta active"
 
 msgid "Add liquidity"
 msgstr "Adăugați lichidități"
 
-msgid "Add xSUSHI to your MetaMask wallet"
+msgid "Add nSURE to your MetaMask wallet"
 msgstr ""
 
 msgid "Add {0} to MetaMask"
@@ -79,12 +76,6 @@ msgstr "Număr de token-uri"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 msgstr ""
-
-msgid "Analytics"
-msgstr "Analize"
-
-msgid "Approve"
-msgstr "Aprobați"
 
 msgid "Approve"
 msgstr "Aprobați Kashi"
@@ -128,27 +119,6 @@ msgstr "Sold"
 msgid "Balance:"
 msgstr ""
 
-msgid "Bento Balance: {0}"
-msgstr "Sold Bento: {0}"
-
-msgid "SureVault"
-msgstr "SureVault"
-
-msgid "SureVault Apps"
-msgstr "Aplicații SureVault"
-
-msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "SureVault este un mod inovator de a utiliza dapp-uri eficiente din punct de vedere al emisiilor de gaz și de a obține un randament suplimentar."
-
-msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "SureVault oferă un randament suplimentar la depozite cu împrumuturi flash, strategii și transferuri fixe, cu consum redus de gaze între dapp-uri integrate, cum ar fi piețele Kashi"
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "Strategiile SureVault pot crea randament pentru token-urile dvs. pentru garanții reale. Acest token încă nu are o strategie în SureVault."
-
-msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
-msgstr "Strategiile SureVault pot crea randament pentru lichiditatea dvs., când aceasta nu este împrumutată. Acest token încă nu are o strategie în SureVault."
-
 msgid "Borrow"
 msgstr "Împrumutați"
 
@@ -164,8 +134,8 @@ msgstr "Împrumutați {0} - {1}"
 msgid "Borrowed"
 msgstr "Împrumutat"
 
-msgid "Borrowing allows you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
-msgstr "Împrumutul vă permite să obțineți lichidități fără a vinde. Limita dvs. de împrumut depinde de suma garanției depuse. Veți putea să împrumutați până la 75% din garanția dvs. și să rambursați în orice moment cu dobânda acumulată."
+msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgstr ""
 
 msgid "Buy"
 msgstr ""
@@ -197,8 +167,8 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-msgid "Claim SUSHI"
-msgstr "Revendicați SUSHI"
+msgid "Claim SURE"
+msgstr "Revendicați SURE"
 
 msgid "Claimed"
 msgstr "Revendicat"
@@ -273,7 +243,7 @@ msgstr ""
 msgid "Create Pool & Supply"
 msgstr "Creați fond comun și ofertă"
 
-msgid "Create a new Kashi Market"
+msgid "Create a new HoneyStream Market"
 msgstr ""
 
 msgid "Create a pair"
@@ -288,8 +258,8 @@ msgstr ""
 msgid "Deposit"
 msgstr "Depuneți"
 
-msgid "Deposit SUSHI into SureVault"
-msgstr "Depuneți SUSHI în SureVault"
+msgid "Deposit SURE into SureVault"
+msgstr "Depuneți SURE în SureVault"
 
 msgid "Deposit tokens into SureVault for all the yields"
 msgstr "Depuneți token-uri în SureVault pentru toate randamentele"
@@ -386,17 +356,17 @@ msgid "Find Pool"
 msgstr "Găsiți fond comun"
 
 msgid ""
-"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SUSHI\n"
-"proportional to your share of the SushiBar. When your SUSHI is staked into the SushiBar, you recieve\n"
-"xSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\n"
-"Your xSUSHI is continuously compounding, when you unstake you will receive all the originally deposited\n"
-"SUSHI and any additional from fees."
+"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\n"
+"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve\n"
+"nSURE in return for voting rights and a fully composable token that can interact with other protocols.\n"
+"Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited\n"
+"SURE and any additional from fees."
 msgstr ""
-"Pentru fiecare swap de pe bursă, pe fiecare lanț, 0,05% din comisioanele de swap sunt distribuite ca SUSHI,\n"
-"proporțional cu cota dvs. din SushiBar. Când SUSHI este investit în SushiBar, primiți\n"
-"xSUSHI în schimbul drepturilor de vot și un token complet compozabil care poate interacționa cu alte protocoale.\n"
-"Investiția dvs. xSUSHI se cumulează continuu, iar atunci când retrageți investiția veți primi toate depozitele inițiale\n"
-"SUSHI și orice sumă suplimentară provenită din comisioane."
+"Pentru fiecare swap de pe bursă, pe fiecare lanț, 0,05% din comisioanele de swap sunt distribuite ca SURE,\n"
+"proporțional cu cota dvs. din SushiBar. Când SURE este investit în SushiBar, primiți\n"
+"nSURE în schimbul drepturilor de vot și un token complet compozabil care poate interacționa cu alte protocoale.\n"
+"Investiția dvs. nSURE se cumulează continuu, iar atunci când retrageți investiția veți primi toate depozitele inițiale\n"
+"SURE și orice sumă suplimentară provenită din comisioane."
 
 msgid "French"
 msgstr ""
@@ -405,10 +375,10 @@ msgid "Gain exposure to tokens without reducing your assets. Leverage will enabl
 msgstr "Obțineți expunere la token-uri fără a vă reduce activele. Efectul de pârghie vă va permite să luați poziții scurte față de active și să câștigați din evoluțiile negative."
 
 msgid ""
-"Gain governance rights with xSUSHI and earn 5% APR (0.05% of\n"
+"Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
 "all swaps from all chains)"
 msgstr ""
-"Obțineți drepturi de guvernanță cu xSUSHI și câștigați 5% APR (0,05% din\n"
+"Obțineți drepturi de guvernanță cu nSURE și câștigați 5% APR (0,05% din\n"
 "toate swap-urile din toate lanțurile)"
 
 msgid "German"
@@ -423,7 +393,7 @@ msgstr "Portofel hardware"
 msgid "Harmony Bridge"
 msgstr ""
 
-msgid "Harvest {0} SUSHI {1}"
+msgid "Harvest {0} SURE {1}"
 msgstr ""
 
 msgid "Have assets you want to earn additional interest on? Lend them in isolated markets and earn interest from borrowers."
@@ -438,8 +408,8 @@ msgstr "Valoare istorică totală blocată: Conectați portofelul"
 msgid "Historical Total Locked: Fetching Total"
 msgstr "Valoare istorică totală blocată: Preluare valoarea totală"
 
-msgid "Historical Total Locked: {0} SUSHI"
-msgstr "Valoare istorică totală blocată: {0} SUSHI"
+msgid "Historical Total Locked: {0} SURE"
+msgstr "Valoare istorică totală blocată: {0} SURE"
 
 msgid "If you want to supply to a market that is not listed yet, you can use this tool to create a new pair."
 msgstr ""
@@ -450,7 +420,7 @@ msgstr ""
 msgid "Import Pool"
 msgstr "Importați Fond comun"
 
-msgid "In Bento:"
+msgid "In SureVault:"
 msgstr ""
 
 msgid "In Wallet:"
@@ -559,7 +529,7 @@ msgid "MAX"
 msgstr "MAX"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
+"MEOW tokens wrap nSURE into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
 
@@ -581,14 +551,11 @@ msgstr ""
 msgid "Markets"
 msgstr "Piețe"
 
-msgid "Matic Bridge"
-msgstr ""
-
 msgid "Max"
 msgstr "Max"
 
-msgid "Maximize yield by staking SUSHI for xSUSHI"
-msgstr "Maximizați randamentul investind SUSHI în xSUSHI"
+msgid "Maximize yield by staking SURE for xSURE"
+msgstr "Maximizați randamentul investind SURE în nSURE"
 
 msgid "Maximum sent"
 msgstr ""
@@ -614,16 +581,13 @@ msgstr ""
 msgid "Minimum received"
 msgstr "Minim primit"
 
-msgid "Miso"
-msgstr ""
-
 msgid "My Liquidity Positions"
 msgstr ""
 
 msgid "My Orders"
 msgstr ""
 
-msgid "My SUSHI"
+msgid "My SURE"
 msgstr ""
 
 msgid "Network not supported yet"
@@ -859,18 +823,16 @@ msgstr "Cumulați randamentele cu SAAVE"
 msgid "Stake"
 msgstr "Investiți"
 
-msgid "Stake SUSHI"
-msgstr "Investiți SUSHI"
+msgid "Stake SURE"
+msgstr "Investiți SURE"
 
-msgid "Stake SUSHI for xSUSHI"
-msgstr "Investiți SUSHI în xSUSHI"
+msgid "Stake SURE for nSURE"
+msgstr "Investiți SURE în nSURE"
 
 msgid ""
-"Stake into xSUSHI add collateral as axSUSHI on Aave all in\n"
+"Stake into nSURE add collateral as a nSURE on Aave all in\n"
 "one click"
 msgstr ""
-"Investiți în xSUSHI, adăugați garanții ca axSUSHI pe Aave, toate cu\n"
-"un singur clic"
 
 msgid "Staking APR"
 msgstr "Investire APR"
@@ -878,11 +840,32 @@ msgstr "Investire APR"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Oferire {0} {1} și {2} {3}"
 
+msgid "SureHive"
+msgstr ""
+
+msgid "SureVault"
+msgstr "SureVault"
+
+msgid "SureVault Apps"
+msgstr "Aplicații SureVault"
+
+msgid "SureVault Balance: {0}"
+msgstr ""
+
+msgid "SureVault extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like HoneyStream markets"
+msgstr ""
+
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault este un mod inovator de a utiliza dapp-uri eficiente din punct de vedere al emisiilor de gaz și de a obține un randament suplimentar."
+
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "Strategiile SureVault pot crea randament pentru token-urile dvs. pentru garanții reale. Acest token încă nu are o strategie în SureVault."
+
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "Strategiile SureVault pot crea randament pentru lichiditatea dvs., când aceasta nu este împrumutată. Acest token încă nu are o strategie în SureVault."
+
 msgid "Sushi is a supporter of Open Source."
 msgstr "Sushi susține Open Source."
-
-msgid "SushiSwap"
-msgstr ""
 
 msgid "Swap"
 msgstr "Swap"
@@ -923,8 +906,8 @@ msgstr ""
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr ""
 
-msgid "Things you can do with your SUSHI"
-msgstr "Ce puteți face cu SUSHI"
+msgid "Things you can do with your SURE"
+msgstr "Ce puteți face cu SURE"
 
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
 msgstr ""
@@ -1000,13 +983,13 @@ msgstr "Activ neacceptat"
 msgid "Unwrap"
 msgstr "Reluați"
 
-msgid "Use SUSHI"
+msgid "Use SURE"
+msgstr ""
+
+msgid "Use nSURE"
 msgstr ""
 
 msgid "Use this tool to find pairs that don't automatically appear in the interface"
-msgstr ""
-
-msgid "Use xSUSHI"
 msgstr ""
 
 msgid "Used"
@@ -1087,8 +1070,8 @@ msgstr "Veți primi"
 msgid "Your"
 msgstr ""
 
-msgid "Your Claimable SUSHI this Week"
-msgstr "SUSHI revendicabil pentru această săptămână"
+msgid "Your Claimable SURE this Week"
+msgstr "SURE revendicabil pentru această săptămână"
 
 msgid "Your Liquidity"
 msgstr "Lichiditatea dvs."
@@ -1126,8 +1109,8 @@ msgstr "Tranzacția dvs. se va anula dacă are loc o mișcare de preț mare și 
 msgid "Your transactions will appear here..."
 msgstr ""
 
-msgid "Your {exchange} {0}/{1} liquidity will become SushiSwap {2}/{3} liquidity."
-msgstr "Lichiditatea dvs. {exchange} {0}/{1} va deveni lichiditate {2}/{3} SushiSwap."
+msgid "Your {exchange} {0}/{1} liquidity will become SureHive {2}/{3} liquidity."
+msgstr ""
 
 msgid "Zap"
 msgstr ""
@@ -1156,10 +1139,10 @@ msgstr "se încarcă..."
 msgid "minutes"
 msgstr "minute"
 
-msgid "or the transaction will revert."
+msgid "nSURE Fee"
 msgstr ""
 
-msgid "xSUSHI Fee"
+msgid "or the transaction will revert."
 msgstr ""
 
 #. js-lingui:icu=%7B0%2C+plural%2C+one+%7BToken%7D+many+%7BTokens%7D%7D&pluralize_on=0

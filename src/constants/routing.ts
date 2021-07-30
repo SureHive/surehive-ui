@@ -33,7 +33,7 @@ import {
   RENBTC,
   RUNE,
   STETH,
-  SUSHI,
+  SURE,
   TRIBE,
   UMA,
   USDC,
@@ -198,7 +198,7 @@ export const CUSTOM_BASES: {
     [AMPL.address]: [DAI, WNATIVE[ChainId.MAINNET]],
   },
   [ChainId.MATIC]: {
-    [MATIC.TEL.address]: [MATIC.SUSHI, MATIC.AAVE],
+    [MATIC.TEL.address]: [MATIC.SURE, MATIC.AAVE],
   },
 }
 
@@ -296,7 +296,7 @@ export const PINNED_PAIRS: {
   readonly [chainId in ChainId]?: [Token, Token][]
 } = {
   [ChainId.MAINNET]: [
-    [SUSHI[ChainId.MAINNET] as Token, WNATIVE[ChainId.MAINNET]],
+    [SURE[ChainId.MAINNET] as Token, WNATIVE[ChainId.MAINNET]],
     [
       new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
       new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin'),

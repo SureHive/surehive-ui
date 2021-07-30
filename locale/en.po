@@ -15,10 +15,10 @@ msgstr ""
 
 msgid ""
 "(COMING SOON) Accrue automatic yield through flash loans and\n"
-"SUSHI strategies"
+"SURE strategies"
 msgstr ""
 "(COMING SOON) Accrue automatic yield through flash loans and\n"
-"SUSHI strategies"
+"SURE strategies"
 
 msgid "1 Hour"
 msgstr "1 Hour"
@@ -32,8 +32,8 @@ msgstr "24 Hours"
 msgid "30 Days"
 msgstr "30 Days"
 
-msgid "A portion of each trade (0.05%) goes to xSUSHI holders as a protocol incentive."
-msgstr "A portion of each trade (0.05%) goes to xSUSHI holders as a protocol incentive."
+msgid "A portion of each trade (0.05%) goes to nSURE holders as a protocol incentive."
+msgstr "A portion of each trade (0.05%) goes to nSURE holders as a protocol incentive."
 
 msgid "A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive."
 msgstr "A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive."
@@ -50,17 +50,14 @@ msgstr "Add"
 msgid "Add Liquidity"
 msgstr "Add Liquidity"
 
-msgid "Add SUSHI to your MetaMask wallet"
-msgstr "Add SUSHI to your MetaMask wallet"
-
 msgid "Add collateral in order to borrow assets"
 msgstr "Add collateral in order to borrow assets"
 
 msgid "Add liquidity"
 msgstr "Add liquidity"
 
-msgid "Add xSUSHI to your MetaMask wallet"
-msgstr "Add xSUSHI to your MetaMask wallet"
+msgid "Add nSURE to your MetaMask wallet"
+msgstr "Add nSURE to your MetaMask wallet"
 
 msgid "Add {0} to MetaMask"
 msgstr "Add {0} to MetaMask"
@@ -79,12 +76,6 @@ msgstr "Amount of Tokens"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 msgstr "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-
-msgid "Analytics"
-msgstr "Analytics"
-
-msgid "Approve"
-msgstr "Approve"
 
 msgid "Approve"
 msgstr "Approve"
@@ -128,27 +119,6 @@ msgstr "Balance"
 msgid "Balance:"
 msgstr "Balance:"
 
-msgid "Bento Balance: {0}"
-msgstr "Bento Balance: {0}"
-
-msgid "SureVault"
-msgstr "SureVault"
-
-msgid "SureVault Apps"
-msgstr "SureVault Apps"
-
-msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
-
-msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-
-msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
-msgstr "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
-
 msgid "Borrow"
 msgstr "Borrow"
 
@@ -164,8 +134,8 @@ msgstr "Borrow {0}-{1}"
 msgid "Borrowed"
 msgstr "Borrowed"
 
-msgid "Borrowing allows you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
-msgstr "Borrowing allows you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgstr "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
 
 msgid "Buy"
 msgstr "Buy"
@@ -200,8 +170,8 @@ msgstr "Change Recipient"
 msgid "Chinese"
 msgstr "Chinese"
 
-msgid "Claim SUSHI"
-msgstr "Claim SUSHI"
+msgid "Claim SURE"
+msgstr "Claim SURE"
 
 msgid "Claimed"
 msgstr "Claimed"
@@ -276,8 +246,8 @@ msgstr "Copy Address"
 msgid "Create Pool & Supply"
 msgstr "Create Pool & Supply"
 
-msgid "Create a new Kashi Market"
-msgstr "Create a new Kashi Market"
+msgid "Create a new HoneyStream Market"
+msgstr "Create a new HoneyStream Market"
 
 msgid "Create a pair"
 msgstr "Create a pair"
@@ -291,8 +261,8 @@ msgstr "Current"
 msgid "Deposit"
 msgstr "Deposit"
 
-msgid "Deposit SUSHI into SureVault"
-msgstr "Deposit SUSHI into SureVault"
+msgid "Deposit SURE into SureVault"
+msgstr "Deposit SURE into SureVault"
 
 msgid "Deposit tokens into SureVault for all the yields"
 msgstr "Deposit tokens into SureVault for all the yields"
@@ -389,17 +359,17 @@ msgid "Find Pool"
 msgstr "Find Pool"
 
 msgid ""
-"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SUSHI\n"
-"proportional to your share of the SushiBar. When your SUSHI is staked into the SushiBar, you recieve\n"
-"xSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\n"
-"Your xSUSHI is continuously compounding, when you unstake you will receive all the originally deposited\n"
-"SUSHI and any additional from fees."
+"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\n"
+"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve\n"
+"nSURE in return for voting rights and a fully composable token that can interact with other protocols.\n"
+"Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited\n"
+"SURE and any additional from fees."
 msgstr ""
-"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SUSHI\n"
-"proportional to your share of the SushiBar. When your SUSHI is staked into the SushiBar, you recieve\n"
-"xSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\n"
-"Your xSUSHI is continuously compounding, when you unstake you will receive all the originally deposited\n"
-"SUSHI and any additional from fees."
+"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\n"
+"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve\n"
+"nSURE in return for voting rights and a fully composable token that can interact with other protocols.\n"
+"Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited\n"
+"SURE and any additional from fees."
 
 msgid "French"
 msgstr "French"
@@ -408,10 +378,10 @@ msgid "Gain exposure to tokens without reducing your assets. Leverage will enabl
 msgstr "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 
 msgid ""
-"Gain governance rights with xSUSHI and earn 5% APR (0.05% of\n"
+"Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
 "all swaps from all chains)"
 msgstr ""
-"Gain governance rights with xSUSHI and earn 5% APR (0.05% of\n"
+"Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
 "all swaps from all chains)"
 
 msgid "German"
@@ -426,8 +396,8 @@ msgstr "Hardware Wallet"
 msgid "Harmony Bridge"
 msgstr "Harmony Bridge"
 
-msgid "Harvest {0} SUSHI {1}"
-msgstr "Harvest {0} SUSHI {1}"
+msgid "Harvest {0} SURE {1}"
+msgstr "Harvest {0} SURE {1}"
 
 msgid "Have assets you want to earn additional interest on? Lend them in isolated markets and earn interest from borrowers."
 msgstr "Have assets you want to earn additional interest on? Lend them in isolated markets and earn interest from borrowers."
@@ -441,8 +411,8 @@ msgstr "Historical Total Locked: Connect Wallet"
 msgid "Historical Total Locked: Fetching Total"
 msgstr "Historical Total Locked: Fetching Total"
 
-msgid "Historical Total Locked: {0} SUSHI"
-msgstr "Historical Total Locked: {0} SUSHI"
+msgid "Historical Total Locked: {0} SURE"
+msgstr "Historical Total Locked: {0} SURE"
 
 msgid "If you want to supply to a market that is not listed yet, you can use this tool to create a new pair."
 msgstr "If you want to supply to a market that is not listed yet, you can use this tool to create a new pair."
@@ -453,8 +423,8 @@ msgstr "Import"
 msgid "Import Pool"
 msgstr "Import Pool"
 
-msgid "In Bento:"
-msgstr "In Bento:"
+msgid "In SureVault:"
+msgstr "In SureVault:"
 
 msgid "In Wallet:"
 msgstr "In Wallet:"
@@ -562,10 +532,10 @@ msgid "MAX"
 msgstr "MAX"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
+"MEOW tokens wrap nSURE into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
-"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
+"MEOW tokens wrap nSURE into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 
 msgid "MEV Shield by Archer DAO"
@@ -586,14 +556,11 @@ msgstr "Market"
 msgid "Markets"
 msgstr "Markets"
 
-msgid "Matic Bridge"
-msgstr "Matic Bridge"
-
 msgid "Max"
 msgstr "Max"
 
-msgid "Maximize yield by staking SUSHI for xSUSHI"
-msgstr "Maximize yield by staking SUSHI for xSUSHI"
+msgid "Maximize yield by staking SURE for xSURE"
+msgstr "Maximize yield by staking SURE for xSURE"
 
 msgid "Maximum sent"
 msgstr "Maximum sent"
@@ -619,17 +586,14 @@ msgstr "Minimum Received"
 msgid "Minimum received"
 msgstr "Minimum received"
 
-msgid "Miso"
-msgstr "Miso"
-
 msgid "My Liquidity Positions"
 msgstr "My Liquidity Positions"
 
 msgid "My Orders"
 msgstr "My Orders"
 
-msgid "My SUSHI"
-msgstr "My SUSHI"
+msgid "My SURE"
+msgstr "My SURE"
 
 msgid "Network not supported yet"
 msgstr "Network not supported yet"
@@ -866,17 +830,17 @@ msgstr "Stack Yields with SAAVE"
 msgid "Stake"
 msgstr "Stake"
 
-msgid "Stake SUSHI"
-msgstr "Stake SUSHI"
+msgid "Stake SURE"
+msgstr "Stake SURE"
 
-msgid "Stake SUSHI for xSUSHI"
-msgstr "Stake SUSHI for xSUSHI"
+msgid "Stake SURE for nSURE"
+msgstr "Stake SURE for nSURE"
 
 msgid ""
-"Stake into xSUSHI add collateral as axSUSHI on Aave all in\n"
+"Stake into nSURE add collateral as a nSURE on Aave all in\n"
 "one click"
 msgstr ""
-"Stake into xSUSHI add collateral as axSUSHI on Aave all in\n"
+"Stake into nSURE add collateral as a nSURE on Aave all in\n"
 "one click"
 
 msgid "Staking APR"
@@ -885,11 +849,32 @@ msgstr "Staking APR"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Supplying {0} {1} and {2} {3}"
 
+msgid "SureHive"
+msgstr "SureHive"
+
+msgid "SureVault"
+msgstr "SureVault"
+
+msgid "SureVault Apps"
+msgstr "SureVault Apps"
+
+msgid "SureVault Balance: {0}"
+msgstr "SureVault Balance: {0}"
+
+msgid "SureVault extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like HoneyStream markets"
+msgstr "SureVault extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like HoneyStream markets"
+
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+
 msgid "Sushi is a supporter of Open Source."
 msgstr "Sushi is a supporter of Open Source."
-
-msgid "SushiSwap"
-msgstr "SushiSwap"
 
 msgid "Swap"
 msgstr "Swap"
@@ -930,8 +915,8 @@ msgstr "The output token cannot be transferred. There may be an issue with the o
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 
-msgid "Things you can do with your SUSHI"
-msgstr "Things you can do with your SUSHI"
+msgid "Things you can do with your SURE"
+msgstr "Things you can do with your SURE"
 
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
 msgstr "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1009,14 +994,14 @@ msgstr "Unsupported Asset"
 msgid "Unwrap"
 msgstr "Unwrap"
 
-msgid "Use SUSHI"
-msgstr "Use SUSHI"
+msgid "Use SURE"
+msgstr "Use SURE"
+
+msgid "Use nSURE"
+msgstr "Use nSURE"
 
 msgid "Use this tool to find pairs that don't automatically appear in the interface"
 msgstr "Use this tool to find pairs that don't automatically appear in the interface"
-
-msgid "Use xSUSHI"
-msgstr "Use xSUSHI"
 
 msgid "Used"
 msgstr "Used"
@@ -1096,8 +1081,8 @@ msgstr "You will receive"
 msgid "Your"
 msgstr "Your"
 
-msgid "Your Claimable SUSHI this Week"
-msgstr "Your Claimable SUSHI this Week"
+msgid "Your Claimable SURE this Week"
+msgstr "Your Claimable SURE this Week"
 
 msgid "Your Liquidity"
 msgstr "Your Liquidity"
@@ -1135,8 +1120,8 @@ msgstr "Your transaction will revert if there is a large, unfavorable price move
 msgid "Your transactions will appear here..."
 msgstr "Your transactions will appear here..."
 
-msgid "Your {exchange} {0}/{1} liquidity will become SushiSwap {2}/{3} liquidity."
-msgstr "Your {exchange} {0}/{1} liquidity will become SushiSwap {2}/{3} liquidity."
+msgid "Your {exchange} {0}/{1} liquidity will become SureHive {2}/{3} liquidity."
+msgstr "Your {exchange} {0}/{1} liquidity will become SureHive {2}/{3} liquidity."
 
 msgid "Zap"
 msgstr "Zap"
@@ -1165,11 +1150,11 @@ msgstr "loading..."
 msgid "minutes"
 msgstr "minutes"
 
+msgid "nSURE Fee"
+msgstr "nSURE Fee"
+
 msgid "or the transaction will revert."
 msgstr "or the transaction will revert."
-
-msgid "xSUSHI Fee"
-msgstr "xSUSHI Fee"
 
 #. js-lingui:icu=%7B0%2C+plural%2C+one+%7BToken%7D+many+%7BTokens%7D%7D&pluralize_on=0
 msgid "Token"

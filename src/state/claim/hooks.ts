@@ -1,5 +1,5 @@
 import { ChainId, Currency, CurrencyAmount, JSBI, Token } from '@sushiswap/sdk'
-import { MERKLE_ROOT, SUSHI } from './../../constants/index'
+import { MERKLE_ROOT, SURE } from './../../constants/index'
 import { getAddress, isAddress } from '@ethersproject/address'
 import { useEffect, useState } from 'react'
 
@@ -86,7 +86,7 @@ export function useUserUnclaimedAmount(account: string | null | undefined): Curr
   const userClaimData = useUserClaimData(account)
   const canClaim = useUserHasAvailableClaim(account)
 
-  const sushi = chainId ? SUSHI[chainId] : undefined
+  const sushi = chainId ? SURE[chainId] : undefined
 
   // console.log('claimStats:', {
   //   canClaim: canClaim,
@@ -126,7 +126,7 @@ export function useClaimCallback(account: string | null | undefined): {
         })
         .then((response: TransactionResponse) => {
           addTransaction(response, {
-            summary: `Claimed ${unClaimedAmount?.toSignificant(4)} SUSHI`,
+            summary: `Claimed ${unClaimedAmount?.toSignificant(4)} SURE`,
             claim: { recipient: account },
           })
           return response.hash

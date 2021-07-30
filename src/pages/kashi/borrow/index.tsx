@@ -285,7 +285,7 @@ const BorrowLayout = ({ children }) => {
           className="h-full bg-gray-200"
           title={i18n._(t`Borrow assets and leverage up`)}
           description={i18n._(
-            t`Borrowing allows you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest.`
+            t`Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest.`
           )}
         />
       }

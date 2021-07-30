@@ -143,8 +143,8 @@ export default function Vesting() {
             <div className="relative w-full overflow-hidden rounded bg-gray-200">
               <div className="flex flex-col gap-3 p-4">
                 <div className="flex flex-row justify-between">
-                  <div className="font-bold text-dark-700">{i18n._(t`Your Claimable SUSHI this Week`)}</div>
-                  <QuestionHelper text="Your Vested SUSHI will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
+                  <div className="font-bold text-dark-700">{i18n._(t`Your Claimable SURE this Week`)}</div>
+                  <QuestionHelper text="Your Vested SURE will be released each week for the next 6 months. The amount released each week is determined by your historical farming rewards. You do not need to harvest each week as unclaimed amounts from each week will continue to accrue onto the next." />
                 </div>
                 {/* <div style={{ display: 'flex', alignItems: 'baseline' }}> */}
                 <div className="flex flex-col items-baseline">
@@ -154,7 +154,7 @@ export default function Vesting() {
                   {account ? (
                     <div className="text-sm text-secondary">
                       {totalLocked ? (
-                        i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SUSHI`)
+                        i18n._(t`Historical Total Locked: ${formatNumber(totalLocked)} SURE`)
                       ) : (
                         <Dots>{i18n._(t`Historical Total Locked: Fetching Total`)}</Dots>
                       )}
@@ -180,7 +180,7 @@ export default function Vesting() {
                   {pendingTreasurySignature ? (
                     <Dots>{i18n._(t`Pending Treasury Transfer`)}</Dots>
                   ) : (
-                    <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim SUSHI`)}</>
+                    <> {claimConfirmed ? i18n._(t`Claimed`) : i18n._(t`Claim SURE`)}</>
                   )}
 
                   {attempting && (
@@ -196,14 +196,14 @@ export default function Vesting() {
             </div>
             <div className="relative w-full overflow-hidden rounded bg-gray-200">
               <div className="flex flex-col gap-3 p-4">
-                <div className="font-bold text-dark-700">{i18n._(t`Things you can do with your SUSHI`)}</div>
+                <div className="font-bold text-dark-700">{i18n._(t`Things you can do with your SURE`)}</div>
                 <div className="p-4 rounded bg-gray-100">
                   <Link href="/stake">
                     <a className="flex items-center justify-between gap-3">
                       <div className="flex flex-col gap-1">
-                        <div className="font-bold text-dark-700">{i18n._(t`Stake SUSHI for xSUSHI`)}</div>
+                        <div className="font-bold text-dark-700">{i18n._(t`Stake SURE for nSURE`)}</div>
                         <div className="text-sm text-secondary">
-                          {t`Gain governance rights with xSUSHI and earn 5% APR (0.05% of
+                          {t`Gain governance rights with nSURE and earn 5% APR (0.05% of
                                                             all swaps from all chains)`}
                         </div>
                       </div>
@@ -219,7 +219,7 @@ export default function Vesting() {
                       <div className="flex flex-col gap-1">
                         <div className="font-bold text-dark-700">{i18n._(t`Stack Yields with SAAVE`)}</div>
                         <div className="text-sm text-secondary">
-                          {t`Stake into xSUR add collateral as a xSUR on Aave all in
+                          {t`Stake into nSURE add collateral as a nSURE on Aave all in
                                                             one click`}
                         </div>
                       </div>
@@ -231,10 +231,10 @@ export default function Vesting() {
                 </div>
                 <div className="p-4 rounded bg-gray-100">
                   <div className="flex flex-col gap-1">
-                    <div className="font-bold text-dark-700">{i18n._(t`Deposit SUR into SureVault`)}</div>
+                    <div className="font-bold text-dark-700">{i18n._(t`Deposit SURE into SureVault`)}</div>
                     <div className="text-sm text-secondary">
                       {t`(COMING SOON) Accrue automatic yield through flash loans and
-                                                            SUSHI strategies`}
+                                                            SURE strategies`}
                     </div>
                   </div>
                 </div>

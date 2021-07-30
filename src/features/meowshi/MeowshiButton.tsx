@@ -1,7 +1,7 @@
 import { ApprovalState, useActiveWeb3React } from '../../hooks'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
 import React, { FC, useMemo, useState } from 'react'
-import { SUSHI, XSUSHI } from '../../constants'
+import { SURE, XSUSHI } from '../../constants'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../modals/TransactionConfirmationModal'
 
 import Button from '../../components/Button'
@@ -27,10 +27,10 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
     open: false,
   })
   const { account, chainId } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(account, SUSHI[ChainId.MAINNET])
+  const sushiBalance = useTokenBalance(account, SURE[ChainId.MAINNET])
   const xSushiBalance = useTokenBalance(account, XSUSHI)
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(
-    currencies[Field.INPUT] === SUSHI[ChainId.MAINNET]
+    currencies[Field.INPUT] === SURE[ChainId.MAINNET]
   )
   const balance = useTokenBalance(account, currencies[Field.INPUT])
   const parsedInputAmount = tryParseAmount(fields[Field.INPUT], currencies[Field.INPUT])
@@ -52,26 +52,26 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
 
     let tx
     if (doMeow) {
-      if (currencies[Field.INPUT]?.symbol === 'SUSHI') {
+      if (currencies[Field.INPUT]?.symbol === 'SURE') {
         tx = await meowSushi({
           value: ethers.utils.parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: sushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.INPUT]?.symbol === 'xSUSHI') {
+      if (currencies[Field.INPUT]?.symbol === 'nSURE') {
         tx = await meow({
           value: ethers.utils.parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,
         })
       }
     } else {
-      if (currencies[Field.OUTPUT]?.symbol === 'SUSHI') {
+      if (currencies[Field.OUTPUT]?.symbol === 'SURE') {
         tx = await unmeowSushi({
           value: ethers.utils.parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,
         })
       }
-      if (currencies[Field.OUTPUT]?.symbol === 'xSUSHI') {
+      if (currencies[Field.OUTPUT]?.symbol === 'nSURE') {
         tx = await unmeow({
           value: ethers.utils.parseUnits(fields[Field.INPUT], sushiBalance.currency.decimals),
           decimals: xSushiBalance.currency.decimals,

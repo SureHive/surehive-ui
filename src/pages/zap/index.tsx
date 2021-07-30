@@ -121,7 +121,7 @@ const CardHeader = () => {
           message={
             <>
               Zaps allow you to LP in any pool with any asset. Please be careful when zapping low liquidity tokens as
-              there may be very high slippage. ETH, WBTC, USDC, DAI and SUR are the safest tokens to zap with. If
+              there may be very high slippage. ETH, WBTC, USDC, DAI and SURE are the safest tokens to zap with. If
               price impact seems too high, try disabling multihop.
             </>
           }

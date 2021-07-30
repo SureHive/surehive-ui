@@ -1,6 +1,6 @@
 import { ChainId, CurrencyAmount, JSBI, MASTERCHEF_ADDRESS } from '@sushiswap/sdk'
 import { Chef, PairType } from './enum'
-import { MASTERCHEF_V2_ADDRESS, MINICHEF_ADDRESS, SUSHI } from '../../constants'
+import { MASTERCHEF_V2_ADDRESS, MINICHEF_ADDRESS, SURE } from '../../constants'
 import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from '../../state/multicall/hooks'
 import { useCallback, useMemo } from 'react'
 import { useMasterChefContract, useMasterChefV2Contract, useMiniChefContract } from '../../hooks'
@@ -87,7 +87,7 @@ export function usePendingSushi(farm) {
 
   const amount = value ? JSBI.BigInt(value.toString()) : undefined
 
-  return amount ? CurrencyAmount.fromRawAmount(SUSHI[chainId], amount) : undefined
+  return amount ? CurrencyAmount.fromRawAmount(SURE[chainId], amount) : undefined
 }
 
 export function usePendingToken(farm, contract) {

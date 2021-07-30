@@ -15,10 +15,10 @@ msgstr ""
 
 msgid ""
 "(COMING SOON) Accrue automatic yield through flash loans and\n"
-"SUSHI strategies"
+"SURE strategies"
 msgstr ""
 "(SẮP RA MẮT) Tích lũy lợi suất tự động thông qua các khoản vay nhanh và chiến lược\n"
-"SUSHI"
+"SURE"
 
 msgid "1 Hour"
 msgstr ""
@@ -32,7 +32,7 @@ msgstr ""
 msgid "30 Days"
 msgstr ""
 
-msgid "A portion of each trade (0.05%) goes to xSUSHI holders as a protocol incentive."
+msgid "A portion of each trade (0.05%) goes to nSURE holders as a protocol incentive."
 msgstr ""
 
 msgid "A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive."
@@ -50,16 +50,13 @@ msgstr "Thêm"
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
 
-msgid "Add SUSHI to your MetaMask wallet"
-msgstr ""
-
 msgid "Add collateral in order to borrow assets"
 msgstr "Thêm tài sản thế chấp để vay tài sản"
 
 msgid "Add liquidity"
 msgstr "Thêm thanh khoản"
 
-msgid "Add xSUSHI to your MetaMask wallet"
+msgid "Add nSURE to your MetaMask wallet"
 msgstr ""
 
 msgid "Add {0} to MetaMask"
@@ -79,12 +76,6 @@ msgstr "Số lượng token"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 msgstr ""
-
-msgid "Analytics"
-msgstr "Phân tích"
-
-msgid "Approve"
-msgstr "Phê duyệt"
 
 msgid "Approve"
 msgstr "Phê duyệt Kashi"
@@ -128,27 +119,6 @@ msgstr "Số dư"
 msgid "Balance:"
 msgstr ""
 
-msgid "Bento Balance: {0}"
-msgstr "Số dư Bento: {0}"
-
-msgid "SureVault"
-msgstr "SureVault"
-
-msgid "SureVault Apps"
-msgstr "Ứng dụng SureVault"
-
-msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
-msgstr "SureVault là một cách sáng tạo để sử dụng hiệu quả khí các ứng dụng phi tập trung và tăng thêm lợi suất."
-
-msgid "SureVault provides extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like Kashi markets"
-msgstr "SureVault cung cấp thêm lợi suất ký quỹ với cho vay nhanh, chiến lược và chuyển khoản cố định, tiết kiệm giữa các ứng dụng phi tập trung được tích hợp, như thị trường Kashi"
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "Các chiến lược SureVault có thể tạo ra lợi suất cho các token thế chấp của bạn. Token này chưa có chiến lược trong SureVault."
-
-msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
-msgstr "Chiến lược SureVault có thể tạo ra lợi suất cho thanh khoản của bạn trong khi không được cho vay. Token này chưa có chiến lược trong SureVault."
-
 msgid "Borrow"
 msgstr "Vay"
 
@@ -164,8 +134,8 @@ msgstr "Vay {0} - {1}"
 msgid "Borrowed"
 msgstr "Đã vay"
 
-msgid "Borrowing allows you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
-msgstr "Việc đi vay cho phép bạn có được tính thanh khoản mà không cần bán. Hạn mức vào phụ thuộc vào số tiền thế chấp ký quỹ. Bạn sẽ có thể vay đến 75% tài sản thế chấp của mình và hoàn trả bất kỳ lúc nào với lãi suất cộng dồn."
+msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgstr ""
 
 msgid "Buy"
 msgstr ""
@@ -197,8 +167,8 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-msgid "Claim SUSHI"
-msgstr "Yêu cầu SUSHI"
+msgid "Claim SURE"
+msgstr "Yêu cầu SURE"
 
 msgid "Claimed"
 msgstr "Đã yêu cầu"
@@ -271,7 +241,7 @@ msgstr ""
 msgid "Create Pool & Supply"
 msgstr "Tạo mạng lưới & tổng cung"
 
-msgid "Create a new Kashi Market"
+msgid "Create a new HoneyStream Market"
 msgstr ""
 
 msgid "Create a pair"
@@ -286,8 +256,8 @@ msgstr ""
 msgid "Deposit"
 msgstr "Ký quỹ"
 
-msgid "Deposit SUSHI into SureVault"
-msgstr "Ký quỹ SUSHI vào SureVault"
+msgid "Deposit SURE into SureVault"
+msgstr "Ký quỹ SURE vào SureVault"
 
 msgid "Deposit tokens into SureVault for all the yields"
 msgstr "Ký quỹ token vào SureVault để nhận tất cả lợi suất"
@@ -384,17 +354,17 @@ msgid "Find Pool"
 msgstr "Tìm mạng lưới"
 
 msgid ""
-"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SUSHI\n"
-"proportional to your share of the SushiBar. When your SUSHI is staked into the SushiBar, you recieve\n"
-"xSUSHI in return for voting rights and a fully composable token that can interact with other protocols.\n"
-"Your xSUSHI is continuously compounding, when you unstake you will receive all the originally deposited\n"
-"SUSHI and any additional from fees."
+"For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as SURE\n"
+"proportional to your share of the SushiBar. When your SURE is staked into the SushiBar, you recieve\n"
+"nSURE in return for voting rights and a fully composable token that can interact with other protocols.\n"
+"Your nSURE is continuously compounding, when you unstake you will receive all the originally deposited\n"
+"SURE and any additional from fees."
 msgstr ""
-"Đối với mỗi giao dịch hoán đổi trên sàn giao dịch trên mọi chuỗi, 0,05% phí hoán đổi được phân bổ dưới dạng SUSHI\n"
-"tương ứng với cổ phần của bạn trên SushiBar. Khi đặt cược SUSHI vào SushiBar, bạn sẽ nhận được\n"
-"xSUSHI để đổi lại quyền biểu quyết và một token có thể tổng hợp đầy đủ có thể tương tác với các giao thức khác.\n"
+"Đối với mỗi giao dịch hoán đổi trên sàn giao dịch trên mọi chuỗi, 0,05% phí hoán đổi được phân bổ dưới dạng SURE\n"
+"tương ứng với cổ phần của bạn trên SushiBar. Khi đặt cược SURE vào SushiBar, bạn sẽ nhận được\n"
+"nSURE để đổi lại quyền biểu quyết và một token có thể tổng hợp đầy đủ có thể tương tác với các giao thức khác.\n"
 "XSUSHI của bạn được hưởng lãi kép liên tục, khi bạn hủy bỏ hủy đặt cược, bạn sẽ nhận được tất cả số\n"
-"SUSHI đã ký quỹ ban đầu và mọi khoản phí bổ sung."
+"SURE đã ký quỹ ban đầu và mọi khoản phí bổ sung."
 
 msgid "French"
 msgstr ""
@@ -403,10 +373,10 @@ msgid "Gain exposure to tokens without reducing your assets. Leverage will enabl
 msgstr "Có cơ hội tiếp cận với các token mà không làm giảm tài sản của bạn. Đòn bẩy sẽ cho phép bạn thực hiện các vị thế bán đối với tài sản và kiếm tiền từ các biến động giảm giá."
 
 msgid ""
-"Gain governance rights with xSUSHI and earn 5% APR (0.05% of\n"
+"Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
 "all swaps from all chains)"
 msgstr ""
-"Nhận quyền quản trị với xSUSHI và kiếm 5% lãi suất phần trăm hàng năm (0,05% trong số\n"
+"Nhận quyền quản trị với nSURE và kiếm 5% lãi suất phần trăm hàng năm (0,05% trong số\n"
 "tất cả các giao dịch hoán đổi từ tất cả các chuỗi)"
 
 msgid "German"
@@ -421,7 +391,7 @@ msgstr "Ví cứng"
 msgid "Harmony Bridge"
 msgstr ""
 
-msgid "Harvest {0} SUSHI {1}"
+msgid "Harvest {0} SURE {1}"
 msgstr ""
 
 msgid "Have assets you want to earn additional interest on? Lend them in isolated markets and earn interest from borrowers."
@@ -436,8 +406,8 @@ msgstr "Tổng số lịch sử đã khóa: Kết nối ví"
 msgid "Historical Total Locked: Fetching Total"
 msgstr "Tổng số lịch sử đã khóa: Tải tổng số"
 
-msgid "Historical Total Locked: {0} SUSHI"
-msgstr "Tổng số lịch sử đã khóa: {0} SUSHI"
+msgid "Historical Total Locked: {0} SURE"
+msgstr "Tổng số lịch sử đã khóa: {0} SURE"
 
 msgid "If you want to supply to a market that is not listed yet, you can use this tool to create a new pair."
 msgstr ""
@@ -448,7 +418,7 @@ msgstr ""
 msgid "Import Pool"
 msgstr "Nhập mạng lưới"
 
-msgid "In Bento:"
+msgid "In SureVault:"
 msgstr ""
 
 msgid "In Wallet:"
@@ -557,7 +527,7 @@ msgid "MAX"
 msgstr "TỐI ĐA"
 
 msgid ""
-"MEOW tokens wrap xSUSHI into SureVault for double yields and can be\n"
+"MEOW tokens wrap nSURE into SureVault for double yields and can be\n"
 "used to vote in special MEOW governor contracts."
 msgstr ""
 
@@ -579,14 +549,11 @@ msgstr ""
 msgid "Markets"
 msgstr "Thị trường"
 
-msgid "Matic Bridge"
-msgstr ""
-
 msgid "Max"
 msgstr "Tối đa"
 
-msgid "Maximize yield by staking SUSHI for xSUSHI"
-msgstr "Tối đa hóa lợi suất bằng cách đặt cược SUSHI cho xSUSHI"
+msgid "Maximize yield by staking SURE for xSURE"
+msgstr "Tối đa hóa lợi suất bằng cách đặt cược SURE cho nSURE"
 
 msgid "Maximum sent"
 msgstr ""
@@ -612,16 +579,13 @@ msgstr ""
 msgid "Minimum received"
 msgstr "Số tiền nhận được tối thiểu"
 
-msgid "Miso"
-msgstr ""
-
 msgid "My Liquidity Positions"
 msgstr ""
 
 msgid "My Orders"
 msgstr ""
 
-msgid "My SUSHI"
+msgid "My SURE"
 msgstr ""
 
 msgid "Network not supported yet"
@@ -857,18 +821,16 @@ msgstr "Lợi suất cộng dồn với SAAVE"
 msgid "Stake"
 msgstr "Đặt cược"
 
-msgid "Stake SUSHI"
-msgstr "Đặt cược SUSHI"
+msgid "Stake SURE"
+msgstr "Đặt cược SURE"
 
-msgid "Stake SUSHI for xSUSHI"
-msgstr "Đặt cược SUSHI cho xSUSHI"
+msgid "Stake SURE for nSURE"
+msgstr "Đặt cược SURE cho nSURE"
 
 msgid ""
-"Stake into xSUSHI add collateral as axSUSHI on Aave all in\n"
+"Stake into nSURE add collateral as a nSURE on Aave all in\n"
 "one click"
 msgstr ""
-"Đặt cược vào xSUSHI, thêm tài sản thế chấp là axSUSHI trên Aave tất cả trong\n"
-"một cú nhấp chuột"
 
 msgid "Staking APR"
 msgstr "APR đặt cược"
@@ -876,11 +838,32 @@ msgstr "APR đặt cược"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Tổng cung {0} {1} và {2} {3}"
 
+msgid "SureHive"
+msgstr ""
+
+msgid "SureVault"
+msgstr "SureVault"
+
+msgid "SureVault Apps"
+msgstr "Ứng dụng SureVault"
+
+msgid "SureVault Balance: {0}"
+msgstr ""
+
+msgid "SureVault extra yield on deposits with flash lending, strategies, and fixed, low-gas transfers among integrated dapps, like HoneyStream markets"
+msgstr ""
+
+msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
+msgstr "SureVault là một cách sáng tạo để sử dụng hiệu quả khí các ứng dụng phi tập trung và tăng thêm lợi suất."
+
+msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
+msgstr "Các chiến lược SureVault có thể tạo ra lợi suất cho các token thế chấp của bạn. Token này chưa có chiến lược trong SureVault."
+
+msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
+msgstr "Chiến lược SureVault có thể tạo ra lợi suất cho thanh khoản của bạn trong khi không được cho vay. Token này chưa có chiến lược trong SureVault."
+
 msgid "Sushi is a supporter of Open Source."
 msgstr "Sushi là người ủng hộ Mã nguồn mở."
-
-msgid "SushiSwap"
-msgstr ""
 
 msgid "Swap"
 msgstr "Hoán đổi"
@@ -921,8 +904,8 @@ msgstr ""
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr ""
 
-msgid "Things you can do with your SUSHI"
-msgstr "Những điều bạn có thể làm với SUSHI của mình"
+msgid "Things you can do with your SURE"
+msgstr "Những điều bạn có thể làm với SURE của mình"
 
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
 msgstr ""
@@ -998,13 +981,13 @@ msgstr "Tài sản không được hỗ trợ"
 msgid "Unwrap"
 msgstr "Mở bọc"
 
-msgid "Use SUSHI"
+msgid "Use SURE"
+msgstr ""
+
+msgid "Use nSURE"
 msgstr ""
 
 msgid "Use this tool to find pairs that don't automatically appear in the interface"
-msgstr ""
-
-msgid "Use xSUSHI"
 msgstr ""
 
 msgid "Used"
@@ -1085,8 +1068,8 @@ msgstr "Bạn sẽ nhận được"
 msgid "Your"
 msgstr ""
 
-msgid "Your Claimable SUSHI this Week"
-msgstr "SUSHI có thể yêu cầu của bạn trong tuần này"
+msgid "Your Claimable SURE this Week"
+msgstr "SURE có thể yêu cầu của bạn trong tuần này"
 
 msgid "Your Liquidity"
 msgstr "Tính thanh khoản của bạn"
@@ -1124,8 +1107,8 @@ msgstr "Giao dịch của bạn sẽ hoàn nguyên nếu có một biến độn
 msgid "Your transactions will appear here..."
 msgstr ""
 
-msgid "Your {exchange} {0}/{1} liquidity will become SushiSwap {2}/{3} liquidity."
-msgstr "{exchange} {0} / {1} thanh khoản của bạn sẽ trở thành thanh khoản SushiSwap {2}/{3} ."
+msgid "Your {exchange} {0}/{1} liquidity will become SureHive {2}/{3} liquidity."
+msgstr ""
 
 msgid "Zap"
 msgstr ""
@@ -1154,10 +1137,10 @@ msgstr "Đang tải..."
 msgid "minutes"
 msgstr "phút"
 
-msgid "or the transaction will revert."
+msgid "nSURE Fee"
 msgstr ""
 
-msgid "xSUSHI Fee"
+msgid "or the transaction will revert."
 msgstr ""
 
 #. js-lingui:icu=%7B0%2C+plural%2C+one+%7BToken%7D+many+%7BTokens%7D%7D&pluralize_on=0
