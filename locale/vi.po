@@ -56,9 +56,6 @@ msgstr "Thêm tài sản thế chấp để vay tài sản"
 msgid "Add liquidity"
 msgstr "Thêm thanh khoản"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr ""
-
 msgid "Add {0} to MetaMask"
 msgstr ""
 
@@ -466,9 +463,6 @@ msgstr ""
 msgid "Learn more about wallets"
 msgstr ""
 
-msgid "Lend"
-msgstr "Cho vay"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "Cho khách hàng vay tài sản lấy lãi."
 
@@ -552,8 +546,7 @@ msgstr "Thị trường"
 msgid "Max"
 msgstr "Tối đa"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
 msgstr "Tối đa hóa lợi suất bằng cách đặt cược SURE cho nSURE"
 
 msgid "Maximum sent"

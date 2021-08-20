@@ -228,149 +228,145 @@ function LimitOrder() {
           toggleExpertMode()
         }}
       >
-        <DoubleGlowShadow>
-          <div id="limit-order-page" className="flex flex-col p-4 rounded bg-gray-200 gap-4">
-            <ExchangeHeader input={currencies[Field.INPUT]} output={currencies[Field.OUTPUT]} />
-            <div className="flex flex-col gap-4">
-              <CurrencyInputPanel
-                className="rounded-t"
-                id="swap-currency-input"
-                topAdornment={<PayFromToggle />}
-                bottomAdornment={<BalancePanel />}
-                selectComponent={
-                  <CurrencySelect
-                    currency={currencies[Field.INPUT]}
-                    otherCurrency={currencies[Field.OUTPUT]}
-                    label={i18n._(t`You pay`)}
-                    onSelect={handleInputSelect}
-                    currencyList={inputTokenList}
-                    allowManageTokenList={false}
-                  />
-                }
-                inputComponent={
-                  <CurrencyInput
-                    id="token-amount-input"
-                    onMax={handleMaxInput}
-                    showMaxButton={!atMaxAmountInput}
-                    onUserInput={(value) => onUserInput(Field.INPUT, value)}
-                    value={formattedAmounts[Field.INPUT]}
-                  />
-                }
-              />
-              <div className="flex flex-row gap-5">
-                <div />
-                <div className="flex items-center relative">
-                  <div className="z-0 absolute w-[2px] bg-gray-100 h-[calc(100%+32px)] top-[-16px] left-[calc(50%-1px)]" />
-                  <button
-                    className="rounded-full bg-gray-200 p-3px z-10"
-                    onClick={() => {
-                      onSwitchTokens()
-                    }}
-                  >
-                    <div
-                      className="p-2 rounded-full bg-gray-50 hover:bg-gray-50"
-                      onMouseEnter={() => setAnimateSwapArrows(true)}
-                      onMouseLeave={() => setAnimateSwapArrows(false)}
-                    >
-                      <Lottie
-                        animationData={swapArrowsAnimationData}
-                        autoplay={animateSwapArrows}
-                        loop={false}
-                        className="w-[32px] h-[32px]"
-                      />
-                    </div>
-                  </button>
-                </div>
-                <LimitPriceInputPanel onBlur={(val) => checkLimitPrice(val)} />
-              </div>
-              <CurrencyInputPanel
-                className="relative z-1 rounded"
-                id="swap-currency-input"
-                selectComponent={
-                  <CurrencySelect
-                    disabled={!currencies[Field.INPUT]}
-                    currency={currencies[Field.OUTPUT]}
-                    otherCurrency={currencies[Field.INPUT]}
-                    label={i18n._(t`You receive:`)}
-                    onSelect={handleOutputSelect}
-                    currencyList={outputTokenList}
-                    includeNativeCurrency={false}
-                    allowManageTokenList={false}
-                  />
-                }
-                inputComponent={
-                  <CurrencyInput
-                    id="token-amount-output"
-                    showMaxButton={false}
-                    onUserInput={(value) => onUserInput(Field.OUTPUT, value)}
-                    value={formattedAmounts[Field.OUTPUT]}
-                    error={currencyInputPanelError}
-                    endAdornment={
-                      <div className="flex flex-col">
-                        <span className="text-xs font-bold text-high-emphesis text-right">
-                          {currencyInputPanelHelperText}
-                        </span>
-                      </div>
-                    }
-                  />
-                }
-                bottomAdornment={
-                  currencyInputPanelError ? (
-                    <div className="bg-red bg-opacity-20 rounded-b flex items-center py-2 justify-center z-0 -mt-2">
-                      <div className="pt-2 flex gap-2 items-center">
-                        <ExclamationIcon className="text-red" width={24} height={24} />
-                        <Typography variant="xs" weight={700}>
-                          {currencyInputPanelError}
-                        </Typography>
-                      </div>
-                    </div>
-                  ) : (
-                    <></>
-                  )
-                }
-              />
-              {recipient !== null ? (
-                <>
-                  <div className="relative left-9">
-                    <ArrowDownIcon className="text-high-emphesis" strokeWidth={2} width={16} height={16} />
-                  </div>
-                  <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
-                </>
-              ) : null}
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-between gap-4 items-end md:items-center w-full">
-              {currencies[Field.INPUT] && currencies[Field.OUTPUT] && (
-                <div className="flex flex-1">
-                  <PriceRatio />
-                </div>
-              )}
-              {isExpertMode && recipient === null && (
-                <div
-                  className={`flex flex-1 ${
-                    currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'justify-center' : ''
-                  }`}
+        <div id="limit-order-page" className="flex flex-col p-4 rounded bg-gray-200 gap-4">
+          <ExchangeHeader input={currencies[Field.INPUT]} output={currencies[Field.OUTPUT]} />
+          <div className="flex flex-col gap-4">
+            <CurrencyInputPanel
+              className="rounded-t"
+              id="swap-currency-input"
+              topAdornment={<PayFromToggle />}
+              bottomAdornment={<BalancePanel />}
+              selectComponent={
+                <CurrencySelect
+                  currency={currencies[Field.INPUT]}
+                  otherCurrency={currencies[Field.OUTPUT]}
+                  label={i18n._(t`You pay`)}
+                  onSelect={handleInputSelect}
+                  currencyList={inputTokenList}
+                  allowManageTokenList={false}
+                />
+              }
+              inputComponent={
+                <CurrencyInput
+                  id="token-amount-input"
+                  onMax={handleMaxInput}
+                  showMaxButton={!atMaxAmountInput}
+                  onUserInput={(value) => onUserInput(Field.INPUT, value)}
+                  value={formattedAmounts[Field.INPUT]}
+                />
+              }
+            />
+            <div className="flex flex-row gap-5">
+              <div />
+              <div className="flex items-center relative">
+                <div className="z-0 absolute w-[2px] bg-gray-100 h-[calc(100%+32px)] top-[-16px] left-[calc(50%-1px)]" />
+                <button
+                  className="rounded-full bg-gray-200 p-3px z-10"
+                  onClick={() => {
+                    onSwitchTokens()
+                  }}
                 >
                   <div
-                    className="flex text-blue underline cursor-pointer items-center text-sm"
-                    onClick={() => onChangeRecipient('')}
+                    className="p-2 rounded-full bg-gray-50 hover:bg-gray-50"
+                    onMouseEnter={() => setAnimateSwapArrows(true)}
+                    onMouseLeave={() => setAnimateSwapArrows(false)}
                   >
-                    {i18n._(t`Change Recipient`)}
+                    <Lottie
+                      animationData={swapArrowsAnimationData}
+                      autoplay={animateSwapArrows}
+                      loop={false}
+                      className="w-[32px] h-[32px]"
+                    />
                   </div>
+                </button>
+              </div>
+              <LimitPriceInputPanel onBlur={(val) => checkLimitPrice(val)} />
+            </div>
+            <CurrencyInputPanel
+              className="relative z-1 rounded"
+              id="swap-currency-input"
+              selectComponent={
+                <CurrencySelect
+                  disabled={!currencies[Field.INPUT]}
+                  currency={currencies[Field.OUTPUT]}
+                  otherCurrency={currencies[Field.INPUT]}
+                  label={i18n._(t`You receive:`)}
+                  onSelect={handleOutputSelect}
+                  currencyList={outputTokenList}
+                  includeNativeCurrency={false}
+                  allowManageTokenList={false}
+                />
+              }
+              inputComponent={
+                <CurrencyInput
+                  id="token-amount-output"
+                  showMaxButton={false}
+                  onUserInput={(value) => onUserInput(Field.OUTPUT, value)}
+                  value={formattedAmounts[Field.OUTPUT]}
+                  error={currencyInputPanelError}
+                  endAdornment={
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold text-high-emphesis text-right">
+                        {currencyInputPanelHelperText}
+                      </span>
+                    </div>
+                  }
+                />
+              }
+              bottomAdornment={
+                currencyInputPanelError ? (
+                  <div className="bg-red bg-opacity-20 rounded-b flex items-center py-2 justify-center z-0 -mt-2">
+                    <div className="pt-2 flex gap-2 items-center">
+                      <ExclamationIcon className="text-red" width={24} height={24} />
+                      <Typography variant="xs" weight={700}>
+                        {currencyInputPanelError}
+                      </Typography>
+                    </div>
+                  </div>
+                ) : (
+                  <></>
+                )
+              }
+            />
+            {recipient !== null ? (
+              <>
+                <div className="relative left-9">
+                  <ArrowDownIcon className="text-high-emphesis" strokeWidth={2} width={16} height={16} />
                 </div>
-              )}
-              {!(currencies[Field.INPUT] && currencies[Field.OUTPUT]) && !(isExpertMode && recipient === null) && (
-                <div className="flex flex-1" />
-              )}
-
-              <OrderExpirationDropdown />
-            </div>
-
-            <div className="flex">
-              <LimitOrderButton color="gradient" className="font-bold" currency={currencies[Field.INPUT]} />
-            </div>
+                <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
+              </>
+            ) : null}
           </div>
-        </DoubleGlowShadow>
+
+          <div className="flex flex-col md:flex-row justify-between gap-4 items-end md:items-center w-full">
+            {currencies[Field.INPUT] && currencies[Field.OUTPUT] && (
+              <div className="flex flex-1">
+                <PriceRatio />
+              </div>
+            )}
+            {isExpertMode && recipient === null && (
+              <div
+                className={`flex flex-1 ${currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'justify-center' : ''}`}
+              >
+                <div
+                  className="flex text-blue underline cursor-pointer items-center text-sm"
+                  onClick={() => onChangeRecipient('')}
+                >
+                  {i18n._(t`Change Recipient`)}
+                </div>
+              </div>
+            )}
+            {!(currencies[Field.INPUT] && currencies[Field.OUTPUT]) && !(isExpertMode && recipient === null) && (
+              <div className="flex flex-1" />
+            )}
+
+            <OrderExpirationDropdown />
+          </div>
+
+          <div className="flex">
+            <LimitOrderButton color="gradient" className="font-bold" currency={currencies[Field.INPUT]} />
+          </div>
+        </div>
       </ExpertModePanel>
     </>
   )

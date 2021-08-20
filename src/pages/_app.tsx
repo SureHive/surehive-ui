@@ -31,6 +31,7 @@ import { i18n } from '@lingui/core'
 import { persistStore } from 'redux-persist'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ThemeProvider } from 'next-themes'
 
 const Web3ProviderNetwork = dynamic(() => import('../components/Web3ProviderNetwork'), { ssr: false })
 
@@ -46,6 +47,7 @@ function MyApp({
     Guard: FunctionComponent
     Layout: FunctionComponent
     Provider: FunctionComponent
+    theme: string
   }
 }) {
   const router = useRouter()
@@ -83,7 +85,6 @@ function MyApp({
 
   // Allows for conditionally setting a provider to be hoisted per page
   const Provider = Component.Provider || Fragment
-
   // Allows for conditionally setting a layout to be hoisted per page
   const Layout = Component.Layout || DefaultLayout
 
@@ -144,22 +145,24 @@ function MyApp({
           <Web3ProviderNetwork getLibrary={getLibrary}>
             <Web3ReactManager>
               <ReduxProvider store={store}>
-              <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
-                <>
-                  <ListsUpdater />
-                  <UserUpdater />
-                  <ApplicationUpdater />
-                  <TransactionUpdater />
-                  <MulticallUpdater />
-                </>
-                <Provider>
-                  <Layout>
-                    <Guard>
-                      <Component {...pageProps} />
-                    </Guard>
-                  </Layout>
-                </Provider>
-              </PersistGate>
+                <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
+                  <>
+                    <ListsUpdater />
+                    <UserUpdater />
+                    <ApplicationUpdater />
+                    <TransactionUpdater />
+                    <MulticallUpdater />
+                  </>
+                  <Provider>
+                    <ThemeProvider enableSystem={true} attribute="class">
+                      <Layout>
+                        <Guard>
+                          <Component {...pageProps} />
+                        </Guard>
+                      </Layout>
+                    </ThemeProvider>
+                  </Provider>
+                </PersistGate>
               </ReduxProvider>
             </Web3ReactManager>
           </Web3ProviderNetwork>

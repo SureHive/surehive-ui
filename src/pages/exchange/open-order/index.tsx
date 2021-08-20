@@ -361,12 +361,11 @@ function OpenOrdersPage() {
             </a>
           </NavLink>
         </div>
-        <DoubleGlowShadow>
-          <div id="limit-order-page" className="flex flex-col w-full p-3 md:p-5 rounded bg-gray-200 gap-4">
-            <OpenOrders />
-            <CompletedOrders />
-          </div>
-        </DoubleGlowShadow>
+
+        <div id="limit-order-page" className="flex flex-col w-full p-3 md:p-5 rounded bg-gray-200 gap-4">
+          <OpenOrders />
+          <CompletedOrders />
+        </div>
       </div>
     </>
   )

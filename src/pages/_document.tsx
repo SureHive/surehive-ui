@@ -32,6 +32,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" dir="ltr">
         <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=optional" rel="stylesheet" />
           <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
 
           <link rel="manifest" href="/site.webmanifest" />

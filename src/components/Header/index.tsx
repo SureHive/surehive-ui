@@ -17,6 +17,8 @@ import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useETHBalances } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
+import { useTheme } from 'next-themes'
+import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
@@ -24,12 +26,28 @@ import { useLingui } from '@lingui/react'
 function AppBar(): JSX.Element {
   const { i18n } = useLingui()
   const { account, chainId, library } = useActiveWeb3React()
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
 
+  const renderThemeChanger = () => {
+    if (!mounted) return null
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    if (currentTheme === 'dark') {
+      return <SunIcon className="w-7 h-7" role="button" onClick={() => setTheme('light')} />
+    } else {
+      return <MoonIcon className="w-7 h-7 bold text-primary" role="button" onClick={() => setTheme('dark')} />
+    }
+  }
+
   return (
     //     // <header className="flex flex-row justify-between w-screen flex-nowrap">
-    <header className="flex-shrink-0 w-full">
+    <header className="flex-shrink-0 w-full dark:bg-dark-900 bg-opacity-100">
       <Popover as="nav" className="z-10 w-full bg-transparent header-border-b">
         {({ open }) => (
           <>
@@ -43,7 +61,7 @@ function AppBar(): JSX.Element {
                       <NavLink href="/swap">
                         <a
                           id={`swap-nav-link`}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                          className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
                           {i18n._(t`Swap`)}
                         </a>
@@ -51,7 +69,7 @@ function AppBar(): JSX.Element {
                       <NavLink href="/pool">
                         <a
                           id={`pool-nav-link`}
-                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                          className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
                           {i18n._(t`Pool`)}
                         </a>
@@ -60,7 +78,7 @@ function AppBar(): JSX.Element {
                         <NavLink href={'/migrate'}>
                           <a
                             id={`migrate-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                            className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                           >
                             {i18n._(t`Migrate`)}
                           </a>
@@ -70,7 +88,7 @@ function AppBar(): JSX.Element {
                         <NavLink href={'/farm'}>
                           <a
                             id={`farm-nav-link`}
-                            className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                            className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                           >
                             {i18n._(t`Farm`)}
                           </a>
@@ -80,7 +98,7 @@ function AppBar(): JSX.Element {
                   </div>
                 </div>
 
-                <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-gray-300 lg:relative lg:p-0 lg:bg-transparent">
+                <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {library && library.provider.isMetaMask && (
                       <div className="hidden sm:inline-block">
@@ -100,6 +118,9 @@ function AppBar(): JSX.Element {
                     </div>
                     <div className="hidden md:block">
                       <LanguageSwitch />
+                    </div>
+                    <div className="w-auto flex items-center whitespace-nowrap cursor-pointer select-none pointer-events-auto">
+                      {renderThemeChanger()}
                     </div>
                   </div>
                 </div>
@@ -168,7 +189,6 @@ function AppBar(): JSX.Element {
                     {i18n._(t`Migrate`)}
                   </a>
                 </Link>
-
               </div>
             </Popover.Panel>
           </>

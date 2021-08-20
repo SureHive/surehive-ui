@@ -10,7 +10,7 @@ module.exports = {
     applyComplexClasses: true,
   },
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     extend: {
       linearBorderGradients: {
@@ -23,10 +23,9 @@ module.exports = {
           'pink-red-light-brown': ['#FE5A75', '#FEC464'],
         },
         background: {
-          'dark-1000': '#0D0415',
-          'dark-900': '#161522',
+          'dark-900': '#141416',
+          'dark-1000': '#161522',
           'dark-800': '#202231',
-          'dark-pink-red': '#4e3034',
         },
         border: {
           1: '1px',
@@ -67,7 +66,7 @@ module.exports = {
         '48px': '48px',
       },
       fontFamily: {
-        sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Noto Sans TC', 'DM Sans', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         hero: [

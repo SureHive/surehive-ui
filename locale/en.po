@@ -56,9 +56,6 @@ msgstr "Add collateral in order to borrow assets"
 msgid "Add liquidity"
 msgstr "Add liquidity"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr "Add nSURE to your MetaMask wallet"
-
 msgid "Add {0} to MetaMask"
 msgstr "Add {0} to MetaMask"
 
@@ -471,9 +468,6 @@ msgstr "LTV"
 msgid "Learn more about wallets"
 msgstr "Learn more about wallets"
 
-msgid "Lend"
-msgstr "Lend"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "Lend assets for interest from borrowers."
 
@@ -559,10 +553,8 @@ msgstr "Markets"
 msgid "Max"
 msgstr "Max"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
-msgstr "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
+msgstr "Maximize yield by staking SURE for nSURE"
 
 msgid "Maximum sent"
 msgstr "Maximum sent"

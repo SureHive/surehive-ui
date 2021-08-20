@@ -56,9 +56,6 @@ msgstr "Aggiungi collaterale per prendere in prestito asset"
 msgid "Add liquidity"
 msgstr "Aggiungi liquidità"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr ""
-
 msgid "Add {0} to MetaMask"
 msgstr ""
 
@@ -468,9 +465,6 @@ msgstr ""
 msgid "Learn more about wallets"
 msgstr ""
 
-msgid "Lend"
-msgstr "Presta"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "Presta asset in cambio di interessi dai debitori."
 
@@ -551,8 +545,7 @@ msgstr "Mercati"
 msgid "Max"
 msgstr "Massimo"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
 msgstr "Massimizza il rendimento facendo staking di SURE per nSURE"
 
 msgid "Maximum sent"

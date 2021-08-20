@@ -56,9 +56,6 @@ msgstr "資産を借り入れるために担保を追加"
 msgid "Add liquidity"
 msgstr "流動性を追加"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr ""
-
 msgid "Add {0} to MetaMask"
 msgstr ""
 
@@ -468,9 +465,6 @@ msgstr ""
 msgid "Learn more about wallets"
 msgstr ""
 
-msgid "Lend"
-msgstr "貸し出す"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "資産を貸し出して、借り手から利息を得る。"
 
@@ -554,8 +548,7 @@ msgstr "市場"
 msgid "Max"
 msgstr "最大"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
 msgstr "xSUSHIにSUSHIを出資して利回りを最大化"
 
 msgid "Maximum sent"

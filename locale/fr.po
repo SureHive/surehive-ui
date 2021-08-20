@@ -56,9 +56,6 @@ msgstr "Ajouter des garanties pour emprunter des actifs"
 msgid "Add liquidity"
 msgstr "Ajouter de la liquidité"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr ""
-
 msgid "Add {0} to MetaMask"
 msgstr ""
 
@@ -468,9 +465,6 @@ msgstr ""
 msgid "Learn more about wallets"
 msgstr ""
 
-msgid "Lend"
-msgstr "Prêter"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "Prêtez vos actifs et collectez des intérêts auprès des emprunteurs."
 
@@ -554,8 +548,7 @@ msgstr "Marchés"
 msgid "Max"
 msgstr "Max"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
 msgstr "Maximisez vos rendements en stakant SURE pour nSURE"
 
 msgid "Maximum sent"

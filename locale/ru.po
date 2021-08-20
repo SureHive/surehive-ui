@@ -56,9 +56,6 @@ msgstr "Добавьте залог, чтобы заимствовать акт�
 msgid "Add liquidity"
 msgstr "Добавить ликвидность"
 
-msgid "Add nSURE to your MetaMask wallet"
-msgstr ""
-
 msgid "Add {0} to MetaMask"
 msgstr ""
 
@@ -468,9 +465,6 @@ msgstr ""
 msgid "Learn more about wallets"
 msgstr ""
 
-msgid "Lend"
-msgstr "Предоставить кредит"
-
 msgid "Lend assets for interest from borrowers."
 msgstr "Давайте активы в кредит под проценты от заемщиков."
 
@@ -554,8 +548,7 @@ msgstr "Рынки"
 msgid "Max"
 msgstr "Максимум"
 
-msgid "Maximize yield by staking SURE for nSURE
-"
+msgid "Maximize yield by staking SURE for nSURE"
 msgstr "Увеличьте доход, ставя SURE на nSURE"
 
 msgid "Maximum sent"

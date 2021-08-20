@@ -317,34 +317,32 @@ export default function Migrate() {
 
       <div className="mb-8 text-2xl text-center">{i18n._(t`Migrate ${exchange} Liquidity`)}</div>
 
-      <DoubleGlowShadow>
-        <div className="w-full max-w-lg p-4 space-y-4 rounded bg-gray-200">
-          {!account ? (
-            <Web3Connect color="blue" className="w-full" />
-          ) : state.loading ? (
-            <Typography variant="lg" className="p-4 text-center text-primary">
-              <Dots>{i18n._(t`Loading your ${exchange} liquidity positions`)}</Dots>
-            </Typography>
-          ) : (
-            <>
-              {!state.loading && <Typography variant="lg">{i18n._(t`Your Wallet`)}</Typography>}
-              <MigrateModeSelect state={state} />
-              {!state.loading && state.lpTokens.length > 0 && (
-                <div>
-                  <Typography variant="lg">{i18n._(t`Your Liquidity`)}</Typography>
-                  <Typography variant="sm" className="text-secondary">
-                    {t`Click on a pool below, input the amount you wish to migrate or select max, and click
+      <div className="w-full max-w-lg p-4 space-y-4 rounded bg-gray-200">
+        {!account ? (
+          <Web3Connect color="blue" className="w-full" />
+        ) : state.loading ? (
+          <Typography variant="lg" className="p-4 text-center text-primary">
+            <Dots>{i18n._(t`Loading your ${exchange} liquidity positions`)}</Dots>
+          </Typography>
+        ) : (
+          <>
+            {!state.loading && <Typography variant="lg">{i18n._(t`Your Wallet`)}</Typography>}
+            <MigrateModeSelect state={state} />
+            {!state.loading && state.lpTokens.length > 0 && (
+              <div>
+                <Typography variant="lg">{i18n._(t`Your Liquidity`)}</Typography>
+                <Typography variant="sm" className="text-secondary">
+                  {t`Click on a pool below, input the amount you wish to migrate or select max, and click
                         migrate`}
-                  </Typography>
-                </div>
-              )}
-              <ExchangeLiquidityPairs state={state} exchange={exchange} />
-              <AmountInput state={state} />
-              {state.selectedLPToken && <MigrateButtons state={state} exchange={exchange} />}
-            </>
-          )}
-        </div>
-      </DoubleGlowShadow>
+                </Typography>
+              </div>
+            )}
+            <ExchangeLiquidityPairs state={state} exchange={exchange} />
+            <AmountInput state={state} />
+            {state.selectedLPToken && <MigrateButtons state={state} exchange={exchange} />}
+          </>
+        )}
+      </div>
     </>
   )
 }
