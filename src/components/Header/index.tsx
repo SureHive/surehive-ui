@@ -84,7 +84,7 @@ function AppBar(): JSX.Element {
 
   return (
     //     // <header className="flex flex-row justify-between w-screen flex-nowrap">
-    <header className="flex-shrink-0 w-full dark:bg-dark-900">
+    <header className="flex-shrink-0 w-full dark:bg-transparent">
       <Popover as="nav" className="z-10 w-full bg-transparent header-border-b">
         {({ open }) => (
           <>
@@ -137,19 +137,24 @@ function AppBar(): JSX.Element {
                 </div>
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {library && library.provider.isMetaMask && (
+                    {/* {library && library.provider.isMetaMask && (
                       <div className="hidden sm:inline-block">
                         <Web3Network />
                       </div>
-                    )}
+                    )} */}
 
-                    <div className="w-auto flex items-center rounded-full border-dark-50 text-dark-1000 bg-white hover:bg-gray-100 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
-                      {account && chainId && userEthBalance && (
+                    <div className="w-auto flex items-center rounded-full border border-dark-600 text-dark-1000 bg-white hover:bg-gray-100 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto dark:bg-dark-900">
+                      {/* {account && chainId && userEthBalance && (
                         <>
-                          <div className="px-3 py-2 text-primary text-bold">
+                          <div className="px-4 py-2 text-dark-900 dark:text-white">
                             {userEthBalance?.toSignificant(4)} {NATIVE[chainId].symbol}
                           </div>
                         </>
+                      )} */}
+                      {library && library.provider.isMetaMask && (
+                        <div className="hidden sm:inline-block">
+                          <Web3Network />
+                        </div>
                       )}
                       <Web3Status />
                     </div>

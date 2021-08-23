@@ -283,7 +283,7 @@ export default function Farm(): JSX.Element {
 
           <div className="flex items-center text-lg font-bold text-high-emphesis whitespace-nowrap">
             Farms{' '}
-            <div className="w-full h-0 ml-4 font-bold bg-transparent border border-b-0 border-transparent rounded text-high-emphesis md:border-gradient-r-blue-pink-dark-800 opacity-20"></div>
+            <div className="w-full h-0 ml-4 font-bold bg-transparent border border-b-0 border-transparent rounded text-high-emphesis md:border-gradient-r-blue-light-dark-800 opacity-20"></div>
           </div>
 
           <FarmList farms={result} term={term} />
