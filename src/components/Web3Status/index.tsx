@@ -111,7 +111,7 @@ function Web3StatusInner() {
     return (
       <div
         id="web3-status-connected"
-        className="flex items-center px-3 py-2 text-sm rounded-lg bg-gray-50 text-secondary"
+        className="flex items-center px-3 py-2 text-sm rounded-full bg-dark-900 text-white"
         onClick={toggleWalletModal}
       >
         {hasPendingTransactions ? (

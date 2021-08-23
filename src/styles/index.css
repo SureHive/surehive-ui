@@ -42,6 +42,7 @@ body {
   min-height: 100%;
   margin: 0;
   overflow-y: scroll;
+  font-size:var(--font-size);
 
   /* For safari and chrome */
   overflow-y: overlay;
@@ -58,6 +59,11 @@ button:focus {
 input:focus {
   box-shadow: none;
   outline: none;
+}
+
+h2 {
+  font-family: var(--font-header);
+  font-size:var(--font-header-size);
 }
 
 /* *::-webkit-scrollbar {

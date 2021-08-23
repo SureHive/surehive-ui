@@ -19,10 +19,10 @@ import { useETHBalances } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon } from '@heroicons/react/outline'
+import { LogoImage } from '../Logo/image'
 
 // import { ExternalLink, NavLink } from "./Link";
 // import { ReactComponent as Burger } from "../assets/images/burger.svg";
-
 function AppBar(): JSX.Element {
   const { i18n } = useLingui()
   const { account, chainId, library } = useActiveWeb3React()
@@ -39,29 +39,67 @@ function AppBar(): JSX.Element {
     if (!mounted) return null
     const currentTheme = theme === 'system' ? systemTheme : theme
     if (currentTheme === 'dark') {
-      return <SunIcon className="w-7 h-7" role="button" onClick={() => setTheme('light')} />
+      return <SunIcon className="w-5 h-5" role="button" onClick={() => setTheme('light')} />
     } else {
-      return <MoonIcon className="w-7 h-7 bold text-primary" role="button" onClick={() => setTheme('dark')} />
+      return <MoonIcon className="w-5 h-5 bold text-dark-1000" role="button" onClick={() => setTheme('dark')} />
+    }
+  }
+  const renderLogo = () => {
+    if (!mounted) return null
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    if (currentTheme === 'dark') {
+      return (
+        <>
+          <div className="inline-flex">
+            <div className="flex-1">
+              <LogoImage color="white" />
+            </div>
+            <div className="flex-1">
+              <h2 className="bg-dark-200 dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis pt-2 pl-1 whitespace-nowrap">
+                {' '}
+                surehive{' '}
+              </h2>
+            </div>
+          </div>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <div className="inline-flex">
+            <div className="flex-0">
+              <LogoImage color="blue" />
+            </div>
+            <div className="flex-0">
+              <h2 className="dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis pt-2 pl-1 whitespace-nowrap">
+                {' '}
+                surehive{' '}
+              </h2>
+            </div>
+          </div>
+        </>
+      )
     }
   }
 
   return (
     //     // <header className="flex flex-row justify-between w-screen flex-nowrap">
-    <header className="flex-shrink-0 w-full dark:bg-dark-900 bg-opacity-100">
+    <header className="flex-shrink-0 w-full dark:bg-dark-900">
       <Popover as="nav" className="z-10 w-full bg-transparent header-border-b">
         {({ open }) => (
           <>
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <Image src="/logo.png" alt="SureHive" width="142px" height="50px" />
+                <div className="flex">
+                  {renderLogo()}
+                  <div className="hidden sm:block sm:ml-4 border-r"> </div>
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
                       <NavLink href="/swap">
                         <a
                           id={`swap-nav-link`}
-                          className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                          className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
                         >
                           {i18n._(t`Swap`)}
                         </a>
@@ -69,7 +107,7 @@ function AppBar(): JSX.Element {
                       <NavLink href="/pool">
                         <a
                           id={`pool-nav-link`}
-                          className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                          className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
                         >
                           {i18n._(t`Pool`)}
                         </a>
@@ -78,7 +116,7 @@ function AppBar(): JSX.Element {
                         <NavLink href={'/migrate'}>
                           <a
                             id={`migrate-nav-link`}
-                            className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                            className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
                           >
                             {i18n._(t`Migrate`)}
                           </a>
@@ -88,7 +126,7 @@ function AppBar(): JSX.Element {
                         <NavLink href={'/farm'}>
                           <a
                             id={`farm-nav-link`}
-                            className="p-2 text-baseline dark:text-white text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                            className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
                           >
                             {i18n._(t`Farm`)}
                           </a>
@@ -97,7 +135,6 @@ function AppBar(): JSX.Element {
                     </div>
                   </div>
                 </div>
-
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {library && library.provider.isMetaMask && (
@@ -106,7 +143,7 @@ function AppBar(): JSX.Element {
                       </div>
                     )}
 
-                    <div className="w-auto flex items-center rounded bg-gray-200 hover:bg-gray-100 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
+                    <div className="w-auto flex items-center rounded-full border-dark-50 text-dark-1000 bg-white hover:bg-gray-100 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
                       {account && chainId && userEthBalance && (
                         <>
                           <div className="px-3 py-2 text-primary text-bold">

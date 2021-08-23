@@ -2,5 +2,8 @@
     --primary: #fff;
     --text-primary: #23262F;
     --font-sans: "Noto Sans TC", -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', sans-serif;
+    --font-header: "Poppins";
     --scrollbar-width: 14px;
+    --font-size:14px;
+    --font-header-size:24px;
 }
