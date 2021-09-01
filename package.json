@@ -142,6 +142,7 @@
     ]
   },
   "dependencies": {
-    "next-themes": "^0.0.15"
+    "next-themes": "^0.0.15",
+    "tailwindcss-border-gradients": "^2.0.3"
   }
 }

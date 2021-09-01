@@ -17,14 +17,20 @@ module.exports = withBundleAnalyzer(
       disable: process.env.NODE_ENV === 'development',
     },
     images: {
-      domains: ['assets.surehive.io','assets.sushi.com', 'res.cloudinary.com', 'raw.githubusercontent.com', 'logos.covalenthq.com'],
+      domains: [
+        'assets.surehive.io',
+        'assets.sushi.com',
+        'res.cloudinary.com',
+        'raw.githubusercontent.com',
+        'logos.covalenthq.com',
+      ],
     },
     reactStrictMode: true,
     async redirects() {
       return [
         {
           source: '/',
-          destination: '/swap',
+          destination: '/wallet',
           permanent: true,
         },
         {

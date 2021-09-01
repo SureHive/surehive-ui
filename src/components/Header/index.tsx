@@ -95,6 +95,14 @@ function AppBar(): JSX.Element {
                   <div className="hidden sm:block sm:ml-4 border-r"> </div>
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
+                      <NavLink href="/wallet">
+                        <a
+                          id={`wallet-nav-link`}
+                          className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
+                        >
+                          {i18n._(t`Wallet`)}
+                        </a>
+                      </NavLink>
                       {/* <Buy /> */}
                       <NavLink href="/swap">
                         <a

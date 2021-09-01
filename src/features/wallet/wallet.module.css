@@ -1,0 +1,54 @@
+.NoWalletTextGroup1 {
+    font-family: var(--font-sans);
+    font-size: 28px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 400;
+    @apply flex justify-center;
+    @apply text-dark-1000;
+}
+
+:global(.dark) .NoWalletTextGroup1 {
+    @apply text-white-100;
+}
+
+.NoWalletTextGroup2 {
+    @apply flex flex-col;
+    @apply text-dark-1000;
+}
+
+:global(.dark) .NoWalletTextGroup2 {
+    @apply text-white-100;
+}
+
+.NoWalletTextGroup2 p {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+    @apply flex justify-center;
+}
+
+.ConnectWalletButton {
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+    border-radius: 28px;
+    height: 48px;
+    width: 372px;
+    @apply text-white;
+}
+
+.CreateWalletButton {
+    width: 372px;
+    @apply grid justify-items-center p-0.5 rounded-full;
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+}
+
+.CreateWalletButton button {
+    opacity: 1;
+    @apply text-dark-1000 w-full bg-white-100 rounded-full;
+}
+
+:global(.dark) .CreateWalletButton button {
+    @apply bg-dark-900 text-white-100;
+}

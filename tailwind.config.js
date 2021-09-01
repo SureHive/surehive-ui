@@ -11,6 +11,7 @@ module.exports = {
   },
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
+  plugins: [require('tailwindcss-border-gradients')()],
   theme: {
     extend: {
       linearBorderGradients: {
@@ -21,6 +22,7 @@ module.exports = {
         colors: {
           'blue-light-blue': ['#004BFF', '#0004F7'],
           'pink-red-light-brown': ['#FE5A75', '#FEC464'],
+          'blue-light-dark': ['#004BFF 0%', '#3772FF 42%', '#0004F7 100%'],
         },
         background: {
           'dark-900': '#141416',
@@ -42,7 +44,9 @@ module.exports = {
         green: '#7cff6b',
         red: '#ff3838',
         yellow: '#ffd166',
+        white: '#FFFFFF',
 
+        'white-100': '#FCFCFD',
         'opaque-blue': '#2B3990',
         'opaque-pink': '#4DC1EF',
         'pink-red': '#FE5A75',
@@ -52,7 +56,7 @@ module.exports = {
         'dark-pink': '#221825',
         'dark-blue': '#292561',
         'dark-1000': '#0D0415',
-        'dark-900': '#161522',
+        'dark-900': '#141416',
         'dark-850': '#1d1e2c',
         'dark-800': '#202231',
         'dark-700': '#2E3348',
@@ -63,6 +67,12 @@ module.exports = {
         secondary: '#7F7F7F',
         'high-emphesis': '#000',
       },
+      backgroundColor: (theme) => ({
+        ...theme('colors'),
+      }),
+      textColor: (theme) => ({
+        ...theme('colors'),
+      }),
       lineHeight: {
         '48px': '48px',
       },
@@ -78,6 +88,7 @@ module.exports = {
             fontWeight: 700,
           },
         ],
+        sm: ['16px', '20px', {}],
       },
       borderRadius: {
         none: '0',
@@ -112,7 +123,7 @@ module.exports = {
   variants: {
     linearBorderGradients: ['responsive', 'hover', 'dark'], // defaults to ['responsive']
     extend: {
-      backgroundColor: ['checked', 'disabled'],
+      backgroundColor: ['checked', 'disabled', 'dark'],
       backgroundImage: ['hover', 'focus'],
       borderColor: ['checked', 'disabled'],
       cursor: ['disabled'],
