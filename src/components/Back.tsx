@@ -2,7 +2,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
 
-const Back = () => {
+const Back = ({ showText = true, className = 'w-4 h-4' }) => {
   const { i18n } = useLingui()
   const router = useRouter()
   return (
@@ -13,14 +13,14 @@ const Back = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-4 h-4"
+          className={className}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
         </svg>
-        <span>{i18n._(t`Go Back`)}</span>
+        {showText ? <span>{i18n._(t`Go Back`)}</span> : null}
       </a>
     </div>
   )

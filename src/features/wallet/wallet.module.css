@@ -1,4 +1,4 @@
-.NoWalletTextGroup1 {
+.TextGroup1 {
     font-family: var(--font-sans);
     font-size: 28px;
     letter-spacing: 0;
@@ -9,20 +9,33 @@
     @apply text-dark-1000;
 }
 
-:global(.dark) .NoWalletTextGroup1 {
+:global(.dark) .TextGroup1 {
     @apply text-white-100;
 }
 
-.NoWalletTextGroup2 {
+.TextGroup2 {
     @apply flex flex-col;
     @apply text-dark-1000;
 }
 
-:global(.dark) .NoWalletTextGroup2 {
+:global(.dark) .TextGroup2 {
     @apply text-white-100;
 }
 
-.NoWalletTextGroup2 p {
+.TextGroup2 p {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+    @apply flex justify-center;
+}
+
+.TextGroup3 {
+    @apply flex flex-col;
+    @apply text-gray;
+}
+
+.TextGroup3 p {
     font-family: var(--font-sans);
     font-size: 16px;
     text-align: center;
@@ -51,4 +64,25 @@
 
 :global(.dark) .CreateWalletButton button {
     @apply bg-dark-900 text-white-100;
+}
+
+.WalletOption {
+    @apply grid text-dark-1000 p-0.5 w-full rounded-2xl bg-gray mb-2;
+}
+
+:global(.dark) .WalletOption {
+    @apply bg-dark-500;
+}
+
+.WalletOption Button {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 16px;
+    opacity: 1;
+    @apply flex flex-row justify-between bg-white-100;
+    @apply w-full p-3 rounded-2xl items-center;
+}
+
+:global(.dark) .WalletOption Button {
+    @apply text-white-100 bg-dark-500;
 }
