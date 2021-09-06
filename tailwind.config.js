@@ -56,7 +56,7 @@ module.exports = {
         'cyan-blue': '#0993EC',
         'dark-pink': '#221825',
         'dark-blue': '#292561',
-        'dark-1000': '#0D0415',
+        'dark-1000': '#000000',
         'dark-900': '#141416',
         'dark-850': '#1d1e2c',
         'dark-800': '#202231',

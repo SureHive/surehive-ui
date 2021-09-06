@@ -2,9 +2,9 @@ import Image from 'next/image'
 import styles from './wallet.module.css'
 import Button from '../../components/Button'
 
-export default function WalletOption({ id, icon, name }) {
-  return (
-    <div className={styles.WalletOption}>
+export default function WalletOption({ id, icon, name, link = null, onClick = null }) {
+  const content = (
+    <div onClick={onClick} className={styles.WalletOption}>
       <Button>
         <div>{name}</div>
         <div className="flex flex-row">
@@ -22,4 +22,13 @@ export default function WalletOption({ id, icon, name }) {
       </Button>
     </div>
   )
+
+  if (link) {
+    return (
+      <a href={link} className="grid w-full">
+        {content}
+      </a>
+    )
+  }
+  return content
 }

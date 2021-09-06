@@ -3,7 +3,7 @@ import React from 'react'
 import Container from '../../../components/Container'
 import ConnectWallet from '../../../features/wallet/ConnectWallet'
 
-export default function Wallet(): JSX.Element {
+export default function WalletConnect(): JSX.Element {
   return (
     <>
       <Head>

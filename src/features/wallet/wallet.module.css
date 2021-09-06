@@ -86,3 +86,75 @@
 :global(.dark) .WalletOption Button {
     @apply text-white-100 bg-dark-500;
 }
+
+.AddressPanel {
+    @apply flex flex-row;
+}
+
+.AddressPanel h1 {
+    font-family: var(--font-sans);
+    line-height: 40px;
+    @apply text-white-100 text-3xl font-normal tracking-normal;
+}
+
+.AddressBar {
+    max-width: 380px;
+    height: 32px;
+    @apply mt-1 ml-10 w-3/5;
+    @apply rounded-full border-2 border-dark-500 border-solid;
+    @apply flex flex-row items-center;
+}
+
+.ActiveLight {
+    height: 6px;
+    width: 6px;
+    @apply rounded-full bg-white-100 ml-3;
+}
+
+.AddressBar p {
+    font-family: var(--font-sans);
+    line-height: 20px;
+    @apply ml-3;
+    @apply text-white-100 text-xs font-normal tracking-wide;
+}
+
+.Address {
+    font-family: var(--font-sans);
+    line-height: 20px;
+    @apply flex rounded-full bg-dark-600 ml-2 h-full w-full items-center pl-2;
+    @apply text-white-100 text-xs font-normal tracking-normal;
+}
+
+.BalancePanel {
+    height: 188px;
+    box-shadow: 0 5px 33px 1px #000000;
+    @apply grid grid-cols-2 bg-dark-900 rounded;
+}
+
+.BalancePanelButtons {
+    @apply flex flex-row justify-end items-end p-6 space-x-6;
+}
+
+.BalancePanelButtonsDisconnect {
+    width: 138px;
+    height: 40px;
+    padding: 1px;
+    @apply flex items-center rounded-full;
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+}
+
+.BalancePanelButtonsDisconnect button {
+    opacity: 1;
+    height: 36px;
+    text-align: center;
+    @apply text-white-100 w-full bg-dark-900 rounded-full leading-3;
+}
+
+.BalancePanelButtonsView {
+    width: 138px;
+    height: 40px;
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+    border-radius: 28px;
+    text-align: center;
+    @apply text-white-100 text-sm leading-3;
+}
