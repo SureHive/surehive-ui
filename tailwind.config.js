@@ -48,6 +48,9 @@ module.exports = {
         gray: '#B1B5C3',
 
         'white-100': '#FCFCFD',
+        'white-150': '#F4F5F6',
+        'white-200': '#E6E8EC',
+        'white-900': '#777E90',
         'opaque-blue': '#2B3990',
         'opaque-pink': '#4DC1EF',
         'pink-red': '#FE5A75',
@@ -58,6 +61,8 @@ module.exports = {
         'dark-blue': '#292561',
         'dark-1000': '#000000',
         'dark-900': '#141416',
+        'dark-870': '#18191D',
+        'dark-860': '#17181B',
         'dark-850': '#1d1e2c',
         'dark-800': '#202231',
         'dark-700': '#2E3348',

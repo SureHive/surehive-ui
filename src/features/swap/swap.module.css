@@ -1,0 +1,76 @@
+.swapLabel {
+    @apply text-3xl font-normal tracking-normal;
+    font-family: var(--font-sans);
+    line-height: 40px;
+}
+
+.swapPanel {
+    @apply rounded bg-white;
+    font-family: var(--font-sans);
+    height: 811px;
+    max-width: 440px;
+    font-size: 14px;
+    border: 1px solid #F4F5F6;
+    box-shadow: 0 61px 61px -47px #1F2F46;
+    border-radius: 10px;
+}
+
+:global(.dark) .swapPanel {
+    @apply bg-dark-600;
+    border: 1px solid #353945;
+    box-shadow: 0 61px 61px -47px #1F2F46;
+    border-radius: 10px;
+}
+
+.ratePanel {
+    @apply border-b-2 border-solid border-white-150 mb-4;
+    height: 60px;
+}
+
+:global(.dark) .ratePanel {
+    @apply border-dark-900;
+}
+
+.currencyBox {
+    border: 1px solid #E6E8EC;
+    border-radius: 12px;
+    height: 56px;
+}
+
+:global(.dark) .currencyBox {
+    border: 1px solid #777E90;
+}
+
+.balanceBox {
+    @apply bg-white-150;
+    border-radius: 4px;
+    height: 88px;
+}
+
+:global(.dark) .balanceBox {
+    @apply bg-dark-870;
+}
+
+.balanceDropdown {
+    height: 50px;
+}
+
+.line {
+    @apply bg-white-200 mt-2;
+    height: 1px;
+}
+
+:global(.dark) .line {
+    @apply bg-white-900 mt-2;
+}
+
+.priceImpact {
+    @apply flex justify-between tracking-normal font-normal bg-white p-1;
+    box-shadow: inset 0 1px 8px 0 #E6E8EC;
+    border-radius: 4px;
+}
+
+:global(.dark) .priceImpact {
+    @apply bg-dark-860;
+    box-shadow: inset 0 1px 8px 0 rgba(0,0,0,0.50);
+}
