@@ -216,6 +216,9 @@ msgstr ""
 msgid "Confirm this transaction in your wallet"
 msgstr ""
 
+msgid "Connect Surehive Wallet"
+msgstr ""
+
 msgid "Connect Wallet"
 msgstr "Collega wallet"
 
@@ -341,6 +344,9 @@ msgid "Expiration is the time at which the order will become invalid"
 msgstr ""
 
 msgid "Expired"
+msgstr ""
+
+msgid "FROM"
 msgstr ""
 
 msgid "Farm"
@@ -876,6 +882,9 @@ msgstr "Scambia in (stimato):"
 msgid "Swap To:"
 msgstr "Scambia in:"
 
+msgid "TO (Estimated)"
+msgstr ""
+
 msgid "TVL"
 msgstr "TVL"
 
@@ -993,6 +1002,9 @@ msgid "Vesting is executed within the guidelines selected by the community in"
 msgstr ""
 
 msgid "Vietnamese"
+msgstr ""
+
+msgid "View"
 msgstr ""
 
 msgid "View Liquidity Positions"

@@ -219,6 +219,9 @@ msgstr "Confirm convert"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirm this transaction in your wallet"
 
+msgid "Connect Surehive Wallet"
+msgstr "Connect Surehive Wallet"
+
 msgid "Connect Wallet"
 msgstr "Connect Wallet"
 
@@ -345,6 +348,9 @@ msgstr "Expiration is the time at which the order will become invalid"
 
 msgid "Expired"
 msgstr "Expired"
+
+msgid "FROM"
+msgstr "FROM"
 
 msgid "Farm"
 msgstr "Farm"
@@ -888,6 +894,9 @@ msgstr "Swap To (est.):"
 msgid "Swap To:"
 msgstr "Swap To:"
 
+msgid "TO (Estimated)"
+msgstr "TO (Estimated)"
+
 msgid "TVL"
 msgstr "TVL"
 
@@ -1008,6 +1017,9 @@ msgstr "Vesting is executed within the guidelines selected by the community in"
 
 msgid "Vietnamese"
 msgstr "Vietnamese"
+
+msgid "View"
+msgstr "View"
 
 msgid "View Liquidity Positions"
 msgstr "View Liquidity Positions"
