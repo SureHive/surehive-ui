@@ -54,6 +54,7 @@
 
 .balanceDropdown {
     height: 50px;
+    @apply flex justify-center;
 }
 
 .line {
@@ -66,7 +67,7 @@
 }
 
 .priceImpact {
-    @apply flex justify-between tracking-normal font-normal bg-white p-1;
+    @apply flex justify-between tracking-normal font-normal bg-white p-1 px-3;
     box-shadow: inset 0 1px 8px 0 #E6E8EC;
     border-radius: 4px;
 }
@@ -74,4 +75,8 @@
 :global(.dark) .priceImpact {
     @apply bg-dark-860;
     box-shadow: inset 0 1px 8px 0 rgba(0,0,0,0.50);
+}
+
+.priceImpact div p {
+    @apply text-orange;
 }

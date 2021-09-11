@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-gas-costs-blue</title>
+    <g id="Swap" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="5.-Swap---Desktop---Token---Dropdown---Light-theme" transform="translate(-80.000000, -721.000000)">
+            <g id="Group" transform="translate(80.000000, 719.000000)">
+                <path d="M2.6362,17 C1.60525,15.5540625 1,13.791375 1,11.8886875 C1,6.9795 5.02975,3 10,3 C14.9707,3 19,6.9795 19,11.8886875 C19,13.7909375 18.3952,15.5540625 17.36425,16.9995625 M10,13 C10.5525,13 11,13.4475 11,14 C11,14.5525 10.5525,15 10,15 C9.448,15 9,14.5525 9,14 C9,13.4475 9.448,13 10,13 Z M3,13.05 L4,13.05 M10.05,5 L10.05,6 M16,13.05 L17,13.05 M15,9 L16,8 M5,9 L4,8 M14,10 L11,13" id="Combined-Shape" stroke="#0090FF"></path>
+                <rect id="Rectangle-Copy-8" x="0" y="0" width="20" height="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
