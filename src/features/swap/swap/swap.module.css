@@ -7,7 +7,7 @@
 .swapPanel {
     @apply rounded bg-white;
     font-family: var(--font-sans);
-    height: 811px;
+    height: 850px;
     max-width: 440px;
     font-size: 14px;
     border: 1px solid #F4F5F6;
@@ -79,4 +79,26 @@
 
 .priceImpact div p {
     @apply text-orange;
+}
+
+.ConfirmSwapButton {
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+    border-radius: 28px;
+    height: 48px;
+    max-width: 380px;
+    @apply text-white mt-3;
+}
+
+.SwapSettingsButton {
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+    border-radius: 5px;
+    height: 37px;
+    width: 37px;
+    cursor: pointer;
+    @apply flex items-center justify-center;
+}
+
+.SwapTransactionLogPanel {
+    border-radius: 4px;
+    @apply flex flex-col bg-dark-852;
 }

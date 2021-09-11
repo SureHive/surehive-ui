@@ -17,11 +17,7 @@ export default function SwapBalance(props: SwapBalanceProps) {
     selectedCurrencyBalance?.toFixed(props.inputCurrency.decimals),
     props.inputCurrency
   )
-  console.log('PP')
-  console.log(parsedAmount)
   const fiatValue = useUSDCValue(parsedAmount)
-  console.log('PP fiat value')
-  console.log(fiatValue)
 
   return (
     <div className="flex justify-between items-center w-full p-3" style={{ height: '88px' }}>
@@ -37,12 +33,13 @@ export default function SwapBalance(props: SwapBalanceProps) {
           <p>balance</p>
         </div>
       </div>
-      <div className="flex flex-column">
+      <div className="flex flex-col">
         {props.inputCurrency && (
-          <div>
+          <div className="text-right">
             {formatCurrencyAmount(selectedCurrencyBalance, 4)} {props.inputCurrency.symbol}
           </div>
         )}
+        <div className="text-right text-xs">{'$9,034.97'}</div>
       </div>
     </div>
   )

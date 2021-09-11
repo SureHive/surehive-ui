@@ -30,6 +30,8 @@ import { getTtlForDisplay } from './const'
 import SwapLabelValuePair from './SwapLabelValuePair'
 import SwapBalance from './SwapBalance'
 import Image from 'next/image'
+import Button from '../../../components/Button'
+import SwapRatePanel from './SwapRatePanel'
 
 const SwapPanel = ({}) => {
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
@@ -99,20 +101,9 @@ const SwapPanel = ({}) => {
           },
     [independentField, parsedAmount, showWrap, trade]
   )
-
-  console.log('parsedAmount')
-  console.log(parsedAmount)
-
   const fiatValueInput = useUSDCValue(parsedAmounts[Field.INPUT])
   const fiatValueOutput = useUSDCValue(parsedAmounts[Field.OUTPUT])
   const priceImpact = computeFiatValuePriceImpact(fiatValueInput, fiatValueOutput)
-
-  console.log('fiatValueInput')
-  console.log(fiatValueInput)
-  console.log('fiatValueOutput')
-  console.log(fiatValueOutput)
-  console.log('priceImpact')
-  console.log(priceImpact)
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
 
@@ -169,7 +160,9 @@ const SwapPanel = ({}) => {
             <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
           </div>
           <div className={styles.swapPanel}>
-            <div className={styles.ratePanel}></div>
+            <div className={styles.ratePanel}>
+              <SwapRatePanel />
+            </div>
             <div className="flex flex-col gap-y-3 px-4">
               <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
               <div className={styles.currencyBox}>
@@ -256,6 +249,7 @@ const SwapPanel = ({}) => {
                 value={'+ 12 %'}
                 logo={'/images/global/icon-price-impact-blue.svg'}
               />
+              <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>
             </div>
           </div>
         </div>

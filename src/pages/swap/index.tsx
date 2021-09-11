@@ -4,6 +4,8 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import Container from '../../components/Container'
 import SwapPanel from '../../features/swap/swap/SwapPanel'
+import SwapGraph from '../../features/swap/swap/SwapGraph'
+import SwapTransactionLog from '../../features/swap/swap/SwapTransactionLog'
 
 export default function Swap(): JSX.Element {
   const { i18n } = useLingui()
@@ -21,7 +23,12 @@ export default function Swap(): JSX.Element {
       <Container maxWidth="full" className="grid h-full">
         <div className="grid grid-cols-3">
           <SwapPanel />
-          <div className="col-span-2"></div>
+          <div className="col-span-2">
+            <div className="flex flex-col">
+              <SwapGraph />
+              <SwapTransactionLog />
+            </div>
+          </div>
         </div>
       </Container>
     </>
