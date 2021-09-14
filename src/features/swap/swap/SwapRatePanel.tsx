@@ -1,7 +1,7 @@
 import styles from './swap.module.css'
 import Image from 'next/image'
 
-export default function SwapRatePanel() {
+export default function SwapRatePanel({ showSettings, setShowSettings }) {
   const imageSrc = '/images/global/icon-setting-white.svg'
 
   return (
@@ -14,7 +14,12 @@ export default function SwapRatePanel() {
         <div>{'3,243.35 USDC'}</div>
       </div>
       <div>
-        <div className={styles.SwapSettingsButton}>
+        <div
+          className={styles.SwapSettingsButton}
+          onClick={() => {
+            setShowSettings(!showSettings)
+          }}
+        >
           <Image src={imageSrc} alt={'icon-setting'} width={'21px'} height={'21px'} />
         </div>
       </div>

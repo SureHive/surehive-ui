@@ -253,6 +253,9 @@ msgstr "创建池"
 msgid "Current"
 msgstr ""
 
+msgid "Date / Time"
+msgstr ""
+
 msgid "Deposit"
 msgstr "存款"
 
@@ -411,6 +414,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "导入流动性池"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -633,6 +639,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -823,6 +832,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "质押APR"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "提供{0} {1}和{2} {3}"
 
@@ -872,6 +884,9 @@ msgid "Swap To:"
 msgstr "交换至："
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION LOG"
 msgstr ""
 
 msgid "TVL"
@@ -956,6 +971,9 @@ msgstr "尝试启用多跳交易"
 
 msgid "Turn On Expert Mode"
 msgstr "开启专家模式"
+
+msgid "Type"
+msgstr ""
 
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""

@@ -1,9 +1,9 @@
 import { secondsToMinute } from '../../../functions/convert/secondsToMinute'
 
-export const getTtlForDisplay = (ttl: number): string => {
+export const getTtlForDisplay = (ttl: number, inFull = true): string => {
   const ttlInMinutes = secondsToMinute(ttl)
   if (ttlInMinutes > 0) {
-    return `${ttlInMinutes} minutes`
+    return inFull ? `${ttlInMinutes} minutes` : `${ttlInMinutes} min`
   }
-  return `${ttl} seconds`
+  return inFull ? `${ttl} seconds` : `${ttl} sec`
 }

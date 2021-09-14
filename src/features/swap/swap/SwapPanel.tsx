@@ -32,9 +32,11 @@ import SwapBalance from './SwapBalance'
 import Image from 'next/image'
 import Button from '../../../components/Button'
 import SwapRatePanel from './SwapRatePanel'
+import SwapSettings from './SwapSettings'
 
 const SwapPanel = ({}) => {
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
+  const [showSettings, setShowSettings] = useState<boolean>(false)
 
   const { i18n } = useLingui()
   const { account, chainId } = useActiveWeb3React()
@@ -53,11 +55,6 @@ const SwapPanel = ({}) => {
   const [archerETHTip] = useUserArcherETHTip()
   const [userGasPrice] = useUserArcherGasPrice()
 
-  console.log('userGasPrice')
-  console.log(userGasPrice)
-  console.log('userSlippageTolerance')
-  console.log(userSlippageTolerance)
-
   // archer
   const archerRelay = chainId ? ARCHER_RELAY_URI?.[chainId] : undefined
   const doArcher = archerRelay !== undefined && useArcher
@@ -73,11 +70,6 @@ const SwapPanel = ({}) => {
     currencies,
     inputError: swapInputError,
   } = useDerivedSwapInfo(doArcher)
-
-  console.log('parsedAmount')
-  console.log(parsedAmount)
-  console.log('currencyBalances')
-  console.log(currencyBalances)
 
   const {
     wrapType,
@@ -154,14 +146,15 @@ const SwapPanel = ({}) => {
 
   return (
     <>
-      <div className="col-span-1">
+      <div className={styles.swapBox}>
         <div className="grid flex flex-col gap-y-6 p-10 dark:text-white-100 text-dark-600">
           <div className="flex flex-row pl-3">
             <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
           </div>
           <div className={styles.swapPanel}>
+            {showSettings && <SwapSettings setShowSettings={setShowSettings} />}
             <div className={styles.ratePanel}>
-              <SwapRatePanel />
+              <SwapRatePanel showSettings={showSettings} setShowSettings={setShowSettings} />
             </div>
             <div className="flex flex-col gap-y-3 px-4">
               <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>

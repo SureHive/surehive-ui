@@ -37,6 +37,9 @@ module.exports = {
           4: '4px',
         },
       },
+      backgroundImage: {
+        'draw-menu-dark': 'url(/images/patterns/pattern-drawmenu.svg)',
+      },
       colors: {
         purple: '#2B39990',
         blue: '#0993ec',

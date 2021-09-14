@@ -253,6 +253,9 @@ msgstr "Tạo mạng lưới"
 msgid "Current"
 msgstr ""
 
+msgid "Date / Time"
+msgstr ""
+
 msgid "Deposit"
 msgstr "Ký quỹ"
 
@@ -420,6 +423,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "Nhập mạng lưới"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -645,6 +651,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -835,6 +844,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "APR đặt cược"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Tổng cung {0} {1} và {2} {3}"
 
@@ -884,6 +896,9 @@ msgid "Swap To:"
 msgstr "Hoán đổi sang:"
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION LOG"
 msgstr ""
 
 msgid "TVL"
@@ -968,6 +983,9 @@ msgstr "Thử bật giao dịch nhiều bước"
 
 msgid "Turn On Expert Mode"
 msgstr "Bật chế độ Chuyên gia"
+
+msgid "Type"
+msgstr ""
 
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""

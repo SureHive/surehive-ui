@@ -1,3 +1,10 @@
+.swapBox {
+    @apply bg-draw-menu-dark flex-grow;
+    background-size: 900%;
+    max-width: 540px;
+    z-index: 2;
+}
+
 .swapLabel {
     @apply text-3xl font-normal tracking-normal;
     font-family: var(--font-sans);
@@ -5,7 +12,7 @@
 }
 
 .swapPanel {
-    @apply rounded bg-white;
+    @apply relative rounded bg-white;
     font-family: var(--font-sans);
     height: 850px;
     max-width: 440px;
@@ -101,4 +108,34 @@
 .SwapTransactionLogPanel {
     border-radius: 4px;
     @apply flex flex-col bg-dark-852;
+}
+
+.swapSettings {
+    @apply absolute flex w-full bg-dark-600 -right-full top-7 -mr-12 p-8;
+    box-shadow: 0 64px 64px 0 rgba(0,0,0,0.12);
+    border-radius: 9px;
+    height: 703px;
+}
+
+.gasCostOption {
+    @apply flex items-center bg-dark-500 justify-around text-white;
+    opacity: 0.9;
+    border: 1px solid #353945;
+    border-radius: 12px;
+    height: 56px;
+}
+
+.slippageOptionInput {
+    @apply flex items-center bg-dark-600 w-full pl-3;
+    opacity: 0.9;
+    border: 1px solid #777E90;
+    border-radius: 12px;
+}
+
+.swapSettingsTransactionDeadline {
+    @apply flex flex-row items-center bg-dark-600 px-3 mt-3;
+    opacity: 0.9;
+    border: 1px solid #777E90;
+    border-radius: 12px;
+    height: 56px;
 }

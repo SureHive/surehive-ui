@@ -255,6 +255,9 @@ msgstr "Pool erstellen"
 msgid "Current"
 msgstr ""
 
+msgid "Date / Time"
+msgstr ""
+
 msgid "Deposit"
 msgstr "Einzahlen"
 
@@ -422,6 +425,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "Pool importieren"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -647,6 +653,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -837,6 +846,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "Staking APR"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Lieferung von {0} {1} und {2} {3}"
 
@@ -886,6 +898,9 @@ msgid "Swap To:"
 msgstr "Swap zu:"
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION LOG"
 msgstr ""
 
 msgid "TVL"
@@ -970,6 +985,9 @@ msgstr "Versuchen Sie, Multi-Hop-Trades zu aktivieren."
 
 msgid "Turn On Expert Mode"
 msgstr "Expertenmodus aktivieren"
+
+msgid "Type"
+msgstr ""
 
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""

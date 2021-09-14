@@ -21,9 +21,9 @@ export default function Swap(): JSX.Element {
         />
       </Head>
       <Container maxWidth="full" className="grid h-full">
-        <div className="grid grid-cols-3">
+        <div className="flex bg-dark-900">
           <SwapPanel />
-          <div className="col-span-2">
+          <div className="flex-grow">
             <div className="flex flex-col">
               <SwapGraph />
               <SwapTransactionLog />
