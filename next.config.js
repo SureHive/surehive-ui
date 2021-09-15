@@ -74,11 +74,11 @@ module.exports = withBundleAnalyzer(
           destination: '/exchange/add/:token*',
         },
         {
-          source: '/swap',
+          source: '/swaps',
           destination: '/exchange/swap',
         },
         {
-          source: '/swap/:token*',
+          source: '/swaps/:token*',
           destination: '/exchange/swap/:token*',
         },
         {

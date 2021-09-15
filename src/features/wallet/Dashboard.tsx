@@ -42,9 +42,9 @@ const WalletDashboard = ({ account, chainId, connector }) => {
 
   return (
     <>
-      <div className="grid grid-cols-12">
-        <div className="col-span-8">
-          <div className="grid gap-y-14 flex flex-col px-10">
+      <div className="grid grid-cols-12 dark:bg-dark-900 bg-white-130">
+        <div className={styles.dashboard}>
+          <div className="grid gap-y-14 flex flex-col px-20 pt-10">
             <div className={styles.AddressPanel}>
               <h1>Wallet</h1>
               {addressBar()}

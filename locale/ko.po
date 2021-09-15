@@ -216,6 +216,9 @@ msgstr ""
 msgid "Confirm this transaction in your wallet"
 msgstr ""
 
+msgid "Connect Surehive Wallet"
+msgstr ""
+
 msgid "Connect Wallet"
 msgstr "지갑 연결"
 
@@ -250,6 +253,9 @@ msgid "Create pool"
 msgstr "풀 만들기"
 
 msgid "Current"
+msgstr ""
+
+msgid "Date / Time"
 msgstr ""
 
 msgid "Deposit"
@@ -343,6 +349,9 @@ msgstr ""
 msgid "Expired"
 msgstr ""
 
+msgid "FROM"
+msgstr ""
+
 msgid "Farm"
 msgstr ""
 
@@ -364,6 +373,9 @@ msgstr ""
 "nSURE 이자는 누적되며 이후에 출금할 때는 처음 스테이킹한 SUSHI에 더해 추가 수수료를 돌려 받게 됩니다."
 
 msgid "French"
+msgstr ""
+
+msgid "GAS COSTS"
 msgstr ""
 
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
@@ -414,6 +426,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "풀 가져오기"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -639,6 +654,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -761,6 +779,9 @@ msgstr "다음 토큰을 통한 라우팅을 통해 최적의 가격이 산출�
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -829,6 +850,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "APR 스테이킹"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} 및 {2} {3} 공급 중"
 
@@ -871,11 +895,23 @@ msgstr "다음에서 스왑(예상):"
 msgid "Swap From:"
 msgstr "다음에서 스왑:"
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "다음으로 스왑(예상):"
 
 msgid "Swap To:"
 msgstr "다음으로 스왑:"
+
+msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
+msgstr ""
+
+msgid "TRANSACTION LOG"
+msgstr ""
 
 msgid "TVL"
 msgstr "전체 동결 가치"
@@ -960,6 +996,9 @@ msgstr "멀티홉 거래 활성화하기"
 msgid "Turn On Expert Mode"
 msgstr "전문가 모드 켜기"
 
+msgid "Type"
+msgstr ""
+
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""
 
@@ -994,6 +1033,9 @@ msgid "Vesting is executed within the guidelines selected by the community in"
 msgstr ""
 
 msgid "Vietnamese"
+msgstr ""
+
+msgid "View"
 msgstr ""
 
 msgid "View Liquidity Positions"
@@ -1110,6 +1152,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1156,4 +1201,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

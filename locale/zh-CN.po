@@ -214,6 +214,9 @@ msgstr ""
 msgid "Confirm this transaction in your wallet"
 msgstr ""
 
+msgid "Connect Surehive Wallet"
+msgstr ""
+
 msgid "Connect Wallet"
 msgstr "连接钱包"
 
@@ -248,6 +251,9 @@ msgid "Create pool"
 msgstr "创建池"
 
 msgid "Current"
+msgstr ""
+
+msgid "Date / Time"
 msgstr ""
 
 msgid "Deposit"
@@ -339,6 +345,9 @@ msgstr ""
 msgid "Expired"
 msgstr ""
 
+msgid "FROM"
+msgstr ""
+
 msgid "Farm"
 msgstr ""
 
@@ -357,6 +366,9 @@ msgid ""
 msgstr "每条链上每笔交易手续费的0.05%都分给SushiBar（以SUSHI的形式）。当您的SUSHI质押在SushiBar的时候，您将会收到xSUSHI，它有治理权及可以与其它协议交互。xSUSHI可持续复利，当您解除质押时，您将收到质押时的SUSHI及手续费。"
 
 msgid "French"
+msgstr ""
+
+msgid "GAS COSTS"
 msgstr ""
 
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
@@ -405,6 +417,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "导入流动性池"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -627,6 +642,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -749,6 +767,9 @@ msgstr "路由经过这些代币将给您的交易带来最好的价格。"
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -817,6 +838,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "质押APR"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "提供{0} {1}和{2} {3}"
 
@@ -859,11 +883,23 @@ msgstr "交换自（估计）："
 msgid "Swap From:"
 msgstr "交换自："
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "交换至（估算）："
 
 msgid "Swap To:"
 msgstr "交换至："
+
+msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
+msgstr ""
+
+msgid "TRANSACTION LOG"
+msgstr ""
 
 msgid "TVL"
 msgstr "TVL"
@@ -948,6 +984,9 @@ msgstr "尝试启用多跳交易"
 msgid "Turn On Expert Mode"
 msgstr "开启专家模式"
 
+msgid "Type"
+msgstr ""
+
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""
 
@@ -982,6 +1021,9 @@ msgid "Vesting is executed within the guidelines selected by the community in"
 msgstr ""
 
 msgid "Vietnamese"
+msgstr ""
+
+msgid "View"
 msgstr ""
 
 msgid "View Liquidity Positions"
@@ -1098,6 +1140,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1144,4 +1189,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

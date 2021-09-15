@@ -73,6 +73,7 @@ const CeloLogo = 'https://raw.githubusercontent.com/sushiswap/icons/master/token
 
 const logo: { readonly [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]: EthereumLogo,
+  [ChainId.RINKEBY]: EthereumLogo,
   [ChainId.FANTOM]: FantomLogo,
   [ChainId.FANTOM_TESTNET]: FantomLogo,
   [ChainId.MATIC]: MaticLogo,
@@ -107,8 +108,8 @@ const unknown = 'https://raw.githubusercontent.com/sushiswap/icons/master/token/
 const CurrencyLogo: FunctionComponent<CurrencyLogoProps> = ({
   currency,
   size = '24px',
-  style,
-  className = '',
+  // style,
+  // className = '',
   ...rest
 }) => {
   const uriLocations = useHttpLocations(

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons-arrow-dropdown-light</title>
+    <g id="icons-arrow-dropdown-light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9.63676959,5.36062687 C9.89711992,5.62097676 9.89711992,6.04308658 9.63676959,6.30343447 L7.77484721,8.1653649 L9.63676959,10.0272929 C9.89711992,10.2876428 9.89711992,10.7097526 9.63676959,10.9701025 C9.37642925,11.2304524 8.95431872,11.2304524 8.69396838,10.9701025 L6.36062741,8.63676348 C6.10027768,8.37642359 6.10027768,7.95431377 6.36062741,7.69396388 L8.69396838,5.36062687 C8.95431872,5.10027758 9.37642925,5.10027758 9.63676959,5.36062687 Z" id="Shape" fill="#353945" transform="translate(7.998699, 8.165365) scale(1, -1) rotate(89.999997) translate(-7.998699, -8.165365) "></path>
+    </g>
+</svg>

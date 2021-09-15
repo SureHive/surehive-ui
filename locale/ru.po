@@ -216,6 +216,9 @@ msgstr ""
 msgid "Confirm this transaction in your wallet"
 msgstr ""
 
+msgid "Connect Surehive Wallet"
+msgstr ""
+
 msgid "Connect Wallet"
 msgstr "Подключите кошелек"
 
@@ -250,6 +253,9 @@ msgid "Create pool"
 msgstr "Создать пул"
 
 msgid "Current"
+msgstr ""
+
+msgid "Date / Time"
 msgstr ""
 
 msgid "Deposit"
@@ -343,6 +349,9 @@ msgstr ""
 msgid "Expired"
 msgstr ""
 
+msgid "FROM"
+msgstr ""
+
 msgid "Farm"
 msgstr ""
 
@@ -366,6 +375,9 @@ msgstr ""
 "SURE и любые дополнительные комиссии."
 
 msgid "French"
+msgstr ""
+
+msgid "GAS COSTS"
 msgstr ""
 
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
@@ -416,6 +428,9 @@ msgstr ""
 
 msgid "Import Pool"
 msgstr "Импортировать пул"
+
+msgid "In"
+msgstr ""
 
 msgid "In SureVault:"
 msgstr ""
@@ -641,6 +656,9 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
+msgid "Out"
+msgstr ""
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -763,6 +781,9 @@ msgstr "Маршрутизация через эти токены привела
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -831,6 +852,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "Ставка годовых"
 
+msgid "Status"
+msgstr ""
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Поставка {0} {1} и {2} {3}"
 
@@ -873,11 +897,23 @@ msgstr "Обменять с (прибл.):"
 msgid "Swap From:"
 msgstr "Обменять с:"
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "Обменять на (прибл.):"
 
 msgid "Swap To:"
 msgstr "Обменять на:"
+
+msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
+msgstr ""
+
+msgid "TRANSACTION LOG"
+msgstr ""
 
 msgid "TVL"
 msgstr "TVL"
@@ -962,6 +998,9 @@ msgstr "Попробуйте включить многоскачковые сд�
 msgid "Turn On Expert Mode"
 msgstr "Включите экспертный режим"
 
+msgid "Type"
+msgstr ""
+
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr ""
 
@@ -996,6 +1035,9 @@ msgid "Vesting is executed within the guidelines selected by the community in"
 msgstr ""
 
 msgid "Vietnamese"
+msgstr ""
+
+msgid "View"
 msgstr ""
 
 msgid "View Liquidity Positions"
@@ -1112,6 +1154,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1158,4 +1203,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

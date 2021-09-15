@@ -87,6 +87,15 @@
     @apply text-white-100 bg-dark-500;
 }
 
+.dashboard {
+    @apply col-span-8 bg-draw-menu-light;
+    background-size: 400%;
+}
+
+:global(.dark) .dashboard {
+    @apply bg-draw-menu-dark;
+}
+
 .AddressPanel {
     @apply flex flex-row;
 }
@@ -101,7 +110,7 @@
     max-width: 380px;
     height: 32px;
     @apply mt-1 ml-10 w-3/5;
-    @apply rounded-full border-2 border-dark-500 border-solid;
+    @apply rounded-full border-2 border-solid;
     @apply flex flex-row items-center;
 }
 
@@ -121,8 +130,12 @@
 .Address {
     font-family: var(--font-sans);
     line-height: 20px;
-    @apply flex rounded-full bg-dark-600 ml-2 h-full w-full items-center pl-2;
+    @apply flex rounded-full bg-white-150 ml-2 h-full w-full items-center pl-2;
     @apply text-white-100 text-xs font-normal tracking-normal;
+}
+
+:global(.dark) .Address {
+    @apply bg-dark-600;
 }
 
 .BalancePanel {

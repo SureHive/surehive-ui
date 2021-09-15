@@ -219,6 +219,9 @@ msgstr "Confirm convert"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirm this transaction in your wallet"
 
+msgid "Connect Surehive Wallet"
+msgstr "Connect Surehive Wallet"
+
 msgid "Connect Wallet"
 msgstr "Connect Wallet"
 
@@ -254,6 +257,9 @@ msgstr "Create pool"
 
 msgid "Current"
 msgstr "Current"
+
+msgid "Date / Time"
+msgstr "Date / Time"
 
 msgid "Deposit"
 msgstr "Deposit"
@@ -346,6 +352,9 @@ msgstr "Expiration is the time at which the order will become invalid"
 msgid "Expired"
 msgstr "Expired"
 
+msgid "FROM"
+msgstr "FROM"
+
 msgid "Farm"
 msgstr "Farm"
 
@@ -370,6 +379,9 @@ msgstr ""
 
 msgid "French"
 msgstr "French"
+
+msgid "GAS COSTS"
+msgstr "GAS COSTS"
 
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
@@ -419,6 +431,9 @@ msgstr "Import"
 
 msgid "Import Pool"
 msgstr "Import Pool"
+
+msgid "In"
+msgstr "In"
 
 msgid "In SureVault:"
 msgstr "In SureVault:"
@@ -646,6 +661,9 @@ msgstr "Order Expiration"
 msgid "Order History"
 msgstr "Order History"
 
+msgid "Out"
+msgstr "Out"
+
 msgid ""
 "Output is estimated. If the price changes by more than {0}% your transaction\n"
 "will revert."
@@ -770,6 +788,9 @@ msgstr "Routing through these tokens resulted in the best price for your trade."
 msgid "Russian"
 msgstr "Russian"
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr "SLIPPAGE TOLERANCE"
+
 msgid "SLP"
 msgstr "SLP"
 
@@ -840,6 +861,9 @@ msgstr ""
 msgid "Staking APR"
 msgstr "Staking APR"
 
+msgid "Status"
+msgstr "Status"
+
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Supplying {0} {1} and {2} {3}"
 
@@ -882,11 +906,23 @@ msgstr "Swap From (est.):"
 msgid "Swap From:"
 msgstr "Swap From:"
 
+msgid "Swap Preferences"
+msgstr "Swap Preferences"
+
 msgid "Swap To (est.):"
 msgstr "Swap To (est.):"
 
 msgid "Swap To:"
 msgstr "Swap To:"
+
+msgid "TO (Estimated)"
+msgstr "TO (Estimated)"
+
+msgid "TRANSACTION DEADLINE"
+msgstr "TRANSACTION DEADLINE"
+
+msgid "TRANSACTION LOG"
+msgstr "TRANSACTION LOG"
 
 msgid "TVL"
 msgstr "TVL"
@@ -973,6 +1009,9 @@ msgstr "Try enabling multi-hop trades"
 msgid "Turn On Expert Mode"
 msgstr "Turn On Expert Mode"
 
+msgid "Type"
+msgstr "Type"
+
 msgid "Unknown error{0}. Try increasing your slippage tolerance."
 msgstr "Unknown error{0}. Try increasing your slippage tolerance."
 
@@ -1008,6 +1047,9 @@ msgstr "Vesting is executed within the guidelines selected by the community in"
 
 msgid "Vietnamese"
 msgstr "Vietnamese"
+
+msgid "View"
+msgstr "View"
 
 msgid "View Liquidity Positions"
 msgstr "View Liquidity Positions"
@@ -1123,6 +1165,9 @@ msgstr "Zap"
 msgid "above"
 msgstr "above"
 
+msgid "average gas cost"
+msgstr "average gas cost"
+
 msgid "below"
 msgstr "below"
 
@@ -1170,3 +1215,6 @@ msgstr "{0} {sign} market rate"
 
 msgid "{0}/{1} Burned"
 msgstr "{0}/{1} Burned"
+
+msgid "{label}"
+msgstr "{label}"
