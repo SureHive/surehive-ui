@@ -6,9 +6,13 @@ import Container from '../../components/Container'
 import SwapPanel from '../../features/swap/swap/SwapPanel'
 import SwapGraph from '../../features/swap/swap/SwapGraph'
 import SwapTransactionLog from '../../features/swap/swap/SwapTransactionLog'
+import { useTheme } from 'next-themes'
 
 export default function Swap(): JSX.Element {
   const { i18n } = useLingui()
+  const { systemTheme, theme } = useTheme()
+
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   return (
     <>
@@ -21,8 +25,8 @@ export default function Swap(): JSX.Element {
         />
       </Head>
       <Container maxWidth="full" className="grid h-full">
-        <div className="flex bg-dark-900">
-          <SwapPanel />
+        <div className="flex dark:bg-dark-900 bg-white-130">
+          <SwapPanel currentTheme={currentTheme} />
           <div className="flex-grow">
             <div className="flex flex-col">
               <SwapGraph />

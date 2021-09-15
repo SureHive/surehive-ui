@@ -368,6 +368,9 @@ msgstr "每條鏈上每筆交易手續費的0.05%都分給SushiBar（以SUSHI的
 msgid "French"
 msgstr ""
 
+msgid "GAS COSTS"
+msgstr ""
+
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "在不減少資產的情況下獲得代幣的敞口。杠桿將使您能夠對資產做空，並從下跌趨勢中獲利。"
 
@@ -764,6 +767,9 @@ msgstr "路由經過這些代幣將給您的交易帶來最好的價格。"
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -877,6 +883,9 @@ msgstr "交換自（估計）："
 msgid "Swap From:"
 msgstr "交換自："
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "交換至（估算）："
 
@@ -884,6 +893,9 @@ msgid "Swap To:"
 msgstr "交換至："
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
 msgstr ""
 
 msgid "TRANSACTION LOG"
@@ -1128,6 +1140,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1174,4 +1189,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

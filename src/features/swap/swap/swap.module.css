@@ -1,8 +1,12 @@
 .swapBox {
-    @apply bg-draw-menu-dark flex-grow;
+    @apply bg-draw-menu-light flex-grow;
     background-size: 900%;
     max-width: 540px;
     z-index: 2;
+}
+
+:global(.dark) .swapBox {
+    @apply bg-draw-menu-dark;
 }
 
 .swapLabel {
@@ -97,45 +101,68 @@
 }
 
 .SwapSettingsButton {
-    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
+    @apply flex items-center justify-center bg-white-200;
     border-radius: 5px;
     height: 37px;
     width: 37px;
     cursor: pointer;
-    @apply flex items-center justify-center;
+}
+
+:global(.dark) .SwapSettingsButton {
+    background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
 }
 
 .SwapTransactionLogPanel {
     border-radius: 4px;
-    @apply flex flex-col bg-dark-852;
+    @apply flex flex-col bg-white;
+}
+
+:global(.dark) .SwapTransactionLogPanel {
+    @apply bg-dark-852;
 }
 
 .swapSettings {
-    @apply absolute flex w-full bg-dark-600 -right-full top-7 -mr-12 p-8;
+    @apply absolute flex w-full bg-white  -right-full top-7 -mr-12 p-8;
     box-shadow: 0 64px 64px 0 rgba(0,0,0,0.12);
     border-radius: 9px;
     height: 703px;
 }
 
+:global(.dark) .swapSettings {
+    @apply bg-dark-600;
+}
+
 .gasCostOption {
-    @apply flex items-center bg-dark-500 justify-around text-white;
+    @apply flex items-center bg-white-150 justify-around text-dark-1000;
     opacity: 0.9;
     border: 1px solid #353945;
     border-radius: 12px;
     height: 56px;
 }
 
+:global(.dark) .gasCostOption {
+    @apply bg-dark-500 text-white;
+}
+
 .slippageOptionInput {
-    @apply flex items-center bg-dark-600 w-full pl-3;
+    @apply flex items-center bg-white w-full pl-3;
     opacity: 0.9;
     border: 1px solid #777E90;
     border-radius: 12px;
 }
 
+:global(.dark) .slippageOptionInput {
+    @apply bg-dark-600;
+}
+
 .swapSettingsTransactionDeadline {
-    @apply flex flex-row items-center bg-dark-600 px-3 mt-3;
+    @apply flex flex-row items-center bg-white px-3 mt-3;
     opacity: 0.9;
     border: 1px solid #777E90;
     border-radius: 12px;
     height: 56px;
+}
+
+:global(.dark) .swapSettingsTransactionDeadline {
+    @apply bg-dark-600;
 }

@@ -380,6 +380,9 @@ msgstr ""
 msgid "French"
 msgstr "French"
 
+msgid "GAS COSTS"
+msgstr "GAS COSTS"
+
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 
@@ -785,6 +788,9 @@ msgstr "Routing through these tokens resulted in the best price for your trade."
 msgid "Russian"
 msgstr "Russian"
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr "SLIPPAGE TOLERANCE"
+
 msgid "SLP"
 msgstr "SLP"
 
@@ -900,6 +906,9 @@ msgstr "Swap From (est.):"
 msgid "Swap From:"
 msgstr "Swap From:"
 
+msgid "Swap Preferences"
+msgstr "Swap Preferences"
+
 msgid "Swap To (est.):"
 msgstr "Swap To (est.):"
 
@@ -908,6 +917,9 @@ msgstr "Swap To:"
 
 msgid "TO (Estimated)"
 msgstr "TO (Estimated)"
+
+msgid "TRANSACTION DEADLINE"
+msgstr "TRANSACTION DEADLINE"
 
 msgid "TRANSACTION LOG"
 msgstr "TRANSACTION LOG"
@@ -1153,6 +1165,9 @@ msgstr "Zap"
 msgid "above"
 msgstr "above"
 
+msgid "average gas cost"
+msgstr "average gas cost"
+
 msgid "below"
 msgstr "below"
 
@@ -1200,3 +1215,6 @@ msgstr "{0} {sign} market rate"
 
 msgid "{0}/{1} Burned"
 msgstr "{0}/{1} Burned"
+
+msgid "{label}"
+msgstr "{label}"

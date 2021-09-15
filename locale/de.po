@@ -377,6 +377,9 @@ msgstr ""
 msgid "French"
 msgstr ""
 
+msgid "GAS COSTS"
+msgstr ""
+
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "Erhalten Sie ein Exposure zu Token, ohne Ihr Vermögen zu reduzieren. Mit Leverage können Sie Short-Positionen gegen Vermögenswerte halten und von Abwärtsbewegungen profitieren."
 
@@ -778,6 +781,9 @@ msgstr "Das Routing durch diese Token ergab den besten Preis für Ihren Trade."
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -891,6 +897,9 @@ msgstr "Swap von (est.):"
 msgid "Swap From:"
 msgstr "Swap von:"
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "Swap To (est.):"
 
@@ -898,6 +907,9 @@ msgid "Swap To:"
 msgstr "Swap zu:"
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
 msgstr ""
 
 msgid "TRANSACTION LOG"
@@ -1142,6 +1154,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1188,4 +1203,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

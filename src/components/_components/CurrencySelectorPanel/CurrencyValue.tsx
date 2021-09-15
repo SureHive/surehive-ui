@@ -28,7 +28,7 @@ const MaxButton = (props) => {
     >
       <Button
         onClick={props.onMax}
-        className="flex items-center justify-evenly text-white-100 w-full bg-dark-830 rounded-full leading-3"
+        className="flex items-center justify-evenly dark:text-white-100 text-dark-600 w-full dark:bg-dark-830 bg-white-200 rounded-full leading-3"
         style={{ opacity: 1, height: '25px', width: '73px', lineHeight: '2px', fontSize: '12px', padding: '0px' }}
       >
         <div>
@@ -65,7 +65,7 @@ const CurrencyValue = (props: CurrencyValueProps) => {
           {selectedCurrencyBalance && (
             <NumericalInput
               value={props.value}
-              className="dark:bg-dark-600 bg-white-100 dark:text-white-100 text-black text-right mr-2"
+              className="dark:bg-dark-600 bg-white dark:text-white-100 text-black text-right mr-2"
               onUserInput={(val) => {
                 props.onUserInput(val)
               }}

@@ -377,6 +377,9 @@ msgstr ""
 msgid "French"
 msgstr ""
 
+msgid "GAS COSTS"
+msgstr ""
+
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "Получите доступ к токенам, не уменьшая свои активы. Кредитное плечо позволит вам открывать короткие позиции по активам и зарабатывать на движении вниз."
 
@@ -778,6 +781,9 @@ msgstr "Маршрутизация через эти токены привела
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -891,6 +897,9 @@ msgstr "Обменять с (прибл.):"
 msgid "Swap From:"
 msgstr "Обменять с:"
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "Обменять на (прибл.):"
 
@@ -898,6 +907,9 @@ msgid "Swap To:"
 msgstr "Обменять на:"
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
 msgstr ""
 
 msgid "TRANSACTION LOG"
@@ -1142,6 +1154,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1188,4 +1203,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

@@ -375,6 +375,9 @@ msgstr ""
 msgid "French"
 msgstr ""
 
+msgid "GAS COSTS"
+msgstr ""
+
 msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 msgstr "자산총액 감소 없이 토큰에 노출됩니다. 레버리지를 사용하면 자산에 대해 숏 포지션을 취하고 하락 시 수익을 올릴 수 있습니다."
 
@@ -776,6 +779,9 @@ msgstr "다음 토큰을 통한 라우팅을 통해 최적의 가격이 산출�
 msgid "Russian"
 msgstr ""
 
+msgid "SLIPPAGE TOLERANCE"
+msgstr ""
+
 msgid "SLP"
 msgstr ""
 
@@ -889,6 +895,9 @@ msgstr "다음에서 스왑(예상):"
 msgid "Swap From:"
 msgstr "다음에서 스왑:"
 
+msgid "Swap Preferences"
+msgstr ""
+
 msgid "Swap To (est.):"
 msgstr "다음으로 스왑(예상):"
 
@@ -896,6 +905,9 @@ msgid "Swap To:"
 msgstr "다음으로 스왑:"
 
 msgid "TO (Estimated)"
+msgstr ""
+
+msgid "TRANSACTION DEADLINE"
 msgstr ""
 
 msgid "TRANSACTION LOG"
@@ -1140,6 +1152,9 @@ msgstr ""
 msgid "above"
 msgstr ""
 
+msgid "average gas cost"
+msgstr ""
+
 msgid "below"
 msgstr ""
 
@@ -1186,4 +1201,7 @@ msgid "{0} {sign} market rate"
 msgstr ""
 
 msgid "{0}/{1} Burned"
+msgstr ""
+
+msgid "{label}"
 msgstr ""

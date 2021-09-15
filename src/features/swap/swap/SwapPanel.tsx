@@ -34,7 +34,7 @@ import Button from '../../../components/Button'
 import SwapRatePanel from './SwapRatePanel'
 import SwapSettings from './SwapSettings'
 
-const SwapPanel = ({}) => {
+const SwapPanel = ({ currentTheme }) => {
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
   const [showSettings, setShowSettings] = useState<boolean>(false)
 
@@ -144,6 +144,9 @@ const SwapPanel = ({}) => {
     maxInputAmount && onUserInput(Field.INPUT, maxInputAmount.toExact())
   }, [maxInputAmount, onUserInput])
 
+  const dropDownImage =
+    currentTheme === 'dark' ? '/images/global/icon-swap-arrow.svg' : '/images/global/icon-swap-arrow-light.svg'
+
   return (
     <>
       <div className={styles.swapBox}>
@@ -152,9 +155,13 @@ const SwapPanel = ({}) => {
             <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
           </div>
           <div className={styles.swapPanel}>
-            {showSettings && <SwapSettings setShowSettings={setShowSettings} />}
+            {showSettings && <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />}
             <div className={styles.ratePanel}>
-              <SwapRatePanel showSettings={showSettings} setShowSettings={setShowSettings} />
+              <SwapRatePanel
+                showSettings={showSettings}
+                setShowSettings={setShowSettings}
+                currentTheme={currentTheme}
+              />
             </div>
             <div className="flex flex-col gap-y-3 px-4">
               <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
@@ -168,19 +175,19 @@ const SwapPanel = ({}) => {
                   onMax={handleMaxInput}
                   showMaxButton={showMaxButton}
                   showCommonBases={true}
+                  currentTheme={currentTheme}
                 />
               </div>
               <div className={styles.balanceBox}>
-                <SwapBalance inputCurrency={currencies[Field.INPUT]} outputCurrency={currencies[Field.OUTPUT]} />
+                <SwapBalance
+                  inputCurrency={currencies[Field.INPUT]}
+                  outputCurrency={currencies[Field.OUTPUT]}
+                  currentTheme={currentTheme}
+                />
               </div>
               <div className={styles.balanceDropdown}>
                 <div style={{ cursor: 'pointer' }}>
-                  <Image
-                    src={'/images/global/icon-swap-arrow.svg'}
-                    alt={'icon-swap-arrow.svg'}
-                    width={'50px'}
-                    height={'50px'}
-                  />
+                  <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />
                 </div>
               </div>
               <p className="font-normal tracking-normal">{i18n._(t`TO (Estimated)`)}</p>
@@ -193,6 +200,7 @@ const SwapPanel = ({}) => {
                   onUserInput={handleTypeOutput}
                   showMaxButton={false}
                   showCommonBases={true}
+                  currentTheme={currentTheme}
                 />
               </div>
               <SwapLabelValuePair

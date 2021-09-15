@@ -22,7 +22,7 @@ const SwapTableRow = () => {
 
   return (
     <div
-      className="flex items-center grid grid-cols-8 px-5 text-white text-sm border-t-2 border-solid border-dark-500"
+      className="flex items-center grid grid-cols-8 px-5 text-sm border-t-2 border-solid dark:border-dark-500 border-white-200"
       style={{ height: '60px' }}
     >
       <div>{i18n._(t`Swap`)}</div>
@@ -63,7 +63,7 @@ export default function SwapTransactionLog() {
 
   return (
     <div className="flex flex-col w-full p-10 space-y-3">
-      <h1 className="text-white-100 text-sm">{i18n._(t`TRANSACTION LOG`)}</h1>
+      <h1 className="dark:text-white-100 text-dark-600 text-sm">{i18n._(t`TRANSACTION LOG`)}</h1>
       <div className={styles.SwapTransactionLogPanel}>
         <SwapTableHeader />
         <SwapTableRow />

@@ -13,6 +13,7 @@ interface CurrencySelectorPanelProps {
   onUserInput?: (value: string) => void
   onMax?: () => void
   showMaxButton: boolean
+  currentTheme: string
 }
 
 const CurrencySelectorPanel = (props: CurrencySelectorPanelProps) => {

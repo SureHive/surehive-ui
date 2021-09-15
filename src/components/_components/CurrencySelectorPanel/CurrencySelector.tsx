@@ -15,6 +15,7 @@ interface CurrencySelectorProps {
   label?: string
   currencyList?: string[]
   showCommonBases?: boolean
+  currentTheme: string
 }
 
 const CurrencySelector = (props: CurrencySelectorProps) => {
@@ -24,6 +25,11 @@ const CurrencySelector = (props: CurrencySelectorProps) => {
   const handleDismissSearch = useCallback(() => {
     setModalOpen(false)
   }, [setModalOpen])
+
+  const dropDownArrowImage =
+    props.currentTheme === 'dark'
+      ? '/images/global/icon-arrow-dropdown.svg'
+      : '/images/global/icon-arrow-dropdown-light.svg'
 
   return (
     <>
@@ -37,7 +43,7 @@ const CurrencySelector = (props: CurrencySelectorProps) => {
             <Lottie animationData={selectCoinAnimation} autoplay loop />
           </div>
         )}
-        <div style={{ lineHeight: '24px' }} className="text-gray text-xs mr-2">
+        <div style={{ lineHeight: '24px' }} className="dark:text-gray text-dark-600 text-xs mr-2">
           {props.currency ? (
             <span>{props.currency.symbol.toUpperCase()}</span>
           ) : (
@@ -52,7 +58,7 @@ const CurrencySelector = (props: CurrencySelectorProps) => {
             }
           }}
         >
-          <Image src="/images/global/icon-arrow-dropdown.svg" alt="icon-arrow-dropdown" height="24px" width="12px" />
+          <Image src={dropDownArrowImage} alt="icon-arrow-dropdown" height="24px" width="12px" />
         </div>
       </div>
       {props.onCurrencySelect && (

@@ -7,13 +7,13 @@ import { ethers } from 'ethers'
 import Image from '../../../components/Image'
 import React from 'react'
 
-export default function SwapSettings({ setShowSettings }) {
+export default function SwapSettings({ setShowSettings, currentTheme }) {
   const { i18n } = useLingui()
 
   const SlippageOption = ({ value }) => {
     return (
       <div
-        className="flex bg-dark-500 items-center justify-center mr-5"
+        className="flex dark:bg-dark-500 bg-white-150 items-center justify-center mr-5"
         style={{ height: '56px', width: '56px', borderRadius: '12px', minWidth: '56px' }}
       >
         {value}%
@@ -30,7 +30,7 @@ export default function SwapSettings({ setShowSettings }) {
         <div className={styles.slippageOptionInput}>
           <NumericalInput
             value={''}
-            className="dark:bg-dark-600 bg-white-100 dark:text-white-100 text-black items-center placeholder-white-100"
+            className="dark:bg-dark-600 bg-white dark:text-white-100 text-black items-center dark:placeholder-white-100 placeholder-text-black"
             onUserInput={() => {}}
             placeholder="Enter %"
           />
@@ -51,6 +51,9 @@ export default function SwapSettings({ setShowSettings }) {
       </div>
     )
   }
+
+  const dropDownArrowImage =
+    currentTheme === 'dark' ? '/images/global/icon-arrow-dropdown.svg' : '/images/global/icon-arrow-dropdown-light.svg'
 
   return (
     <div className={styles.swapSettings}>
@@ -83,12 +86,7 @@ export default function SwapSettings({ setShowSettings }) {
           <div className={styles.swapSettingsTransactionDeadline}>
             <p>120 minutes</p>
             <div className="ml-2 mt-1" style={{ cursor: 'pointer' }} onClick={() => {}}>
-              <Image
-                src="/images/global/icon-arrow-dropdown.svg"
-                alt="icon-arrow-dropdown"
-                height="24px"
-                width="12px"
-              />
+              <Image src={dropDownArrowImage} alt="icon-arrow-dropdown" height="24px" width="12px" />
             </div>
           </div>
         </div>

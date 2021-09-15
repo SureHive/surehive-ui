@@ -1,8 +1,9 @@
 import styles from './swap.module.css'
 import Image from 'next/image'
 
-export default function SwapRatePanel({ showSettings, setShowSettings }) {
-  const imageSrc = '/images/global/icon-setting-white.svg'
+export default function SwapRatePanel({ showSettings, setShowSettings, currentTheme }) {
+  const imageSrc =
+    currentTheme === 'dark' ? '/images/global/icon-setting-white.svg' : '/images/global/icon-setting-dark-light.svg'
 
   return (
     <div className="flex justify-between items-center h-full p-4">
