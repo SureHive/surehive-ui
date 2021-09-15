@@ -13,18 +13,14 @@ interface CurrencySelectorProps {
   onCurrencySelect?: (currency: Currency) => void
   otherCurrency?: Currency
   label?: string
-  currencyList?: string[]
+  currencyList?: Currency[]
   showCommonBases?: boolean
   currentTheme: string
+  setShowDropdown: (value: boolean) => void
 }
 
 const CurrencySelector = (props: CurrencySelectorProps) => {
   const { i18n } = useLingui()
-  const [modalOpen, setModalOpen] = useState(false)
-
-  const handleDismissSearch = useCallback(() => {
-    setModalOpen(false)
-  }, [setModalOpen])
 
   const dropDownArrowImage =
     props.currentTheme === 'dark'
@@ -53,24 +49,12 @@ const CurrencySelector = (props: CurrencySelectorProps) => {
         <div
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            if (props.onCurrencySelect) {
-              setModalOpen(true)
-            }
+            props.setShowDropdown(true)
           }}
         >
           <Image src={dropDownArrowImage} alt="icon-arrow-dropdown" height="24px" width="12px" />
         </div>
       </div>
-      {props.onCurrencySelect && (
-        <CurrencySearchModal
-          isOpen={modalOpen}
-          onDismiss={handleDismissSearch}
-          onCurrencySelect={props.onCurrencySelect}
-          selectedCurrency={props.currency}
-          otherSelectedCurrency={props.otherCurrency}
-          showCommonBases={props.showCommonBases}
-        />
-      )}
     </>
   )
 }
