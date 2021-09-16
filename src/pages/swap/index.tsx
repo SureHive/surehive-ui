@@ -29,7 +29,7 @@ export default function Swap(): JSX.Element {
           <SwapPanel currentTheme={currentTheme} />
           <div className="flex-grow">
             <div className="flex flex-col">
-              <SwapGraph />
+              <SwapGraph currentTheme={currentTheme} />
               <SwapTransactionLog />
             </div>
           </div>

@@ -65,6 +65,7 @@
     "@types/react": "^17.0.11",
     "@uniswap/token-lists": "1.0.0-beta.24",
     "@visx/gradient": "^1.7.0",
+    "@visx/mock-data": "^2.1.0",
     "@visx/scale": "^1.14.0",
     "@visx/shape": "^1.16.0",
     "@web3-react/core": "^6.1.9",
@@ -142,6 +143,10 @@
     ]
   },
   "dependencies": {
+    "@visx/event": "^2.1.0",
+    "@visx/grid": "^2.1.1",
+    "@visx/responsive": "^2.1.1",
+    "@visx/tooltip": "^2.1.0",
     "next-themes": "^0.0.15",
     "tailwindcss-border-gradients": "^2.0.3"
   }
