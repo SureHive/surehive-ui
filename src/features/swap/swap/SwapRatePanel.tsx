@@ -16,7 +16,7 @@ export default function SwapRatePanel({ showSettings, setShowSettings, currentTh
       </div>
       <div>
         <div
-          className={styles.SwapSettingsButton}
+          className={showSettings ? styles.SwapSettingsButtonActive : styles.SwapSettingsButton}
           onClick={() => {
             setShowSettings(!showSettings)
           }}

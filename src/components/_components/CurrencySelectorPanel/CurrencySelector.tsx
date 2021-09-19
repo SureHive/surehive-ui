@@ -17,6 +17,7 @@ interface CurrencySelectorProps {
   showCommonBases?: boolean
   currentTheme: string
   setShowDropdown: (value: boolean) => void
+  setSearchQuery?: (value: string) => void
 }
 
 const CurrencySelector = (props: CurrencySelectorProps) => {
@@ -49,6 +50,7 @@ const CurrencySelector = (props: CurrencySelectorProps) => {
         <div
           style={{ cursor: 'pointer' }}
           onClick={() => {
+            props.setSearchQuery('')
             props.setShowDropdown(true)
           }}
         >

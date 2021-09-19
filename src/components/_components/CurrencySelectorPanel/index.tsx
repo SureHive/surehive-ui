@@ -2,7 +2,7 @@ import { ChainId, Currency, NATIVE, Token } from '@sushiswap/sdk'
 import CurrencySelector from './CurrencySelector'
 import CurrencyValue from './CurrencyValue'
 import CurrencyDropdownList from './CurrencyDropdownList'
-import { KeyboardEvent, useCallback, useMemo, useRef, useState } from 'react'
+import { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState } from 'react'
 import { FixedSizeList } from 'react-window'
 import { useAllTokens, useIsUserAddedToken, useSearchInactiveTokenLists, useToken } from '../../../hooks/Tokens'
 import { isAddress } from '../../../functions'
@@ -27,12 +27,9 @@ interface CurrencySelectorPanelProps {
 }
 
 const CurrencySelectorPanel = (props: CurrencySelectorPanelProps) => {
-  props.includeNativeCurrency = props.includeNativeCurrency ? props.includeNativeCurrency : true
-
   const { chainId } = useActiveWeb3React()
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const fixedList = useRef<FixedSizeList>()
 
   const [searchQuery, setSearchQuery] = useState<string>('')
   const debouncedQuery = useDebounce(searchQuery, 200)
@@ -119,17 +116,32 @@ const CurrencySelectorPanel = (props: CurrencySelectorPanelProps) => {
 
   return (
     <div className="flex justify-between w-full">
-      <CurrencySelector setShowDropdown={setShowDropdown} {...props} currencyList={filteredSortedTokensWithETH} />
+      <CurrencySelector
+        setShowDropdown={setShowDropdown}
+        {...props}
+        currencyList={filteredSortedTokensWithETH}
+        setSearchQuery={setSearchQuery}
+      />
       <CurrencyValue {...props} />
       {showDropdown && (
         <CurrencyDropdownList
           setShowDropdown={setShowDropdown}
           {...props}
+          selectedCurrency={props.currency}
+          onCurrencySelect={handleCurrencySelect}
           currencyList={props.includeNativeCurrency ? filteredSortedTokensWithETH : filteredSortedTokens}
+          inputRef={inputRef as RefObject<HTMLInputElement>}
+          handleInput={handleInput}
+          handleEnter={handleEnter}
+          searchQuery={searchQuery}
         />
       )}
     </div>
   )
+}
+
+CurrencySelectorPanel.defaultProps = {
+  includeNativeCurrency: true,
 }
 
 export default CurrencySelectorPanel
