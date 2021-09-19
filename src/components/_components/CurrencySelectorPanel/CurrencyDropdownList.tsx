@@ -9,6 +9,9 @@ interface CurrencyDropdownProps {
 }
 
 export default function CurrencyDropdownList(props: CurrencyDropdownProps) {
+  console.log('currencyList')
+  console.log(props.currencyList)
+
   return (
     <div
       className="absolute -top-1 left-0 dark:bg-dark-600 bg-white border-white-200 w-full z-10"
@@ -32,12 +35,7 @@ export default function CurrencyDropdownList(props: CurrencyDropdownProps) {
           placeholder="Select Token"
         />
       </div>
-      <div
-        className="w-full h-full"
-        onClick={() => {
-          props.setShowDropdown(false)
-        }}
-      ></div>
+      <div className="w-full h-full"></div>
     </div>
   )
 }

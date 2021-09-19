@@ -13,7 +13,7 @@ export default function SwapSettings({ setShowSettings, currentTheme }) {
   const SlippageOption = ({ value }) => {
     return (
       <div
-        className="flex dark:bg-dark-500 bg-white-150 items-center justify-center mr-5"
+        className="flex dark:bg-dark-500 bg-white-150 items-center justify-center mr-5 cursor-pointer"
         style={{ height: '56px', width: '56px', borderRadius: '12px', minWidth: '56px' }}
       >
         {value}%

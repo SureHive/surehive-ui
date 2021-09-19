@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import CurrencySelectorPanel from '../../../components/_components/CurrencySelectorPanel'
-import { ARCHER_RELAY_URI } from '../../../constants'
+import { ARCHER_RELAY_URI, COMMON_BASES } from '../../../constants'
 import {
   useDefaultsFromURLSearch,
   useDerivedSwapInfo,

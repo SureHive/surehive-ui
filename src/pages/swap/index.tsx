@@ -30,7 +30,7 @@ export default function Swap(): JSX.Element {
             <SwapPanel currentTheme={currentTheme} />
           </div>
           <div className="flex-grow">
-            <div className="grid" style={{ width: '904px' }}>
+            <div className="grid" style={{ minWidth: '904px' }}>
               <SwapGraph currentTheme={currentTheme} />
               <SwapTransactionLog />
             </div>
