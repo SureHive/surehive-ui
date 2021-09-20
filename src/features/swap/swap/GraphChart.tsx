@@ -10,6 +10,8 @@ import { localPoint } from '@visx/event'
 import { LinearGradient } from '@visx/gradient'
 import { max, extent, bisector } from 'd3-array'
 import { timeFormat } from 'd3-time-format'
+import CurrencyLogo from '../../../components/CurrencyLogo'
+import { Currency } from '@sushiswap/sdk'
 
 type TooltipData = AppleStock
 
@@ -20,9 +22,11 @@ export const accentColor = '#004BFF'
 export const accentColorDark = '#0004F7'
 const tooltipStyles = {
   ...defaultStyles,
-  background,
-  border: '1px solid white',
+  background: '#353945',
+  border: '1px solid #353945',
   color: 'white',
+  padding: '12px',
+  fontSize: '12px',
 }
 
 // util
@@ -33,14 +37,14 @@ const getDate = (d: AppleStock) => new Date(d.date)
 const getStockValue = (d: AppleStock) => d.close
 const bisectDate = bisector<AppleStock, Date>((d) => new Date(d.date)).left
 
-export type AreaProps = {
+export type OtherProps = {
   width: number
   height: number
   margin?: { top: number; right: number; bottom: number; left: number }
   currentTheme: string
 }
 
-export default withTooltip<AreaProps, TooltipData>(
+export default withTooltip<OtherProps, TooltipData>(
   ({
     width,
     height,
@@ -51,7 +55,7 @@ export default withTooltip<AreaProps, TooltipData>(
     tooltipTop = 0,
     tooltipLeft = 0,
     currentTheme,
-  }: AreaProps & WithTooltipProvidedProps<TooltipData>) => {
+  }: OtherProps & WithTooltipProvidedProps<TooltipData>) => {
     if (width < 10) return null
 
     // bounds
@@ -167,7 +171,7 @@ export default withTooltip<AreaProps, TooltipData>(
         </svg>
         {tooltipData && (
           <div>
-            <TooltipWithBounds key={Math.random()} top={tooltipTop - 12} left={tooltipLeft + 12} style={tooltipStyles}>
+            <TooltipWithBounds key={Math.random()} top={tooltipTop - 60} left={tooltipLeft - 45} style={tooltipStyles}>
               {`$${getStockValue(tooltipData)}`}
             </TooltipWithBounds>
             <Tooltip

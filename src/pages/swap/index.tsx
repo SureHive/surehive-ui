@@ -24,11 +24,13 @@ export default function Swap(): JSX.Element {
           content="SureHive allows for swapping of ERC20 compatible tokens across multiple networks"
         />
       </Head>
-      <Container maxWidth="full" className="grid h-full">
+      <Container maxWidth="full" className="grid h-full overflow-x-auto">
         <div className="flex dark:bg-dark-900 bg-white-130">
-          <SwapPanel currentTheme={currentTheme} />
+          <div style={{ width: '538px' }}>
+            <SwapPanel currentTheme={currentTheme} />
+          </div>
           <div className="flex-grow">
-            <div className="flex flex-col">
+            <div className="grid" style={{ minWidth: '904px' }}>
               <SwapGraph currentTheme={currentTheme} />
               <SwapTransactionLog />
             </div>

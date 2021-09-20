@@ -51,6 +51,8 @@ module.exports = {
         white: '#FFFFFF',
         gray: '#B1B5C3',
 
+        'blue-100': '#3772FF',
+
         'white-100': '#FCFCFD',
         'white-130': '#F8F8F9',
         'white-150': '#F4F5F6',
