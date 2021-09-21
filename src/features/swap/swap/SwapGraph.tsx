@@ -25,7 +25,7 @@ export default function SwapGraph({ currentTheme }) {
   const GraphDetails = () => {
     return (
       <div className="grid p-2" style={{ height: '60px' }}>
-        <div className="flex flex-row items-center dark:text-white text-dark-600">
+        <div className="flex flex-row items-center dark:text-white text-dark-600 mobile:place-self-center">
           <div className="relative flex flex-row" style={{ width: '60px', height: '40px' }}>
             <div className="z-10">
               <CurrencyLogo currency={currency} size={'40px'} className="rounded-full" />
@@ -34,14 +34,16 @@ export default function SwapGraph({ currentTheme }) {
               <CurrencyLogo currency={otherCurrency} size={'40px'} className="rounded-full" />
             </div>
           </div>
-          <p className="ml-5 text-base">
+          <p className="ml-5 text-base mobile:text-2xl">
             {currency?.symbol.toUpperCase()} / {otherCurrency?.symbol.toUpperCase() || 'USDC'}
           </p>
           <div className="cursor-pointer" style={{ marginLeft: '15px', marginTop: '3px' }}>
             <Image src={'/images/global/icon-switch-currency.svg'} width={'18px'} height={'18px'} />
           </div>
         </div>
-        <div className="text-blue-100 text-xs mt-2">{'+179.1588 USDC (+6.09) Past 24 Hours'}</div>
+        <div className="text-blue-100 mobile:text-orange text-xs mt-2 mobile:place-self-center">
+          {'+179.1588 USDC (+6.09) Past 24 Hours'}
+        </div>
       </div>
     )
   }
@@ -69,7 +71,7 @@ export default function SwapGraph({ currentTheme }) {
       </div>
       <div className={styles.swapGraphBottomLabel}>
         <p>Time</p>
-        <div className="p-2 bg-dark-500 text-white rounded-full">24 Hours</div>
+        <div className="mobile:py-1 p-2 bg-dark-500 text-white rounded-full">24 Hours</div>
         <p>1 Week</p>
         <p>1 Month</p>
       </div>

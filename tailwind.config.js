@@ -14,6 +14,16 @@ module.exports = {
   plugins: [require('tailwindcss-border-gradients')()],
   theme: {
     extend: {
+      screens: {
+        mobile: { max: '767px' },
+      },
+      spacing: {
+        538: '538px',
+        406: '406px',
+      },
+      minWidth: {
+        904: '904px',
+      },
       linearBorderGradients: {
         directions: {
           tr: 'to top right',

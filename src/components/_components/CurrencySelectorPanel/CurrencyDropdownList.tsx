@@ -71,9 +71,8 @@ export default function CurrencyDropdownList(props: CurrencyDropdownProps) {
   const borderBottom = props.currentTheme === 'dark' ? '1px solid #353945' : '1px solid  #E6E8EC'
   return (
     <div
-      className="absolute -top-1 left-0 dark:bg-dark-600 bg-white z-10"
+      className="absolute -top-1 left-0 dark:bg-dark-600 bg-white z-10 w-406 mobile:w-full"
       style={{
-        width: '406px',
         border,
         borderRadius: '12px',
         boxShadow: '0 20px 20px -20px #141416',

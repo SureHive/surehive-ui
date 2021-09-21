@@ -25,12 +25,12 @@ export default function Swap(): JSX.Element {
         />
       </Head>
       <Container maxWidth="full" className="grid h-full overflow-x-auto">
-        <div className="flex dark:bg-dark-900 bg-white-130">
-          <div style={{ width: '538px' }}>
+        <div className="flex mobile:flex-col dark:bg-dark-900 bg-white-130">
+          <div className="mobile:w-full mobile:order-last w-538">
             <SwapPanel currentTheme={currentTheme} />
           </div>
-          <div className="flex-grow">
-            <div className="grid" style={{ minWidth: '904px' }}>
+          <div className="md:flex-grow">
+            <div className="grid mobile:w-full mobile:min-w-0 min-w-904">
               <SwapGraph currentTheme={currentTheme} />
               <SwapTransactionLog />
             </div>

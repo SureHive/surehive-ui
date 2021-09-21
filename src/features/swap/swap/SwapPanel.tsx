@@ -150,8 +150,8 @@ const SwapPanel = ({ currentTheme }) => {
   return (
     <>
       <div className={styles.swapBox}>
-        <div className="grid flex flex-col gap-y-6 p-10 dark:text-white-100 text-dark-600">
-          <div className="flex flex-row pl-3">
+        <div className="grid flex flex-col md:gap-y-6 md:p-10 dark:text-white-100 text-dark-600">
+          <div className="flex flex-row pl-3 mobile:hidden">
             <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
           </div>
           <div className={styles.swapPanel}>
