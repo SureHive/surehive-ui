@@ -62,7 +62,7 @@ export default function SwapTransactionLog() {
   const { i18n } = useLingui()
 
   return (
-    <div className="grid w-full p-10 space-y-3">
+    <div className="grid w-full p-10 space-y-3 mobile:hidden">
       <h1 className="dark:text-white-100 text-dark-600 text-sm">{i18n._(t`TRANSACTION LOG`)}</h1>
       <div className={styles.SwapTransactionLogPanel}>
         <SwapTableHeader />

@@ -1,12 +1,12 @@
 .swapBox {
-    @apply bg-draw-menu-light flex-grow;
+    @apply md:bg-draw-menu-light flex-grow;
     background-size: 800%;
     width: 538px;
     z-index: 2;
 }
 
 :global(.dark) .swapBox {
-    @apply bg-draw-menu-dark;
+    @apply md:bg-draw-menu-dark;
 }
 
 .swapLabel {
@@ -93,11 +93,11 @@
 }
 
 .ConfirmSwapButton {
+    @apply text-white mt-3;
     background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
     border-radius: 28px;
     height: 48px;
     max-width: 380px;
-    @apply text-white mt-3;
 }
 
 .SwapSettingsButton {
@@ -132,9 +132,7 @@
 }
 
 .swapSettings {
-    @apply absolute flex w-full bg-white  -right-full top-7 -mr-12 p-8 z-10;
-    box-shadow: 0 64px 64px 0 rgba(0,0,0,0.12);
-    border-radius: 9px;
+    @apply flex w-full bg-white;
     height: 703px;
 }
 
@@ -235,4 +233,50 @@
 
 :global(.dark) .swapGraphBottomLabel {
     box-shadow:  0 -11px 12px -8px rgba(0,0,0,0.50);
+}
+
+@media (max-width: 767px) {
+    .swapBox {
+        @apply w-full;
+        border: 1px solid #F4F5F6;
+        box-shadow: 0 2px 10px 3px rgba(11,19,43,0.05);
+        border-radius: 10px;
+    }
+
+    :global(.dark) .swapBox {
+        border: 1px solid #353945;
+        box-shadow: 0 -35px 16px -29px #000000;
+        border-radius: 10px;
+    }
+
+    .swapGraphBox {
+        border: 0;
+    }
+
+    .swapGraph {
+        @apply py-0 relative;
+        height: 412px;
+    }
+
+    :global(.dark) .swapGraph {
+        background-image: none;
+    }
+
+    .swapGraphInner {
+        height: 412px;
+        background-size: 1100%;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .swapGraphInnerTime {
+        @apply absolute w-full px-2 inset-x-0 bottom-4;
+        margin: 0;
+    }
+
+    .swapGraphBottomLabel {
+        @apply justify-around gap-0 px-4;
+        font-size: 12px;
+        line-height: 24px;
+    }
 }

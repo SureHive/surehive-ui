@@ -7,6 +7,7 @@ import {
   setKashiApprovalPending,
   setOpenModal,
   updateBlockNumber,
+  updateMobileHeader,
 } from './actions'
 
 type PopupList = Array<{
@@ -21,6 +22,7 @@ export interface ApplicationState {
   readonly popupList: PopupList
   readonly openModal: ApplicationModal | null
   kashiApprovalPending: string
+  mobileHeaderDetails: { name: string; isSubPage: boolean }
 }
 
 const initialState: ApplicationState = {
@@ -28,6 +30,7 @@ const initialState: ApplicationState = {
   popupList: [],
   openModal: null,
   kashiApprovalPending: '',
+  mobileHeaderDetails: { name: 'Wallet', isSubPage: false },
 }
 
 export default createReducer(initialState, (builder) =>
@@ -62,5 +65,8 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(setKashiApprovalPending, (state, action) => {
       state.kashiApprovalPending = action.payload
+    })
+    .addCase(updateMobileHeader, (state, action) => {
+      state.mobileHeaderDetails = action.payload
     })
 )

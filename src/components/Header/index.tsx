@@ -1,16 +1,10 @@
 import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@sushiswap/sdk'
 import React, { useEffect, useState } from 'react'
 
-import { ANALYTICS_URL } from '../../constants'
-import Buy from '../../features/ramp'
-import ExternalLink from '../ExternalLink'
-import Image from 'next/image'
 import LanguageSwitch from '../LanguageSwitch'
 import Link from 'next/link'
-import More from './More'
 import NavLink from '../NavLink'
 import { Popover } from '@headlessui/react'
-import QuestionHelper from '../QuestionHelper'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import { t } from '@lingui/macro'
@@ -21,13 +15,15 @@ import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 import { LogoImage } from '../Logo/image'
 
-// import { ExternalLink, NavLink } from "./Link";
-// import { ReactComponent as Burger } from "../assets/images/burger.svg";
+import { useMobileHeader } from '../../state/application/hooks'
+
 function AppBar(): JSX.Element {
   const { i18n } = useLingui()
   const { account, chainId, library } = useActiveWeb3React()
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+
+  const [pageHeaderDetails] = useMobileHeader()
 
   useEffect(() => {
     setMounted(true)
@@ -54,7 +50,7 @@ function AppBar(): JSX.Element {
             <div className="flex-1">
               <LogoImage color="white" />
             </div>
-            <div className="flex-1">
+            <div className="flex-1  mobile:hidden">
               <h2 className="bg-dark-200 dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis pt-2 pl-1 whitespace-nowrap">
                 {' '}
                 surehive{' '}
@@ -70,7 +66,7 @@ function AppBar(): JSX.Element {
             <div className="flex-0">
               <LogoImage color="blue" />
             </div>
-            <div className="flex-0">
+            <div className="flex-0 mobile:hidden">
               <h2 className="dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis pt-2 pl-1 whitespace-nowrap">
                 {' '}
                 surehive{' '}
@@ -82,13 +78,20 @@ function AppBar(): JSX.Element {
     }
   }
 
+  const capitalize = (str) => {
+    if (!str) {
+      return null
+    }
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   return (
     //     // <header className="flex flex-row justify-between w-screen flex-nowrap">
     <header className="flex-shrink-0 w-full dark:bg-transparent border-2 dark:border-dark-900 border-white-100 border-solid">
       <Popover as="nav" className="z-10 w-full bg-transparent header-border-b">
         {({ open }) => (
           <>
-            <div className="px-4 py-4">
+            <div className="px-2 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex">
                   {renderLogo()}
@@ -143,7 +146,12 @@ function AppBar(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
+                <div className="flex-0 sm:hidden">
+                  <p className="dark:text-white text-dark-1000 text-2xl">
+                    {capitalize(i18n._(t`${pageHeaderDetails.name}`))}
+                  </p>
+                </div>
+                <div className="mobile:hidden fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                     {/* {library && library.provider.isMetaMask && (
                       <div className="hidden sm:inline-block">

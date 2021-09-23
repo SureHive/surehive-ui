@@ -2,7 +2,6 @@ import React, { useMemo, useCallback } from 'react'
 import { AreaClosed, Line, Bar, LinePath } from '@visx/shape'
 import appleStock, { AppleStock } from '@visx/mock-data/lib/mocks/appleStock'
 import { curveMonotoneX } from '@visx/curve'
-import { GridRows, GridColumns } from '@visx/grid'
 import { scaleTime, scaleLinear } from '@visx/scale'
 import { withTooltip, Tooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip'
 import { WithTooltipProvidedProps } from '@visx/tooltip/lib/enhancers/withTooltip'
@@ -10,16 +9,14 @@ import { localPoint } from '@visx/event'
 import { LinearGradient } from '@visx/gradient'
 import { max, extent, bisector } from 'd3-array'
 import { timeFormat } from 'd3-time-format'
-import CurrencyLogo from '../../../components/CurrencyLogo'
-import { Currency } from '@sushiswap/sdk'
 
 type TooltipData = AppleStock
 
 const stock = appleStock.slice(800)
-export const background = '#3b6978'
-export const background2 = '#204051'
-export const accentColor = '#004BFF'
-export const accentColorDark = '#0004F7'
+const background = '#3b6978'
+const background2 = '#204051'
+let accentColor = '#004BFF'
+let accentColorDark = '#0004F7'
 const tooltipStyles = {
   ...defaultStyles,
   background: '#353945',
@@ -57,6 +54,8 @@ export default withTooltip<OtherProps, TooltipData>(
     currentTheme,
   }: OtherProps & WithTooltipProvidedProps<TooltipData>) => {
     if (width < 10) return null
+
+    const isMobile = width < 768
 
     // bounds
     const innerWidth = width - margin.left - margin.right
@@ -102,18 +101,34 @@ export default withTooltip<OtherProps, TooltipData>(
       [showTooltip, stockValueScale, dateScale]
     )
 
+    let fromOpacity = 0.15
+    let toOpacity = 0
+    if (isMobile) {
+      accentColor = 'rgba(255,126,55,0.00)'
+      accentColorDark = '#FF6D00'
+      fromOpacity = 0.2
+      toOpacity = 0
+    }
+
     return (
       <div>
         <svg width={width} height={height}>
-          <rect x={0} y={0} width={width} height={height} fill="url(#area-background-gradient)" rx={14} />
-          <LinearGradient id="area-gradient" from={accentColorDark} fromOpacity={0.15} to={accentColor} toOpacity={0} />
+          <rect x={0} y={0} width={width} height={height} fill="none" rx={14} />
+          <LinearGradient
+            id="area-gradient"
+            from={accentColorDark}
+            fromOpacity={fromOpacity}
+            to={accentColor}
+            toOpacity={toOpacity}
+            toOffset={'70%'}
+          />
           <LinePath<AppleStock>
             id="line-path"
             data={stock}
             x={(d) => dateScale(getDate(d)) ?? 0}
             y={(d) => stockValueScale(getStockValue(d)) ?? 0}
             strokeWidth={1}
-            stroke="#004BFF"
+            stroke={accentColorDark}
           />
           <AreaClosed<AppleStock>
             data={stock}
