@@ -2,7 +2,8 @@ import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { AppDispatch, AppState } from '../index'
-import { addPopup, ApplicationModal, PopupContent, removePopup, setOpenModal } from './actions'
+import { addPopup, ApplicationModal, PopupContent, removePopup, setOpenModal, updateMobileHeader } from './actions'
+import { useAppDispatch } from '../hooks'
 
 export function useBlockNumber(): number | undefined {
   const { chainId } = useActiveWeb3React()
@@ -94,4 +95,21 @@ export function useActivePopups(): AppState['application']['popupList'] {
 
 export function useKashiApprovalPending(): string {
   return useSelector((state: AppState) => state.application.kashiApprovalPending)
+}
+
+export function useMobileHeader(): [
+  { name: string; isSubPage: boolean },
+  ({ name: string, isSubPage: boolean }) => void
+] {
+  const dispatch = useAppDispatch()
+  const pageHeaderDetails = useSelector((state: AppState) => state.application.mobileHeaderDetails)
+
+  const updatePageHeader = useCallback(
+    (payload: { name: string; isSubPage: boolean }) => {
+      dispatch(updateMobileHeader(payload))
+    },
+    [dispatch]
+  )
+
+  return [pageHeaderDetails, updatePageHeader]
 }

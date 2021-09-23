@@ -34,7 +34,7 @@ import Button from '../../../components/Button'
 import SwapRatePanel from './SwapRatePanel'
 import SwapSettings from './SwapSettings'
 
-const SwapPanel = ({ currentTheme }) => {
+const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
   const [showSettings, setShowSettings] = useState<boolean>(false)
 
@@ -155,11 +155,22 @@ const SwapPanel = ({ currentTheme }) => {
             <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
           </div>
           <div className={styles.swapPanel}>
-            {showSettings && <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />}
+            {showSettings && (
+              <div
+                className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"
+                style={{
+                  boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',
+                  borderRadius: '9px',
+                }}
+              >
+                <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />
+              </div>
+            )}
             <div className={styles.ratePanel}>
               <SwapRatePanel
                 showSettings={showSettings}
                 setShowSettings={setShowSettings}
+                setShowSwapPreference={setShowSwapPreference}
                 currentTheme={currentTheme}
               />
             </div>

@@ -43,3 +43,4 @@ export const addPopup = createAction<{
 }>('application/addPopup')
 export const removePopup = createAction<{ key: string }>('application/removePopup')
 export const setKashiApprovalPending = createAction<string>('application/setKashiApprovalPending')
+export const updateMobileHeader = createAction<{ name: string; isSubPage: boolean }>('user/updateMobileHeader')

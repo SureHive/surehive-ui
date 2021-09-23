@@ -93,11 +93,11 @@
 }
 
 .ConfirmSwapButton {
+    @apply text-white mt-3;
     background-image: linear-gradient(238deg, #004BFF 0%, #3772FF 42%, #0004F7 100%);
     border-radius: 28px;
     height: 48px;
     max-width: 380px;
-    @apply text-white mt-3;
 }
 
 .SwapSettingsButton {
@@ -132,9 +132,7 @@
 }
 
 .swapSettings {
-    @apply absolute flex w-full bg-white  -right-full top-7 -mr-12 p-8 z-10;
-    box-shadow: 0 64px 64px 0 rgba(0,0,0,0.12);
-    border-radius: 9px;
+    @apply flex w-full bg-white;
     height: 703px;
 }
 
