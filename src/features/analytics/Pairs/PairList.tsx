@@ -1,9 +1,9 @@
 import _ from 'lodash'
 import React from 'react'
 import { formatNumber, formatNumberScale, formatPercent } from '../../../functions'
-import Table from '../../../components/Table'
+import TableOld from '../../../components/Table-old'
 import ColoredNumber from '../../../features/analytics/ColoredNumber'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
+import DoubleCurrencyLogoOld from '../../../components/DoubleLogoOld'
 import { useCurrency } from '../../../hooks/Tokens'
 
 interface PairListProps {
@@ -37,7 +37,7 @@ function PairListName({ pair }: PairListNameProps): JSX.Element {
   return (
     <>
       <div className="flex items-center">
-        <DoubleCurrencyLogo currency0={token0} currency1={token1} size={28} />
+        <DoubleCurrencyLogoOld currency0={token0} currency1={token1} size={28} />
         <div className="ml-3 font-bold text-high-emphesis">
           {pair.symbol0}-{pair.symbol1}
         </div>
@@ -179,5 +179,5 @@ export default function PairList({ pairs, type }: PairListProps): JSX.Element {
     }
   }, [type])
 
-  return <>{pairs && <Table columns={columns} data={pairs} defaultSortBy={defaultSortBy} />}</>
+  return <>{pairs && <TableOld columns={columns} data={pairs} defaultSortBy={defaultSortBy} />}</>
 }

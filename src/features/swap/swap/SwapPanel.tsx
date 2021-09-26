@@ -2,7 +2,7 @@ import styles from './swap.module.css'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
-import CurrencySelectorPanel from '../../../components/_components/CurrencySelectorPanel'
+import CurrencySelectorPanel from '../../../components/CurrencySelectorPanel'
 import { ARCHER_RELAY_URI, COMMON_BASES } from '../../../constants'
 import {
   useDefaultsFromURLSearch,

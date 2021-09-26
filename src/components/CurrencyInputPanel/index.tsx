@@ -6,7 +6,7 @@ import Button from '../Button'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import CurrencyLogo from '../CurrencyLogo'
 import CurrencySearchModal from '../../modals/SearchModal/CurrencySearchModal'
-import DoubleCurrencyLogo from '../DoubleLogo'
+import DoubleCurrencyLogoOld from '../DoubleLogoOld'
 import { FiatValue } from './FiatValue'
 import Lottie from 'lottie-react'
 import { Input as NumericalInput } from '../NumericalInput'
@@ -86,7 +86,7 @@ export default function CurrencyInputPanel({
           >
             <div className="flex">
               {pair ? (
-                <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={54} margin={true} />
+                <DoubleCurrencyLogoOld currency0={pair.token0} currency1={pair.token1} size={54} margin={true} />
               ) : currency ? (
                 <div className="flex items-center">
                   <CurrencyLogo currency={currency} size={'54px'} />

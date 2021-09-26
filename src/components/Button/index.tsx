@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { classNames } from '../../functions'
 
 const SIZE = {
@@ -122,3 +123,31 @@ export function ButtonError({
     return <Button color={disabled ? 'gray' : 'gradient'} disabled={disabled} size="lg" {...rest} />
   }
 }
+
+const Outline = styled.div.attrs(({ className, ...rest }) => ({
+  className: classNames('grid justify-items-center rounded-full', className),
+  ...rest,
+}))`
+  padding: 1px;
+  background-image: linear-gradient(238deg, #004bff 0%, #3772ff 42%, #0004f7 100%);
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+`
+
+export const OutlinedButton = ({ label, ...rest }) => (
+  <Outline {...rest}>
+    <button className="text-dark-1000 w-full bg-white-100 rounded-full dark:bg-dark-900 dark:text-white-100">
+      {label}
+    </button>
+  </Outline>
+)
+
+export const FilledButton = styled.button.attrs(({ className, ...rest }) => ({
+  className: classNames('text-white', className),
+  ...rest,
+}))`
+  background-image: linear-gradient(238deg, #004bff 0%, #3772ff 42%, #0004f7 100%);
+  border-radius: 28px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+`

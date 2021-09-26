@@ -2,7 +2,7 @@ import Provider, { useKashiPairs } from '../../../features/lending/context'
 import { formatNumber, formatPercent } from '../../../functions/format'
 
 import Card from '../../../components/Card'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
+import DoubleCurrencyLogoOld from '../../../components/DoubleLogoOld'
 import Head from 'next/head'
 import Image from '../../../components/Image'
 import Layout from '../../../layouts/Kashi'

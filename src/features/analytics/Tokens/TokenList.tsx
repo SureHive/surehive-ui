@@ -3,7 +3,7 @@ import { classNames, formatNumber, formatNumberScale, formatPercent } from '../.
 import ColoredNumber from '../ColoredNumber'
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import React from 'react'
-import Table from '../../../components/Table'
+import TableOld from '../../../components/Table-old'
 import _ from 'lodash'
 import { useCurrency } from '../../../hooks/Tokens'
 
@@ -85,5 +85,5 @@ export default function TokenList({ tokens }: TokenListProps): JSX.Element {
     []
   )
 
-  return <>{tokens && <Table columns={columns} data={tokens} defaultSortBy={{ id: 'liquidity', desc: true }} />}</>
+  return <>{tokens && <TableOld columns={columns} data={tokens} defaultSortBy={{ id: 'liquidity', desc: true }} />}</>
 }

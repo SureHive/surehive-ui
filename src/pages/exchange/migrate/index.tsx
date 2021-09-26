@@ -9,7 +9,7 @@ import useMigrateState, { MigrateState } from '../../../hooks/useMigrateState'
 import { AddressZero } from '@ethersproject/constants'
 import Badge from '../../../components/Badge'
 import Dots from '../../../components/Dots'
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
+import DoubleCurrencyLogoOld from '../../../components/DoubleLogoOld'
 import Empty from '../../../components/Empty'
 import Head from 'next/head'
 import LPToken from '../../../types/LPToken'
@@ -107,7 +107,7 @@ const LPTokenSelect = ({ lpToken, onToggle, isSelected, updating, exchange }: Po
       onClick={() => onToggle(lpToken)}
     >
       <div className="flex items-center space-x-3">
-        <DoubleCurrencyLogo currency0={lpToken.tokenA} currency1={lpToken.tokenB} size={20} />
+        <DoubleCurrencyLogoOld currency0={lpToken.tokenA} currency1={lpToken.tokenB} size={20} />
         <Typography
           variant="lg"
           className="text-primary"

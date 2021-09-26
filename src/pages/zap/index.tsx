@@ -15,7 +15,7 @@ import { AppDispatch } from '../../state'
 import { ArrowLeft } from 'react-feather'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
-import DoubleCurrencyLogo from '../../components/DoubleLogo'
+import DoubleCurrencyLogoOld from '../../components/DoubleLogoOld'
 import FormattedPriceImpact from '../../features/swap/FormattedPriceImpact'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -289,7 +289,7 @@ export default function Zap() {
               <RowBetween style={{ marginBottom: '12px' }}>
                 <div style={{ fontSize: '14px' }}>To</div>
                 {currency0 && currency1 ? (
-                  <DoubleCurrencyLogo
+                  <DoubleCurrencyLogoOld
                     currency0={currency0 ?? undefined}
                     currency1={currency1 ?? undefined}
                     margin={false}

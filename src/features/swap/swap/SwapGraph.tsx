@@ -1,12 +1,12 @@
 import styles from './swap.module.css'
 import ParentSize from '@visx/responsive/lib/components/ParentSize'
 import GraphChart from './GraphChart'
-import { useUserArcherETHTip, useUserArcherGasPrice, useUserArcherUseRelay } from '../../../state/user/hooks'
+import { useUserArcherUseRelay } from '../../../state/user/hooks'
 import { ARCHER_RELAY_URI } from '../../../constants'
 import { useDerivedSwapInfo, useSwapState } from '../../../state/swap/hooks'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import { Field } from '../../../state/swap/actions'
-import CurrencyLogo from '../../../components/CurrencyLogo'
+import DoubleCurrencyLogo from '../../../components/DoubleLogo'
 import React from 'react'
 import Image from '../../../components/Image'
 
@@ -26,14 +26,7 @@ export default function SwapGraph({ currentTheme }) {
     return (
       <div className="grid p-2" style={{ height: '60px' }}>
         <div className="flex flex-row items-center dark:text-white text-dark-600 mobile:place-self-center">
-          <div className="relative flex flex-row" style={{ width: '60px', height: '40px' }}>
-            <div className="z-10">
-              <CurrencyLogo currency={currency} size={'40px'} className="rounded-full" />
-            </div>
-            <div className="absolute left-1/2">
-              <CurrencyLogo currency={otherCurrency} size={'40px'} className="rounded-full" />
-            </div>
-          </div>
+          <DoubleCurrencyLogo currency0={currency} currency1={otherCurrency} size={40} />
           <p className="ml-5 text-base mobile:text-2xl">
             {currency?.symbol.toUpperCase()} / {otherCurrency?.symbol.toUpperCase() || 'USDC'}
           </p>

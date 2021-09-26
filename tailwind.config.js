@@ -114,7 +114,7 @@ module.exports = {
             fontWeight: 700,
           },
         ],
-        sm: ['16px', '20px', {}],
+        sm: ['14px', '20px', {}],
       },
       borderRadius: {
         none: '0',

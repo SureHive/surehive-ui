@@ -74,6 +74,9 @@ msgstr "Quantité de tokens"
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 msgstr ""
 
+msgid "Apply Preferences"
+msgstr ""
+
 msgid "Approve"
 msgstr "Approuver Kashi"
 
@@ -1189,6 +1192,9 @@ msgid "Token"
 msgid_plural "Tokens"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "{0}"
+msgstr ""
 
 msgid "{0} Deposited"
 msgstr "{0} Déposé"

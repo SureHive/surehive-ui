@@ -1,11 +1,11 @@
 import React from 'react'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
-import { useCurrencyBalance } from '../../../state/wallet/hooks'
+import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useCurrencyBalance } from '../../state/wallet/hooks'
 import { Currency } from '@sushiswap/sdk'
-import Button from '../../Button'
+import Button from '../Button'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Input as NumericalInput } from '../../NumericalInput'
+import { Input as NumericalInput } from '../NumericalInput'
 
 interface CurrencyValueProps {
   currency?: Currency
