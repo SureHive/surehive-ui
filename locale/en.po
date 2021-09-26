@@ -246,6 +246,9 @@ msgstr "Copied"
 msgid "Copy Address"
 msgstr "Copy Address"
 
+msgid "Create Pool"
+msgstr "Create Pool"
+
 msgid "Create Pool & Supply"
 msgstr "Create Pool & Supply"
 
@@ -1224,3 +1227,6 @@ msgstr "{0}/{1} Burned"
 
 msgid "{label}"
 msgstr "{label}"
+
+msgid "{tab}"
+msgstr "{tab}"

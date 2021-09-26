@@ -18,7 +18,7 @@ export const TableHeader = styled.div.attrs(({ className, ...rest }) => ({
 `
 
 export const TableBody = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('flex flex-col overflow-y-scroll', className),
+  className: classNames('grid overflow-y-auto overscroll-contain', className),
   ...rest,
 }))`
   height: ${({ height }) => height};

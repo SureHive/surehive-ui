@@ -12,8 +12,8 @@ export const poolColumns = [
 ]
 
 export const poolColumnConfigs = {
-  pool: { width: '10%', className: 'pl-10' },
-  type: { width: '10%', className: '' },
+  pool: { width: '12%', className: 'pl-10' },
+  type: { width: '8%', className: '' },
   feeRate: { width: '10%', className: '' },
   liquidity: { width: '20%', className: '' },
   tradeVolume: { width: '15%', className: '' },

@@ -12,7 +12,6 @@ const PoolTable = ({ fetchData }) => {
   const [currentTab, setCurrentTab] = useState<string>(tabs[0])
 
   const allTokens: Currency[] = Object.values(useAllTokens())
-  console.log(allTokens)
 
   const tempData = [
     {
@@ -29,7 +28,7 @@ const PoolTable = ({ fetchData }) => {
       currency: allTokens[0],
       otherCurrency: allTokens[2],
       type: 'Public',
-      feeRate: '0.25',
+      feeRate: '0.2',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
       myLiquidity: ['134K', '72.4'],
@@ -39,9 +38,9 @@ const PoolTable = ({ fetchData }) => {
       currency: allTokens[0],
       otherCurrency: allTokens[3],
       type: 'Public',
-      feeRate: '0.25',
+      feeRate: '0.35',
       liquidity: ['32.34M', '15.4'],
-      tradeVolume: ['38.44', '124.27'],
+      tradeVolume: ['38.44M', '124.27M'],
       myLiquidity: ['134K', '72.4'],
       impermantLoss: '5',
     },
@@ -49,7 +48,7 @@ const PoolTable = ({ fetchData }) => {
       currency: allTokens[2],
       otherCurrency: allTokens[4],
       type: 'Public',
-      feeRate: '0.25',
+      feeRate: '1.25',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
       myLiquidity: ['134K', '72.4'],
@@ -116,7 +115,7 @@ const PoolTable = ({ fetchData }) => {
   }
 
   return (
-    <div className="flex flex-col w-full space-y-2">
+    <div className="grid w-full space-y-2">
       <Tabs />
       <Table
         columns={poolColumns}

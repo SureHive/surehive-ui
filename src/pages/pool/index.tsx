@@ -19,7 +19,7 @@ export default function Pool(): JSX.Element {
         <meta key="description" name="description" content="" />
       </Head>
       <Container maxWidth="full" className="grid h-full md:overflow-x-auto">
-        <div className="flex flex-col space-y-6 dark:bg-dark-900 bg-white-130 sm:min-w-904 sm:px-10 sm:py-5">
+        <div className="grid space-y-6 dark:bg-dark-900 bg-white-130 sm:min-w-904 sm:px-10 sm:py-5">
           <PoolHeader label="My Pools" showSearch={true} />
           <PoolTable fetchData={() => {}} />
           <PoolHeader label="Pools" showSearch={false} />
