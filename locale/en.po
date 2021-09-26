@@ -779,6 +779,9 @@ msgstr "Review Limit Order"
 msgid "Rewards"
 msgstr "Rewards"
 
+msgid "Risk of {0}% loss"
+msgstr "Risk of {0}% loss"
+
 msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr "Roll it back - this feature is not yet supported on {0}."
 

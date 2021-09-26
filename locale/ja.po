@@ -772,6 +772,9 @@ msgstr ""
 msgid "Rewards"
 msgstr ""
 
+msgid "Risk of {0}% loss"
+msgstr ""
+
 msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
