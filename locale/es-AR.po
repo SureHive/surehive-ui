@@ -137,6 +137,9 @@ msgstr "Prestado"
 msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
 msgstr ""
 
+msgid "Breakdown"
+msgstr ""
+
 msgid "Buy"
 msgstr ""
 
@@ -715,6 +718,9 @@ msgstr "Pool tokens en el grupo de recompensas"
 msgid "Pooled {0}"
 msgstr "{0} agrupado"
 
+msgid "Pools"
+msgstr ""
+
 msgid "Positions"
 msgstr "Posiciones"
 
@@ -729,6 +735,9 @@ msgstr "Impacto de precio demasiado alto"
 
 msgid "Price Updated"
 msgstr "Precio actualizado"
+
+msgid "Public"
+msgstr ""
 
 msgid "Rate"
 msgstr ""
@@ -794,6 +803,9 @@ msgid "SLIPPAGE TOLERANCE"
 msgstr ""
 
 msgid "SLP"
+msgstr ""
+
+msgid "Search here"
 msgstr ""
 
 msgid "Search name or paste address"

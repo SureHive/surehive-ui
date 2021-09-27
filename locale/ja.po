@@ -137,6 +137,9 @@ msgstr "借入れ済み"
 msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
 msgstr ""
 
+msgid "Breakdown"
+msgstr ""
+
 msgid "Buy"
 msgstr ""
 
@@ -715,6 +718,9 @@ msgstr "報酬プールのトークンをプール"
 msgid "Pooled {0}"
 msgstr "{0}をプールしました"
 
+msgid "Pools"
+msgstr ""
+
 msgid "Positions"
 msgstr "ポジション"
 
@@ -729,6 +735,9 @@ msgstr "価格への影響が高すぎる"
 
 msgid "Price Updated"
 msgstr "価格が更新されました"
+
+msgid "Public"
+msgstr ""
 
 msgid "Rate"
 msgstr ""
@@ -794,6 +803,9 @@ msgid "SLIPPAGE TOLERANCE"
 msgstr ""
 
 msgid "SLP"
+msgstr ""
+
+msgid "Search here"
 msgstr ""
 
 msgid "Search name or paste address"
