@@ -1,5 +1,6 @@
 import React from 'react'
 import PoolRow from './PoolRow'
+import { t } from '@lingui/macro'
 
 export const poolColumns = [
   { label: 'Pool', field: 'pool' },
@@ -24,3 +25,17 @@ export const poolColumnConfigs = {
 export const renderBody = (data, columns, columnConfigs) => {
   return data.map((rowData, i) => <PoolRow key={i} rowData={rowData} columns={columns} columnConfigs={columnConfigs} />)
 }
+
+export const Type = ({ value }) => (
+  <div
+    className="bg-black px-4 text-white"
+    style={{
+      fontSize: '10px',
+      borderRadius: '6px',
+      paddingTop: '2px',
+      paddingBottom: '2px',
+    }}
+  >
+    {value}
+  </div>
+)

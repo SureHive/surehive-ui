@@ -128,6 +128,7 @@ module.exports = {
         'blue-glow': '0px 57px 90px -47px rgba(39, 176, 230, 0.17)',
         'pink-glow-hovered': '0px 57px 90px -47px rgba(250, 82, 160, 0.30)',
         'blue-glow-hovered': '0px 57px 90px -47px rgba(39, 176, 230, 0.34)',
+        'pool-table': '0 61px 61px -47px #1F2F46',
       },
       ringWidth: {
         DEFAULT: '1px',

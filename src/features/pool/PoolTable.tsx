@@ -37,7 +37,7 @@ const PoolTable = ({ fetchData }) => {
     {
       currency: allTokens[0],
       otherCurrency: allTokens[3],
-      type: 'Public',
+      type: 'Private',
       feeRate: '0.35',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44M', '124.27M'],
@@ -67,7 +67,7 @@ const PoolTable = ({ fetchData }) => {
     {
       currency: allTokens[3],
       otherCurrency: allTokens[4],
-      type: 'Public',
+      type: 'Private',
       feeRate: '0.25',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
@@ -122,7 +122,7 @@ const PoolTable = ({ fetchData }) => {
         columnConfigs={poolColumnConfigs}
         data={tempData}
         headerHeight={'40px'}
-        className="px-0 py-0 text-gray text-xs rounded-md"
+        className="px-0 py-0 text-gray text-xs rounded-md shadow-pool-table"
         renderBody={renderBody}
         bodyHeight={'300px'}
       />
