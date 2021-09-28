@@ -29,6 +29,9 @@ msgstr ""
 msgid "24 Hours"
 msgstr ""
 
+msgid "24 hours"
+msgstr ""
+
 msgid "30 Days"
 msgstr ""
 
@@ -66,6 +69,9 @@ msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
+msgstr ""
+
+msgid "All time"
 msgstr ""
 
 msgid "Amount of Tokens"
@@ -108,6 +114,9 @@ msgid "Available"
 msgstr "Disponibile"
 
 msgid "Available Networks"
+msgstr ""
+
+msgid "BASE TOKEN"
 msgstr ""
 
 msgid "Back to Limit Orders"
@@ -306,6 +315,9 @@ msgstr "Documentazione per gli sviluppatori di Sushi."
 msgid "Documentation for users of Sushi."
 msgstr "Documentazione per gli utenti di Sushi."
 
+msgid "Edit Liquidity"
+msgstr ""
+
 msgid "Either return to the {link}, or change to an available network."
 msgstr ""
 
@@ -362,6 +374,9 @@ msgid "FROM"
 msgstr ""
 
 msgid "Farm"
+msgstr ""
+
+msgid "Fees"
 msgstr ""
 
 msgid "Filled"
@@ -596,6 +611,9 @@ msgstr ""
 msgid "Minimum received"
 msgstr "Minimo ricevuto"
 
+msgid "My Liquidity"
+msgstr ""
+
 msgid "My Liquidity Positions"
 msgstr ""
 
@@ -734,6 +752,9 @@ msgid "Price Updated"
 msgstr "Prezzo aggiornato"
 
 msgid "Public"
+msgstr ""
+
+msgid "QUOTE TOKEN"
 msgstr ""
 
 msgid "Rate"
@@ -998,6 +1019,12 @@ msgstr "Strumenti per ottimizzare il tuo flusso di lavoro."
 msgid "Total"
 msgstr "Totale"
 
+msgid "Total Liquidity"
+msgstr ""
+
+msgid "Traders"
+msgstr ""
+
 msgid "Transaction History {0}"
 msgstr ""
 
@@ -1066,6 +1093,9 @@ msgstr "Visualizza statistiche"
 
 msgid "View on explorer"
 msgstr "Visualizza sull'explorer"
+
+msgid "Volume"
+msgstr ""
 
 msgid "Waiting for Confirmation"
 msgstr ""

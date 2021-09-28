@@ -29,6 +29,9 @@ msgstr ""
 msgid "24 Hours"
 msgstr ""
 
+msgid "24 hours"
+msgstr ""
+
 msgid "30 Days"
 msgstr ""
 
@@ -66,6 +69,9 @@ msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
+msgstr ""
+
+msgid "All time"
 msgstr ""
 
 msgid "Amount of Tokens"
@@ -108,6 +114,9 @@ msgid "Available"
 msgstr "Có sẵn"
 
 msgid "Available Networks"
+msgstr ""
+
+msgid "BASE TOKEN"
 msgstr ""
 
 msgid "Back to Limit Orders"
@@ -304,6 +313,9 @@ msgstr "Tài liệu dành cho các nhà phát triển Sushi."
 msgid "Documentation for users of Sushi."
 msgstr "Tài liệu cho người dùng Sushi."
 
+msgid "Edit Liquidity"
+msgstr ""
+
 msgid "Either return to the {link}, or change to an available network."
 msgstr ""
 
@@ -360,6 +372,9 @@ msgid "FROM"
 msgstr ""
 
 msgid "Farm"
+msgstr ""
+
+msgid "Fees"
 msgstr ""
 
 msgid "Filled"
@@ -597,6 +612,9 @@ msgstr ""
 msgid "Minimum received"
 msgstr "Số tiền nhận được tối thiểu"
 
+msgid "My Liquidity"
+msgstr ""
+
 msgid "My Liquidity Positions"
 msgstr ""
 
@@ -735,6 +753,9 @@ msgid "Price Updated"
 msgstr "Đã cập nhật giá"
 
 msgid "Public"
+msgstr ""
+
+msgid "QUOTE TOKEN"
 msgstr ""
 
 msgid "Rate"
@@ -999,6 +1020,12 @@ msgstr "Công cụ để tối ưu hóa quy trình làm việc của bạn."
 msgid "Total"
 msgstr "Tổng cộng"
 
+msgid "Total Liquidity"
+msgstr ""
+
+msgid "Traders"
+msgstr ""
+
 msgid "Transaction History {0}"
 msgstr ""
 
@@ -1067,6 +1094,9 @@ msgstr "Xem số liệu thống kê"
 
 msgid "View on explorer"
 msgstr "Xem trên explorer"
+
+msgid "Volume"
+msgstr ""
 
 msgid "Waiting for Confirmation"
 msgstr ""

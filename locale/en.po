@@ -29,6 +29,9 @@ msgstr "1 Week"
 msgid "24 Hours"
 msgstr "24 Hours"
 
+msgid "24 hours"
+msgstr "24 hours"
+
 msgid "30 Days"
 msgstr "30 Days"
 
@@ -67,6 +70,9 @@ msgstr "Added"
 
 msgid "Additional records and weekly merkle updates can be found on"
 msgstr "Additional records and weekly merkle updates can be found on"
+
+msgid "All time"
+msgstr "All time"
 
 msgid "Amount of Tokens"
 msgstr "Amount of Tokens"
@@ -109,6 +115,9 @@ msgstr "Available"
 
 msgid "Available Networks"
 msgstr "Available Networks"
+
+msgid "BASE TOKEN"
+msgstr "BASE TOKEN"
 
 msgid "Back to Limit Orders"
 msgstr "Back to Limit Orders"
@@ -309,6 +318,9 @@ msgstr "Documentation for developers of Sushi."
 msgid "Documentation for users of Sushi."
 msgstr "Documentation for users of Sushi."
 
+msgid "Edit Liquidity"
+msgstr "Edit Liquidity"
+
 msgid "Either return to the {link}, or change to an available network."
 msgstr "Either return to the {link}, or change to an available network."
 
@@ -366,6 +378,9 @@ msgstr "FROM"
 
 msgid "Farm"
 msgstr "Farm"
+
+msgid "Fees"
+msgstr "Fees"
 
 msgid "Filled"
 msgstr "Filled"
@@ -604,6 +619,9 @@ msgstr "Minimum Received"
 msgid "Minimum received"
 msgstr "Minimum received"
 
+msgid "My Liquidity"
+msgstr "My Liquidity"
+
 msgid "My Liquidity Positions"
 msgstr "My Liquidity Positions"
 
@@ -745,6 +763,9 @@ msgstr "Price Updated"
 
 msgid "Public"
 msgstr "Public"
+
+msgid "QUOTE TOKEN"
+msgstr "QUOTE TOKEN"
 
 msgid "Rate"
 msgstr "Rate"
@@ -1012,6 +1033,12 @@ msgstr "Tools to optimize your workflow."
 msgid "Total"
 msgstr "Total"
 
+msgid "Total Liquidity"
+msgstr "Total Liquidity"
+
+msgid "Traders"
+msgstr "Traders"
+
 msgid "Transaction History {0}"
 msgstr "Transaction History {0}"
 
@@ -1080,6 +1107,9 @@ msgstr "View Stats"
 
 msgid "View on explorer"
 msgstr "View on explorer"
+
+msgid "Volume"
+msgstr "Volume"
 
 msgid "Waiting for Confirmation"
 msgstr "Waiting for Confirmation"
