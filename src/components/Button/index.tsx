@@ -149,5 +149,6 @@ export const FilledButton = styled.button.attrs(({ className, ...rest }) => ({
   background-image: linear-gradient(238deg, #004bff 0%, #3772ff 42%, #0004f7 100%);
   border-radius: 28px;
   width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
   height: ${({ height }) => height};
 `

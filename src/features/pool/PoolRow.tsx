@@ -22,12 +22,11 @@ const PoolRow = ({ rowData, columns, columnConfigs }) => {
     </div>
   )
 
-  console.log(rowData.currency)
   const router = useRouter()
   const handleClick = (e) => {
     e.preventDefault()
     router.push({
-      pathname: '/pool/pair',
+      pathname: '/pool/expanded',
       query: {
         currency: rowData.currency.tokenInfo.symbol,
         otherCurrency: rowData.otherCurrency.tokenInfo.symbol,

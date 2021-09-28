@@ -25,10 +25,10 @@ const PoolTable = ({ fetchData }) => {
       impermantLoss: '5',
     },
     {
-      currency: allTokens[0],
-      otherCurrency: allTokens[2],
+      currency: allTokens[4],
+      otherCurrency: allTokens[0],
       type: 'Public',
-      feeRate: '0.2',
+      feeRate: '1.25',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
       myLiquidity: ['134K', '72.4'],

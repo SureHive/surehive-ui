@@ -7,7 +7,7 @@ import { t } from '@lingui/macro'
 import Container from '../../../components/Container'
 import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
 import { Currency } from '@sushiswap/sdk'
-import PoolPairSidePanel from '../../../features/pool/Pair'
+import ExpandedPool from '../../../features/pool/ExpandedPool'
 
 export default function PoolExpandedPair(): JSX.Element {
   const { i18n } = useLingui()
@@ -19,8 +19,11 @@ export default function PoolExpandedPair(): JSX.Element {
   // for testing
   const allTokens: Currency[] = Object.values(useAllTokens())
 
-  const currencyA = allTokens[0]
-  const currencyB = allTokens[1]
+  const currencyA = allTokens.find((t) => t.symbol === currency)
+  const currencyB = allTokens.find((t) => t.symbol === otherCurrency)
+
+  // for testing
+  const hasLiquidity = currencyA.symbol.toUpperCase() === 'WETH' || currencyB.symbol.toUpperCase() === 'WETH'
 
   return (
     <>
@@ -31,7 +34,12 @@ export default function PoolExpandedPair(): JSX.Element {
       <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
           <div className="w-full sm:w-538 order-last sm:order-first">
-            <PoolPairSidePanel currency={currencyA} otherCurrency={currencyB} />
+            <ExpandedPool
+              currency={currencyA}
+              otherCurrency={currencyB}
+              hasLiquidity={hasLiquidity}
+              currentTheme={currentTheme}
+            />
           </div>
         </div>
       </Container>
