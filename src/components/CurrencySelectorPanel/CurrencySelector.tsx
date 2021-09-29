@@ -1,12 +1,11 @@
 import { Currency } from '@sushiswap/sdk'
-import CurrencyLogo from '../../CurrencyLogo'
+import CurrencyLogo from '../CurrencyLogo'
 import React, { useCallback, useState } from 'react'
-import Image from '../../Image'
+import Image from '../Image'
 import Lottie from 'lottie-react'
-import selectCoinAnimation from '../../../animation/select-coin.json'
+import selectCoinAnimation from '../../animation/select-coin.json'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import CurrencySearchModal from '../../../modals/SearchModal/CurrencySearchModal'
 
 interface CurrencySelectorProps {
   currency?: Currency

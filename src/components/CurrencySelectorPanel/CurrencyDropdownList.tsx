@@ -1,8 +1,8 @@
 import { Currency, CurrencyAmount } from '@sushiswap/sdk'
-import { useCurrencyBalance } from '../../../state/wallet/hooks'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
-import CurrencyLogo from '../../CurrencyLogo'
-import Loader from '../../Loader'
+import { useCurrencyBalance } from '../../state/wallet/hooks'
+import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import CurrencyLogo from '../CurrencyLogo'
+import Loader from '../Loader'
 import { RefObject } from 'react'
 
 interface CurrencyDropdownProps {

@@ -9,7 +9,7 @@ interface DoubleCurrencyLogoProps {
   currency1?: Currency
 }
 
-export default function DoubleCurrencyLogo({ currency0, currency1, size = 16 }: DoubleCurrencyLogoProps) {
+export default function DoubleCurrencyLogoOld({ currency0, currency1, size = 16 }: DoubleCurrencyLogoProps) {
   return (
     <div className="flex items-center space-x-2">
       <CurrencyLogo currency={currency0} size={size.toString() + 'px'} />

@@ -29,6 +29,9 @@ msgstr ""
 msgid "24 Hours"
 msgstr ""
 
+msgid "24 hours"
+msgstr ""
+
 msgid "30 Days"
 msgstr ""
 
@@ -68,10 +71,16 @@ msgstr ""
 msgid "Additional records and weekly merkle updates can be found on"
 msgstr ""
 
+msgid "All time"
+msgstr ""
+
 msgid "Amount of Tokens"
 msgstr "Quantità di token"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+msgstr ""
+
+msgid "Apply Preferences"
 msgstr ""
 
 msgid "Approve"
@@ -107,6 +116,9 @@ msgstr "Disponibile"
 msgid "Available Networks"
 msgstr ""
 
+msgid "BASE TOKEN"
+msgstr ""
+
 msgid "Back to Limit Orders"
 msgstr ""
 
@@ -132,6 +144,9 @@ msgid "Borrowed"
 msgstr "Preso in prestito"
 
 msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgstr ""
+
+msgid "Breakdown"
 msgstr ""
 
 msgid "Buy"
@@ -240,6 +255,9 @@ msgstr ""
 msgid "Copy Address"
 msgstr ""
 
+msgid "Create Pool"
+msgstr ""
+
 msgid "Create Pool & Supply"
 msgstr "Crea pool e fornitura"
 
@@ -297,6 +315,9 @@ msgstr "Documentazione per gli sviluppatori di Sushi."
 msgid "Documentation for users of Sushi."
 msgstr "Documentazione per gli utenti di Sushi."
 
+msgid "Edit Liquidity"
+msgstr ""
+
 msgid "Either return to the {link}, or change to an available network."
 msgstr ""
 
@@ -353,6 +374,9 @@ msgid "FROM"
 msgstr ""
 
 msgid "Farm"
+msgstr ""
+
+msgid "Fees"
 msgstr ""
 
 msgid "Filled"
@@ -587,6 +611,9 @@ msgstr ""
 msgid "Minimum received"
 msgstr "Minimo ricevuto"
 
+msgid "My Liquidity"
+msgstr ""
+
 msgid "My Liquidity Positions"
 msgstr ""
 
@@ -706,6 +733,9 @@ msgstr "Pool token in pool di ricompense"
 msgid "Pooled {0}"
 msgstr "{0} raccolti"
 
+msgid "Pools"
+msgstr ""
+
 msgid "Positions"
 msgstr "Posizioni"
 
@@ -720,6 +750,12 @@ msgstr "Impatto sul prezzo troppo elevato"
 
 msgid "Price Updated"
 msgstr "Prezzo aggiornato"
+
+msgid "Public"
+msgstr ""
+
+msgid "QUOTE TOKEN"
+msgstr ""
 
 msgid "Rate"
 msgstr ""
@@ -763,6 +799,9 @@ msgstr ""
 msgid "Rewards"
 msgstr ""
 
+msgid "Risk of {0}% loss"
+msgstr ""
+
 msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
@@ -782,6 +821,9 @@ msgid "SLIPPAGE TOLERANCE"
 msgstr ""
 
 msgid "SLP"
+msgstr ""
+
+msgid "Search here"
 msgstr ""
 
 msgid "Search name or paste address"
@@ -977,6 +1019,12 @@ msgstr "Strumenti per ottimizzare il tuo flusso di lavoro."
 msgid "Total"
 msgstr "Totale"
 
+msgid "Total Liquidity"
+msgstr ""
+
+msgid "Traders"
+msgstr ""
+
 msgid "Transaction History {0}"
 msgstr ""
 
@@ -1045,6 +1093,9 @@ msgstr "Visualizza statistiche"
 
 msgid "View on explorer"
 msgstr "Visualizza sull'explorer"
+
+msgid "Volume"
+msgstr ""
 
 msgid "Waiting for Confirmation"
 msgstr ""
@@ -1187,6 +1238,9 @@ msgid_plural "Tokens"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "{0}"
+msgstr ""
+
 msgid "{0} Deposited"
 msgstr "{0} depositato"
 
@@ -1203,4 +1257,7 @@ msgid "{0}/{1} Burned"
 msgstr ""
 
 msgid "{label}"
+msgstr ""
+
+msgid "{tab}"
 msgstr ""

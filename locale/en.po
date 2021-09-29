@@ -29,6 +29,9 @@ msgstr "1 Week"
 msgid "24 Hours"
 msgstr "24 Hours"
 
+msgid "24 hours"
+msgstr "24 hours"
+
 msgid "30 Days"
 msgstr "30 Days"
 
@@ -68,11 +71,17 @@ msgstr "Added"
 msgid "Additional records and weekly merkle updates can be found on"
 msgstr "Additional records and weekly merkle updates can be found on"
 
+msgid "All time"
+msgstr "All time"
+
 msgid "Amount of Tokens"
 msgstr "Amount of Tokens"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 msgstr "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+
+msgid "Apply Preferences"
+msgstr "Apply Preferences"
 
 msgid "Approve"
 msgstr "Approve"
@@ -107,6 +116,9 @@ msgstr "Available"
 msgid "Available Networks"
 msgstr "Available Networks"
 
+msgid "BASE TOKEN"
+msgstr "BASE TOKEN"
+
 msgid "Back to Limit Orders"
 msgstr "Back to Limit Orders"
 
@@ -133,6 +145,9 @@ msgstr "Borrowed"
 
 msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
 msgstr "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+
+msgid "Breakdown"
+msgstr "Breakdown"
 
 msgid "Buy"
 msgstr "Buy"
@@ -243,6 +258,9 @@ msgstr "Copied"
 msgid "Copy Address"
 msgstr "Copy Address"
 
+msgid "Create Pool"
+msgstr "Create Pool"
+
 msgid "Create Pool & Supply"
 msgstr "Create Pool & Supply"
 
@@ -299,6 +317,9 @@ msgstr "Documentation for developers of Sushi."
 
 msgid "Documentation for users of Sushi."
 msgstr "Documentation for users of Sushi."
+
+msgid "Edit Liquidity"
+msgstr "Edit Liquidity"
 
 msgid "Either return to the {link}, or change to an available network."
 msgstr "Either return to the {link}, or change to an available network."
@@ -357,6 +378,9 @@ msgstr "FROM"
 
 msgid "Farm"
 msgstr "Farm"
+
+msgid "Fees"
+msgstr "Fees"
 
 msgid "Filled"
 msgstr "Filled"
@@ -595,6 +619,9 @@ msgstr "Minimum Received"
 msgid "Minimum received"
 msgstr "Minimum received"
 
+msgid "My Liquidity"
+msgstr "My Liquidity"
+
 msgid "My Liquidity Positions"
 msgstr "My Liquidity Positions"
 
@@ -716,6 +743,9 @@ msgstr "Pool tokens in rewards pool"
 msgid "Pooled {0}"
 msgstr "Pooled {0}"
 
+msgid "Pools"
+msgstr "Pools"
+
 msgid "Positions"
 msgstr "Positions"
 
@@ -730,6 +760,12 @@ msgstr "Price Impact Too High"
 
 msgid "Price Updated"
 msgstr "Price Updated"
+
+msgid "Public"
+msgstr "Public"
+
+msgid "QUOTE TOKEN"
+msgstr "QUOTE TOKEN"
 
 msgid "Rate"
 msgstr "Rate"
@@ -773,6 +809,9 @@ msgstr "Review Limit Order"
 msgid "Rewards"
 msgstr "Rewards"
 
+msgid "Risk of {0}% loss"
+msgstr "Risk of {0}% loss"
+
 msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr "Roll it back - this feature is not yet supported on {0}."
 
@@ -793,6 +832,9 @@ msgstr "SLIPPAGE TOLERANCE"
 
 msgid "SLP"
 msgstr "SLP"
+
+msgid "Search here"
+msgstr "Search here"
 
 msgid "Search name or paste address"
 msgstr "Search name or paste address"
@@ -991,6 +1033,12 @@ msgstr "Tools to optimize your workflow."
 msgid "Total"
 msgstr "Total"
 
+msgid "Total Liquidity"
+msgstr "Total Liquidity"
+
+msgid "Traders"
+msgstr "Traders"
+
 msgid "Transaction History {0}"
 msgstr "Transaction History {0}"
 
@@ -1059,6 +1107,9 @@ msgstr "View Stats"
 
 msgid "View on explorer"
 msgstr "View on explorer"
+
+msgid "Volume"
+msgstr "Volume"
 
 msgid "Waiting for Confirmation"
 msgstr "Waiting for Confirmation"
@@ -1201,6 +1252,9 @@ msgid_plural "Tokens"
 msgstr[0] "Token"
 msgstr[1] "Tokens"
 
+msgid "{0}"
+msgstr "{0}"
+
 msgid "{0} Deposited"
 msgstr "{0} Deposited"
 
@@ -1218,3 +1272,6 @@ msgstr "{0}/{1} Burned"
 
 msgid "{label}"
 msgstr "{label}"
+
+msgid "{tab}"
+msgstr "{tab}"

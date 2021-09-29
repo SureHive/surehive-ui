@@ -114,7 +114,7 @@ module.exports = {
             fontWeight: 700,
           },
         ],
-        sm: ['16px', '20px', {}],
+        sm: ['14px', '20px', {}],
       },
       borderRadius: {
         none: '0',
@@ -128,6 +128,11 @@ module.exports = {
         'blue-glow': '0px 57px 90px -47px rgba(39, 176, 230, 0.17)',
         'pink-glow-hovered': '0px 57px 90px -47px rgba(250, 82, 160, 0.30)',
         'blue-glow-hovered': '0px 57px 90px -47px rgba(39, 176, 230, 0.34)',
+        'pool-table': '0 61px 61px -47px #1F2F46',
+        'pool-edit-type-switch': ' inset 0 1px 15px 0 rgba(0,0,0,0.92)',
+      },
+      height: {
+        42: '42px',
       },
       ringWidth: {
         DEFAULT: '1px',

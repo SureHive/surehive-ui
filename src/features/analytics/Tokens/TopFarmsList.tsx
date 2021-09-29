@@ -1,5 +1,5 @@
-import DoubleCurrencyLogo from '../../../components/DoubleLogo'
-import Table from '../../../components/Table'
+import DoubleCurrencyLogoOld from '../../../components/DoubleLogoOld'
+import TableOld from '../../../components/Table-old'
 import { formatPercent } from '../../../functions'
 import { pairQuery } from '../../../services/graph/queries'
 import { useCurrency } from '../../../hooks/Tokens'
@@ -44,7 +44,7 @@ function FarmListname({ pair }: FarmListNameProps): JSX.Element {
 
   return (
     <div className="flex items-center">
-      <DoubleCurrencyLogo currency0={token0} currency1={token1} size={28} />
+      <DoubleCurrencyLogoOld currency0={token0} currency1={token1} size={28} />
       <div className="ml-3 font-bold text-high-emphesis">
         {pair.token0.symbol}-{pair.token1.symbol}
       </div>
@@ -77,5 +77,5 @@ export default function TopFarmsList({ farms }: TopFarmsListProps): JSX.Element 
     []
   )
 
-  return <>{farms && <Table columns={columns} data={farms} defaultSortBy={{ id: 'ROI (1Y)', desc: true }} />}</>
+  return <>{farms && <TableOld columns={columns} data={farms} defaultSortBy={{ id: 'ROI (1Y)', desc: true }} />}</>
 }

@@ -29,6 +29,9 @@ msgstr ""
 msgid "24 Hours"
 msgstr ""
 
+msgid "24 hours"
+msgstr ""
+
 msgid "30 Days"
 msgstr ""
 
@@ -68,10 +71,16 @@ msgstr ""
 msgid "Additional records and weekly merkle updates can be found on"
 msgstr ""
 
+msgid "All time"
+msgstr ""
+
 msgid "Amount of Tokens"
 msgstr "トークンの量"
 
 msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+msgstr ""
+
+msgid "Apply Preferences"
 msgstr ""
 
 msgid "Approve"
@@ -107,6 +116,9 @@ msgstr "利用可能"
 msgid "Available Networks"
 msgstr ""
 
+msgid "BASE TOKEN"
+msgstr ""
+
 msgid "Back to Limit Orders"
 msgstr ""
 
@@ -132,6 +144,9 @@ msgid "Borrowed"
 msgstr "借入れ済み"
 
 msgid "Borrowing enables you to obtain liquidity without selling. Your borrow limit depends on the amount of deposited collateral. You will be able to borrow up to 75% of your collateral and repay at any time with accrued interest."
+msgstr ""
+
+msgid "Breakdown"
 msgstr ""
 
 msgid "Buy"
@@ -240,6 +255,9 @@ msgstr ""
 msgid "Copy Address"
 msgstr ""
 
+msgid "Create Pool"
+msgstr ""
+
 msgid "Create Pool & Supply"
 msgstr "プールおよび供給を作成"
 
@@ -297,6 +315,9 @@ msgstr "Sushiの開発者向けドキュメント。"
 msgid "Documentation for users of Sushi."
 msgstr "Sushiのユーザー向けドキュメント。"
 
+msgid "Edit Liquidity"
+msgstr ""
+
 msgid "Either return to the {link}, or change to an available network."
 msgstr ""
 
@@ -353,6 +374,9 @@ msgid "FROM"
 msgstr ""
 
 msgid "Farm"
+msgstr ""
+
+msgid "Fees"
 msgstr ""
 
 msgid "Filled"
@@ -590,6 +614,9 @@ msgstr ""
 msgid "Minimum received"
 msgstr "最小の受け取り"
 
+msgid "My Liquidity"
+msgstr ""
+
 msgid "My Liquidity Positions"
 msgstr ""
 
@@ -709,6 +736,9 @@ msgstr "報酬プールのトークンをプール"
 msgid "Pooled {0}"
 msgstr "{0}をプールしました"
 
+msgid "Pools"
+msgstr ""
+
 msgid "Positions"
 msgstr "ポジション"
 
@@ -723,6 +753,12 @@ msgstr "価格への影響が高すぎる"
 
 msgid "Price Updated"
 msgstr "価格が更新されました"
+
+msgid "Public"
+msgstr ""
+
+msgid "QUOTE TOKEN"
+msgstr ""
 
 msgid "Rate"
 msgstr ""
@@ -766,6 +802,9 @@ msgstr ""
 msgid "Rewards"
 msgstr ""
 
+msgid "Risk of {0}% loss"
+msgstr ""
+
 msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
@@ -785,6 +824,9 @@ msgid "SLIPPAGE TOLERANCE"
 msgstr ""
 
 msgid "SLP"
+msgstr ""
+
+msgid "Search here"
 msgstr ""
 
 msgid "Search name or paste address"
@@ -980,6 +1022,12 @@ msgstr "ワークフローを最適化するツール。"
 msgid "Total"
 msgstr "合計"
 
+msgid "Total Liquidity"
+msgstr ""
+
+msgid "Traders"
+msgstr ""
+
 msgid "Transaction History {0}"
 msgstr ""
 
@@ -1048,6 +1096,9 @@ msgstr "統計を表示"
 
 msgid "View on explorer"
 msgstr "エクスプローラーで表示"
+
+msgid "Volume"
+msgstr ""
 
 msgid "Waiting for Confirmation"
 msgstr ""
@@ -1190,6 +1241,9 @@ msgid_plural "Tokens"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "{0}"
+msgstr ""
+
 msgid "{0} Deposited"
 msgstr "{0}の預け入れ"
 
@@ -1206,4 +1260,7 @@ msgid "{0}/{1} Burned"
 msgstr ""
 
 msgid "{label}"
+msgstr ""
+
+msgid "{tab}"
 msgstr ""

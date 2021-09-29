@@ -1,7 +1,7 @@
 import { classNames, formatNumber, formatPercent } from '../../functions'
 
 import { Disclosure } from '@headlessui/react'
-import DoubleLogo from '../../components/DoubleLogo'
+import DoubleLogo from '../../components/DoubleLogoOld'
 import FarmListItemDetails from './FarmListItemDetails'
 import Image from '../../components/Image'
 import { PairType } from './enum'

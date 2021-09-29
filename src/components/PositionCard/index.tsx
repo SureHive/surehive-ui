@@ -10,7 +10,7 @@ import { BIG_INT_ZERO } from '../../constants'
 import Button from '../Button'
 import CurrencyLogo from '../CurrencyLogo'
 import Dots from '../Dots'
-import DoubleCurrencyLogo from '../DoubleLogo'
+import DoubleCurrencyLogoOld from '../DoubleLogoOld'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useColor } from '../../hooks'
@@ -67,7 +67,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <div className="text-lg">Your Position</div>
             <div className="flex flex-col md:flex-row md:justify-between">
               <RowFixed className="flex items-center space-x-4">
-                <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={40} />
+                <DoubleCurrencyLogoOld currency0={pair.token0} currency1={pair.token1} size={40} />
                 <div className="text-2xl font-semibold">
                   {currency0.symbol}/{currency1.symbol}
                 </div>
@@ -165,7 +165,7 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
         onClick={() => setShowMore(!showMore)}
       >
         <div className="flex items-center space-x-4">
-          <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={40} />
+          <DoubleCurrencyLogoOld currency0={currency0} currency1={currency1} size={40} />
           <div className="text-xl font-semibold">
             {!currency0 || !currency1 ? <Dots>{i18n._(t`Loading`)}</Dots> : `${currency0.symbol}/${currency1.symbol}`}
           </div>
