@@ -145,7 +145,7 @@ const EditPool = ({ currency, otherCurrency, currentTheme }) => {
       <SidePanelBox className="p-5 gap-y-8">
         <MyLiquidityBox currency={currency} otherCurrency={otherCurrency} />
         <div
-          className="flex flex-row w-full justify-between bg-dark-870 h-42 shadow-pool-edit-type-switch text-xs text-white px-10 py-1"
+          className="flex flex-row w-full justify-between bg-white-150 dark:bg-dark-870 h-42 shadow-pool-edit-type-switch-light dark:shadow-pool-edit-type-switch text-xs text-dark-600 dark:text-white px-10 py-1"
           style={{ borderRadius: '29px' }}
         >
           <EditTypeButton editType={EditType.ADD} label={'Add Liquidity'} />

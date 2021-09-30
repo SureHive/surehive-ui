@@ -122,7 +122,7 @@ const PoolTable = ({ fetchData }) => {
         columnConfigs={poolColumnConfigs}
         data={tempData}
         headerHeight={'40px'}
-        className="px-0 py-0 text-gray text-xs rounded-md shadow-pool-table"
+        className="px-0 py-0 text-gray text-xs rounded-md pool-table-light dark:shadow-pool-table"
         renderBody={renderBody}
         bodyHeight={'300px'}
       />

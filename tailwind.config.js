@@ -50,6 +50,8 @@ module.exports = {
       backgroundImage: {
         'draw-menu-dark': 'url(/images/patterns/pattern-drawmenu.svg)',
         'draw-menu-light': 'url(/images/patterns/pattern-drawmenu-light.svg)',
+        'white-to-transparent': 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,0,0,0.00) 100%)',
+        'dark-to-transparent': 'linear-gradient(180deg, #000000 0%, rgba(0,0,0,0.00) 100%)',
       },
       colors: {
         purple: '#2B39990',
@@ -62,6 +64,8 @@ module.exports = {
         gray: '#B1B5C3',
 
         'blue-100': '#3772FF',
+
+        'light-green': '#58BD7D',
 
         'white-100': '#FCFCFD',
         'white-130': '#F8F8F9',
@@ -129,7 +133,13 @@ module.exports = {
         'pink-glow-hovered': '0px 57px 90px -47px rgba(250, 82, 160, 0.30)',
         'blue-glow-hovered': '0px 57px 90px -47px rgba(39, 176, 230, 0.34)',
         'pool-table': '0 61px 61px -47px #1F2F46',
+        'pool-table-light': '0 61px 61px -47px #E6E8EC',
         'pool-edit-type-switch': ' inset 0 1px 15px 0 rgba(0,0,0,0.92)',
+        'pool-edit-type-switch-light': ' inset 0 1px 15px 0 #E6E8EC',
+        'pool-liquidity': '0 61px 61px -47px #1F2F46',
+        'pool-liquidity-light': '0 61px 61px -47px #E6E8EC',
+        'graph-time-range-selector-light': '0 -11px 12px -8px rgba(200,200,200,0.50)',
+        'graph-time-range-selector': '0 -11px 12px -8px rgba(0,0,0,0.50)',
       },
       height: {
         42: '42px',

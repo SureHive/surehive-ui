@@ -128,9 +128,8 @@ export const TotalLiquidityBox = ({ currency, otherCurrency }) => {
   const { i18n } = useLingui()
   return (
     <div
-      className="bg-dark-1000 p-10 space-y-4 text-white"
+      className="bg-white-150 dark:bg-dark-1000 p-10 space-y-4 text-dark-600 dark:text-white shadow-pool-liquidity-light dark:shadow-pool-liquidity"
       style={{
-        boxShadow: '0 61px 61px -47px #1F2F46',
         borderRadius: '10px',
         height: '170px',
       }}
@@ -169,9 +168,8 @@ export const MyLiquidityBox = ({ currency, otherCurrency }) => {
 
   return (
     <div
-      className="bg-dark-1000 px-10 py-5 space-y-4 text-white"
+      className="bg-white-150 dark:bg-dark-1000 px-10 py-5 space-y-4 text-dark-600 dark:text-white shadow-pool-liquidity-light dark:shadow-pool-liquidity"
       style={{
-        boxShadow: '0 61px 61px -47px #1F2F46',
         borderRadius: '10px',
         height: '113px',
       }}

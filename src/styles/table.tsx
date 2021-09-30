@@ -30,7 +30,7 @@ export const TableRow = styled.tr.attrs(({ className, ...rest }) => ({
   ...rest,
 }))`
   height: ${({ height }) => height};
-  border-bottom: 1px solid;
+  border-top: 1px solid;
   ${(props) => props.addCSS}
 `
 
