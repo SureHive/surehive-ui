@@ -52,6 +52,7 @@ module.exports = {
         'draw-menu-light': 'url(/images/patterns/pattern-drawmenu-light.svg)',
         'white-to-transparent': 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,0,0,0.00) 100%)',
         'dark-to-transparent': 'linear-gradient(180deg, #000000 0%, rgba(0,0,0,0.00) 100%)',
+        'graph-bar-blue-gradient': 'linear-gradient(177deg, #3772FF 52%, rgba(0,75,255,0.00) 100%)',
       },
       colors: {
         purple: '#2B39990',

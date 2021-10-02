@@ -13,7 +13,8 @@ export const TableHeader = styled.thead.attrs(({ className, ...rest }) => ({
   ...rest,
 }))`
   height: ${({ height }) => height};
-  border-bottom: 1px solid;
+  border-style: solid;
+  border-bottom-width: 1px;
   ${(props) => props.addCSS}
 `
 
@@ -30,7 +31,8 @@ export const TableRow = styled.tr.attrs(({ className, ...rest }) => ({
   ...rest,
 }))`
   height: ${({ height }) => height};
-  border-top: 1px solid;
+  border-style: solid;
+  border-bottom-width: 1px;
   ${(props) => props.addCSS}
 `
 

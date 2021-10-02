@@ -36,7 +36,7 @@ const Row = ({ rowData, columns, columnConfigs }) => {
   const { i18n } = useLingui()
   return (
     <TableRow
-      className="flex flex-row items-center w-full text-sm text-dark-1000 dark:text-white border-t-2 border-solid dark:border-dark-500 border-white-200"
+      className="flex flex-row items-center w-full text-sm text-dark-1000 dark:text-white dark:border-dark-500 border-white-200"
       style={{ height: '60px' }}
     >
       <TableCell {...columnConfigs.type}>{i18n._(t`${rowData.type}`)}</TableCell>
@@ -73,7 +73,7 @@ const TransactionTable = ({ data }) => {
       headerHeight={'40px'}
       bodyHeight={'251px'}
       renderBody={renderBody}
-      className="flex flex-col bg-white dark:bg-dark-852 rounded-lg text-xs text-gray"
+      className="flex flex-col bg-white dark:bg-dark-852 rounded-lg text-xs text-gray px-0"
     />
   )
 }

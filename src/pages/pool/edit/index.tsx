@@ -9,6 +9,7 @@ import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
 import { Currency } from '@sushiswap/sdk'
 import EditPool from '../../../features/pool/EditPool'
 import PoolTransactionLog from '../../../features/pool/PoolTransactionLog'
+import PoolGraph from '../../../features/pool/PoolGraph'
 
 export default function PoolExpandedPair(): JSX.Element {
   const { i18n } = useLingui()
@@ -31,12 +32,12 @@ export default function PoolExpandedPair(): JSX.Element {
       </Head>
       <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
-          <div className="w-full sm:w-538 order-last sm:order-first">
+          <div className="mobile:w-full order-last sm:order-first">
             <EditPool currency={currencyA} otherCurrency={currencyB} currentTheme={currentTheme} />
           </div>
           <div className="sm:flex-grow">
             <div className="grid w-full min-w-0 sm:min-w-900">
-              <div />
+              <PoolGraph currency={currencyA} otherCurrency={currencyB} currentTheme={currentTheme} />
               <PoolTransactionLog currency={currencyA} otherCurrency={currencyB} />
             </div>
           </div>

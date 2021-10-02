@@ -4,24 +4,25 @@ import { classNames } from '../functions'
 import { ReactNode } from 'react'
 
 export const GraphContainer = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('w-full dark:bg-dark-900 dark:border-dark-1000 mb-5', className),
+  className: classNames('w-full dark:bg-dark-900 dark:border-dark-1000 border-white-200 mb-5', className),
   ...rest,
 }))`
-  border-bottom: 1px solid;
+  border-style: solid;
+  border-bottom-width: 1px;
 `
 
 export const GraphBox = styled.div.attrs(({ className, ...rest }) => ({
   className: classNames('w-full px-10 py-2 bg-white-to-transparent dark:bg-dark-to-transparent', className),
   ...rest,
 }))`
-  height: ${({ height = '500px' }) => height};
+  height: ${({ height = '400px' }) => height};
 `
 
 export const Graph = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('mb-3 bg-draw-menu-light dark:bg-draw-menu-dark', className),
+  className: classNames('mb-3', className),
   ...rest,
 }))`
-  height: ${({ height = '438px' }) => height};
+  height: ${({ height = '338px' }) => height};
   ${(props) => props.addCSS}
 `
 
@@ -61,7 +62,7 @@ export const GraphTemplate = (props: GraphTemplateProps) => {
       <GraphBox>
         <Graph>
           {renderGraphDetails && renderGraphDetails()}
-          <ParentSize>{({ width, height }) => renderGraph({ width, height: height - 60 })}</ParentSize>
+          <ParentSize>{({ width, height }) => renderGraph({ width, height: height })}</ParentSize>
         </Graph>
         <GraphTime>
           {timeRange.map((value, i) => (
