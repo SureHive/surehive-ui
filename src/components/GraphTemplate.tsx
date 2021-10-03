@@ -4,7 +4,7 @@ import { classNames } from '../functions'
 import { ReactNode } from 'react'
 
 export const GraphContainer = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('w-full dark:bg-dark-900 dark:border-dark-1000 border-white-200 mb-5', className),
+  className: classNames('w-full dark:bg-dark-900 dark:border-dark-1000 border-white-200 sm:mb-5', className),
   ...rest,
 }))`
   border-style: solid;
@@ -12,7 +12,7 @@ export const GraphContainer = styled.div.attrs(({ className, ...rest }) => ({
 `
 
 export const GraphBox = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('w-full px-10 py-2 bg-white-to-transparent dark:bg-dark-to-transparent', className),
+  className: classNames('w-full sm:px-10 py-2 bg-white-to-transparent dark:bg-dark-to-transparent', className),
   ...rest,
 }))`
   height: ${({ height = '400px' }) => height};
@@ -44,6 +44,7 @@ export const GraphTimeRangeSelector = styled.div.attrs(({ className, ...rest }) 
 
 interface GraphTemplateProps {
   className?: string
+  graphBoxClassName?: string
   renderGraph: ({ width, height: number }) => ReactNode
   renderGraphDetails?: () => void
   timeRange?: string[]
@@ -52,6 +53,7 @@ interface GraphTemplateProps {
 export const GraphTemplate = (props: GraphTemplateProps) => {
   const {
     className = '',
+    graphBoxClassName = '',
     renderGraph,
     renderGraphDetails = null,
     timeRange = ['0:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00', '24:00'],
@@ -59,7 +61,7 @@ export const GraphTemplate = (props: GraphTemplateProps) => {
 
   return (
     <GraphContainer className={className}>
-      <GraphBox>
+      <GraphBox className={graphBoxClassName}>
         <Graph>
           {renderGraphDetails && renderGraphDetails()}
           <ParentSize>{({ width, height }) => renderGraph({ width, height: height })}</ParentSize>

@@ -9,6 +9,8 @@ import { FilledButton } from '../../components/Button'
 import letterFrequency, { LetterFrequency } from '@visx/mock-data/lib/mocks/letterFrequency'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
+import DoubleCurrencyLogo from '../../components/DoubleLogo'
+import { Type } from './const'
 
 enum GraphView {
   FEES,
@@ -99,8 +101,20 @@ const PoolGraph = ({ currency, otherCurrency, currentTheme }) => {
   }
 
   const GraphDetails = () => (
-    <div className="grid px-10 bg-white dark:bg-dark-1000 pt-2" style={{ height: '100px' }}>
-      <span className="text-dark-1000 dark:text-white text-2xl">
+    <div
+      className="grid justify-items-center sm:justify-items-start sm:px-10 bg-draw-menu-light dark:bg-draw-menu-dark bg-1000% sm:bg-auto sm:bg-white sm:dark:bg-dark-1000 pt-2"
+      style={{ height: '100px' }}
+    >
+      <div className="flex sm:hidden flex-row w-full items-center justify-around">
+        <div>
+          <DoubleCurrencyLogo currency0={currency} currency1={otherCurrency} size={40} isRound={true} />
+        </div>
+        <span className="text-dark-1000 dark:text-white text-lg">
+          {`${currency.symbol.toUpperCase()} / ${otherCurrency.symbol.toUpperCase()}`}
+        </span>
+        <Type value={'Public'} />
+      </div>
+      <span className="hidden sm:flex text-dark-1000 dark:text-white text-2xl">
         {`1 ${currency.symbol.toUpperCase()} = 1.0002 ${otherCurrency.symbol.toUpperCase()}`}
       </span>
       <span className="text-sm text-blue-100">{'$22,648,985.9676'}</span>
@@ -117,6 +131,7 @@ const PoolGraph = ({ currency, otherCurrency, currentTheme }) => {
       <GraphDetails />
       <Line className="bg-white-200 dark:bg-dark-900" />
       <GraphTemplate
+        graphBoxClassName="bg-draw-menu-light dark:bg-draw-menu-dark bg-1000% sm:bg-auto sm:bg-white-to-transparent sm:dark:bg-dark-to-transparent"
         renderGraph={({ width, height }) => (
           <div>
             <Chart

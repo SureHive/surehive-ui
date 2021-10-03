@@ -25,7 +25,11 @@ export default function PoolExpandedPair(): JSX.Element {
   const currencyB = allTokens.find((t) => t.symbol === otherCurrency)
 
   // for testing
-  const hasLiquidity = currencyA.symbol.toUpperCase() === 'WETH' || currencyB.symbol.toUpperCase() === 'WETH'
+  const hasLiquidity =
+    currencyA.symbol.toUpperCase() === 'WETH' ||
+    currencyB.symbol.toUpperCase() === 'WETH' ||
+    currencyA.symbol.toUpperCase() === 'BAT' ||
+    currencyB.symbol.toUpperCase() === 'BAT'
 
   return (
     <>
@@ -35,7 +39,7 @@ export default function PoolExpandedPair(): JSX.Element {
       </Head>
       <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
-          <div className="mobile:w-full order-last sm:order-first">
+          <div className="w-screen sm:w-auto order-last sm:order-first">
             <ExpandedPool
               currency={currencyA}
               otherCurrency={currencyB}

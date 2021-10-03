@@ -4,10 +4,10 @@ import Image from 'next/image'
 import { Input as NumericalInput } from './NumericalInput'
 
 export const SidePanelContainer = styled.table.attrs(({ className, ...rest }) => ({
-  className: classNames('flex flex-col md:bg-draw-menu-light dark:md:bg-draw-menu-dark', className),
+  className: classNames('flex flex-col md:bg-draw-menu-light dark:md:bg-draw-menu-dark sm:w-500px', className),
   ...rest,
 }))`
-  width: ${({ width = '500px' }) => width};
+  width: ${({ width }) => width};
   height: ${({ height = '100%' }) => height};
   background-size: 800%;
   z-index: 2;

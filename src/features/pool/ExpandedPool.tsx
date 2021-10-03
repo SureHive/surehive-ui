@@ -23,13 +23,13 @@ const ExpandedPool = ({ currency, otherCurrency, currentTheme, hasLiquidity = fa
   }
 
   return (
-    <SidePanelContainer className="px-10 pt-5 pb-10 space-y-5">
+    <SidePanelContainer className="sm:px-10 sm:pt-5 sm:pb-10 sm:space-y-5">
       <PanelHeader value={i18n._(t`Pools`)} type={i18n._(t`Public`)} currentTheme={currentTheme} />
       <CurrencyInfo currency={currency} otherCurrency={otherCurrency} />
-      <SidePanelBox className="p-5 gap-y-8">
+      <SidePanelBox className="p-5 gap-y-4 sm:gap-y-8">
         <TotalLiquidityBox currency={currency} otherCurrency={otherCurrency} />
         {hasLiquidity && <MyLiquidityBox currency={currency} otherCurrency={otherCurrency} />}
-        {!hasLiquidity && <h3 className="font-medium">{i18n._(t`Breakdown`)}</h3>}
+        {!hasLiquidity && <h3 className="hidden sm:block font-medium">{i18n._(t`Breakdown`)}</h3>}
         <BreakdownBox fees={{}} volume={{}} traders={{}} />
         {!hasLiquidity && <Line className="bg-dark-500 mt-2" />}
         <div className="text-xs space-y-2">

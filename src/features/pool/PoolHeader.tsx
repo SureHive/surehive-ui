@@ -10,7 +10,7 @@ const PoolHeader = ({ label, showSearch = false }) => {
     return (
       <div className="flex flex-row flex-grow">
         <div
-          className="flex flex-row flex-grow items-center px-5 space-x-2 text-xs"
+          className="flex flex-row w-4/5 sm:w-auto sm:flex-grow items-center px-5 space-x-2 text-xs"
           style={{
             border: '1px solid #23262F',
             borderRadius: '25px',
@@ -37,19 +37,24 @@ const PoolHeader = ({ label, showSearch = false }) => {
             />
           </div>
         </div>
-        <OutlinedButton className="ml-10 text-xs" label={i18n._(t`Import Pool`)} width={'137px'} height={'36px'} />
-        <FilledButton width={'137px'} height={'36px'} className="flex justify-center items-center text-xs ml-5">
+        <OutlinedButton
+          className="hidden sm:block ml-10 text-xs"
+          label={i18n._(t`Import Pool`)}
+          width={'137px'}
+          height={'36px'}
+        />
+        <FilledButton className="flex w-44px h-44px sm:w-137px sm:h-36px justify-center items-center text-xs ml-5">
           <div className="flex items-center space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-3 w-3"
+              className="h-6 sm:h-3 w-6 sm:w-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
-            <div>{i18n._(t`Create Pool`)}</div>
+            <div className="hidden sm:block">{i18n._(t`Create Pool`)}</div>
           </div>
         </FilledButton>
       </div>

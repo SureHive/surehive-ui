@@ -133,7 +133,7 @@ const EditPool = ({ currency, otherCurrency, currentTheme }) => {
   )
 
   return (
-    <SidePanelContainer className="px-10 pt-5 pb-10 space-y-5">
+    <SidePanelContainer className="sm:px-10 sm:pt-5 sm:pb-10 sm:space-y-5">
       <PanelHeader
         value={i18n._(t`Edit Liquidity`)}
         type={i18n._(t`Public`)}
@@ -142,7 +142,7 @@ const EditPool = ({ currency, otherCurrency, currentTheme }) => {
         currentTheme={currentTheme}
       />
       <CurrencyInfo currency={currency} otherCurrency={otherCurrency} />
-      <SidePanelBox className="p-5 gap-y-8">
+      <SidePanelBox className="p-5 gap-y-4 sm:gap-y-8">
         <MyLiquidityBox currency={currency} otherCurrency={otherCurrency} />
         <div
           className="flex flex-row w-full justify-between bg-white-150 dark:bg-dark-870 h-42 shadow-pool-edit-type-switch-light dark:shadow-pool-edit-type-switch text-xs text-dark-600 dark:text-white px-10 py-1"

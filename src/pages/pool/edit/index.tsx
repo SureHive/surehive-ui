@@ -32,7 +32,7 @@ export default function PoolExpandedPair(): JSX.Element {
       </Head>
       <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
-          <div className="mobile:w-full order-last sm:order-first">
+          <div className="w-screen sm:w-auto order-last sm:order-first">
             <EditPool currency={currencyA} otherCurrency={currencyB} currentTheme={currentTheme} />
           </div>
           <div className="sm:flex-grow">
