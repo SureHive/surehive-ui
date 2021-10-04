@@ -5,8 +5,9 @@ import Table from '../../components/Table'
 import { poolColumns, poolColumnConfigs, renderBody } from './const'
 import { useAllTokens } from '../../hooks/Tokens'
 import { Currency } from '@sushiswap/sdk'
+import { classNames } from '../../functions'
 
-const PoolTable = ({ fetchData }) => {
+const PoolTable = ({ fetchData, className = '' }) => {
   const { i18n } = useLingui()
   const tabs = ['All', 'My Pools', 'Public', 'Private', 'Pegged']
   const [currentTab, setCurrentTab] = useState<string>(tabs[0])
@@ -94,7 +95,7 @@ const PoolTable = ({ fetchData }) => {
 
   const Tabs = () => {
     return (
-      <div className="flex flex-row items-center sm:space-x-10 text-sm text-black dark:text-white">
+      <div className="flex flex-row justify-around sm:justify-start items-center sm:space-x-10 text-xs sm:text-sm text-black dark:text-white">
         {tabs.map((tab) => {
           const className = tab === 'My Pools' ? 'cursor-pointer block sm:hidden' : 'cursor-pointer'
           return tab === currentTab ? (
@@ -115,16 +116,22 @@ const PoolTable = ({ fetchData }) => {
   }
 
   return (
-    <div className="grid w-full space-y-2">
+    <div
+      className={classNames(
+        'grid w-full space-y-2 bg-dark-600 sm:bg-transparent border-solid sm:border-none border-2 rounded-10px border-dark-500',
+        className
+      )}
+    >
       <Tabs />
       <Table
         columns={poolColumns}
         columnConfigs={poolColumnConfigs}
         data={tempData}
         headerHeight={'40px'}
-        className="px-0 py-0 text-gray text-xs rounded-md shadow-pool-table"
+        className="px-0 py-0 text-gray text-xs rounded-md pool-table-light dark:shadow-pool-table w-screen overflow-x-auto"
         renderBody={renderBody}
-        bodyHeight={'300px'}
+        bodyClassName="h-full sm:h-300px sm:overflow-y-auto sm:overscroll-y-contain"
+        headerClassName="w-full"
       />
     </div>
   )

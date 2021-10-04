@@ -8,6 +8,8 @@ import Container from '../../../components/Container'
 import { useAllTokens, useCurrency } from '../../../hooks/Tokens'
 import { Currency } from '@sushiswap/sdk'
 import ExpandedPool from '../../../features/pool/ExpandedPool'
+import PoolTransactionLog from '../../../features/pool/PoolTransactionLog'
+import PoolGraph from '../../../features/pool/PoolGraph'
 
 export default function PoolExpandedPair(): JSX.Element {
   const { i18n } = useLingui()
@@ -23,7 +25,11 @@ export default function PoolExpandedPair(): JSX.Element {
   const currencyB = allTokens.find((t) => t.symbol === otherCurrency)
 
   // for testing
-  const hasLiquidity = currencyA.symbol.toUpperCase() === 'WETH' || currencyB.symbol.toUpperCase() === 'WETH'
+  const hasLiquidity =
+    currencyA.symbol.toUpperCase() === 'WETH' ||
+    currencyB.symbol.toUpperCase() === 'WETH' ||
+    currencyA.symbol.toUpperCase() === 'BAT' ||
+    currencyB.symbol.toUpperCase() === 'BAT'
 
   return (
     <>
@@ -33,13 +39,19 @@ export default function PoolExpandedPair(): JSX.Element {
       </Head>
       <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
-          <div className="w-full sm:w-538 order-last sm:order-first">
+          <div className="w-screen sm:w-auto order-last sm:order-first">
             <ExpandedPool
               currency={currencyA}
               otherCurrency={currencyB}
               hasLiquidity={hasLiquidity}
               currentTheme={currentTheme}
             />
+          </div>
+          <div className="sm:flex-grow">
+            <div className="grid w-full min-w-0 sm:min-w-900">
+              <PoolGraph currency={currencyA} otherCurrency={currencyB} currentTheme={currentTheme} />
+              <PoolTransactionLog currency={currencyA} otherCurrency={currencyB} />
+            </div>
           </div>
         </div>
       </Container>

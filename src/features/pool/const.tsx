@@ -17,13 +17,16 @@ export const poolColumns = [
 ]
 
 export const poolColumnConfigs = {
-  pool: { width: '12%', className: 'pl-10' },
-  type: { width: '8%', className: '' },
-  feeRate: { width: '10%', className: '' },
-  liquidity: { width: '20%', className: '' },
-  tradeVolume: { width: '15%', className: '' },
-  myLiquidity: { width: '15%', className: '' },
-  impermantLoss: { width: '20%', className: '' },
+  pool: {
+    className:
+      'pl-4 sm:pl-10 w-100px sm:w-12/100 fixed sm:relative bg-white dark:bg-dark-852 sm:bg-transparent shadow-pool-mobile-graph-first-column sm:shadow-none',
+  },
+  type: { className: 'w-100px sm:w-8/100 ml-100px sm:ml-0' },
+  feeRate: { className: 'w-60px sm:w-10/100' },
+  liquidity: { className: 'w-200px sm:w-20/100' },
+  tradeVolume: { className: 'w-150px sm:w-15/100' },
+  myLiquidity: { className: 'w-150px sm:w-15/100' },
+  impermantLoss: { className: 'w-150px sm:w-20/100' },
 }
 
 export const renderBody = (data, columns, columnConfigs) => {
@@ -35,7 +38,7 @@ export const PanelHeader = ({ value, type, currentTheme, showBack = false, back 
     currentTheme === 'dark' ? '/images/global/icon-external-link.svg' : '/images/global/icon-external-link-light.svg'
 
   return (
-    <div className="space-y-1">
+    <div className="hidden sm:block space-y-1">
       <div className="w-full flex justify-between items-center">
         <div className="flex space-x-2 items-center">
           {showBack && (
@@ -65,7 +68,7 @@ export const PanelHeader = ({ value, type, currentTheme, showBack = false, back 
 }
 
 export const CurrencyInfo = ({ currency, otherCurrency }) => (
-  <div className="flex flex-row items-center space-x-5">
+  <div className="hidden sm:flex flex-row items-center space-x-5">
     <DoubleCurrencyLogo currency0={currency} currency1={otherCurrency} size={40} isRound={true} />
     <p className="ml-5 text-2xl">
       {`${currency.tokenInfo.symbol.toUpperCase()} / ${otherCurrency.tokenInfo.symbol.toUpperCase()}`}
@@ -128,9 +131,8 @@ export const TotalLiquidityBox = ({ currency, otherCurrency }) => {
   const { i18n } = useLingui()
   return (
     <div
-      className="bg-dark-1000 p-10 space-y-4 text-white"
+      className="bg-white-150 dark:bg-dark-1000 p-5 sm:p-10 space-y-4 text-dark-600 dark:text-white shadow-pool-liquidity-light dark:shadow-pool-liquidity"
       style={{
-        boxShadow: '0 61px 61px -47px #1F2F46',
         borderRadius: '10px',
         height: '170px',
       }}
@@ -169,9 +171,8 @@ export const MyLiquidityBox = ({ currency, otherCurrency }) => {
 
   return (
     <div
-      className="bg-dark-1000 px-10 py-5 space-y-4 text-white"
+      className="bg-white-150 dark:bg-dark-1000 px-10 py-5 space-y-4 text-dark-600 dark:text-white shadow-pool-liquidity-light dark:shadow-pool-liquidity"
       style={{
-        boxShadow: '0 61px 61px -47px #1F2F46',
         borderRadius: '10px',
         height: '113px',
       }}
