@@ -46,20 +46,20 @@ const PoolRow = ({ rowData, columns, columnConfigs }) => {
       <TableCell {...columnConfigs.type}>
         <Type value={i18n._(t`${rowData.type}`)} />
       </TableCell>
-      <TableCell {...merge(columnConfigs.feeRate, '')}>{`${rowData.feeRate}%`}</TableCell>
-      <TableCell {...merge(columnConfigs.liquidity, 'grid space-y-2')}>
+      <TableCell {...merge(columnConfigs.feeRate, 'sm:pl-2')}>{`${rowData.feeRate}%`}</TableCell>
+      <TableCell {...merge(columnConfigs.liquidity, 'grid space-y-2 sm:pl-1')}>
         <Liquidity value={rowData.liquidity[0]} currency={rowData.currency} color={'bg-red'} extra={'(75.1%)'} />
         <Liquidity value={rowData.liquidity[1]} currency={rowData.otherCurrency} color={'bg-blue'} extra={'(25.9%)'} />
       </TableCell>
-      <TableCell {...merge(columnConfigs.tradeVolume, 'grid space-y-2')}>
+      <TableCell {...merge(columnConfigs.tradeVolume, 'grid space-y-2 sm:pl-2')}>
         <div>{`$${rowData.tradeVolume[0]} (24hr)`}</div>
         <div>{`$${rowData.tradeVolume[1]} (wk)`}</div>
       </TableCell>
-      <TableCell {...merge(columnConfigs.myLiquidity, 'grid space-y-2')}>
+      <TableCell {...merge(columnConfigs.myLiquidity, 'grid space-y-2 sm:pl-2')}>
         <Liquidity value={rowData.myLiquidity[0]} currency={rowData.currency} color={'bg-red'} />
         <Liquidity value={rowData.myLiquidity[1]} currency={rowData.otherCurrency} color={'bg-blue'} />
       </TableCell>
-      <TableCell {...merge(columnConfigs.impermantLoss, '')}>
+      <TableCell {...merge(columnConfigs.impermantLoss, 'sm:pl-5')}>
         {i18n._(t`Risk of ${rowData.impermantLoss}% loss`)}
       </TableCell>
     </TableRow>

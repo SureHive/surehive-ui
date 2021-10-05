@@ -10,6 +10,7 @@ import { Currency } from '@sushiswap/sdk'
 import ExpandedPool from '../../../features/pool/ExpandedPool'
 import PoolTransactionLog from '../../../features/pool/PoolTransactionLog'
 import PoolGraph from '../../../features/pool/PoolGraph'
+import MobileHeader from '../../../components/Header/Mobile'
 
 export default function PoolExpandedPair(): JSX.Element {
   const { i18n } = useLingui()
@@ -37,7 +38,7 @@ export default function PoolExpandedPair(): JSX.Element {
         <title>{i18n._(t`SureHive`)} | Pool</title>
         <meta key="description" name="description" content="" />
       </Head>
-      <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
+      <Container headerLabel="Pools" showBackButton={true} maxWidth="full" className="grid h-full sm:overflow-x-auto">
         <div className="flex flex-col sm:flex-row dark:bg-dark-900 bg-white-130">
           <div className="w-screen sm:w-auto order-last sm:order-first">
             <ExpandedPool

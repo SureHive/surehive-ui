@@ -1,4 +1,7 @@
 import { classNames } from '../functions'
+import MobileHeader from './Header/Mobile'
+import React from 'react'
+import { useTheme } from 'next-themes'
 
 const MAX_WIDTH = {
   full: 'max-w-full',
@@ -15,10 +18,31 @@ const MAX_WIDTH = {
   xs: 'max-w-xs',
 }
 
-const Container = ({ children, maxWidth = '2xl', className = '', ...rest }) => (
-  <div className={classNames(className, MAX_WIDTH[maxWidth], 'w-full')} {...rest}>
-    {children}
-  </div>
-)
+const Container = ({
+  children,
+  headerLabel = 'Wallet',
+  showBackButton = false,
+  backFunc = null,
+  maxWidth = '2xl',
+  className = '',
+  ...rest
+}) => {
+  const { systemTheme, theme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
+  return (
+    <>
+      <MobileHeader
+        label={headerLabel}
+        currentTheme={currentTheme}
+        showBackButton={showBackButton}
+        backFunc={backFunc}
+      />
+      <div className={classNames(className, MAX_WIDTH[maxWidth], 'w-full mt-65px sm:mt-0')} {...rest}>
+        {children}
+      </div>
+    </>
+  )
+}
 
 export default Container

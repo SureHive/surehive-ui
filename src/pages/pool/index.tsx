@@ -18,8 +18,8 @@ export default function Pool(): JSX.Element {
         <title>{i18n._(t`SureHive`)} | Pool</title>
         <meta key="description" name="description" content="" />
       </Head>
-      <Container maxWidth="full" className="grid h-full sm:overflow-x-auto">
-        <div className="grid w-screen sm:space-y-6 dark:bg-dark-900 bg-white-130 sm:min-w-904 sm:px-10 sm:py-5">
+      <Container headerLabel="Pools" maxWidth="full" className="grid h-full sm:overflow-x-auto">
+        <div className="flex flex-col space-y-5 sm:space-y-6 dark:bg-dark-900 bg-white-130 sm:min-w-904 sm:px-10 sm:py-5 mt-5 sm:mt-0">
           <PoolHeader label="My Pools" showSearch={true} />
           <PoolTable fetchData={() => {}} />
           <PoolHeader label="Pools" showSearch={false} />

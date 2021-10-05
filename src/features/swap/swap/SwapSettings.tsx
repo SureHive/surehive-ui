@@ -7,6 +7,7 @@ import { ethers } from 'ethers'
 import Image from '../../../components/Image'
 import React from 'react'
 import Button from '../../../components/Button'
+import { SidePanelSlippageToleranceOptions } from '../../../components/SidePanel'
 
 export default function SwapSettings({ setShowSettings, currentTheme, isMobile = false }) {
   const { i18n } = useLingui()
@@ -18,24 +19,6 @@ export default function SwapSettings({ setShowSettings, currentTheme, isMobile =
         style={{ height: '56px', width: '56px', borderRadius: '12px', minWidth: '56px' }}
       >
         {value}%
-      </div>
-    )
-  }
-
-  const slippageToleranceOptions = () => {
-    return (
-      <div className="flex flex-row">
-        <SlippageOption value={'1'} />
-        <SlippageOption value={'2'} />
-        <SlippageOption value={'3'} />
-        <div className={styles.slippageOptionInput}>
-          <NumericalInput
-            value={''}
-            className="dark:bg-dark-600 bg-white dark:text-white-100 text-black items-center dark:placeholder-white-100 placeholder-text-black"
-            onUserInput={() => {}}
-            placeholder="Enter %"
-          />
-        </div>
       </div>
     )
   }
@@ -82,7 +65,14 @@ export default function SwapSettings({ setShowSettings, currentTheme, isMobile =
         )}
         <div>
           <p className="text-sm mb-3">{i18n._(t`SLIPPAGE TOLERANCE`)}</p>
-          {slippageToleranceOptions()}
+          <SidePanelSlippageToleranceOptions
+            value1={'0.8%'}
+            value2={'2.%'}
+            value3={'3%'}
+            value={''}
+            placeholder={'Enter %'}
+            onInput={() => {}}
+          />
         </div>
         <div>
           <p className="text-sm">{i18n._(t`TRANSACTION DEADLINE`)}</p>

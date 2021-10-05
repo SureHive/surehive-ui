@@ -11,9 +11,9 @@ export const ColouredDot = styled.div.attrs(({ className, ...rest }) => ({
 `
 
 export const Line = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('bg-white-200', className),
+  className: classNames('bg-white-200 h-2px sm:h-1px', className),
   ...rest,
 }))`
   width: ${({ width = '100%' }) => width};
-  height: ${({ height = '1px' }) => height};
+  height: ${({ height }) => height};
 `

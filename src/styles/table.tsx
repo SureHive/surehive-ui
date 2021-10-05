@@ -18,7 +18,7 @@ export const TableHeader = styled.thead.attrs(({ className, ...rest }) => ({
 `
 
 export const TableHeaderRow = styled.tr.attrs(({ className, ...rest }) => ({
-  className: classNames('flex flex-row items-center w-full border-white-200 dark:border-dark-500', className),
+  className: classNames('flex flex-row items-center w-full sm:w-auto border-white-200 dark:border-dark-500', className),
   ...rest,
 }))`
   height: ${({ height }) => height};

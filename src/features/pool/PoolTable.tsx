@@ -63,12 +63,32 @@ const PoolTable = ({ fetchData, className = '' }) => {
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
       myLiquidity: ['134K', '72.4'],
-      impermantLoss: '5',
+      impermantLoss: '15',
     },
     {
       currency: allTokens[3],
       otherCurrency: allTokens[4],
       type: 'Private',
+      feeRate: '0.25',
+      liquidity: ['32.34M', '15.4'],
+      tradeVolume: ['38.44', '124.27'],
+      myLiquidity: ['134K', '72.4'],
+      impermantLoss: '5',
+    },
+    {
+      currency: allTokens[4],
+      otherCurrency: allTokens[1],
+      type: 'Private',
+      feeRate: '1.25',
+      liquidity: ['32.34M', '15.4'],
+      tradeVolume: ['8.44', '124.07'],
+      myLiquidity: ['134K', '79.0'],
+      impermantLoss: '1.5',
+    },
+    {
+      currency: allTokens[3],
+      otherCurrency: allTokens[1],
+      type: 'Public',
       feeRate: '0.25',
       liquidity: ['32.34M', '15.4'],
       tradeVolume: ['38.44', '124.27'],
@@ -118,7 +138,7 @@ const PoolTable = ({ fetchData, className = '' }) => {
   return (
     <div
       className={classNames(
-        'grid w-full space-y-2 bg-dark-600 sm:bg-transparent border-solid sm:border-none border-2 rounded-10px border-dark-500',
+        'flex flex-col space-y-2 bg-white-150 dark:bg-dark-600 sm:bg-transparent sm:dark:bg-transparent border-solid sm:border-none border-t-2 border-b-2 rounded-10px border-white-200 dark:border-dark-500 pt-2',
         className
       )}
     >
@@ -128,7 +148,7 @@ const PoolTable = ({ fetchData, className = '' }) => {
         columnConfigs={poolColumnConfigs}
         data={tempData}
         headerHeight={'40px'}
-        className="px-0 py-0 text-gray text-xs rounded-md pool-table-light dark:shadow-pool-table w-screen overflow-x-auto"
+        className="px-0 py-0 text-gray text-xs rounded-md pool-table-light dark:shadow-pool-table w-screen sm:w-auto overflow-x-auto"
         renderBody={renderBody}
         bodyClassName="h-full sm:h-300px sm:overflow-y-auto sm:overscroll-y-contain"
         headerClassName="w-full"

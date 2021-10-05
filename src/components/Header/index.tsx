@@ -87,7 +87,7 @@ function AppBar(): JSX.Element {
 
   return (
     //     // <header className="flex flex-row justify-between w-screen flex-nowrap">
-    <header className="flex-shrink-0 w-full dark:bg-transparent border-2 dark:border-dark-900 border-white-100 border-solid">
+    <header className="hidden sm:block flex-shrink-0 w-full dark:bg-transparent border-2 dark:border-dark-900 border-white-100 border-solid">
       <Popover as="nav" className="z-10 w-full bg-transparent header-border-b">
         {({ open }) => (
           <>
