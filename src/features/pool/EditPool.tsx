@@ -43,8 +43,8 @@ const EditPool = ({ currency, otherCurrency, currentTheme }) => {
   }
 
   const AddLiquidity = () => (
-    <div className="grid gap-y-5 text-xs">
-      <div className="space-y-2">
+    <div className="flex flex-col gap-y-5 text-xs">
+      <div className="space-y-2 w-full">
         <p className="font-normal tracking-normal">{i18n._(t`BASE TOKEN`)}</p>
         <SidePanelCurrencyBox>
           <CurrencySelectorPanel
@@ -96,7 +96,7 @@ const EditPool = ({ currency, otherCurrency, currentTheme }) => {
   )
 
   const Withdraw = () => (
-    <div className="grid gap-y-5 text-xs">
+    <div className="flex flex-col gap-y-5 text-xs">
       <div className="space-y-2">
         <p className="font-normal tracking-normal">{i18n._(t`BASE TOKEN`)}</p>
         <SidePanelCurrencyBox>

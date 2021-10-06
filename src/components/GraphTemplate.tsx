@@ -4,25 +4,30 @@ import { classNames } from '../functions'
 import { ReactNode } from 'react'
 
 export const GraphContainer = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('w-full dark:bg-dark-900 dark:border-dark-1000 border-white-200 sm:mb-5', className),
+  className: classNames(
+    'w-full dark:bg-dark-900 dark:border-dark-1000 border-white-200 sm:mb-5 border-b-0 sm:border-b-1',
+    className
+  ),
   ...rest,
 }))`
   border-style: solid;
-  border-bottom-width: 1px;
 `
 
 export const GraphBox = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('w-full sm:px-10 py-2 bg-white-to-transparent dark:bg-dark-to-transparent', className),
+  className: classNames(
+    'w-full h-300px sm:h-400px sm:px-10 py-2 bg-white-to-transparent dark:bg-dark-to-transparent',
+    className
+  ),
   ...rest,
 }))`
-  height: ${({ height = '400px' }) => height};
+  height: ${({ height }) => height};
 `
 
 export const Graph = styled.div.attrs(({ className, ...rest }) => ({
-  className: classNames('mb-3', className),
+  className: classNames('mb-3 h-238px sm:h-338px', className),
   ...rest,
 }))`
-  height: ${({ height = '338px' }) => height};
+  height: ${({ height }) => height};
   ${(props) => props.addCSS}
 `
 
@@ -33,13 +38,12 @@ export const GraphTime = styled.div.attrs(({ className, ...rest }) => ({
 
 export const GraphTimeRangeSelector = styled.div.attrs(({ className, ...rest }) => ({
   className: classNames(
-    'flex flex-row justify-center items-center gap-x-12 text-sm text-white dark:opacity-50 dark:text-dark-1000 shadow-graph-time-range-selector-light dark:shadow-graph-time-range-selector',
+    'flex flex-row justify-center items-center gap-x-6 sm:gap-x-12 text-xs sm:text-sm text-dark-1000 dark:text-white shadow-graph-time-range-selector-light dark:shadow-graph-time-range-selector',
     className
   ),
   ...rest,
 }))`
   height: ${({ height = '60px' }) => height};
-  font-size: min(0.875rem, 14px);
 `
 
 interface GraphTemplateProps {
@@ -47,6 +51,7 @@ interface GraphTemplateProps {
   graphBoxClassName?: string
   renderGraph: ({ width, height: number }) => ReactNode
   renderGraphDetails?: () => void
+  renderGraphBottomTime: () => ReactNode
   timeRange?: string[]
 }
 
@@ -56,6 +61,7 @@ export const GraphTemplate = (props: GraphTemplateProps) => {
     graphBoxClassName = '',
     renderGraph,
     renderGraphDetails = null,
+    renderGraphBottomTime,
     timeRange = ['0:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00', '24:00'],
   } = props
 
@@ -72,7 +78,7 @@ export const GraphTemplate = (props: GraphTemplateProps) => {
           ))}
         </GraphTime>
       </GraphBox>
-      <GraphTimeRangeSelector></GraphTimeRangeSelector>
+      <GraphTimeRangeSelector>{renderGraphBottomTime()}</GraphTimeRangeSelector>
     </GraphContainer>
   )
 }

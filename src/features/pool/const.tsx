@@ -18,10 +18,9 @@ export const poolColumns = [
 
 export const poolColumnConfigs = {
   pool: {
-    className:
-      'pl-4 sm:pl-10 w-100px sm:w-12/100 fixed sm:relative bg-white dark:bg-dark-852 sm:bg-transparent shadow-pool-mobile-graph-first-column sm:shadow-none',
+    className: 'pl-4 sm:pl-10 w-100px sm:w-12/100 sm:relative bg-white dark:bg-dark-852 sm:bg-transparent',
   },
-  type: { className: 'w-100px sm:w-8/100 ml-100px sm:ml-0' },
+  type: { className: 'w-100px sm:w-8/100' },
   feeRate: { className: 'w-60px sm:w-10/100' },
   liquidity: { className: 'w-200px sm:w-20/100' },
   tradeVolume: { className: 'w-150px sm:w-15/100' },

@@ -30,7 +30,7 @@ const Chart = ({ width, height, data, getValue, getValueFrequency }) => {
         range: [0, xMax],
         round: true,
         domain: data.map(getValue),
-        padding: 0.7,
+        padding: 0.4,
       }),
     [data, getValue, xMax]
   )
@@ -101,10 +101,7 @@ const PoolGraph = ({ currency, otherCurrency, currentTheme }) => {
   }
 
   const GraphDetails = () => (
-    <div
-      className="grid justify-items-center sm:justify-items-start sm:px-10 bg-draw-menu-light dark:bg-draw-menu-dark bg-1000% sm:bg-auto sm:bg-white sm:dark:bg-dark-1000 pt-2"
-      style={{ height: '100px' }}
-    >
+    <div className="grid justify-items-center h-120px sm:h-100px sm:justify-items-start sm:px-10 bg-draw-menu-light dark:bg-draw-menu-dark bg-1000% sm:bg-auto sm:bg-white sm:dark:bg-dark-1000 pt-1 sm:pt-2">
       <div className="flex sm:hidden flex-row w-full items-center justify-around">
         <div>
           <DoubleCurrencyLogo currency0={currency} currency1={otherCurrency} size={40} isRound={true} />
@@ -129,7 +126,7 @@ const PoolGraph = ({ currency, otherCurrency, currentTheme }) => {
   return (
     <div className="dark:bg-dark-900 bg-white">
       <GraphDetails />
-      <Line className="bg-white-200 dark:bg-dark-900" />
+      <Line className="bg-white-200 dark:bg-dark-500 sm:dark:bg-dark-900" />
       <GraphTemplate
         graphBoxClassName="bg-draw-menu-light dark:bg-draw-menu-dark bg-1000% sm:bg-auto sm:bg-white-to-transparent sm:dark:bg-dark-to-transparent"
         renderGraph={({ width, height }) => (
@@ -142,6 +139,14 @@ const PoolGraph = ({ currency, otherCurrency, currentTheme }) => {
               getValueFrequency={getLetterFrequency}
             />
           </div>
+        )}
+        renderGraphBottomTime={() => (
+          <>
+            <p className="opacity-50">Time</p>
+            <div className="py-1 px-2 sm:p-2 bg-dark-500 text-white rounded-full">24 Hours</div>
+            <p className="opacity-50">1 Week</p>
+            <p className="opacity-50">1 Month</p>
+          </>
         )}
       />
     </div>

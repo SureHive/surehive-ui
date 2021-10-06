@@ -43,7 +43,7 @@ export const SidePanelCurrencyBox = styled.div.attrs(({ className, ...rest }) =>
 
 export const SidePanelSlippageOption = styled.div.attrs(({ className, ...rest }) => ({
   className: classNames(
-    'flex dark:bg-dark-500 bg-white-150 items-center justify-center mr-5 cursor-pointer',
+    'flex dark:bg-dark-500 bg-white-150 items-center justify-center mr-2 sm:mr-5 cursor-pointer',
     className
   ),
   ...rest,
@@ -62,7 +62,7 @@ export const SidePanelSlippageInputOption = styled.div.attrs(({ className, ...re
   border-width: 1px;
   border-radius: 12px;
   opacity: 0.9;
-  max-width: ${({ maxWidth = '172px' }) => maxWidth};
+  max-width: ${({ maxWidth = '144px' }) => maxWidth};
 `
 
 export const SidePanelSlippageToleranceOptions = ({ value1, value2, value3, value, onInput, placeholder }) => (

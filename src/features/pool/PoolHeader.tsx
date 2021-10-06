@@ -38,7 +38,7 @@ const PoolHeader = ({ label, showSearch = false }) => {
           </div>
         </div>
         <OutlinedButton
-          className="hidden sm:block ml-10 text-xs"
+          className="hidden sm:flex ml-10 text-xs"
           label={i18n._(t`Import Pool`)}
           width={'137px'}
           height={'36px'}

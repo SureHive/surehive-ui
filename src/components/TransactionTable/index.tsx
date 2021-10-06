@@ -74,6 +74,8 @@ const TransactionTable = ({ data }) => {
       bodyHeight={'251px'}
       renderBody={renderBody}
       className="flex flex-col bg-white dark:bg-dark-852 rounded-lg text-xs text-gray px-0"
+      bodyClassName="sm:overflow-y-auto sm:overscroll-y-contain"
+      headerClassName="w-full"
     />
   )
 }
