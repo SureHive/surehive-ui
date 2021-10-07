@@ -11,6 +11,7 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { Type } from './const'
+import { useSpring, animated } from 'react-spring'
 
 enum GraphView {
   FEES,
@@ -30,7 +31,7 @@ const Chart = ({ width, height, data, getValue, getValueFrequency }) => {
         range: [0, xMax],
         round: true,
         domain: data.map(getValue),
-        padding: 0.4,
+        padding: 0.5,
       }),
     [data, getValue, xMax]
   )
@@ -44,6 +45,14 @@ const Chart = ({ width, height, data, getValue, getValueFrequency }) => {
     [data, getValueFrequency, yMax]
   )
 
+  // @ts-ignore
+  const { scale } = useSpring({
+    from: { scale: 0 },
+    to: { scale: 1 },
+  })
+
+  const AnimatedBar = animated(BarRounded)
+
   return (
     <svg width={width} height={height}>
       <LinearGradient id="bar-gradient" from={'#3772FF'} fromOpacity={1} to={'#004BFF'} toOpacity={0} />
@@ -53,16 +62,16 @@ const Chart = ({ width, height, data, getValue, getValueFrequency }) => {
           const barWidth = xScale.bandwidth()
           const barHeight = yMax - (yScale(getValueFrequency(d)) ?? 0)
           const barX = xScale(value)
-          const barY = yMax - barHeight
+          // const barY = yMax - barHeight
           return (
-            <BarRounded
+            <AnimatedBar
               key={`pool-bar-${value}`}
               radius={10}
               all={true}
               x={barX}
-              y={barY}
+              y={scale.interpolate((s) => yMax - s * barHeight)}
               width={barWidth}
-              height={barHeight}
+              height={scale.interpolate((s) => s * barHeight)}
               fill="url(#bar-gradient)"
             />
           )
