@@ -132,6 +132,8 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/icons/favicon.ico" />
 
           <link rel="manifest" href="/manifest.json" />
+
+          <script src="/static/yoroi-ergo-connector-inject.js" />
         </Head>
         <body>
           <Main />

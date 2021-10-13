@@ -24,7 +24,7 @@
 
 .TextGroup2 p {
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     line-height: 24px;
     @apply flex justify-center;
@@ -37,7 +37,7 @@
 
 .TextGroup3 p {
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     line-height: 24px;
     @apply flex justify-center;

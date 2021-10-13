@@ -2,7 +2,7 @@ import styles from './wallet.module.css'
 import Back from '../../components/Back'
 import { SUPPORTED_WALLETS } from '../../constants'
 import WalletOption from './WalletOption'
-import { injected } from '../../connectors'
+import { injected, yoroi } from '../../connectors'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import ReactGA from 'react-ga'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
@@ -35,18 +35,27 @@ const ConnectWallet = ({}) => {
       conn.walletConnectProvider = undefined
     }
 
-    conn &&
-      activate(conn, undefined, true)
+    if (conn === yoroi) {
+      conn
+        .activate()
         .then(() => {
-          router.push('/wallet')
+          console.log('yoroi activated')
         })
-        .catch((error) => {
-          if (error instanceof UnsupportedChainIdError) {
-            activate(conn) // a little janky...can't use setError because the connector isn't set
-          } else {
-            ///TODO: show error
-          }
-        })
+        .catch((e) => console.log(e))
+    } else {
+      conn &&
+        activate(conn, undefined, true)
+          .then(() => {
+            router.push('/wallet')
+          })
+          .catch((error) => {
+            if (error instanceof UnsupportedChainIdError) {
+              activate(conn) // a little janky...can't use setError because the connector isn't set
+            } else {
+              ///TODO: show error
+            }
+          })
+    }
   }
 
   function getWalletOptions() {
@@ -57,29 +66,49 @@ const ConnectWallet = ({}) => {
       // overwrite injected when needed
       if (option.connector === injected) {
         // don't show injected if there's no injected provider
-        if (!(window.web3 || window.ethereum)) {
-          if (option.name === 'MetaMask') {
-            return (
-              <WalletOption
-                id={`connect-${key}`}
-                key={key}
-                name={'Metamask'}
-                icon={'/images/wallets/metamask.png'}
-                link={'https://metamask.io/'}
-              />
-            )
-          } else {
-            return null
-          }
-        }
-        // don't return metamask if injected provider isn't metamask
-        else if (option.name === 'MetaMask' && !isMetamask) {
+        // if (!(window.web3 || window.ethereum)) {
+        //   if (option.name === 'MetaMask') {
+        //     return (
+        //       <WalletOption
+        //         id={`connect-${key}`}
+        //         key={key}
+        //         name={'Metamask'}
+        //         icon={'/images/wallets/metamask.png'}
+        //         link={'https://metamask.io/'}
+        //       />
+        //     )
+        //   } else {
+        //     return null
+        //   }
+        // }
+        // // don't return metamask if injected provider isn't metamask
+        // else if (option.name === 'MetaMask' && !isMetamask) {
+        //   return null
+        // }
+        // // likewise for generic
+        // else if (option.name === 'Injected' && isMetamask) {
+        //   return null
+        // }
+      }
+
+      if (option.connector === yoroi) {
+        // @ts-ignore
+        if (typeof window.cardano_request_read_access === 'undefined') {
           return null
         }
-        // likewise for generic
-        else if (option.name === 'Injected' && isMetamask) {
-          return null
-        }
+
+        return (
+          <WalletOption
+            id={`connect-${key}`}
+            key={key}
+            name={option.name}
+            icon={'/images/wallets/' + option.iconName}
+            link={option.href}
+            onClick={() => {
+              !option.href && tryActivation(option.connector)
+            }}
+          />
+        )
       }
 
       return (

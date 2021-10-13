@@ -1,5 +1,5 @@
 import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
-import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink } from '../connectors'
+import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink, yoroi } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { BigNumber } from 'ethers'
@@ -105,6 +105,14 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: 'Easy-to-use browser extension.',
     href: null,
     color: '#E8831D',
+  },
+  YOROI: {
+    connector: yoroi,
+    name: 'Yoroi',
+    iconName: 'yoroi.svg',
+    description: 'Connect to yoroi wallet',
+    href: null,
+    color: '#4196FC',
   },
   WALLET_CONNECT: {
     connector: walletconnect,
