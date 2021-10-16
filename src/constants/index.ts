@@ -1,5 +1,5 @@
 import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
-import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink, yoroi } from '../connectors'
+import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink, nami } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { BigNumber } from 'ethers'
@@ -89,6 +89,14 @@ export interface WalletInfo {
 }
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
+  Nami: {
+    connector: nami,
+    name: 'Nami',
+    iconName: 'nami.svg',
+    description: 'Login using nami browser extension wallet',
+    href: null,
+    color: '#315CF5',
+  },
   INJECTED: {
     connector: injected,
     name: 'Injected',
@@ -98,22 +106,14 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     color: '#010101',
     primary: true,
   },
-  METAMASK: {
-    connector: injected,
-    name: 'MetaMask',
-    iconName: 'metamask.png',
-    description: 'Easy-to-use browser extension.',
-    href: null,
-    color: '#E8831D',
-  },
-  YOROI: {
-    connector: yoroi,
-    name: 'Yoroi',
-    iconName: 'yoroi.svg',
-    description: 'Connect to yoroi wallet',
-    href: null,
-    color: '#4196FC',
-  },
+  // METAMASK: {
+  //   connector: injected,
+  //   name: 'MetaMask',
+  //   iconName: 'metamask.png',
+  //   description: 'Easy-to-use browser extension.',
+  //   href: null,
+  //   color: '#E8831D',
+  // },
   WALLET_CONNECT: {
     connector: walletconnect,
     name: 'WalletConnect',

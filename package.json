@@ -143,6 +143,8 @@
     ]
   },
   "dependencies": {
+    "@emurgo/cardano-serialization-lib-asmjs": "^9.1.0",
+    "@emurgo/cardano-serialization-lib-browser": "^9.1.0",
     "@visx/event": "^2.1.0",
     "@visx/grid": "^2.1.1",
     "@visx/responsive": "^2.1.1",

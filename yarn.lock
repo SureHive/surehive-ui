@@ -1211,6 +1211,16 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@emurgo/cardano-serialization-lib-asmjs@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-asmjs/-/cardano-serialization-lib-asmjs-9.1.0.tgz#0a2101120c52b555142a5a238077518788da3526"
+  integrity sha512-Cp7exVqXRxFydUEfnmIVY89O+biX1zwnSLiG+hFwIQl8OTrqWmQZpNgq2in9LDf/r3K//LmtGamG0T+Nnm+M6A==
+
+"@emurgo/cardano-serialization-lib-browser@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-browser/-/cardano-serialization-lib-browser-9.1.0.tgz#2a80800608877555d1ff52ed839e7f2c8b1ace95"
+  integrity sha512-FaNW/RalB/BPYvQbum0zkUcMxd+jKvsdwvT93GErKd/owE9W4IKhQfqI9icDZSphqFFPkDqHms2VE4XT4P7gDA==
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz#eea4635828dde372838b0909693ebd9aafeec22d"
