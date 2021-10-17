@@ -32,6 +32,7 @@ import { persistStore } from 'redux-persist'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ThemeProvider } from 'next-themes'
+import { WalletManagerProvider } from '../providers/walletManagerProvider'
 
 const Web3ProviderNetwork = dynamic(() => import('../components/Web3ProviderNetwork'), { ssr: false })
 
@@ -144,26 +145,28 @@ function MyApp({
         <Web3ReactProvider getLibrary={getLibrary}>
           <Web3ProviderNetwork getLibrary={getLibrary}>
             <Web3ReactManager>
-              <ReduxProvider store={store}>
-                <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
-                  <>
-                    <ListsUpdater />
-                    <UserUpdater />
-                    <ApplicationUpdater />
-                    <TransactionUpdater />
-                    <MulticallUpdater />
-                  </>
-                  <Provider>
-                    <ThemeProvider enableSystem={true} attribute="class">
-                      <Layout>
-                        <Guard>
-                          <Component {...pageProps} />
-                        </Guard>
-                      </Layout>
-                    </ThemeProvider>
-                  </Provider>
-                </PersistGate>
-              </ReduxProvider>
+              <WalletManagerProvider>
+                <ReduxProvider store={store}>
+                  <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
+                    <>
+                      <ListsUpdater />
+                      <UserUpdater />
+                      <ApplicationUpdater />
+                      <TransactionUpdater />
+                      <MulticallUpdater />
+                    </>
+                    <Provider>
+                      <ThemeProvider enableSystem={true} attribute="class">
+                        <Layout>
+                          <Guard>
+                            <Component {...pageProps} />
+                          </Guard>
+                        </Layout>
+                      </ThemeProvider>
+                    </Provider>
+                  </PersistGate>
+                </ReduxProvider>
+              </WalletManagerProvider>
             </Web3ReactManager>
           </Web3ProviderNetwork>
         </Web3ReactProvider>

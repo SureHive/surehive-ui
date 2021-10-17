@@ -3,13 +3,13 @@ import Head from 'next/head'
 import Container from '../../components/Container'
 import NoWallet from '../../features/wallet/NoWallet'
 import WalletDashboard from '../../features/wallet/Dashboard'
-import { useActiveWeb3React } from '../../hooks'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 
 export default function Wallet(): JSX.Element {
   const { i18n } = useLingui()
-  const { account, chainId, connector } = useActiveWeb3React()
+  const { account, chainId, connector } = useWalletManager()
 
   return (
     <>

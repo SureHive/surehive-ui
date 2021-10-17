@@ -4,60 +4,25 @@ import { SUPPORTED_WALLETS } from '../../constants'
 import WalletOption from './WalletOption'
 import { injected, nami } from '../../connectors'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import ReactGA from 'react-ga'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+import { UnsupportedChainIdError } from '@web3-react/core'
 import { useRouter } from 'next/router'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 
 const ConnectWallet = ({}) => {
-  const { activate } = useWeb3React()
   const router = useRouter()
+  const { activate } = useWalletManager()
 
   const tryActivation = async (connector: (() => Promise<AbstractConnector>) | AbstractConnector | undefined) => {
-    let name = ''
-    let conn = typeof connector === 'function' ? await connector() : connector
-
-    Object.keys(SUPPORTED_WALLETS).map((key) => {
-      if (connector === SUPPORTED_WALLETS[key].connector) {
-        return (name = SUPPORTED_WALLETS[key].name)
-      }
-      return true
-    })
-    // log selected wallet
-    ReactGA.event({
-      category: 'Wallet',
-      action: 'Change Wallet',
-      label: name,
-    })
-
-    // if the connector is walletconnect and the user has already tried to connect, manually reset the connector
-    if (conn instanceof WalletConnectConnector && conn.walletConnectProvider?.wc?.uri) {
-      conn.walletConnectProvider = undefined
-    }
-
-    conn &&
-      activate(conn, undefined, true)
-        .then(() => {
-          router.push('/wallet')
-        })
-        .catch((error) => {
-          if (error instanceof UnsupportedChainIdError) {
-            activate(conn) // a little janky...can't use setError because the connector isn't set
-          } else {
-            ///TODO: show error
-          }
-        })
-  }
-
-  const activateNami = (connector) => {
-    connector
-      .activate()
-      .then((resp) => {
-        console.log('active nami resp')
-        console.log(resp)
+    activate(connector)
+      .then(() => {
+        router.push('/wallet')
       })
       .catch((error) => {
-        console.log(`error in activation: `, error)
+        if (error instanceof UnsupportedChainIdError) {
+          activate(connector) // a little janky...can't use setError because the connector isn't set
+        } else {
+          ///TODO: show error
+        }
       })
   }
 
@@ -79,24 +44,9 @@ const ConnectWallet = ({}) => {
       }
 
       // nami connector requires injected cardano in window
-      if (option.connector === nami) {
-        // @ts-ignore
-        if (!window.cardano) {
-          return null
-        }
-
-        return (
-          <WalletOption
-            id={`connect-${key}`}
-            key={key}
-            name={option.name}
-            icon={'/images/wallets/' + option.iconName}
-            link={option.href}
-            onClick={() => {
-              activateNami(option.connector)
-            }}
-          />
-        )
+      // @ts-ignore
+      if (option.connector === nami && !window.cardano) {
+        return null
       }
 
       return (
