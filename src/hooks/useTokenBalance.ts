@@ -5,10 +5,11 @@ import { Contract } from 'ethers'
 import ERC20_ABI from '../constants/abis/erc20.json'
 import { WNATIVE } from '@sushiswap/sdk'
 import { isAddress } from '../functions/validate'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useBlockNumber } from '../state/application/hooks'
 import { useContract } from './useContract'
 import useTransactionStatus from './useTransactionStatus'
+import { useActiveWeb3React } from './index'
 
 export interface BalanceProps {
   value: BigNumber
@@ -23,7 +24,8 @@ function useTokenBalance(tokenAddress: string): BalanceProps {
     value: BigNumber.from(0),
     decimals: 18,
   })
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
+  const { library } = useActiveWeb3React()
   const currentBlockNumber = useBlockNumber()
   const currentTransactionStatus = useTransactionStatus()
   const addressCheckSum = isAddress(tokenAddress)

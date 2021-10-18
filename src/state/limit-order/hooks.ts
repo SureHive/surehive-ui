@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Field, replaceLimitOrderState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions'
 import { useCurrency } from '../../hooks/Tokens'
 import { ChainId, Currency, CurrencyAmount, JSBI, NATIVE, Percent, Price, WNATIVE } from '@sushiswap/sdk'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { isAddress, tryParseAmount } from '../../functions'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
@@ -71,7 +71,7 @@ export function useDerivedLimitOrderInfo(): {
   inputError?: string
   currentPrice: Price<Currency, Currency>
 } {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const [singleHopOnly] = useUserSingleHopOnly()
   const {
     [Field.INPUT]: { currencyId: inputCurrencyId },
@@ -275,7 +275,7 @@ export function queryParametersToSwapState(chainId: ChainId, parsedQs: ParsedQs)
 
 // updates the swap state to use the defaults for a given network
 export function useDefaultsFromURLSearch() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const dispatch = useDispatch<AppDispatch>()
   const parsedQs = useParsedQueryString()
   const [result, setResult] = useState<

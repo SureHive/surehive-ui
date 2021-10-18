@@ -25,7 +25,7 @@ import { useCallback, useMemo } from 'react'
 
 import ReactGA from 'react-ga'
 import flatMap from 'lodash/flatMap'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
 
 function serializeToken(token: Token): SerializedToken {
@@ -178,7 +178,7 @@ export function useRemoveUserAddedToken(): (chainId: number, address: string) =>
 }
 
 export function useUserAddedTokens(): Token[] {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const serializedTokensMap = useAppSelector(({ user: { tokens } }) => tokens)
 
   return useMemo(() => {
@@ -237,7 +237,7 @@ export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
  * Returns all the pairs of tokens that are tracked by the user for the current chain ID.
  */
 export function useTrackedTokenPairs(): [Token, Token][] {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const tokens = useAllTokens()
 
   // pinned pairs

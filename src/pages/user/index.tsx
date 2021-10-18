@@ -16,7 +16,7 @@ import { clearAllTransactions } from '../../state/transactions/actions'
 import { getExplorerLink } from '../../functions/explorer'
 import { shortenAddress } from '../../functions/format'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAppDispatch } from '../../state/hooks'
 import useENSName from '../../hooks/useENSName'
 import { useETHBalances } from '../../state/wallet/hooks'
@@ -29,7 +29,7 @@ function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
 
 export default function Me() {
   const { i18n } = useLingui()
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const dispatch = useAppDispatch()
 

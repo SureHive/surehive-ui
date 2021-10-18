@@ -6,12 +6,12 @@ import React from 'react'
 import Web3Status from '../../components/Web3Status'
 import bentoBoxHero from '../../../public/bentobox-hero.jpg'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useLingui } from '@lingui/react'
 
 export default function BenotBox() {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   return (
     <>
       <Head>

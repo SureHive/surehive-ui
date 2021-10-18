@@ -2,7 +2,7 @@ import { ChainId, Currency, NATIVE, WNATIVE } from '@sushiswap/sdk'
 
 import { WETH9_EXTENDED } from '../constants/tokens'
 import { tryParseAmount } from '../functions/parse'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useCurrencyBalance } from '../state/wallet/hooks'
 import { useMemo } from 'react'
 import { useTransactionAdder } from '../state/transactions/hooks'
@@ -30,7 +30,7 @@ export default function useWrapCallback(
   execute?: undefined | (() => Promise<void>)
   inputError?: string
 } {
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
   const wethContract = useWETH9Contract()
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency)
   // we can always parse the amount typed as the input currency, since wrapping is 1:1

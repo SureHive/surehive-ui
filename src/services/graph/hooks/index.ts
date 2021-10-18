@@ -14,14 +14,14 @@ import useSWR, { SWRConfiguration } from 'swr'
 import { ChainId } from '@sushiswap/sdk'
 import { Chef } from '../../../features/farm/enum'
 import concat from 'lodash/concat'
-import useActiveWeb3React from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../providers/walletManagerProvider'
 
 export * from './bentobox'
 export * from './blocks'
 export * from './exchange'
 
 export function useMasterChefV1TotalAllocPoint(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(
     shouldFetch ? 'masterChefV1TotalAllocPoint' : null,
@@ -32,7 +32,7 @@ export function useMasterChefV1TotalAllocPoint(swrConfig = undefined) {
 }
 
 export function useMasterChefV1SushiPerBlock(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(
     shouldFetch ? 'masterChefV1SushiPerBlock' : null,
@@ -43,7 +43,7 @@ export function useMasterChefV1SushiPerBlock(swrConfig = undefined) {
 }
 
 export function useMasterChefV1Farms(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(shouldFetch ? 'masterChefV1Farms' : null, () => getMasterChefV1Farms(), swrConfig)
   return useMemo(() => {
@@ -53,7 +53,7 @@ export function useMasterChefV1Farms(swrConfig = undefined) {
 }
 
 export function useMasterChefV2Farms(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(shouldFetch ? 'masterChefV2Farms' : null, () => getMasterChefV2Farms(), swrConfig)
   return useMemo(() => {
@@ -63,7 +63,7 @@ export function useMasterChefV2Farms(swrConfig: SWRConfiguration = undefined) {
 }
 
 export function useMiniChefFarms(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && [ChainId.MATIC, ChainId.XDAI, ChainId.HARMONY].includes(chainId)
   const { data } = useSWR(
     shouldFetch ? ['miniChefFarms', chainId] : null,
@@ -90,7 +90,7 @@ export function useFarms(swrConfig: SWRConfiguration = undefined) {
 }
 
 export function useMasterChefV1PairAddresses() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(shouldFetch ? ['masterChefV1PairAddresses', chainId] : null, (_) =>
     getMasterChefV1PairAddreses()
@@ -102,7 +102,7 @@ export function useMasterChefV1PairAddresses() {
 }
 
 export function useMasterChefV2PairAddresses() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.MAINNET
   const { data } = useSWR(shouldFetch ? ['masterChefV2PairAddresses', chainId] : null, (_) =>
     getMasterChefV2PairAddreses()
@@ -114,7 +114,7 @@ export function useMasterChefV2PairAddresses() {
 }
 
 export function useMiniChefPairAddresses() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && [ChainId.MATIC, ChainId.XDAI, ChainId.HARMONY].includes(chainId)
   const { data } = useSWR(shouldFetch ? ['miniChefPairAddresses', chainId] : null, (_, chainId) =>
     getMiniChefPairAddreses(chainId)

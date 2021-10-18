@@ -31,7 +31,7 @@ import { currencyId as getCurrencyId } from '../../functions/currency/currencyId
 import { maxAmountSpend } from '../../functions/currency/maxAmountSpend'
 import { resetZapState } from '../../state/zap/actions'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useCurrency } from '../../hooks/Tokens'
 import { useDefaultsFromURLSearch } from '../../state/zap/hooks'
 import { useDispatch } from 'react-redux'
@@ -137,7 +137,7 @@ const DEFAULT_ZAP_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 export default function Zap() {
   const { i18n } = useLingui()
 
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const loadedUrlParams = useDefaultsFromURLSearch()
 

@@ -5,10 +5,10 @@ import { BigNumber } from '@ethersproject/bignumber'
 import ERC20_ABI from '../constants/abis/erc20.json'
 import Fraction from '../entities/Fraction'
 import { getAddress } from '@ethersproject/address'
-import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 
 const useAllowance = (tokenAddress: string) => {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const bentoBoxContract = useBentoBoxContract(true) // withSigner
   const tokenAddressChecksum = getAddress(tokenAddress)
   const tokenContract = useContract(tokenAddressChecksum ? tokenAddressChecksum : undefined, ERC20_ABI, true) // withSigner

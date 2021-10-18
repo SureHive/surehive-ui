@@ -14,7 +14,7 @@ import { formatNumber } from '../../functions'
 import { getAddress } from '@ethersproject/address'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useLingui } from '@lingui/react'
 import useMasterChef from './useMasterChef'
 import usePendingReward from './usePendingReward'
@@ -24,7 +24,7 @@ import { useTransactionAdder } from '../../state/transactions/hooks'
 const FarmListItem = ({ farm }) => {
   const { i18n } = useLingui()
 
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const [pendingTx, setPendingTx] = useState(false)
   const [depositValue, setDepositValue] = useState('')
   const [withdrawValue, setWithdrawValue] = useState('')

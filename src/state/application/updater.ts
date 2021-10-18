@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import useDebounce from '../../hooks/useDebounce'
 import useIsWindowVisible from '../../hooks/useIsWindowVisible'
 import { updateBlockNumber } from './actions'
 
 export default function Updater(): null {
-  const { library, chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const dispatch = useDispatch()
 
   const windowVisible = useIsWindowVisible()
@@ -36,21 +36,21 @@ export default function Updater(): null {
   )
 
   // attach/detach listeners
-  useEffect(() => {
-    if (!library || !chainId || !windowVisible) return undefined
-
-    setState({ chainId, blockNumber: null })
-
-    library
-      .getBlockNumber()
-      .then(blockNumberCallback)
-      .catch((error) => console.error(`Failed to get block number for chainId: ${chainId}`, error))
-
-    library.on('block', blockNumberCallback)
-    return () => {
-      library.removeListener('block', blockNumberCallback)
-    }
-  }, [dispatch, chainId, library, blockNumberCallback, windowVisible])
+  // useEffect(() => {
+  //   if (!library || !chainId || !windowVisible) return undefined
+  //
+  //   setState({ chainId, blockNumber: null })
+  //
+  //   library
+  //     .getBlockNumber()
+  //     .then(blockNumberCallback)
+  //     .catch((error) => console.error(`Failed to get block number for chainId: ${chainId}`, error))
+  //
+  //   library.on('block', blockNumberCallback)
+  //   return () => {
+  //     library.removeListener('block', blockNumberCallback)
+  //   }
+  // }, [dispatch, chainId, library, blockNumberCallback, windowVisible])
 
   const debouncedState = useDebounce(state, 100)
 

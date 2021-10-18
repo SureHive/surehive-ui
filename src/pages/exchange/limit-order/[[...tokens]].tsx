@@ -32,7 +32,7 @@ import CurrencySelect from '../../../features/limit-order/CurrencySelect'
 import Typography from '../../../components/Typography'
 import PayFromToggle from '../../../features/limit-order/PayFromToggle'
 import { ExclamationIcon } from '@heroicons/react/solid'
-import { useActiveWeb3React } from '../../../hooks'
+import { useWalletManager } from '../../../providers/walletManagerProvider'
 import limitOrderPairList from '@sushiswap/limit-order-pair-list/dist/limit-order.pairlist.json'
 import NetworkGuard from '../../../guards/Network'
 
@@ -50,7 +50,7 @@ const areEqual = (first, second) => {
 
 function LimitOrder() {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const loadedUrlParams = useDefaultsFromURLSearch()
   const [loadedInputCurrency, loadedOutputCurrency] = [

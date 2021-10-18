@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks'
 import { AppState } from '../index'
 import { CreateState } from './reducer'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useCallback } from 'react'
 import { useCurrency } from '../../hooks/Tokens'
 import { useLingui } from '@lingui/react'
@@ -56,7 +56,7 @@ export function useDerivedCreateInfo(): {
 } {
   const { i18n } = useLingui()
 
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const {
     independentField,

@@ -1,4 +1,4 @@
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useBentoBoxContract, useLimitOrderHelperContract } from './useContract'
 import { useBentoMasterContractAllowed } from '../state/bentobox/hooks'
@@ -12,6 +12,7 @@ import { getSignatureWithProviderBentobox, getVerifyingContract } from 'limitord
 import { Field } from '../state/swap/actions'
 import { calculateGasMargin, ZERO } from '../functions'
 import { MaxUint256 } from '@ethersproject/constants'
+import { useActiveWeb3React } from './index'
 
 export enum BentoApprovalState {
   UNKNOWN,
@@ -29,7 +30,8 @@ export enum BentoApproveOutcome {
 }
 
 const useLimitOrderApproveCallback = () => {
-  const { account, library, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
+  const { library } = useActiveWeb3React()
   const dispatch = useDispatch()
 
   const { fromBentoBalance } = useLimitOrderState()

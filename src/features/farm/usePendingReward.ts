@@ -6,7 +6,7 @@ import { ChainId } from '@sushiswap/sdk'
 import { Chef } from './enum'
 import Fraction from '../../entities/Fraction'
 import { getContract } from '../../functions'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useBlockNumber } from '../../state/application/hooks'
 
 const REWARDERS = {
@@ -29,7 +29,7 @@ const REWARDERS = {
 const usePending = (farm) => {
   const [balance, setBalance] = useState<string>('0')
 
-  const { chainId, account, library } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
   const currentBlockNumber = useBlockNumber()
 
   const aclxRewarder = useAlcxRewarderContract()
@@ -60,16 +60,10 @@ const usePending = (farm) => {
       }
     }
     // id = 0 is evaluated as false
-    if (
-      account &&
-      aclxRewarder &&
-      farm &&
-      library &&
-      (farm.chef === Chef.MASTERCHEF_V2 || farm.chef === Chef.MINICHEF)
-    ) {
+    if (account && aclxRewarder && farm && (farm.chef === Chef.MASTERCHEF_V2 || farm.chef === Chef.MINICHEF)) {
       fetchPendingReward()
     }
-  }, [account, currentBlockNumber, aclxRewarder, complexRewarder, farm, library, contract, chainId])
+  }, [account, currentBlockNumber, aclxRewarder, complexRewarder, farm, contract, chainId])
 
   return balance
 }

@@ -6,7 +6,7 @@ import { ARCHER_ROUTER_ADDRESS } from '../constants'
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
 import { calculateGasMargin } from '../functions/trade'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useTokenAllowance } from './useTokenAllowance'
 import { useTokenContract } from './useContract'
 
@@ -22,7 +22,7 @@ export function useApproveCallback(
   amountToApprove?: CurrencyAmount<Currency>,
   spender?: string
 ): [ApprovalState, () => Promise<void>] {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const token = amountToApprove?.currency?.isToken ? amountToApprove.currency : undefined
   const currentAllowance = useTokenAllowance(token, account ?? undefined, spender)
   const pendingApproval = useHasPendingApproval(token?.address, spender)
@@ -102,7 +102,7 @@ export function useApproveCallbackFromTrade(
   allowedSlippage: Percent,
   doArcher: boolean = false
 ) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const amountToApprove = useMemo(
     () => (trade && trade.inputAmount.currency.isToken ? trade.maximumAmountIn(allowedSlippage) : undefined),
     [trade, allowedSlippage]

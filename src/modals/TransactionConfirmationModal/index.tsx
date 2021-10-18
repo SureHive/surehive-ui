@@ -14,6 +14,7 @@ import { RowFixed } from '../../components/Row'
 import { getExplorerLink } from '../../functions/explorer'
 import loadingRollingCircle from '../../animation/loading-rolling-circle.json'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import useAddTokenToMetaMask from '../../hooks/useAddTokenToMetaMask'
 import { useLingui } from '@lingui/react'
 
@@ -180,7 +181,7 @@ const TransactionConfirmationModal: FC<ConfirmationModalProps> = ({
   content,
   currencyToAdd,
 }) => {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   if (!chainId) return null
 

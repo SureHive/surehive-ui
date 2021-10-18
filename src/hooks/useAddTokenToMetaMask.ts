@@ -2,13 +2,15 @@ import { Currency, Token } from '@sushiswap/sdk'
 import { useCallback, useState } from 'react'
 
 import { getTokenLogoURL } from './../components/CurrencyLogo'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
+import { useActiveWeb3React } from './index'
 
 export default function useAddTokenToMetaMask(currencyToAdd: Currency | undefined): {
   addToken: () => void
   success: boolean | undefined
 } {
-  const { chainId, library } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
+  const { library } = useActiveWeb3React()
 
   const token: Token | undefined = currencyToAdd?.wrapped
 

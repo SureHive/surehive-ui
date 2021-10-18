@@ -1,4 +1,5 @@
-import { useActiveWeb3React, useSushiContract } from '../../hooks'
+import { useSushiContract } from '../../hooks'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { Chef } from './enum'
@@ -7,7 +8,7 @@ import { useCallback } from 'react'
 import { useChefContract } from './hooks'
 
 export default function useMasterChef(chef: Chef) {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const sushi = useSushiContract()
 

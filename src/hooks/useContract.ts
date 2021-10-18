@@ -68,8 +68,9 @@ import ZAPPER_ABI from '../constants/abis/zapper.json'
 import LIMIT_ORDER_ABI from '../constants/abis/limit-order.json'
 import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json'
 import { getContract } from '../functions/contract'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useMemo } from 'react'
+import { useActiveWeb3React } from './index'
 
 import { getVerifyingContract } from 'limitorderv2-sdk'
 
@@ -81,7 +82,8 @@ export function useEIP2612Contract(tokenAddress?: string): Contract | null {
 
 // returns null on errors
 export function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
-  const { library, account } = useActiveWeb3React()
+  const { account } = useWalletManager()
+  const { library } = useActiveWeb3React()
 
   return useMemo(() => {
     if (!address || !ABI || !library) return null
@@ -99,12 +101,12 @@ export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: b
 }
 
 export function useWETH9Contract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId ? WNATIVE[chainId].address : undefined, WETH9_ABI, withSignerIfPossible)
 }
 
 export function useArgentWalletDetectorContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(
     chainId === ChainId.MAINNET ? ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS : undefined,
     ARGENT_WALLET_DETECTOR_ABI,
@@ -113,7 +115,7 @@ export function useArgentWalletDetectorContract(): Contract | null {
 }
 
 export function useENSRegistrarContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   let address: string | undefined
   if (chainId) {
     switch (chainId) {
@@ -141,12 +143,12 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 }
 
 export function useMerkleDistributorContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId ? MERKLE_DISTRIBUTOR_ADDRESS[chainId] : undefined, MERKLE_DISTRIBUTOR_ABI, true)
 }
 
 export function useBoringHelperContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && BORING_HELPER_ADDRESS[chainId], BORING_HELPER_ABI, false)
 }
 
@@ -155,22 +157,22 @@ export function usePendingContract(): Contract | null {
 }
 
 export function useMulticallContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && MULTICALL_NETWORKS[chainId], MULTICALL_ABI, false)
 }
 
 export function useMulticall2Contract() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && MULTICALL2_ADDRESS[chainId], MULTICALL2_ABI, false)
 }
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && SUSHI_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && MASTERCHEF_ADDRESS[chainId], MASTERCHEF_ABI, withSignerIfPossible)
 }
 
@@ -178,17 +180,17 @@ export function useMasterChefV2Contract(withSignerIfPossible?: boolean): Contrac
   return useContract('0xEF0881eC094552b2e128Cf945EF17a6752B4Ec5d', MASTERCHEF_V2_ABI, withSignerIfPossible)
 }
 export function useMiniChefContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && MINICHEF_ADDRESS[chainId], MINICHEF_ABI, withSignerIfPossible)
 }
 
 export function useFactoryContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && FACTORY_ADDRESS[chainId], FACTORY_ABI, false)
 }
 
 export function useRouterContract(useArcher = false, withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const address = useArcher ? ARCHER_ROUTER_ADDRESS[chainId] : ROUTER_ADDRESS[chainId]
   const abi = useArcher ? ARCHER_ROUTER_ABI : ROUTER_ABI
@@ -197,27 +199,27 @@ export function useRouterContract(useArcher = false, withSignerIfPossible?: bool
 }
 
 export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && BAR_ADDRESS[chainId], BAR_ABI, withSignerIfPossible)
 }
 
 export function useMakerContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && MAKER_ADDRESS[chainId], MAKER_ABI, false)
 }
 
 export function useTimelockContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && TIMELOCK_ADDRESS[chainId], TIMELOCK_ABI, false)
 }
 
 export function useBentoBoxContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && BENTOBOX_ADDRESS[chainId], BENTOBOX_ABI, withSignerIfPossible)
 }
 
 export function useKashiPairContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && KASHI_ADDRESS[chainId], KASHIPAIR_ABI, withSignerIfPossible)
 }
 
@@ -226,7 +228,7 @@ export function useKashiPairCloneContract(address: string, withSignerIfPossible?
 }
 
 export function useSushiSwapSwapper(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(chainId && SUSHISWAP_SWAPPER_ADDRESS[chainId], BASE_SWAPPER_ABI, false)
 }
 
@@ -407,7 +409,7 @@ export function usePancakeV1FactoryContract(): Contract | null {
 }
 
 export function useSushiRollContract(version: 'v1' | 'v2' = 'v2'): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   let address: string | undefined
   if (chainId) {
     switch (chainId) {
@@ -441,7 +443,7 @@ export function useSushiRollContract(version: 'v1' | 'v2' = 'v2'): Contract | nu
 // }
 
 export function useDashboardContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   let address: string | undefined
   if (chainId) {
     switch (chainId) {
@@ -479,7 +481,7 @@ export function useSushiSwapTWAPContract(address?: string): Contract | null {
 }
 
 export function useZapperContract(withSignerIfPossible?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const address = ZAPPER_ADDRESS[chainId]
   return useContract(address, ZAPPER_ABI, withSignerIfPossible)
 }
@@ -647,7 +649,7 @@ export function useMeowshiContract(withSignerIfPossible?: boolean): Contract | n
 }
 
 export function useLimitOrderContract(withSignerIfPossibe?: boolean): Contract | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return useContract(getVerifyingContract(chainId), LIMIT_ORDER_ABI, withSignerIfPossibe)
 }
 

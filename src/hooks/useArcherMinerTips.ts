@@ -1,12 +1,12 @@
 import { ChainId } from '@sushiswap/sdk'
 import { useEffect, useState } from 'react'
 import { ARCHER_GAS_URI } from '../constants'
-import useActiveWeb3React from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 
 type T = Record<string, string>
 
 export default function useArcherMinerTips(): { status: string; data: T } {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const [status, setStatus] = useState<string>('idle')
   const [data, setData] = useState<T>({
     immediate: '2000000000000',

@@ -8,7 +8,7 @@ import { useMasterChefContract, useMasterChefV2Contract, useMiniChefContract } f
 import { Contract } from '@ethersproject/contracts'
 import { Zero } from '@ethersproject/constants'
 import concat from 'lodash/concat'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import zip from 'lodash/zip'
 
 export function useChefContract(chef: Chef) {
@@ -49,7 +49,7 @@ export function useChefContracts(chefs: Chef[]) {
 }
 
 export function useUserInfo(farm, token) {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const contract = useChefContract(farm.chef)
 
@@ -70,7 +70,7 @@ export function useUserInfo(farm, token) {
 }
 
 export function usePendingSushi(farm) {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const contract = useChefContract(farm.chef)
 
@@ -91,7 +91,7 @@ export function usePendingSushi(farm) {
 }
 
 export function usePendingToken(farm, contract) {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const args = useMemo(() => {
     if (!account || !farm) {
@@ -110,7 +110,7 @@ export function usePendingToken(farm, contract) {
 }
 
 export function useChefPositions(contract?: Contract | null, rewarder?: Contract | null) {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const numberOfPools = useSingleCallResult(contract ? contract : null, 'poolLength', undefined, NEVER_RELOAD)
     ?.result?.[0]

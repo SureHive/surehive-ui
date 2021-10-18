@@ -6,17 +6,17 @@ import { getNetworkLibrary } from '../connectors'
 import { getTokenList } from '../functions/list'
 import { nanoid } from '@reduxjs/toolkit'
 import { resolveENSContentHash } from '../functions/ens'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 
 export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean) => Promise<TokenList> {
-  const { chainId, library } = useActiveWeb3React()
+  const { chainId, provider } = useWalletManager()
   const dispatch = useDispatch<AppDispatch>()
 
   const ensResolver = useCallback(
     (ensName: string) => {
-      if (!library || chainId !== ChainId.MAINNET) {
+      if (!provider || chainId !== ChainId.MAINNET) {
         if (chainId === ChainId.MAINNET) {
           const networkLibrary = getNetworkLibrary()
           if (networkLibrary) {
@@ -25,9 +25,9 @@ export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean
         }
         throw new Error('Could not construct mainnet ENS resolver')
       }
-      return resolveENSContentHash(ensName, library)
+      return resolveENSContentHash(ensName, provider)
     },
-    [chainId, library]
+    [chainId, provider]
   )
 
   // note: prevent dispatch if using for list search or unsupported list

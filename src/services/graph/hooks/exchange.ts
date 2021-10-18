@@ -20,10 +20,10 @@ import useSWR, { SWRConfiguration } from 'swr'
 
 import { ChainId } from '@sushiswap/sdk'
 import { ethPriceQuery } from '../queries'
-import { useActiveWeb3React } from '../../../hooks'
+import { useWalletManager } from '../../../providers/walletManagerProvider'
 
 export function useExchange(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(
     chainId ? [chainId, query, JSON.stringify(variables)] : null,
     () => exchange(chainId, query, variables),
@@ -33,7 +33,7 @@ export function useExchange(variables = undefined, query = undefined, swrConfig:
 }
 
 export function useFactory(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(
     chainId ? ['factory', chainId, JSON.stringify(variables)] : null,
     () => getFactory(chainId, variables),
@@ -43,7 +43,7 @@ export function useFactory(variables = undefined, swrConfig: SWRConfiguration = 
 }
 
 export function useEthPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(
     chainId ? ['ethPrice', JSON.stringify(variables)] : null,
     () => getEthPrice(chainId, variables),
@@ -53,33 +53,33 @@ export function useEthPrice(variables = undefined, swrConfig: SWRConfiguration =
 }
 
 export function useStakePrice(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.XDAI
   const { data } = useSWR(shouldFetch ? 'stakePrice' : null, () => getStakePrice(), swrConfig)
   return data
 }
 
 export function useOnePrice(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId && chainId === ChainId.HARMONY
   const { data } = useSWR(shouldFetch ? 'onePrice' : null, () => getOnePrice(), swrConfig)
   return data
 }
 
 export function useAlcxPrice(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(chainId && chainId === ChainId.MAINNET ? 'aclxPrice' : null, () => getAlcxPrice(), swrConfig)
   return data
 }
 
 export function useCvxPrice(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(chainId && chainId === ChainId.MAINNET ? 'cvxPrice' : null, () => getCvxPrice(), swrConfig)
   return data
 }
 
 export function useMaticPrice(swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(chainId && chainId === ChainId.MATIC ? 'maticPrice' : null, () => getMaticPrice(), swrConfig)
   return data
 }
@@ -90,7 +90,7 @@ export function useSushiPrice(swrConfig: SWRConfiguration = undefined) {
 }
 
 export function useBundle(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { data } = useSWR(
     chainId ? [chainId, ethPriceQuery, JSON.stringify(variables)] : null,
     () => getBundle(),
@@ -100,7 +100,7 @@ export function useBundle(variables = undefined, swrConfig: SWRConfiguration = u
 }
 
 export function useLiquidityPositions(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['liquidityPositions', chainId, JSON.stringify(variables)] : null,
@@ -111,7 +111,7 @@ export function useLiquidityPositions(variables = undefined, swrConfig: SWRConfi
 }
 
 export function useSushiPairs(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['sushiPairs', chainId, JSON.stringify(variables)] : null,
@@ -122,7 +122,7 @@ export function useSushiPairs(variables = undefined, query = undefined, swrConfi
 }
 
 export function useTokens(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['tokens', chainId, query, JSON.stringify(variables)] : null,
@@ -133,7 +133,7 @@ export function useTokens(variables = undefined, query = undefined, swrConfig: S
 }
 
 export function useToken(variables, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['token', chainId, query, JSON.stringify(variables)] : null,
@@ -144,7 +144,7 @@ export function useToken(variables, query = undefined, swrConfig: SWRConfigurati
 }
 
 export function useDayData(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['dayData', chainId, query, JSON.stringify(variables)] : null,
@@ -155,7 +155,7 @@ export function useDayData(variables = undefined, query = undefined, swrConfig: 
 }
 
 export function useTransactions(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['transactions', chainId, query, JSON.stringify(variables)] : null,
@@ -166,7 +166,7 @@ export function useTransactions(variables = undefined, query = undefined, swrCon
 }
 
 export function useTokenPairs(variables = undefined, query = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const shouldFetch = chainId
   const { data } = useSWR(
     shouldFetch ? ['tokenPairs', chainId, query, JSON.stringify(variables)] : null,

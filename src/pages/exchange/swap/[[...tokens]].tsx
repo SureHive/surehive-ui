@@ -51,7 +51,7 @@ import confirmPriceImpactWithoutFee from '../../../features/swap/confirmPriceImp
 import { maxAmountSpend } from '../../../functions/currency'
 import swapArrowsAnimationData from '../../../animation/swap-arrows.json'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../providers/walletManagerProvider'
 import useENSAddress from '../../../hooks/useENSAddress'
 import useIsArgentWallet from '../../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../../hooks/useIsSwapUnsupported'
@@ -91,7 +91,7 @@ export default function Swap() {
       return !Boolean(token.address in defaultTokens)
     })
 
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const toggleNetworkModal = useNetworkModalToggle()
 

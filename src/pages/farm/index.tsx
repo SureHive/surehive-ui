@@ -1,5 +1,6 @@
 import { Chef, PairType } from '../../features/farm/enum'
-import { useActiveWeb3React, useFuse } from '../../hooks'
+import { useFuse } from '../../hooks'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import {
   useAlcxPrice,
   useAverageBlockTime,
@@ -30,7 +31,7 @@ import { usePositions } from '../../features/farm/hooks'
 import { useRouter } from 'next/router'
 
 export default function Farm(): JSX.Element {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const router = useRouter()
 

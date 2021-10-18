@@ -21,7 +21,7 @@ import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import { cloudinaryLoader } from '../../functions/cloudinary'
 import { formatNumber } from '../../functions/format'
 import { t } from '@lingui/macro'
-import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import useBentoBox from '../../hooks/useBentoBox'
 import { useLingui } from '@lingui/react'
 import useTokenBalance from '../../hooks/useTokenBalance'
@@ -155,7 +155,7 @@ const TokenBalance = ({ token }: { token: BentoBalance & WrappedTokenInfo }) => 
 
 export function Deposit({ token }: { token: BentoBalance & WrappedTokenInfo }): JSX.Element {
   const { i18n } = useLingui()
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const { deposit } = useBentoBox()
 
@@ -230,7 +230,7 @@ export function Deposit({ token }: { token: BentoBalance & WrappedTokenInfo }): 
 
 function Withdraw({ token }: { token: BentoBalance & WrappedTokenInfo }): JSX.Element {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const { withdraw } = useBentoBox()
 

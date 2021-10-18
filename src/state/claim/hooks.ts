@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 import { TransactionResponse } from '@ethersproject/providers'
 import { calculateGasMargin } from '../../functions/trade'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useMerkleDistributorContract } from '../../hooks/useContract'
 import { useSingleCallResult } from '../multicall/hooks'
 import { useTransactionAdder } from '../transactions/hooks'
@@ -49,7 +49,7 @@ function fetchClaim(account: string, chainId: ChainId): Promise<any | UserClaimD
 // parse distributorContract blob and detect if user has claim data
 // null means we know it does not
 export function useUserClaimData(account: string | null | undefined): UserClaimData | null | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const key = `${chainId}:${account}`
   const [claimInfo, setClaimInfo] = useState<{
@@ -82,7 +82,7 @@ export function useUserHasAvailableClaim(account: string | null | undefined): bo
 }
 
 export function useUserUnclaimedAmount(account: string | null | undefined): CurrencyAmount<Currency> | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const userClaimData = useUserClaimData(account)
   const canClaim = useUserHasAvailableClaim(account)
 
@@ -105,7 +105,7 @@ export function useClaimCallback(account: string | null | undefined): {
   claimCallback: () => Promise<string>
 } {
   // get claim data for this account
-  const { library, chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const claimData = useUserClaimData(account)
 
   // used for popup summary
@@ -114,7 +114,7 @@ export function useClaimCallback(account: string | null | undefined): {
   const distributorContract = useMerkleDistributorContract()
 
   const claimCallback = async function () {
-    if (!claimData || !account || !library || !chainId || !distributorContract) return
+    if (!claimData || !account || !chainId || !distributorContract) return
 
     const args = [claimData.index, account, claimData.amount, claimData.proof]
 

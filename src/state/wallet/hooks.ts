@@ -5,7 +5,7 @@ import ERC20_ABI from '../../constants/abis/erc20.json'
 import { Interface } from '@ethersproject/abi'
 import { SURE } from './../../constants'
 import { isAddress } from '../../functions/validate'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useMemo } from 'react'
 import { useMulticall2Contract } from '../../hooks/useContract'
@@ -16,7 +16,7 @@ import { useMulticall2Contract } from '../../hooks/useContract'
 export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
 } {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const multicallContract = useMulticall2Contract()
 
   const addresses: string[] = useMemo(
@@ -141,7 +141,7 @@ export function useCurrencyBalance(account?: string, currency?: Currency): Curre
 export function useAllTokenBalances(): {
   [tokenAddress: string]: CurrencyAmount<Token> | undefined
 } {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const allTokens = useAllTokens()
   const allTokensArray = useMemo(() => Object.values(allTokens ?? {}), [allTokens])
   const balances = useTokenBalances(account ?? undefined, allTokensArray)

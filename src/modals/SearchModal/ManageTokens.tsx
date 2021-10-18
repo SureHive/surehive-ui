@@ -12,7 +12,7 @@ import { Token } from '@sushiswap/sdk'
 import TrashIcon from '../../components/TrashIcon'
 import { getExplorerLink } from '../../functions/explorer'
 import { isAddress } from '../../functions/validate'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useToken } from '../../hooks/Tokens'
 
 function ManageTokens({
@@ -22,7 +22,7 @@ function ManageTokens({
   setModalView: (view: CurrencyModalView) => void
   setImportToken: (token: Token) => void
 }) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const [searchQuery, setSearchQuery] = useState<string>('')
 

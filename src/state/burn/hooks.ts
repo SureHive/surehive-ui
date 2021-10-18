@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks'
 import { AppState } from '../index'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useCallback } from 'react'
 import { useLingui } from '@lingui/react'
 import { useTokenBalances } from '../wallet/hooks'
@@ -29,7 +29,7 @@ export function useDerivedBurnInfo(
   }
   error?: string
 } {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const { i18n } = useLingui()
 

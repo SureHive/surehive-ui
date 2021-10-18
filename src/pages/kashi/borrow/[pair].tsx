@@ -15,20 +15,22 @@ import Layout from '../../../layouts/Kashi'
 import QuestionHelper from '../../../components/QuestionHelper'
 import { cloudinaryLoader } from '../../../functions/cloudinary'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../providers/walletManagerProvider'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
 import { useToken } from '../../../hooks/Tokens'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useUSDCPrice } from '../../../hooks'
 import { useV2Pair } from '../../../hooks/useV2Pairs'
+import { useActiveWeb3React } from '../../../hooks'
 
 function Pair() {
   const router = useRouter()
   const { i18n } = useLingui()
   const [tabIndex, setTabIndex] = useState(0)
 
-  const { account, library, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
+  const { library } = useActiveWeb3React()
 
   const pair = useKashiPair(router.query.pair as string)
   const asset = useToken(pair?.asset.address)

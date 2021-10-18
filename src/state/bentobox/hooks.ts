@@ -12,7 +12,7 @@ import { e10 } from '../../functions/math'
 import { easyAmount } from '../../functions/kashi'
 import { getAddress } from '@ethersproject/address'
 import { toAmount } from '../../functions/bentobox'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useSingleCallResult } from '../multicall/hooks'
 import useTransactionStatus from '../../hooks/useTransactionStatus'
@@ -29,7 +29,7 @@ export interface BentoBalance {
 }
 
 export function useBentoBalances(): BentoBalance[] {
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
 
   const boringHelperContract = useBoringHelperContract()
 
@@ -113,7 +113,7 @@ export function useBentoBalance(tokenAddress: string): {
   value: BigNumber
   decimals: number
 } {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const boringHelperContract = useBoringHelperContract()
   const bentoBoxContract = useBentoBoxContract()

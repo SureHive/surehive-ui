@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../providers/walletManagerProvider'
 import { ChainId } from '@sushiswap/sdk'
 import Typography from '../../components/Typography'
 import Image from 'next/image'
@@ -10,6 +10,7 @@ import { useLingui, Trans } from '@lingui/react'
 import { t } from '@lingui/macro'
 import HeadlessUIModal from '../../components/Modal/HeadlessUIModal'
 import NavLink from '../../components/NavLink'
+import { useActiveWeb3React } from '../../hooks'
 
 interface NetworkGuardProps {
   networks: ChainId[]
@@ -17,7 +18,8 @@ interface NetworkGuardProps {
 
 const Component: FC<NetworkGuardProps> = ({ children, networks = [] }) => {
   const { i18n } = useLingui()
-  const { chainId, library, account } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
+  const { library } = useActiveWeb3React()
 
   const link = (
     <NavLink href="/swap">
