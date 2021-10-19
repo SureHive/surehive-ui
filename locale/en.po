@@ -53,20 +53,11 @@ msgstr "Add"
 msgid "Add Liquidity"
 msgstr "Add Liquidity"
 
-msgid "Add collateral in order to borrow assets"
-msgstr "Add collateral in order to borrow assets"
-
 msgid "Add liquidity"
 msgstr "Add liquidity"
 
-msgid "Add {0} to MetaMask"
-msgstr "Add {0} to MetaMask"
-
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Add {0} {1} and {2} {3}"
-
-msgid "Added"
-msgstr "Added"
 
 msgid "Additional records and weekly merkle updates can be found on"
 msgstr "Additional records and weekly merkle updates can be found on"
@@ -113,9 +104,6 @@ msgstr "Auto"
 msgid "Available"
 msgstr "Available"
 
-msgid "Available Networks"
-msgstr "Available Networks"
-
 msgid "BASE TOKEN"
 msgstr "BASE TOKEN"
 
@@ -133,12 +121,6 @@ msgstr "Borrow"
 
 msgid "Borrow assets and leverage up"
 msgstr "Borrow assets and leverage up"
-
-msgid "Borrow {0}"
-msgstr "Borrow {0}"
-
-msgid "Borrow {0}-{1}"
-msgstr "Borrow {0}-{1}"
 
 msgid "Borrowed"
 msgstr "Borrowed"
@@ -231,9 +213,6 @@ msgstr "Confirm Withdrawal"
 msgid "Confirm convert"
 msgstr "Confirm convert"
 
-msgid "Confirm this transaction in your wallet"
-msgstr "Confirm this transaction in your wallet"
-
 msgid "Connect Surehive Wallet"
 msgstr "Connect Surehive Wallet"
 
@@ -321,9 +300,6 @@ msgstr "Documentation for users of Sushi."
 msgid "Edit Liquidity"
 msgstr "Edit Liquidity"
 
-msgid "Either return to the {link}, or change to an available network."
-msgstr "Either return to the {link}, or change to an available network."
-
 msgid "English"
 msgstr "English"
 
@@ -376,9 +352,6 @@ msgstr "Expired"
 msgid "FROM"
 msgstr "FROM"
 
-msgid "Farm"
-msgstr "Farm"
-
 msgid "Fees"
 msgstr "Fees"
 
@@ -406,9 +379,6 @@ msgstr "French"
 
 msgid "GAS COSTS"
 msgstr "GAS COSTS"
-
-msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
-msgstr "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
 
 msgid ""
 "Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
@@ -500,9 +470,6 @@ msgstr "Join the community on Discord."
 
 msgid "Korean"
 msgstr "Korean"
-
-msgid "LTV"
-msgstr "LTV"
 
 msgid "Learn more about wallets"
 msgstr "Learn more about wallets"
@@ -676,9 +643,6 @@ msgstr "Open Orders"
 msgid "Open Source"
 msgstr "Open Source"
 
-msgid "Open main menu"
-msgstr "Open main menu"
-
 msgid "Oracle"
 msgstr "Oracle"
 
@@ -797,9 +761,6 @@ msgstr "Remove {0} {1} and {2} {3}"
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "Removing {0} {1} and {2} {3}"
 
-msgid "Repay"
-msgstr "Repay"
-
 msgid "Restricts swaps to direct pairs only."
 msgstr "Restricts swaps to direct pairs only."
 
@@ -811,9 +772,6 @@ msgstr "Rewards"
 
 msgid "Risk of {0}% loss"
 msgstr "Risk of {0}% loss"
-
-msgid "Roll it back - this feature is not yet supported on {0}."
-msgstr "Roll it back - this feature is not yet supported on {0}."
 
 msgid "Romanian"
 msgstr "Romanian"
@@ -829,9 +787,6 @@ msgstr "Russian"
 
 msgid "SLIPPAGE TOLERANCE"
 msgstr "SLIPPAGE TOLERANCE"
-
-msgid "SLP"
-msgstr "SLP"
 
 msgid "Search here"
 msgstr "Search here"
@@ -926,9 +881,6 @@ msgstr "SureVault extra yield on deposits with flash lending, strategies, and fi
 
 msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
 
 msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
@@ -1045,9 +997,6 @@ msgstr "Transaction History {0}"
 msgid "Transaction Settings"
 msgstr "Transaction Settings"
 
-msgid "Transaction Submitted"
-msgstr "Transaction Submitted"
-
 msgid "Transaction deadline"
 msgstr "Transaction deadline"
 
@@ -1110,9 +1059,6 @@ msgstr "View on explorer"
 
 msgid "Volume"
 msgstr "Volume"
-
-msgid "Waiting for Confirmation"
-msgstr "Waiting for Confirmation"
 
 msgid "Wallet"
 msgstr "Wallet"
@@ -1230,9 +1176,6 @@ msgstr "for deliberations on additional points."
 
 msgid "forum discussion"
 msgstr "forum discussion"
-
-msgid "home page"
-msgstr "home page"
 
 msgid "loading..."
 msgstr "loading..."

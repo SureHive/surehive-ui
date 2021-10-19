@@ -53,19 +53,10 @@ msgstr "추가"
 msgid "Add Liquidity"
 msgstr "유동성 추가"
 
-msgid "Add collateral in order to borrow assets"
-msgstr "자산을 빌리려면 담보를 추가하세요"
-
 msgid "Add liquidity"
 msgstr "유동성 추가"
 
-msgid "Add {0} to MetaMask"
-msgstr ""
-
 msgid "Add {0} {1} and {2} {3}"
-msgstr ""
-
-msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
@@ -113,9 +104,6 @@ msgstr ""
 msgid "Available"
 msgstr "유효"
 
-msgid "Available Networks"
-msgstr ""
-
 msgid "BASE TOKEN"
 msgstr ""
 
@@ -133,12 +121,6 @@ msgstr "대출"
 
 msgid "Borrow assets and leverage up"
 msgstr "자산을 대출받아 레버리지를 올리세요"
-
-msgid "Borrow {0}"
-msgstr "{0} 대출"
-
-msgid "Borrow {0}-{1}"
-msgstr "{0}-{1} 대출"
 
 msgid "Borrowed"
 msgstr "차용금액"
@@ -228,9 +210,6 @@ msgstr "출금 확인"
 msgid "Confirm convert"
 msgstr ""
 
-msgid "Confirm this transaction in your wallet"
-msgstr ""
-
 msgid "Connect Surehive Wallet"
 msgstr ""
 
@@ -318,9 +297,6 @@ msgstr "Sushi 사용자를 위한 문서."
 msgid "Edit Liquidity"
 msgstr ""
 
-msgid "Either return to the {link}, or change to an available network."
-msgstr ""
-
 msgid "English"
 msgstr ""
 
@@ -373,9 +349,6 @@ msgstr ""
 msgid "FROM"
 msgstr ""
 
-msgid "Farm"
-msgstr ""
-
 msgid "Fees"
 msgstr ""
 
@@ -401,9 +374,6 @@ msgstr ""
 
 msgid "GAS COSTS"
 msgstr ""
-
-msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
-msgstr "자산총액 감소 없이 토큰에 노출됩니다. 레버리지를 사용하면 자산에 대해 숏 포지션을 취하고 하락 시 수익을 올릴 수 있습니다."
 
 msgid ""
 "Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
@@ -494,9 +464,6 @@ msgid "Join the community on Discord."
 msgstr "Discord 커뮤니티에 가입하세요."
 
 msgid "Korean"
-msgstr ""
-
-msgid "LTV"
 msgstr ""
 
 msgid "Learn more about wallets"
@@ -669,9 +636,6 @@ msgstr ""
 msgid "Open Source"
 msgstr "오픈 소스"
 
-msgid "Open main menu"
-msgstr "메인 메뉴 열기"
-
 msgid "Oracle"
 msgstr "오라클"
 
@@ -788,9 +752,6 @@ msgstr ""
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "{0} {1} 및 {2} {3} 제거 중"
 
-msgid "Repay"
-msgstr "상환"
-
 msgid "Restricts swaps to direct pairs only."
 msgstr "스왑을 직접적인 거래쌍으로만 제한합니다."
 
@@ -801,9 +762,6 @@ msgid "Rewards"
 msgstr ""
 
 msgid "Risk of {0}% loss"
-msgstr ""
-
-msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
 msgid "Romanian"
@@ -819,9 +777,6 @@ msgid "Russian"
 msgstr ""
 
 msgid "SLIPPAGE TOLERANCE"
-msgstr ""
-
-msgid "SLP"
 msgstr ""
 
 msgid "Search here"
@@ -915,9 +870,6 @@ msgstr ""
 
 msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "BentoBox는 dapp을 가스 효율적으로 사용하고 추가 수익을 얻을 수있는 혁신적인 방법입니다."
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "벤토박스의 전략은 자산이 대출운용되지 않는 동안에도 담보자산에 대한 수익을 창출할 수 있게 해줍니다. 해당 토큰에 대한 전략은 아직 벤토박스에 없습니다."
 
 msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "벤토박스의 전략은 자산이 대출운용되지 않는 동안에도 유동성에 대한 수익을 창출할 수 있게 해줍니다. 해당 토큰에 대한 전략은 아직 벤토박스에 없습니다."
@@ -1032,9 +984,6 @@ msgstr ""
 msgid "Transaction Settings"
 msgstr "거래 설정"
 
-msgid "Transaction Submitted"
-msgstr ""
-
 msgid "Transaction deadline"
 msgstr "거래 제한시간"
 
@@ -1096,9 +1045,6 @@ msgid "View on explorer"
 msgstr "탐색기에서 보기"
 
 msgid "Volume"
-msgstr ""
-
-msgid "Waiting for Confirmation"
 msgstr ""
 
 msgid "Wallet"
@@ -1216,9 +1162,6 @@ msgid "for deliberations on additional points."
 msgstr ""
 
 msgid "forum discussion"
-msgstr ""
-
-msgid "home page"
 msgstr ""
 
 msgid "loading..."

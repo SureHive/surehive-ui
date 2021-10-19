@@ -53,19 +53,10 @@ msgstr "添加"
 msgid "Add Liquidity"
 msgstr "添加流动性"
 
-msgid "Add collateral in order to borrow assets"
-msgstr "添加抵押品以借出资产"
-
 msgid "Add liquidity"
 msgstr "添加流动性"
 
-msgid "Add {0} to MetaMask"
-msgstr ""
-
 msgid "Add {0} {1} and {2} {3}"
-msgstr ""
-
-msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
@@ -113,9 +104,6 @@ msgstr ""
 msgid "Available"
 msgstr "可用的"
 
-msgid "Available Networks"
-msgstr ""
-
 msgid "BASE TOKEN"
 msgstr ""
 
@@ -133,12 +121,6 @@ msgstr "借"
 
 msgid "Borrow assets and leverage up"
 msgstr "借入资产并提高杠杆率"
-
-msgid "Borrow {0}"
-msgstr "借款 {0}"
-
-msgid "Borrow {0}-{1}"
-msgstr "借款{0}-{1}"
 
 msgid "Borrowed"
 msgstr "已借入"
@@ -224,9 +206,6 @@ msgid "Confirm Withdrawal"
 msgstr "确认提取"
 
 msgid "Confirm convert"
-msgstr ""
-
-msgid "Confirm this transaction in your wallet"
 msgstr ""
 
 msgid "Connect Surehive Wallet"
@@ -316,9 +295,6 @@ msgstr "Sushi用户文档。"
 msgid "Edit Liquidity"
 msgstr ""
 
-msgid "Either return to the {link}, or change to an available network."
-msgstr ""
-
 msgid "English"
 msgstr ""
 
@@ -369,9 +345,6 @@ msgstr ""
 msgid "FROM"
 msgstr ""
 
-msgid "Farm"
-msgstr ""
-
 msgid "Fees"
 msgstr ""
 
@@ -394,9 +367,6 @@ msgstr ""
 
 msgid "GAS COSTS"
 msgstr ""
-
-msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
-msgstr "在不减少资产的情况下获得代币的敞口。杠杆将使您能够对资产做空，并从下跌趋势中获利。"
 
 msgid ""
 "Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
@@ -485,9 +455,6 @@ msgid "Join the community on Discord."
 msgstr "加入Discord社区。"
 
 msgid "Korean"
-msgstr ""
-
-msgid "LTV"
 msgstr ""
 
 msgid "Learn more about wallets"
@@ -657,9 +624,6 @@ msgstr ""
 msgid "Open Source"
 msgstr "开源"
 
-msgid "Open main menu"
-msgstr "打开主菜单"
-
 msgid "Oracle"
 msgstr "预言机"
 
@@ -776,9 +740,6 @@ msgstr ""
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "移除{0}{1}和{2}{3}"
 
-msgid "Repay"
-msgstr "还款"
-
 msgid "Restricts swaps to direct pairs only."
 msgstr "限制只交易直接交易对。"
 
@@ -789,9 +750,6 @@ msgid "Rewards"
 msgstr ""
 
 msgid "Risk of {0}% loss"
-msgstr ""
-
-msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
 msgid "Romanian"
@@ -807,9 +765,6 @@ msgid "Russian"
 msgstr ""
 
 msgid "SLIPPAGE TOLERANCE"
-msgstr ""
-
-msgid "SLP"
 msgstr ""
 
 msgid "Search here"
@@ -903,9 +858,6 @@ msgstr ""
 
 msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "BentoBox可以实现用很低的gas费用体验高收益的dapp。"
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "BentoBox策略可以为您的抵押代币创造收益。这个代币暂时在BentoBox中没有策略。"
 
 msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "BentoBox策略可以为您的流动性在不借出的情况下创造收益。这个代币暂时在BentoBox中没有策略。"
@@ -1020,9 +972,6 @@ msgstr ""
 msgid "Transaction Settings"
 msgstr "交易设置"
 
-msgid "Transaction Submitted"
-msgstr ""
-
 msgid "Transaction deadline"
 msgstr "交易期限"
 
@@ -1084,9 +1033,6 @@ msgid "View on explorer"
 msgstr "在浏览器查看"
 
 msgid "Volume"
-msgstr ""
-
-msgid "Waiting for Confirmation"
 msgstr ""
 
 msgid "Wallet"
@@ -1204,9 +1150,6 @@ msgid "for deliberations on additional points."
 msgstr ""
 
 msgid "forum discussion"
-msgstr ""
-
-msgid "home page"
 msgstr ""
 
 msgid "loading..."

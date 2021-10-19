@@ -53,19 +53,10 @@ msgstr "Thêm"
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
 
-msgid "Add collateral in order to borrow assets"
-msgstr "Thêm tài sản thế chấp để vay tài sản"
-
 msgid "Add liquidity"
 msgstr "Thêm thanh khoản"
 
-msgid "Add {0} to MetaMask"
-msgstr ""
-
 msgid "Add {0} {1} and {2} {3}"
-msgstr ""
-
-msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
@@ -113,9 +104,6 @@ msgstr ""
 msgid "Available"
 msgstr "Có sẵn"
 
-msgid "Available Networks"
-msgstr ""
-
 msgid "BASE TOKEN"
 msgstr ""
 
@@ -133,12 +121,6 @@ msgstr "Vay"
 
 msgid "Borrow assets and leverage up"
 msgstr "Vay tài sản và sử dụng đòn bẩy"
-
-msgid "Borrow {0}"
-msgstr "Vay {0}"
-
-msgid "Borrow {0}-{1}"
-msgstr "Vay {0} - {1}"
 
 msgid "Borrowed"
 msgstr "Đã vay"
@@ -224,9 +206,6 @@ msgid "Confirm Withdrawal"
 msgstr "Xác nhận rút tiền"
 
 msgid "Confirm convert"
-msgstr ""
-
-msgid "Confirm this transaction in your wallet"
 msgstr ""
 
 msgid "Connect Surehive Wallet"
@@ -316,9 +295,6 @@ msgstr "Tài liệu cho người dùng Sushi."
 msgid "Edit Liquidity"
 msgstr ""
 
-msgid "Either return to the {link}, or change to an available network."
-msgstr ""
-
 msgid "English"
 msgstr ""
 
@@ -371,9 +347,6 @@ msgstr ""
 msgid "FROM"
 msgstr ""
 
-msgid "Farm"
-msgstr ""
-
 msgid "Fees"
 msgstr ""
 
@@ -401,9 +374,6 @@ msgstr ""
 
 msgid "GAS COSTS"
 msgstr ""
-
-msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
-msgstr "Có cơ hội tiếp cận với các token mà không làm giảm tài sản của bạn. Đòn bẩy sẽ cho phép bạn thực hiện các vị thế bán đối với tài sản và kiếm tiền từ các biến động giảm giá."
 
 msgid ""
 "Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
@@ -494,9 +464,6 @@ msgid "Join the community on Discord."
 msgstr "Tham gia cộng đồng trên Discord."
 
 msgid "Korean"
-msgstr ""
-
-msgid "LTV"
 msgstr ""
 
 msgid "Learn more about wallets"
@@ -669,9 +636,6 @@ msgstr ""
 msgid "Open Source"
 msgstr "Mã nguồn mở"
 
-msgid "Open main menu"
-msgstr "Mở menu chính"
-
 msgid "Oracle"
 msgstr "Oracle"
 
@@ -788,9 +752,6 @@ msgstr ""
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "Xóa {0} {1} và {2} {3}"
 
-msgid "Repay"
-msgstr "Hoàn trả"
-
 msgid "Restricts swaps to direct pairs only."
 msgstr "Chỉ hạn chế hoán đổi đối với các cặp trực tiếp."
 
@@ -801,9 +762,6 @@ msgid "Rewards"
 msgstr ""
 
 msgid "Risk of {0}% loss"
-msgstr ""
-
-msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
 msgid "Romanian"
@@ -819,9 +777,6 @@ msgid "Russian"
 msgstr ""
 
 msgid "SLIPPAGE TOLERANCE"
-msgstr ""
-
-msgid "SLP"
 msgstr ""
 
 msgid "Search here"
@@ -915,9 +870,6 @@ msgstr ""
 
 msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "SureVault là một cách sáng tạo để sử dụng hiệu quả khí các ứng dụng phi tập trung và tăng thêm lợi suất."
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "Các chiến lược SureVault có thể tạo ra lợi suất cho các token thế chấp của bạn. Token này chưa có chiến lược trong SureVault."
 
 msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "Chiến lược SureVault có thể tạo ra lợi suất cho thanh khoản của bạn trong khi không được cho vay. Token này chưa có chiến lược trong SureVault."
@@ -1032,9 +984,6 @@ msgstr ""
 msgid "Transaction Settings"
 msgstr "Cài đặt giao dịch"
 
-msgid "Transaction Submitted"
-msgstr ""
-
 msgid "Transaction deadline"
 msgstr "Thời hạn giao dịch"
 
@@ -1096,9 +1045,6 @@ msgid "View on explorer"
 msgstr "Xem trên explorer"
 
 msgid "Volume"
-msgstr ""
-
-msgid "Waiting for Confirmation"
 msgstr ""
 
 msgid "Wallet"
@@ -1216,9 +1162,6 @@ msgid "for deliberations on additional points."
 msgstr ""
 
 msgid "forum discussion"
-msgstr ""
-
-msgid "home page"
 msgstr ""
 
 msgid "loading..."

@@ -53,19 +53,10 @@ msgstr "Hinzufügen"
 msgid "Add Liquidity"
 msgstr "Liquidität hinzufügen"
 
-msgid "Add collateral in order to borrow assets"
-msgstr "Fügen Sie Sicherheiten hinzu, um Vermögenswerte auszuleihen"
-
 msgid "Add liquidity"
 msgstr "Liquidität hinzufügen"
 
-msgid "Add {0} to MetaMask"
-msgstr ""
-
 msgid "Add {0} {1} and {2} {3}"
-msgstr ""
-
-msgid "Added"
 msgstr ""
 
 msgid "Additional records and weekly merkle updates can be found on"
@@ -113,9 +104,6 @@ msgstr ""
 msgid "Available"
 msgstr "Verfügbar"
 
-msgid "Available Networks"
-msgstr ""
-
 msgid "BASE TOKEN"
 msgstr ""
 
@@ -133,12 +121,6 @@ msgstr "Leihen"
 
 msgid "Borrow assets and leverage up"
 msgstr "Vermögenswerte ausleihen und Leverage erhöhen."
-
-msgid "Borrow {0}"
-msgstr "{0} ausleihen"
-
-msgid "Borrow {0}-{1}"
-msgstr "{0} - {1} ausleihen"
 
 msgid "Borrowed"
 msgstr "Geliehen"
@@ -228,9 +210,6 @@ msgstr "Auszahlung bestätigen"
 msgid "Confirm convert"
 msgstr ""
 
-msgid "Confirm this transaction in your wallet"
-msgstr ""
-
 msgid "Connect Surehive Wallet"
 msgstr ""
 
@@ -318,9 +297,6 @@ msgstr "Dokumentation für Benutzer von Sushi."
 msgid "Edit Liquidity"
 msgstr ""
 
-msgid "Either return to the {link}, or change to an available network."
-msgstr ""
-
 msgid "English"
 msgstr ""
 
@@ -373,9 +349,6 @@ msgstr ""
 msgid "FROM"
 msgstr ""
 
-msgid "Farm"
-msgstr ""
-
 msgid "Fees"
 msgstr ""
 
@@ -403,9 +376,6 @@ msgstr ""
 
 msgid "GAS COSTS"
 msgstr ""
-
-msgid "Gain exposure to tokens without reducing your assets. Leverage will enable you to take short positions against assets and earn from downside movements."
-msgstr "Erhalten Sie ein Exposure zu Token, ohne Ihr Vermögen zu reduzieren. Mit Leverage können Sie Short-Positionen gegen Vermögenswerte halten und von Abwärtsbewegungen profitieren."
 
 msgid ""
 "Gain governance rights with nSURE and earn 5% APR (0.05% of\n"
@@ -496,9 +466,6 @@ msgid "Join the community on Discord."
 msgstr "Treten Sie der Community auf Discord bei."
 
 msgid "Korean"
-msgstr ""
-
-msgid "LTV"
 msgstr ""
 
 msgid "Learn more about wallets"
@@ -671,9 +638,6 @@ msgstr ""
 msgid "Open Source"
 msgstr "Open Source"
 
-msgid "Open main menu"
-msgstr "Hauptmenü öffnen"
-
 msgid "Oracle"
 msgstr "Orakel"
 
@@ -790,9 +754,6 @@ msgstr ""
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "Entfernen von {0} {1} und {2} {3}"
 
-msgid "Repay"
-msgstr "Zurückzahlen"
-
 msgid "Restricts swaps to direct pairs only."
 msgstr "Beschränkt Swaps nur auf direkte Paare."
 
@@ -803,9 +764,6 @@ msgid "Rewards"
 msgstr ""
 
 msgid "Risk of {0}% loss"
-msgstr ""
-
-msgid "Roll it back - this feature is not yet supported on {0}."
 msgstr ""
 
 msgid "Romanian"
@@ -821,9 +779,6 @@ msgid "Russian"
 msgstr ""
 
 msgid "SLIPPAGE TOLERANCE"
-msgstr ""
-
-msgid "SLP"
 msgstr ""
 
 msgid "Search here"
@@ -917,9 +872,6 @@ msgstr ""
 
 msgid "SureVault is an innovative way to use dapps gas-efficiently and gain extra yield."
 msgstr "SureVault ist eine innovative Methode, um Dapps gas-effizient einzusetzen und zusätzliche Erträge zu erzielen."
-
-msgid "SureVault strategies can create yield for your collateral tokens. This token does not yet have a strategy in the SureVault."
-msgstr "SureVault-Strategien können Rendite für Ihre Sicherheiten-Token erzielen. Dieses Token hat noch keine Strategie in der SureVault."
 
 msgid "SureVault strategies can create yield for your liquidity while it is not lent out. This token does not yet have a strategy in the SureVault."
 msgstr "SureVault-Strategien können eine Rendite für Ihre Liquidität erzielen, ohne dass diese verliehen wird. Dieses Token hat noch keine Strategie in der SureVault."
@@ -1034,9 +986,6 @@ msgstr ""
 msgid "Transaction Settings"
 msgstr "Transaktionseinstellungen"
 
-msgid "Transaction Submitted"
-msgstr ""
-
 msgid "Transaction deadline"
 msgstr "Transaktionsfrist"
 
@@ -1098,9 +1047,6 @@ msgid "View on explorer"
 msgstr "Ansicht auf Explorer"
 
 msgid "Volume"
-msgstr ""
-
-msgid "Waiting for Confirmation"
 msgstr ""
 
 msgid "Wallet"
@@ -1218,9 +1164,6 @@ msgid "for deliberations on additional points."
 msgstr ""
 
 msgid "forum discussion"
-msgstr ""
-
-msgid "home page"
 msgstr ""
 
 msgid "loading..."
