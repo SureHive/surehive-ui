@@ -6,7 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import { RowBetween } from '../../components/Row'
 import { currencyId } from '../../functions/currency'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 interface RemoveLiquidityReceiveDetailsProps {
   currencyA?: Currency
@@ -27,7 +27,7 @@ export default function RemoveLiquidityReceiveDetails({
   hasETH,
   id,
 }: RemoveLiquidityReceiveDetailsProps) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   if (!chainId || !currencyA || !currencyB) throw new Error('missing dependencies')
   return (
     <div id={id} className="p-5 rounded bg-gray-100">

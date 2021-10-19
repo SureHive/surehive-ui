@@ -6,7 +6,7 @@ import { useEffect, useMemo } from 'react'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useBlockNumber } from '../application/hooks'
 
 export interface Result extends ReadonlyArray<any> {
@@ -47,7 +47,7 @@ function useCallsData(
   calls: (Call | undefined)[],
   { blocksPerFetch }: ListenerOptions = { blocksPerFetch: 1 }
 ): CallResult[] {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const callResults = useAppSelector((state) => state.multicall.callResults)
   const dispatch = useAppDispatch()
 

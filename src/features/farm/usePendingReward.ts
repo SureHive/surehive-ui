@@ -15,7 +15,7 @@ const REWARDERS = {
 }
 
 // const useRewarderContract = (farm) => {
-//     const { chainId } = useActiveWeb3React()
+//     const { chainId } = useWalletManager()
 //     const aclxRewarder = useAlcxRewarderContract()
 //     const useComplexRewarderContract = useComplexRewarderContract()
 //     // const rewarderContract = await getContract(

@@ -21,7 +21,7 @@ import { ethers } from 'ethers'
 import { getCurrency } from '../../functions/currency'
 import { getOracle } from '../../entities/Oracle'
 import { toElastic } from '../../functions/rebase'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useBlockNumber } from '../../state/application/hooks'
 import usePrevious from '../../hooks/usePrevious'
@@ -185,7 +185,7 @@ export function KashiProvider({ children }) {
   const [state, dispatch] = useReducer<React.Reducer<State, Reducer>>(reducer, initialState)
   const blockNumber = useBlockNumber()
 
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const weth = WNATIVE[chainId]
 

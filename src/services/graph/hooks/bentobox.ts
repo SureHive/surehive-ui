@@ -3,10 +3,10 @@ import useSWR, { SWRConfiguration } from 'swr'
 
 import { ChainId } from '@sushiswap/sdk'
 import { getKashiPairs } from '../fetchers/bentobox'
-import { useActiveWeb3React } from '../../../hooks'
+import { useWalletManager } from '../../../hooks'
 
 export function useKashiPairs(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const shouldFetch = chainId && (chainId === ChainId.MAINNET || chainId === ChainId.MATIC)
 

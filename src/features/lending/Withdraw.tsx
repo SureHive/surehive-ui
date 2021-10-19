@@ -9,12 +9,12 @@ import { TransactionReview } from '../../entities/TransactionReview'
 import TransactionReviewView from './TransactionReview'
 import { Warnings } from '../../entities/Warnings'
 import WarningsView from './WarningsList'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useKashiApprovalPending } from '../../state/application/hooks'
 import useKashiApproveCallback from '../../hooks/useKashiApproveCallback'
 
 export default function LendWithdrawAction({ pair }: any): JSX.Element {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const pendingApprovalMessage = useKashiApprovalPending()
 
   // State
@@ -35,7 +35,9 @@ export default function LendWithdrawAction({ pair }: any): JSX.Element {
   const warnings = new Warnings()
     .add(
       pair.currentUserAssetAmount.value.lt(value.toBigNumber(pair.asset.tokenInfo.decimals)),
-      `Please make sure your ${useBento ? 'SureVault' : 'wallet'} balance is sufficient to withdraw and then try again.`,
+      `Please make sure your ${
+        useBento ? 'SureVault' : 'wallet'
+      } balance is sufficient to withdraw and then try again.`,
       true
     )
     .add(

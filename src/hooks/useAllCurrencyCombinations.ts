@@ -1,12 +1,11 @@
 import { ADDITIONAL_BASES, BASES_TO_CHECK_TRADES_AGAINST, CUSTOM_BASES } from '../constants/routing'
 import { Currency, Token } from '@sushiswap/sdk'
-
 import flatMap from 'lodash/flatMap'
-import { useActiveWeb3React } from './useActiveWeb3React'
 import { useMemo } from 'react'
+import { useWalletManager } from '../providers/walletManagerProvider'
 
 export function useAllCurrencyCombinations(currencyA?: Currency, currencyB?: Currency): [Token, Token][] {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const [tokenA, tokenB] = chainId ? [currencyA?.wrapped, currencyB?.wrapped] : [undefined, undefined]
 

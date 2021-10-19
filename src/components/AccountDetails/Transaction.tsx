@@ -9,7 +9,7 @@ import Loader from '../Loader'
 import { TransactionDetails } from '../../state/transactions/reducer'
 import { finalizeTransaction } from '../../state/transactions/actions'
 import { getExplorerLink } from '../../functions/explorer'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useAllTransactions } from '../../state/transactions/hooks'
 import { useDispatch } from 'react-redux'
 import { classNames } from '../../functions'
@@ -27,7 +27,7 @@ const calculateSecondsUntilDeadline = (tx: TransactionDetails): number => {
 
 const Transaction: FC<{ hash: string }> = ({ hash }) => {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const allTransactions = useAllTransactions()
   const dispatch = useDispatch<AppDispatch>()
 

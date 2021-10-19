@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react'
-import { USDC, useActiveWeb3React, useUSDCPrice } from '../../hooks'
+import { USDC, useWalletManager, useUSDCPrice } from '../../hooks'
 import { ConfirmationModalContent } from '../../modals/TransactionConfirmationModal'
 import { useLingui } from '@lingui/react'
 import CurrencyLogo from '../../components/CurrencyLogo'
@@ -36,7 +36,7 @@ const ConfirmLimitOrderTopContent = () => {
   const { i18n } = useLingui()
   const { limitPrice } = useLimitOrderState()
   const { currencies, parsedAmounts } = useDerivedLimitOrderInfo()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const inputUSDC = useUSDCPrice(
     currencies[Field.INPUT] && chainId in USDC ? currencies[Field.INPUT] : undefined

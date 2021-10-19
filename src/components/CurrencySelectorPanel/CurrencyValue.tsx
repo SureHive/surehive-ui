@@ -1,5 +1,5 @@
 import React from 'react'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import { Currency } from '@sushiswap/sdk'
 import Button from '../Button'
@@ -55,7 +55,7 @@ const MaxButton = (props) => {
 
 const CurrencyValue = (props: CurrencyValueProps) => {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, props.currency ?? undefined)
 
   return (

@@ -20,7 +20,7 @@ import WarningsView from './WarningsList'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { toShare } from '../../functions/bentobox'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useKashiInfo } from './context'
 import { useV2TradeExactIn } from '../../hooks/useV2Trades'
@@ -32,7 +32,7 @@ interface BorrowProps {
 const DEFAULT_BORROW_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
 export default function Borrow({ pair }: BorrowProps) {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const info = useKashiInfo()
 
   // State

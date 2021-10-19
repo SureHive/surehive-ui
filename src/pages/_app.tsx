@@ -142,34 +142,28 @@ function MyApp({
         />
       </Head>
       <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
-        <Web3ReactProvider getLibrary={getLibrary}>
-          <Web3ProviderNetwork getLibrary={getLibrary}>
-            <Web3ReactManager>
-              <WalletManagerProvider>
-                <ReduxProvider store={store}>
-                  <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
-                    <>
-                      <ListsUpdater />
-                      <UserUpdater />
-                      <ApplicationUpdater />
-                      <TransactionUpdater />
-                      <MulticallUpdater />
-                    </>
-                    <Provider>
-                      <ThemeProvider enableSystem={true} attribute="class">
-                        <Layout>
-                          <Guard>
-                            <Component {...pageProps} />
-                          </Guard>
-                        </Layout>
-                      </ThemeProvider>
-                    </Provider>
-                  </PersistGate>
-                </ReduxProvider>
-              </WalletManagerProvider>
-            </Web3ReactManager>
-          </Web3ProviderNetwork>
-        </Web3ReactProvider>
+        <WalletManagerProvider>
+          <ReduxProvider store={store}>
+            <PersistGate loading={<Dots>loading</Dots>} persistor={persistor}>
+              <>
+                <ListsUpdater />
+                <UserUpdater />
+                <ApplicationUpdater />
+                <TransactionUpdater />
+                <MulticallUpdater />
+              </>
+              <Provider>
+                <ThemeProvider enableSystem={true} attribute="class">
+                  <Layout>
+                    <Guard>
+                      <Component {...pageProps} />
+                    </Guard>
+                  </Layout>
+                </ThemeProvider>
+              </Provider>
+            </PersistGate>
+          </ReduxProvider>
+        </WalletManagerProvider>
       </I18nProvider>
     </Fragment>
   )

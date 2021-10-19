@@ -1,7 +1,7 @@
 import { Currency } from '@sushiswap/sdk'
 import Image from 'next/image'
 import { useCurrencyBalance } from '../../../state/wallet/hooks'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { formatCurrencyAmount, tryParseAmount } from '../../../functions'
 import { useUSDCValue } from '../../../hooks/useUSDCPrice'
 
@@ -12,7 +12,7 @@ interface SwapBalanceProps {
 }
 
 export default function SwapBalance(props: SwapBalanceProps) {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, props.inputCurrency ?? undefined)
   const parsedAmount = tryParseAmount(
     selectedCurrencyBalance?.toFixed(props.inputCurrency.decimals),

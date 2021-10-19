@@ -70,7 +70,6 @@ import LIMIT_ORDER_HELPER_ABI from '../constants/abis/limit-order-helper.json'
 import { getContract } from '../functions/contract'
 import { useWalletManager } from '../providers/walletManagerProvider'
 import { useMemo } from 'react'
-import { useActiveWeb3React } from './index'
 
 import { getVerifyingContract } from 'limitorderv2-sdk'
 
@@ -82,18 +81,17 @@ export function useEIP2612Contract(tokenAddress?: string): Contract | null {
 
 // returns null on errors
 export function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
-  const { account } = useWalletManager()
-  const { library } = useActiveWeb3React()
+  const { account, provider } = useWalletManager()
 
   return useMemo(() => {
-    if (!address || !ABI || !library) return null
+    if (!address || !ABI || !provider) return null
     try {
-      return getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
+      //return getContract(address, ABI, library, withSignerIfPossible && account ? account : undefined)
     } catch (error) {
       console.error('Failed to get contract', error)
       return null
     }
-  }, [address, ABI, library, withSignerIfPossible, account])
+  }, [address, ABI, provider, withSignerIfPossible, account])
 }
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {

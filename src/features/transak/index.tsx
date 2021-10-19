@@ -1,7 +1,7 @@
 import { ChainId } from '@sushiswap/sdk'
 import { t } from '@lingui/macro'
 import transakSDK from '@transak/transak-sdk'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../hooks'
 import { useCallback } from 'react'
 import { useLingui } from '@lingui/react'
 
@@ -18,7 +18,7 @@ const DEFAULT_CRYPTO_CURRENCY = {
 }
 
 export default function Buy() {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const { i18n } = useLingui()
   useCallback(() => {
     if (!(chainId in DEFAULT_NETWORK)) {

@@ -4,7 +4,7 @@ import { t } from '@lingui/macro'
 import Button, { ButtonProps } from '../../components/Button'
 import React, { FC, useCallback, useState } from 'react'
 import useLimitOrderApproveCallback, { BentoApprovalState } from '../../hooks/useLimitOrderApproveCallback'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { ApprovalState, useApproveCallback } from '../../hooks'
 import { BENTOBOX_ADDRESS } from '../../constants/kashi'
 import { ChainId, Currency } from '@sushiswap/sdk'
@@ -25,7 +25,7 @@ interface LimitOrderButtonProps extends ButtonProps {
 
 const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest }) => {
   const { i18n } = useLingui()
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId, library } = useWalletManager()
   const dispatch = useDispatch<AppDispatch>()
   const addPopup = useAddPopup()
   const toggleWalletModal = useWalletModalToggle()
@@ -153,7 +153,13 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
     )
   else if (showTokenApprove)
     button = (
-      <Button disabled={disabled} onClick={tokenApprove} color={disabled ? 'gray' : 'yellow'} className="mb-4" {...rest}>
+      <Button
+        disabled={disabled}
+        onClick={tokenApprove}
+        color={disabled ? 'gray' : 'yellow'}
+        className="mb-4"
+        {...rest}
+      >
         {tokenApprovalState === ApprovalState.PENDING ? (
           <Dots>{i18n._(t`Approving ${currency.symbol}`)}</Dots>
         ) : (

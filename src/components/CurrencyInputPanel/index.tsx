@@ -12,7 +12,7 @@ import Lottie from 'lottie-react'
 import { Input as NumericalInput } from '../NumericalInput'
 import selectCoinAnimation from '../../animation/select-coin.json'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 
@@ -61,7 +61,7 @@ export default function CurrencyInputPanel({
 }: CurrencyInputPanelProps) {
   const { i18n } = useLingui()
   const [modalOpen, setModalOpen] = useState(false)
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
 
   const handleDismissSearch = useCallback(() => {

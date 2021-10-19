@@ -5,7 +5,7 @@ import React, { useMemo } from 'react'
 import SwapRoute from '../swap/SwapRoute'
 import { TradeType, Trade as V2Trade, Currency } from '@sushiswap/sdk'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 
 function TradeReview({
@@ -16,7 +16,7 @@ function TradeReview({
   allowedSlippage: any
 }) {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const showRoute = Boolean(trade && trade.route.path.length > 2)
 
   // const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(

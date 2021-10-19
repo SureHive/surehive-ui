@@ -8,22 +8,18 @@ import { Popover } from '@headlessui/react'
 import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon } from '@heroicons/react/outline'
 import { LogoImage } from '../Logo/image'
 
-import { useMobileHeader } from '../../state/application/hooks'
-
 function AppBar(): JSX.Element {
   const { i18n } = useLingui()
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-
-  const [pageHeaderDetails] = useMobileHeader()
 
   useEffect(() => {
     setMounted(true)
@@ -41,7 +37,6 @@ function AppBar(): JSX.Element {
     }
   }
   const renderLogo = () => {
-    if (!mounted) return null
     const currentTheme = theme === 'system' ? systemTheme : theme
     if (currentTheme === 'dark') {
       return (
@@ -76,13 +71,6 @@ function AppBar(): JSX.Element {
         </>
       )
     }
-  }
-
-  const capitalize = (str) => {
-    if (!str) {
-      return null
-    }
-    return str.charAt(0).toUpperCase() + str.slice(1)
   }
 
   return (
@@ -123,56 +111,38 @@ function AppBar(): JSX.Element {
                           {i18n._(t`Pool`)}
                         </a>
                       </NavLink>
-                      {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.BSC].includes(chainId) && (
-                        <NavLink href={'/migrate'}>
-                          <a
-                            id={`migrate-nav-link`}
-                            className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
-                          >
-                            {i18n._(t`Migrate`)}
-                          </a>
-                        </NavLink>
-                      )}
-                      {chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.XDAI, ChainId.HARMONY].includes(chainId) && (
-                        <NavLink href={'/farm'}>
-                          <a
-                            id={`farm-nav-link`}
-                            className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"
-                          >
-                            {i18n._(t`Farm`)}
-                          </a>
-                        </NavLink>
-                      )}
+                      {/*{chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.BSC].includes(chainId) && (*/}
+                      {/*  <NavLink href={'/migrate'}>*/}
+                      {/*    <a*/}
+                      {/*      id={`migrate-nav-link`}*/}
+                      {/*      className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"*/}
+                      {/*    >*/}
+                      {/*      {i18n._(t`Migrate`)}*/}
+                      {/*    </a>*/}
+                      {/*  </NavLink>*/}
+                      {/*)}*/}
+                      {/*{chainId && [ChainId.MAINNET, ChainId.MATIC, ChainId.XDAI, ChainId.HARMONY].includes(chainId) && (*/}
+                      {/*  <NavLink href={'/farm'}>*/}
+                      {/*    <a*/}
+                      {/*      id={`farm-nav-link`}*/}
+                      {/*      className="p-2 text-baseline dark:text-white text-dark-1000 hover:text-high-emphesis focus:text-high-emphesis md:p-4 whitespace-nowrap"*/}
+                      {/*    >*/}
+                      {/*      {i18n._(t`Farm`)}*/}
+                      {/*    </a>*/}
+                      {/*  </NavLink>*/}
+                      {/*)}*/}
                     </div>
                   </div>
                 </div>
-                <div className="flex-0 sm:hidden">
-                  <p className="dark:text-white text-dark-1000 text-2xl">
-                    {capitalize(i18n._(t`${pageHeaderDetails.name}`))}
-                  </p>
-                </div>
                 <div className="mobile:hidden fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-white lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {/* {library && library.provider.isMetaMask && (
-                      <div className="hidden sm:inline-block">
-                        <Web3Network />
-                      </div>
-                    )} */}
-
                     <div className="w-auto flex items-center rounded-full border border-dark-600 text-dark-1000 bg-white hover:bg-gray-100 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto dark:bg-dark-900">
-                      {/* {account && chainId && userEthBalance && (
-                        <>
-                          <div className="px-4 py-2 text-dark-900 dark:text-white">
-                            {userEthBalance?.toSignificant(4)} {NATIVE[chainId].symbol}
-                          </div>
-                        </>
-                      )} */}
-                      {library && library.provider.isMetaMask && (
-                        <div className="hidden sm:inline-block">
-                          <Web3Network />
-                        </div>
-                      )}
-                      <Web3Status />
+                      {/*{library && library.provider.isMetaMask && (*/}
+                      {/*  <div className="hidden sm:inline-block">*/}
+                      {/*    <Web3Network />*/}
+                      {/*  </div>*/}
+                      {/*)}*/}
+                      {/*<Web3Status />*/}
                     </div>
                     <div className="hidden md:block">
                       <LanguageSwitch />
@@ -182,73 +152,73 @@ function AppBar(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="flex -mr-2 sm:hidden">
-                  {/* Mobile menu button */}
-                  <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
-                    <span className="sr-only">{i18n._(t`Open main menu`)}</span>
-                    {open ? (
-                      <svg
-                        className="block w-6 h-6"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    ) : (
-                      // <X title="Close" className="block w-6 h-6" aria-hidden="true" />
-                      <svg
-                        className="block w-6 h-6"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
-                      // <Burger title="Burger" className="block w-6 h-6" aria-hidden="true" />
-                    )}
-                  </Popover.Button>
-                </div>
+                {/*<div className="flex -mr-2 sm:hidden">*/}
+                {/*  /!* Mobile menu button *!/*/}
+                {/*  <Popover.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">*/}
+                {/*    <span className="sr-only">{i18n._(t`Open main menu`)}</span>*/}
+                {/*    {open ? (*/}
+                {/*      <svg*/}
+                {/*        className="block w-6 h-6"*/}
+                {/*        aria-hidden="true"*/}
+                {/*        xmlns="http://www.w3.org/2000/svg"*/}
+                {/*        viewBox="0 0 24 24"*/}
+                {/*        stroke="currentColor"*/}
+                {/*      >*/}
+                {/*        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />*/}
+                {/*      </svg>*/}
+                {/*    ) : (*/}
+                {/*      // <X title="Close" className="block w-6 h-6" aria-hidden="true" />*/}
+                {/*      <svg*/}
+                {/*        className="block w-6 h-6"*/}
+                {/*        aria-hidden="true"*/}
+                {/*        xmlns="http://www.w3.org/2000/svg"*/}
+                {/*        fill="none"*/}
+                {/*        viewBox="0 0 24 24"*/}
+                {/*        stroke="currentColor"*/}
+                {/*      >*/}
+                {/*        <path*/}
+                {/*          strokeLinecap="round"*/}
+                {/*          strokeLinejoin="round"*/}
+                {/*          strokeWidth={2}*/}
+                {/*          d="M4 6h16M4 12h16M4 18h16"*/}
+                {/*        />*/}
+                {/*      </svg>*/}
+                {/*      // <Burger title="Burger" className="block w-6 h-6" aria-hidden="true" />*/}
+                {/*    )}*/}
+                {/*  </Popover.Button>*/}
+                {/*</div>*/}
               </div>
             </div>
 
-            <Popover.Panel className="sm:hidden">
-              <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
-                <Link href={'/swap'}>
-                  <a
-                    id={`swap-nav-link`}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`Swap`)}
-                  </a>
-                </Link>
-                <Link href={'/pool'}>
-                  <a
-                    id={`pool-nav-link`}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`Pool`)}
-                  </a>
-                </Link>
+            {/*<Popover.Panel className="sm:hidden">*/}
+            {/*  <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">*/}
+            {/*    <Link href={'/swap'}>*/}
+            {/*      <a*/}
+            {/*        id={`swap-nav-link`}*/}
+            {/*        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"*/}
+            {/*      >*/}
+            {/*        {i18n._(t`Swap`)}*/}
+            {/*      </a>*/}
+            {/*    </Link>*/}
+            {/*    <Link href={'/pool'}>*/}
+            {/*      <a*/}
+            {/*        id={`pool-nav-link`}*/}
+            {/*        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"*/}
+            {/*      >*/}
+            {/*        {i18n._(t`Pool`)}*/}
+            {/*      </a>*/}
+            {/*    </Link>*/}
 
-                <Link href={'/migrate'}>
-                  <a
-                    id={`migrate-nav-link`}
-                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                  >
-                    {i18n._(t`Migrate`)}
-                  </a>
-                </Link>
-              </div>
-            </Popover.Panel>
+            {/*    <Link href={'/migrate'}>*/}
+            {/*      <a*/}
+            {/*        id={`migrate-nav-link`}*/}
+            {/*        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"*/}
+            {/*      >*/}
+            {/*        {i18n._(t`Migrate`)}*/}
+            {/*      </a>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*</Popover.Panel>*/}
           </>
         )}
       </Popover>

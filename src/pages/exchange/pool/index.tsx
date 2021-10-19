@@ -21,7 +21,7 @@ import { MigrationSupported } from '../../../features/migration'
 import Typography from '../../../components/Typography'
 import Web3Connect from '../../../components/Web3Connect'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { useETHBalances } from '../../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
@@ -31,7 +31,7 @@ import { useV2Pairs } from '../../../hooks/useV2Pairs'
 export default function Pool() {
   const { i18n } = useLingui()
   const router = useRouter()
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
 

@@ -13,7 +13,7 @@ import Transaction from './Transaction'
 import { clearAllTransactions } from '../../state/transactions/actions'
 import { getExplorerLink } from '../../functions/explorer'
 import { shortenAddress } from '../../functions'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useDispatch } from 'react-redux'
 import Typography from '../Typography'
 import { useLingui } from '@lingui/react'
@@ -54,7 +54,7 @@ const AccountDetails: FC<AccountDetailsProps> = ({
   openOptions,
 }) => {
   const { i18n } = useLingui()
-  const { chainId, account, connector } = useActiveWeb3React()
+  const { chainId, account, connector } = useWalletManager()
   const dispatch = useDispatch<AppDispatch>()
 
   function formatConnectorName() {

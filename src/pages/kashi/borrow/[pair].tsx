@@ -22,7 +22,7 @@ import { useToken } from '../../../hooks/Tokens'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useUSDCPrice } from '../../../hooks'
 import { useV2Pair } from '../../../hooks/useV2Pairs'
-import { useActiveWeb3React } from '../../../hooks'
+import { useWalletManager } from '../../../hooks'
 
 function Pair() {
   const router = useRouter()
@@ -30,7 +30,7 @@ function Pair() {
   const [tabIndex, setTabIndex] = useState(0)
 
   const { account, chainId } = useWalletManager()
-  const { library } = useActiveWeb3React()
+  const { library } = useWalletManager()
 
   const pair = useKashiPair(router.query.pair as string)
   const asset = useToken(pair?.asset.address)

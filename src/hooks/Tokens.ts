@@ -9,14 +9,14 @@ import { WrappedTokenInfo } from './../state/lists/wrappedTokenInfo'
 import { arrayify } from 'ethers/lib/utils'
 import { isAddress } from '../functions/validate'
 import { parseBytes32String } from '@ethersproject/strings'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useCombinedActiveList } from '../state/lists/hooks'
 import { useMemo } from 'react'
 import { useUserAddedTokens } from '../state/user/hooks'
 
 // reduce token map into standard address <-> Token mapping, optionally include user added tokens
 function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean): { [address: string]: Token } {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const userAddedTokens = useUserAddedTokens()
 
   return useMemo(() => {
@@ -68,7 +68,7 @@ export function useUnsupportedTokens(): { [address: string]: Token } {
 export function useSearchInactiveTokenLists(search: string | undefined, minResults = 10): WrappedTokenInfo[] {
   const lists = useAllLists()
   const inactiveUrls = useInactiveListUrls()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const activeTokens = useAllTokens()
   return useMemo(() => {
     if (!search || search.trim().length === 0) return []
@@ -130,7 +130,7 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 // null if loading
 // otherwise returns the token
 export function useToken(tokenAddress?: string): Token | undefined | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const tokens = useAllTokens()
 
   const address = isAddress(tokenAddress)
@@ -180,7 +180,7 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 }
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const isETH = currencyId?.toUpperCase() === 'ETH'
 

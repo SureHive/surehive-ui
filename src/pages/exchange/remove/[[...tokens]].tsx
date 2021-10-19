@@ -35,7 +35,7 @@ import Web3Connect from '../../../components/Web3Connect'
 import { currencyId } from '../../../functions/currency'
 import { splitSignature } from '@ethersproject/bytes'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { useCurrency } from '../../../hooks/Tokens'
 import useDebouncedChangeHandler from '../../../hooks/useDebouncedChangeHandler'
 import { useDerivedMintInfo } from '../../../state/mint/hooks'
@@ -59,7 +59,7 @@ export default function Remove() {
   const tokens = router.query.tokens
   const [currencyIdA, currencyIdB] = tokens || [undefined, undefined]
   const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId, library } = useWalletManager()
   const [tokenA, tokenB] = useMemo(() => [currencyA?.wrapped, currencyB?.wrapped], [currencyA, currencyB])
 
   // toggle wallet when disconnected

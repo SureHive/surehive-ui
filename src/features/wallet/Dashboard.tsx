@@ -2,14 +2,12 @@ import styles from './wallet.module.css'
 import Button from '../../components/Button'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { SUPPORTED_WALLETS } from '../../constants'
 import ReactGA from 'react-ga'
 import { useRouter } from 'next/router'
 
 const WalletDashboard = ({ account, chainId, connector }) => {
   const { i18n } = useLingui()
-  const { deactivate } = useWeb3React()
   const router = useRouter()
 
   const tryDeactivation = async (connector) => {
@@ -27,16 +25,17 @@ const WalletDashboard = ({ account, chainId, connector }) => {
       action: 'Deactivate Wallet',
       label: name,
     })
-
-    deactivate()
+    // TODO: deactivate wallet manager
     router.push('/wallet').catch()
   }
 
   const addressBar = () => (
     <div className={styles.AddressBar}>
       <div className={styles.ActiveLight} />
-      <p>ETH</p>
-      <div className={styles.Address}>{account}</div>
+      <p className="flex-none">ETH</p>
+      <div className={styles.Address}>
+        <p>{account}</p>
+      </div>
     </div>
   )
 

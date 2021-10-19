@@ -8,7 +8,7 @@ import { isAddress } from '../../functions'
 import useDebounce from '../../hooks/useDebounce'
 import { filterTokens, useSortedTokensByQuery } from '../../functions/filtering'
 import { useTokenComparator } from '../../modals/SearchModal/sorting'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 interface CurrencySelectorPanelProps {
   currency?: Currency
@@ -26,7 +26,7 @@ interface CurrencySelectorPanelProps {
 }
 
 const CurrencySelectorPanel = (props: CurrencySelectorPanelProps) => {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const [showDropdown, setShowDropdown] = useState(false)
 

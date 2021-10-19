@@ -8,7 +8,7 @@ import { AppState } from '../index'
 import { Contract } from 'ethers'
 import { chunkArray } from '../../functions/array'
 import { updateBlockNumber } from '../application/actions'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useBlockNumber } from '../application/hooks'
 import useDebounce from '../../hooks/useDebounce'
 import { useMulticall2Contract } from '../../hooks/useContract'
@@ -121,7 +121,7 @@ export default function Updater(): null {
   // wait for listeners to settle before triggering updates
   const debouncedListeners = useDebounce(state.callListeners, 100)
   const latestBlockNumber = useBlockNumber()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const multicall2Contract = useMulticall2Contract()
   const cancellations = useRef<{ blockNumber: number; cancellations: (() => void)[] }>()
 

@@ -2,7 +2,7 @@
 
 // import { t } from '@lingui/macro'
 // import { tryParseAmount } from '../../functions'
-// import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+// import useWalletManager from '../../hooks'
 
 // // based on typed value
 // export function useDerivedStakeInfo(
@@ -13,7 +13,7 @@
 //   parsedAmount?: CurrencyAmount<Token>
 //   error?: string
 // } {
-//   const { account } = useActiveWeb3React()
+//   const { account } = useWalletManager()
 
 //   const parsedInput: CurrencyAmount<Token> | undefined = tryParseAmount(typedValue, stakingToken)
 
@@ -45,7 +45,7 @@
 //   parsedAmount?: CurrencyAmount<Token>
 //   error?: string
 // } {
-//   const { account } = useActiveWeb3React()
+//   const { account } = useWalletManager()
 
 //   const parsedInput: CurrencyAmount<Token> | undefined = tryParseAmount(typedValue, stakingAmount.currency)
 

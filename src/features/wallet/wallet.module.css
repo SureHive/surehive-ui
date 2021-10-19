@@ -97,7 +97,7 @@
 }
 
 .AddressPanel {
-    @apply flex flex-row;
+    @apply flex flex-row w-full;
 }
 
 .AddressPanel h1 {
@@ -107,7 +107,7 @@
 }
 
 .AddressBar {
-    max-width: 380px;
+    max-width: 420px;
     height: 32px;
     @apply mt-1 ml-10 w-3/5;
     @apply rounded-full border-2 border-solid;
@@ -117,7 +117,7 @@
 .ActiveLight {
     height: 6px;
     width: 6px;
-    @apply rounded-full bg-white-100 ml-3;
+    @apply flex-none rounded-full bg-white-100 ml-3;
 }
 
 .AddressBar p {
@@ -130,8 +130,14 @@
 .Address {
     font-family: var(--font-sans);
     line-height: 20px;
-    @apply flex rounded-full bg-white-150 ml-2 h-full w-full items-center pl-2;
+    max-width: 352px;
+    @apply flex-grow rounded-full bg-white-150 ml-2 h-full items-center py-1;
     @apply text-white-100 text-xs font-normal tracking-normal;
+}
+
+.Address p {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 :global(.dark) .Address {

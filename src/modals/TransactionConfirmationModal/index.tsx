@@ -13,9 +13,9 @@ import ModalHeader from '../../components/ModalHeader'
 import { RowFixed } from '../../components/Row'
 import { getExplorerLink } from '../../functions/explorer'
 import loadingRollingCircle from '../../animation/loading-rolling-circle.json'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useWalletManager } from '../../providers/walletManagerProvider'
-import useAddTokenToMetaMask from '../../hooks/useAddTokenToMetaMask'
+import useAddTokenToWallet from '../../hooks/useAddTokenToWallet'
 import { useLingui } from '@lingui/react'
 
 interface ConfirmationPendingContentProps {
@@ -63,8 +63,8 @@ export const TransactionSubmittedContent: FC<TransactionSubmittedContentProps> =
   currencyToAdd,
 }) => {
   const { i18n } = useLingui()
-  const { library } = useActiveWeb3React()
-  const { addToken, success } = useAddTokenToMetaMask(currencyToAdd)
+  const { library } = useWalletManager()
+  const { addToken, success } = useAddTokenToWallet(currencyToAdd)
   return (
     <div>
       <div className="flex justify-end">

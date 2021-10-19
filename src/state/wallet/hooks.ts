@@ -151,7 +151,7 @@ export function useAllTokenBalances(): {
 // TODO: Replace
 // get the total owned, unclaimed, and unharvested UNI for account
 // export function useAggregateUniBalance(): CurrencyAmount<Token> | undefined {
-//   const { account, chainId } = useActiveWeb3React();
+//   const { account, chainId } = useWalletManager();
 
 //   const uni = chainId ? UNI[chainId] : undefined;
 

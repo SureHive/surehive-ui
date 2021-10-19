@@ -9,7 +9,7 @@ import QuestionHelper from '../../components/QuestionHelper'
 import SwapRoute from './SwapRoute'
 import { computeRealizedLPFeePercent } from '../../functions/prices'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 
 export interface AdvancedSwapDetailsProps {
@@ -21,7 +21,7 @@ export interface AdvancedSwapDetailsProps {
 export function AdvancedSwapDetails({ trade, allowedSlippage, minerBribe }: AdvancedSwapDetailsProps) {
   const { i18n } = useLingui()
 
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const { realizedLPFee, priceImpact } = useMemo(() => {
     if (!trade) return { realizedLPFee: undefined, priceImpact: undefined }

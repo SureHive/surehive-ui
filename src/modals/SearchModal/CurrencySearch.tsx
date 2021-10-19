@@ -21,7 +21,7 @@ import ReactGA from 'react-ga'
 import { isAddress } from '../../functions/validate'
 import styled from 'styled-components'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import useDebounce from '../../hooks/useDebounce'
 import { useLingui } from '@lingui/react'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -68,7 +68,7 @@ export function CurrencySearch({
 }: CurrencySearchProps) {
   const { i18n } = useLingui()
 
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>()

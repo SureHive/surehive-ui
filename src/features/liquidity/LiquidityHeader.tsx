@@ -1,10 +1,10 @@
 import NavLink from '../../components/NavLink'
 import React from 'react'
 import { currencyId } from '../../functions/currency'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../hooks'
 
 export default function LiquidityHeader({ input = undefined, output = undefined }: any): JSX.Element {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return (
     <div className="grid grid-cols-2 rounded-md p-3px bg-gray-100">
       <NavLink

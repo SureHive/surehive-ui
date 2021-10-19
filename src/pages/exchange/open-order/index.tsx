@@ -8,7 +8,7 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import NetworkGuard from '../../../guards/Network'
 import { ChainId } from '@sushiswap/sdk'
-import { useContract, useActiveWeb3React } from '../../../hooks'
+import { useContract, useWalletManager } from '../../../hooks'
 import { BigNumber } from 'ethers'
 import { useEffect } from 'react'
 

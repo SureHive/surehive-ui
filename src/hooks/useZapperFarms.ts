@@ -6,13 +6,13 @@ import { POOL_DENY } from '../constants'
 import orderBy from 'lodash/orderBy'
 import range from 'lodash/range'
 import sushiData from '@sushiswap/sushi-data'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useBoringHelperContract } from './useContract'
 
 // Todo: Rewrite in terms of web3 as opposed to subgraph
 const useZapperFarms = () => {
   const [farms, setFarms] = useState<any | undefined>()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const boringHelperContract = useBoringHelperContract()
 
   const fetchAllFarms = useCallback(async () => {

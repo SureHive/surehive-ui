@@ -19,7 +19,7 @@ import { cloudinaryLoader } from '../../functions/cloudinary'
 import { formatNumber } from '../../functions/format'
 import { isAddress } from 'ethers/lib/utils'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 
@@ -29,7 +29,7 @@ export default function Vesting() {
   const isOpen = useModalOpen(ApplicationModal.SELF_CLAIM)
   const toggleClaimModal = useToggleSelfClaimModal()
 
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   // used for UI loading states
   const [attempting, setAttempting] = useState<boolean>(false)

@@ -8,7 +8,7 @@ import Lottie from 'lottie-react'
 import selectCoinAnimation from '../../animation/select-coin.json'
 import styled from 'styled-components'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 
 const CurrencySelect = styled.button<{ selected: boolean }>`
@@ -53,7 +53,7 @@ export default function CurrencySelectPanel({
   const { i18n } = useLingui()
 
   const [modalOpen, setModalOpen] = useState(false)
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const handleDismissSearch = useCallback(() => {
     setModalOpen(false)

@@ -15,7 +15,7 @@ import Layout from '../../../layouts/Kashi'
 import { e10 } from '../../../functions/math'
 import { ethers } from 'ethers'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { useBentoBoxContract } from '../../../hooks/useContract'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
@@ -29,7 +29,7 @@ export type ChainlinkToken = {
 }
 
 function Create() {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const bentoBoxContract = useBentoBoxContract()
 
@@ -146,7 +146,9 @@ function Create() {
       const tx = await bentoBoxContract?.deploy(chainId && KASHI_ADDRESS[chainId], kashiData, true)
 
       addTransaction(tx, {
-        summary: `Add HoneyStream market ${currencies[Field.ASSET].symbol}/${currencies[Field.COLLATERAL].symbol} Chainlink`,
+        summary: `Add HoneyStream market ${currencies[Field.ASSET].symbol}/${
+          currencies[Field.COLLATERAL].symbol
+        } Chainlink`,
       })
 
       router.push('/lend')

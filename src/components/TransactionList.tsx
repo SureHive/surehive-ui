@@ -4,12 +4,12 @@ import Image from '../components/Image'
 import React from 'react'
 import { getExplorerLink } from '../functions/explorer'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
+import { useWalletManager } from '../hooks'
 import { useLingui } from '@lingui/react'
 
 export default function TransactionList({ transactions }) {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   return transactions ? (
     <div className="space-y-3">
       {transactions.map((transaction) => (

@@ -17,7 +17,7 @@ import { shortenAddress } from '../../functions'
 import styled from 'styled-components'
 import { t, plural } from '@lingui/macro'
 import { transparentize } from 'polished'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useAddUserToken } from '../../state/user/hooks'
 import { useLingui } from '@lingui/react'
 
@@ -30,7 +30,7 @@ interface ImportProps {
 }
 
 export function ImportToken({ tokens, list, onBack, onDismiss, handleCurrencySelect }: ImportProps) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const { i18n } = useLingui()
 
   const addToken = useAddUserToken()

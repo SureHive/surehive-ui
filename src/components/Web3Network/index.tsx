@@ -3,11 +3,11 @@ import { NETWORK_ICON, NETWORK_LABEL } from '../../constants/networks'
 import Image from 'next/image'
 import NetworkModel from '../../modals/NetworkModal'
 import React from 'react'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useNetworkModalToggle } from '../../state/application/hooks'
 
 function Web3Network(): JSX.Element | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const toggleNetworkModal = useNetworkModalToggle()
 

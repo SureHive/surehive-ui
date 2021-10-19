@@ -1,4 +1,4 @@
-import { useActiveWeb3React, useLimitOrderContract } from '.'
+import { useWalletManager, useLimitOrderContract } from '.'
 import useSWR, { SWRResponse } from 'swr'
 import { LAMBDA_URL, LimitOrder, OrderStatus } from 'limitorderv2-sdk'
 import { BigNumber } from 'ethers'
@@ -45,7 +45,7 @@ const viewFetcher = (url, account, chainId, pendingPage, page) => {
 }
 
 const useLimitOrders = () => {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const limitOrderContract = useLimitOrderContract()
   const tokens = useAllTokens()
 

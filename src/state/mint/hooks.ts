@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
@@ -72,7 +72,7 @@ export function useDerivedMintInfo(
   error?: string
 } {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
 
   const { independentField, typedValue, otherTypedValue } = useMintState()
 

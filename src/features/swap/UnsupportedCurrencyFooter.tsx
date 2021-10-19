@@ -10,7 +10,7 @@ import ExternalLink from '../../components/ExternalLink'
 import Modal from '../../components/Modal'
 import { getExplorerLink } from '../../functions/explorer'
 import styled from 'styled-components'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useUnsupportedTokens } from '../../hooks/Tokens'
 
 const DetailsFooter = styled.div<{ show: boolean }>`
@@ -44,7 +44,7 @@ export default function UnsupportedCurrencyFooter({
   show: boolean
   currencies: (Currency | undefined)[]
 }) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const [showDetails, setShowDetails] = useState(false)
 
   const tokens =

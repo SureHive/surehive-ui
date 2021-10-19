@@ -8,7 +8,7 @@ import { Input as NumericalInput } from '../../components/NumericalInput'
 import Typography from '../../components/Typography'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 import { useTokenBalance } from '../../state/wallet/hooks'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
@@ -22,7 +22,7 @@ interface CurrencyInputPanelProps {
 const CurrencyInputPanel: FC<CurrencyInputPanelProps> = ({ field, meowshiState, showMax }) => {
   const { currencies, handleInput, setCurrency, fields } = meowshiState
 
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const { i18n } = useLingui()
   const currency = currencies[field]
   const balance = useTokenBalance(account, currency)

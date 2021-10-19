@@ -2,10 +2,10 @@ import Badge from '../../components/Badge'
 import { ChainId } from '@sushiswap/sdk'
 import NavLink from '../../components/NavLink'
 import React from 'react'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../hooks'
 
 const Menu = ({ positionsLength }) => {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   return (
     <div className="space-y-4">
       {account && positionsLength > 0 && (

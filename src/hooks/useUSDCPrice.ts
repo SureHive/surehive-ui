@@ -1,6 +1,6 @@
 import { ChainId, Currency, CurrencyAmount, Price, Token } from '@sushiswap/sdk'
 
-import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useMemo } from 'react'
 import { useV2TradeExactOut } from './useV2Trades'
 
@@ -40,7 +40,7 @@ const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
  * @param currency currency to compute the USDC price of
  */
 export default function useUSDCPrice(currency?: Currency): Price<Currency, Token> | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const amountOut = chainId ? STABLECOIN_AMOUNT_OUT[chainId] : undefined
   const stablecoin = amountOut?.currency

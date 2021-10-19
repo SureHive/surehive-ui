@@ -4,14 +4,14 @@ import GraphChart from './GraphChart'
 import { useUserArcherUseRelay } from '../../../state/user/hooks'
 import { ARCHER_RELAY_URI } from '../../../constants'
 import { useDerivedSwapInfo, useSwapState } from '../../../state/swap/hooks'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { Field } from '../../../state/swap/actions'
 import DoubleCurrencyLogo from '../../../components/DoubleLogo'
 import React from 'react'
 import Image from '../../../components/Image'
 
 export default function SwapGraph({ currentTheme }) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const [useArcher] = useUserArcherUseRelay()
 
   // archer

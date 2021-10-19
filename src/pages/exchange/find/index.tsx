@@ -19,7 +19,7 @@ import Typography from '../../../components/Typography'
 import Web3Connect from '../../../components/Web3Connect'
 import { currencyId } from '../../../functions/currency'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import { useLingui } from '@lingui/react'
 import { usePairAdder } from '../../../state/user/hooks'
 import { useTokenBalance } from '../../../state/wallet/hooks'
@@ -31,7 +31,7 @@ enum Fields {
 
 export default function PoolFinder() {
   const { i18n } = useLingui()
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const [activeField, setActiveField] = useState<number>(Fields.TOKEN1)
 

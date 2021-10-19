@@ -26,7 +26,7 @@ import WarningsView from './WarningsList'
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { ethers } from 'ethers'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useKashiInfo } from './context'
 
@@ -37,7 +37,7 @@ interface RepayProps {
 const DEFAULT_KASHI_REPAY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
 export default function Repay({ pair }: RepayProps) {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const info = useKashiInfo()
 
   // State

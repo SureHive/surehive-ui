@@ -7,7 +7,7 @@ import { useCallback, useEffect, useMemo } from 'react'
 
 import { ChainId } from '@sushiswap/sdk'
 import { updateBlockNumber } from '../application/actions'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 interface TxInterface {
   addedTime: number
@@ -40,7 +40,7 @@ const RETRY_OPTIONS_BY_CHAIN_ID: { [chainId: number]: RetryOptions } = {
 const DEFAULT_RETRY_OPTIONS: RetryOptions = { n: 3, minWait: 1000, maxWait: 3000 }
 
 export default function Updater(): null {
-  const { chainId, library } = useActiveWeb3React()
+  const { chainId, library } = useWalletManager()
 
   const lastBlockNumber = useBlockNumber()
 

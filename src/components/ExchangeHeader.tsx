@@ -6,7 +6,7 @@ import NavLink from './NavLink'
 import Settings from './Settings'
 import { currencyId } from '../functions'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../hooks'
+import { useWalletManager } from '../hooks'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
 import MyOrders from '../features/limit-order/MyOrders'
@@ -29,7 +29,7 @@ interface ExchangeHeaderProps {
 
 const ExchangeHeader: FC<ExchangeHeaderProps> = ({ input, output, allowedSlippage }) => {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const router = useRouter()
   const [animateWallet, setAnimateWallet] = useState(false)
   const isRemove = router.asPath.startsWith('/remove')

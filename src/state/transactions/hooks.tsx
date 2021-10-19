@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TransactionDetails } from './reducer'
 import { TransactionResponse } from '@ethersproject/providers'
 import { addTransaction } from './actions'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 export interface TransactionResponseLight {
   hash: string
@@ -27,7 +27,7 @@ export function useTransactionAdder(): (
     }
   }
 ) => void {
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId, account } = useWalletManager()
   const dispatch = useAppDispatch()
 
   return useCallback(
@@ -75,7 +75,7 @@ export function useTransactionAdder(): (
 
 // returns all the transactions for the current chain
 export function useAllTransactions(): { [txHash: string]: TransactionDetails } {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const state = useAppSelector((state) => state.transactions)
 

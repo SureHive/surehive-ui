@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useReducer } from 'react'
+import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { SUPPORTED_WALLETS } from '../constants'
 import ReactGA from 'react-ga'

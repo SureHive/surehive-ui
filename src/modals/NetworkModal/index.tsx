@@ -8,7 +8,7 @@ import Modal from '../../components/Modal'
 import ModalHeader from '../../components/ModalHeader'
 import React from 'react'
 import cookie from 'cookie-cutter'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 export const SUPPORTED_NETWORKS: {
   [chainId in ChainId]?: {
@@ -152,7 +152,7 @@ export const SUPPORTED_NETWORKS: {
 }
 
 export default function NetworkModal(): JSX.Element | null {
-  const { chainId, library, account } = useActiveWeb3React()
+  const { chainId, library, account } = useWalletManager()
   const networkModalOpen = useModalOpen(ApplicationModal.NETWORK)
   const toggleNetworkModal = useNetworkModalToggle()
 

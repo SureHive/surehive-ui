@@ -1,6 +1,6 @@
 import { Currency, CurrencyAmount } from '@sushiswap/sdk'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import CurrencyLogo from '../CurrencyLogo'
 import Loader from '../Loader'
 import { RefObject } from 'react'
@@ -39,7 +39,7 @@ function CurrencyRow({
   onSelect: () => void
   borderBottom: string
 }) {
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const key = currencyKey(currency)
   const balance = useCurrencyBalance(account ?? undefined, currency)
 

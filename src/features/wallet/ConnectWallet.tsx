@@ -2,7 +2,7 @@ import styles from './wallet.module.css'
 import Back from '../../components/Back'
 import { SUPPORTED_WALLETS } from '../../constants'
 import WalletOption from './WalletOption'
-import { injected, nami } from '../../connectors'
+import { nami } from '../../connectors'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { UnsupportedChainIdError } from '@web3-react/core'
 import { useRouter } from 'next/router'
@@ -27,21 +27,8 @@ const ConnectWallet = ({}) => {
   }
 
   function getWalletOptions() {
-    const isMetamask = window.ethereum && window.ethereum.isMetaMask
     return Object.keys(SUPPORTED_WALLETS).map((key) => {
       const option = SUPPORTED_WALLETS[key]
-
-      // overwrite injected when needed
-      if (option.connector === injected) {
-        // don't show injected if there's no injected provider
-        if (!(window.web3 || window.ethereum)) {
-          return null
-        }
-        // likewise for generic
-        else if (option.name === 'Injected' && isMetamask) {
-          return null
-        }
-      }
 
       // nami connector requires injected cardano in window
       // @ts-ignore

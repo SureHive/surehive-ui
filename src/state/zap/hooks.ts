@@ -27,7 +27,7 @@ import { ZAPPER_ADDRESS } from '../../constants/addresses'
 import { basisPointsToPercent } from '../../functions'
 import { ethers } from 'ethers'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useCurrencyBalances } from '../wallet/hooks'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
@@ -94,7 +94,7 @@ export function useDerivedZapInfo(
   isTradingUnderlying: boolean
   error?: string
 } {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const { typedValue } = useZapState()
 
@@ -256,7 +256,7 @@ export function useDerivedZapInfo(
 export function useDefaultsFromURLSearch():
   | { poolAddress: string | undefined; currencyId: string | undefined }
   | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const dispatch = useDispatch<AppDispatch>()
   const parsedQs = useParsedQueryString()
   // const parsedQs = {}

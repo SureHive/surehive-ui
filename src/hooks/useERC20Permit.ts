@@ -3,7 +3,7 @@ import { DAI, SURE, USDC } from '../constants/tokens'
 import { useMemo, useState } from 'react'
 
 import { splitSignature } from 'ethers/lib/utils'
-import { useActiveWeb3React } from './useActiveWeb3React'
+import { useWalletManager } from '../providers/walletManagerProvider'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
 import { useSingleCallResult } from '../state/multicall/hooks'
@@ -132,7 +132,7 @@ export function useERC20Permit(
   state: UseERC20PermitState
   gatherPermitSignature: null | (() => Promise<void>)
 } {
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId, provider } = useWalletManager()
   const transactionDeadline = useTransactionDeadline()
   const tokenAddress = currencyAmount?.currency?.isToken ? currencyAmount.currency.address : undefined
   const eip2612Contract = useEIP2612Contract(tokenAddress)
@@ -152,7 +152,7 @@ export function useERC20Permit(
       !account ||
       !chainId ||
       !transactionDeadline ||
-      !library ||
+      !provider ||
       !tokenNonceState.valid ||
       !tokenAddress ||
       !spender ||
@@ -228,24 +228,24 @@ export function useERC20Permit(
           message,
         })
 
-        return library
-          .send('eth_signTypedData_v4', [account, data])
-          .then(splitSignature)
-          .then((signature) => {
-            setSignatureData({
-              v: signature.v,
-              r: signature.r,
-              s: signature.s,
-              deadline: signatureDeadline,
-              ...(allowed ? { allowed } : { amount: value }),
-              nonce: nonceNumber,
-              chainId,
-              owner: account,
-              spender,
-              tokenAddress,
-              permitType: permitInfo.type,
-            })
-          })
+        // return library
+        //   .send('eth_signTypedData_v4', [account, data])
+        //   .then(splitSignature)
+        //   .then((signature) => {
+        //     setSignatureData({
+        //       v: signature.v,
+        //       r: signature.r,
+        //       s: signature.s,
+        //       deadline: signatureDeadline,
+        //       ...(allowed ? { allowed } : { amount: value }),
+        //       nonce: nonceNumber,
+        //       chainId,
+        //       owner: account,
+        //       spender,
+        //       tokenAddress,
+        //       permitType: permitInfo.type,
+        //     })
+        //   })
       },
     }
   }, [
@@ -255,7 +255,7 @@ export function useERC20Permit(
     chainId,
     isArgentWallet,
     transactionDeadline,
-    library,
+    provider,
     tokenNonceState.loading,
     tokenNonceState.valid,
     tokenNonceState.result,
@@ -283,7 +283,7 @@ export function useERC20PermitFromTrade(
   trade: V2Trade<Currency, Currency, TradeType> | undefined,
   allowedSlippage: Percent
 ) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const amountToApprove = useMemo(
     () => (trade ? trade.maximumAmountIn(allowedSlippage) : undefined),

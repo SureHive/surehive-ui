@@ -11,12 +11,12 @@ import { WNATIVE } from '@sushiswap/sdk'
 import { Warnings } from '../../entities/Warnings'
 import WarningsList from './WarningsList'
 import { formatNumber } from '../../functions/format'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useKashiInfo } from './context'
 
 export default function Deposit({ pair }: any): JSX.Element {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const assetToken = useCurrency(pair.asset.address) || undefined
 
   // console.log({ pair })

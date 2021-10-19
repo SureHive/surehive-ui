@@ -1,7 +1,7 @@
 import styles from './swap.module.css'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../../hooks'
 import CurrencySelectorPanel from '../../../components/CurrencySelectorPanel'
 import { ARCHER_RELAY_URI, COMMON_BASES } from '../../../constants'
 import {
@@ -33,13 +33,14 @@ import Image from 'next/image'
 import Button from '../../../components/Button'
 import SwapRatePanel from './SwapRatePanel'
 import SwapSettings from './SwapSettings'
+import { SidePanelContainer, SidePanelBox, SidePanelCurrencyBox } from '../../../components/SidePanel'
 
 const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
   const [showSettings, setShowSettings] = useState<boolean>(false)
 
   const { i18n } = useLingui()
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
 
   const loadedUrlParams = useDefaultsFromURLSearch()
 
@@ -147,126 +148,144 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
   const dropDownImage =
     currentTheme === 'dark' ? '/images/global/icon-swap-arrow.svg' : '/images/global/icon-swap-arrow-light.svg'
 
-  return (
+  const FromOption = () => (
     <>
-      <div className={styles.swapBox}>
-        <div className="grid flex flex-col md:gap-y-6 md:p-10 dark:text-white-100 text-dark-600">
-          <div className="flex flex-row pl-3 mobile:hidden">
-            <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
-          </div>
-          <div className={styles.swapPanel}>
-            {showSettings && (
-              <div
-                className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"
-                style={{
-                  boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',
-                  borderRadius: '9px',
-                }}
-              >
-                <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />
-              </div>
-            )}
-            <div className={styles.ratePanel}>
-              <SwapRatePanel
-                showSettings={showSettings}
-                setShowSettings={setShowSettings}
-                setShowSwapPreference={setShowSwapPreference}
-                currentTheme={currentTheme}
-              />
-            </div>
-            <div className="flex flex-col gap-y-3 px-4">
-              <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
-              <div className={styles.currencyBox}>
-                <CurrencySelectorPanel
-                  currency={currencies[Field.INPUT]}
-                  otherCurrency={currencies[Field.OUTPUT]}
-                  onCurrencySelect={handleInputSelect}
-                  value={formattedAmounts[Field.INPUT]}
-                  onUserInput={handleTypeInput}
-                  onMax={handleMaxInput}
-                  showMaxButton={showMaxButton}
-                  showCommonBases={true}
-                  currentTheme={currentTheme}
-                />
-              </div>
-              <div className={styles.balanceBox}>
-                <SwapBalance
-                  inputCurrency={currencies[Field.INPUT]}
-                  outputCurrency={currencies[Field.OUTPUT]}
-                  currentTheme={currentTheme}
-                />
-              </div>
-              <div className={styles.balanceDropdown}>
-                <div style={{ cursor: 'pointer' }}>
-                  <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />
-                </div>
-              </div>
-              <p className="font-normal tracking-normal">{i18n._(t`TO (Estimated)`)}</p>
-              <div className={styles.currencyBox}>
-                <CurrencySelectorPanel
-                  currency={currencies[Field.OUTPUT]}
-                  otherCurrency={currencies[Field.INPUT]}
-                  onCurrencySelect={handleOutputSelect}
-                  value={formattedAmounts[Field.OUTPUT]}
-                  onUserInput={handleTypeOutput}
-                  showMaxButton={false}
-                  showCommonBases={true}
-                  currentTheme={currentTheme}
-                />
-              </div>
-              <SwapLabelValuePair
-                className="flex justify-between text-xs tracking-tight font-normal p-1"
-                label={'Minimum Received'}
-                value={'2,953.35 USDC'}
-              />
-              <div className={styles.line} />
-              <SwapLabelValuePair
-                className="flex justify-between tracking-normal font-normal p-1 px-3"
-                label={'nSure Fee'}
-                value={'0.00002 ETH'}
-                logo={'/images/global/icon-nsure-blue.svg'}
-              />
-              <SwapLabelValuePair
-                className="flex justify-between tracking-normal font-normal p-1  px-3"
-                label={'Liquidity Provider Fee'}
-                value={'0.000012 ETH'}
-                logo={'/images/global/icon-liquidity-provider-fees-blue.svg'}
-              />
-              <SwapLabelValuePair
-                className="flex justify-between tracking-normal font-normal p-1  px-3"
-                label={'Gas Cost'}
-                value={
-                  userGasPrice
-                    ? `${getGasCostLevel(userGasPrice)} - ${ethers.utils.formatUnits(userGasPrice, 'gwei')} gwei`
-                    : '--'
-                }
-                logo={'/images/global/icon-gas-costs-blue.svg'}
-              />
-              <div className={styles.line} />
-              <SwapLabelValuePair
-                className="flex justify-between tracking-normal font-normal p-1 px-3"
-                label={'Transaction Deadline'}
-                value={getTtlForDisplay(ttl)}
-                logo={'/images/global/icon-deadline-blue.svg'}
-              />
-              <SwapLabelValuePair
-                className="flex justify-between tracking-normal font-normal p-1 px-3"
-                label={'Slippage Tolerance'}
-                value={userSlippageTolerance instanceof Percent ? `${userSlippageTolerance?.toFixed()} %` : '--'}
-                logo={'/images/global/icon-slippage-blue.svg'}
-              />
-              <SwapLabelValuePair
-                className={styles.priceImpact}
-                label={'Price Impact'}
-                value={'+ 12 %'}
-                logo={'/images/global/icon-price-impact-blue.svg'}
-              />
-              <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
+      <SidePanelCurrencyBox>
+        <CurrencySelectorPanel
+          currency={currencies[Field.INPUT]}
+          otherCurrency={currencies[Field.OUTPUT]}
+          onCurrencySelect={handleInputSelect}
+          value={formattedAmounts[Field.INPUT]}
+          onUserInput={handleTypeInput}
+          onMax={handleMaxInput}
+          showMaxButton={showMaxButton}
+          showCommonBases={true}
+          currentTheme={currentTheme}
+        />
+      </SidePanelCurrencyBox>
     </>
+  )
+
+  const ToOption = () => (
+    <>
+      <p className="font-normal tracking-normal">{i18n._(t`TO (Estimated)`)}</p>
+      <SidePanelCurrencyBox>
+        <CurrencySelectorPanel
+          currency={currencies[Field.OUTPUT]}
+          otherCurrency={currencies[Field.INPUT]}
+          onCurrencySelect={handleOutputSelect}
+          value={formattedAmounts[Field.OUTPUT]}
+          onUserInput={handleTypeOutput}
+          showMaxButton={false}
+          showCommonBases={true}
+          currentTheme={currentTheme}
+        />
+      </SidePanelCurrencyBox>
+    </>
+  )
+
+  const SwapSettingsValues = () => (
+    <>
+      <SwapLabelValuePair
+        className="flex justify-between text-xs tracking-tight font-normal p-1"
+        label={'Minimum Received'}
+        value={'2,953.35 USDC'}
+      />
+      <div className={styles.line} />
+      <SwapLabelValuePair
+        className="flex justify-between tracking-normal font-normal p-1 px-3"
+        label={'nSure Fee'}
+        value={'0.00002 ETH'}
+        logo={'/images/global/icon-nsure-blue.svg'}
+      />
+      <SwapLabelValuePair
+        className="flex justify-between tracking-normal font-normal p-1  px-3"
+        label={'Liquidity Provider Fee'}
+        value={'0.000012 ETH'}
+        logo={'/images/global/icon-liquidity-provider-fees-blue.svg'}
+      />
+      <SwapLabelValuePair
+        className="flex justify-between tracking-normal font-normal p-1  px-3"
+        label={'Gas Cost'}
+        value={
+          userGasPrice
+            ? `${getGasCostLevel(userGasPrice)} - ${ethers.utils.formatUnits(userGasPrice, 'gwei')} gwei`
+            : '--'
+        }
+        logo={'/images/global/icon-gas-costs-blue.svg'}
+      />
+      <div className={styles.line} />
+      <SwapLabelValuePair
+        className="flex justify-between tracking-normal font-normal p-1 px-3"
+        label={'Transaction Deadline'}
+        value={getTtlForDisplay(ttl)}
+        logo={'/images/global/icon-deadline-blue.svg'}
+      />
+      <SwapLabelValuePair
+        className="flex justify-between tracking-normal font-normal p-1 px-3"
+        label={'Slippage Tolerance'}
+        value={userSlippageTolerance instanceof Percent ? `${userSlippageTolerance?.toFixed()} %` : '--'}
+        logo={'/images/global/icon-slippage-blue.svg'}
+      />
+      <SwapLabelValuePair
+        className={styles.priceImpact}
+        label={'Price Impact'}
+        value={'+ 12 %'}
+        logo={'/images/global/icon-price-impact-blue.svg'}
+      />
+    </>
+  )
+
+  const RatePanel = () => (
+    <div className={styles.ratePanel}>
+      <SwapRatePanel
+        showSettings={showSettings}
+        setShowSettings={setShowSettings}
+        setShowSwapPreference={setShowSwapPreference}
+        currentTheme={currentTheme}
+      />
+    </div>
+  )
+
+  return (
+    <SidePanelContainer className="sm:px-10 sm:pt-5 sm:pb-10 sm:space-y-5">
+      <div className="flex flex-row pl-3 mobile:hidden">
+        <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
+      </div>
+      <SidePanelBox className="relative">
+        {showSettings && (
+          <div
+            className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"
+            style={{
+              boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',
+              borderRadius: '9px',
+            }}
+          >
+            <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />
+          </div>
+        )}
+        <RatePanel />
+        <div className="flex flex-col gap-y-3 px-4">
+          <FromOption />
+          <div className={styles.balanceBox}>
+            <SwapBalance
+              inputCurrency={currencies[Field.INPUT]}
+              outputCurrency={currencies[Field.OUTPUT]}
+              currentTheme={currentTheme}
+            />
+          </div>
+          <div className={styles.balanceDropdown}>
+            <div style={{ cursor: 'pointer' }}>
+              <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />
+            </div>
+          </div>
+          <ToOption />
+          <SwapSettingsValues />
+          <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>
+        </div>
+      </SidePanelBox>
+    </SidePanelContainer>
   )
 }
 

@@ -15,7 +15,7 @@ import styled from 'styled-components'
 import sushiData from '@sushiswap/sushi-data'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+import useWalletManager from '../../hooks'
 import { useLingui } from '@lingui/react'
 import useSWR from 'swr'
 import useSushiBar from '../../hooks/useSushiBar'
@@ -58,7 +58,7 @@ const fetcher = (query) => request('https://api.thegraph.com/subgraphs/name/matt
 
 export default function Stake() {
   const { i18n } = useLingui()
-  const { account } = useActiveWeb3React()
+  const { account } = useWalletManager()
   const sushiBalance = useTokenBalance(account ?? undefined, SURE[ChainId.MAINNET])
   const xSushiBalance = useTokenBalance(account ?? undefined, XSUSHI)
 
@@ -215,8 +215,7 @@ export default function Stake() {
                             </div>
                         </div> */}
           </div>
-          <div className="hidden px-8 ml-6 md:block w-72">
-          </div>
+          <div className="hidden px-8 ml-6 md:block w-72"></div>
         </div>
         <div className="flex flex-col justify-center md:flex-row">
           <div className="flex flex-col w-full max-w-xl mx-auto mb-4 md:m-0">

@@ -1,4 +1,4 @@
-import { ApprovalState, useActiveWeb3React } from '../../hooks'
+import { ApprovalState, useWalletManager } from '../../hooks'
 import { Field, MeowshiState } from '../../pages/tools/meowshi'
 import React, { FC, useMemo, useState } from 'react'
 import { SURE, XSUSHI } from '../../constants'
@@ -26,7 +26,7 @@ const MeowshiButton: FC<MeowshiButtonProps> = ({ meowshiState }) => {
     txHash: '',
     open: false,
   })
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useWalletManager()
   const sushiBalance = useTokenBalance(account, SURE[ChainId.MAINNET])
   const xSushiBalance = useTokenBalance(account, XSUSHI)
   const { approvalState, approve, meow, unmeow, meowSushi, unmeowSushi } = useMeowshi(

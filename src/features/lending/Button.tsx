@@ -9,7 +9,7 @@ import React from 'react'
 import { WNATIVE } from '@sushiswap/sdk'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useLingui } from '@lingui/react'
 
 export function KashiApproveButton({ content, color }: any): any {
@@ -44,7 +44,7 @@ export function KashiApproveButton({ content, color }: any): any {
 
 export function TokenApproveButton({ children, value, token, needed, color }: any): any {
   const { i18n } = useLingui()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const [approvalState, approve] = useApproveCallback(
     tryParseAmount(value, token),
     chainId && BENTOBOX_ADDRESS[chainId]

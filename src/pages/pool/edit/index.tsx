@@ -10,7 +10,6 @@ import { Currency } from '@sushiswap/sdk'
 import EditPool from '../../../features/pool/EditPool'
 import PoolTransactionLog from '../../../features/pool/PoolTransactionLog'
 import PoolGraph from '../../../features/pool/PoolGraph'
-import MobileHeader from '../../../components/Header/Mobile'
 
 export default function PoolExpandedPair(): JSX.Element {
   const { i18n } = useLingui()

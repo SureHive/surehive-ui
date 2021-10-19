@@ -8,7 +8,7 @@ import { CustomLightSpinner } from '../Spinner'
 import ExternalLink from '../ExternalLink'
 import { RowBetween } from '../Row'
 import { getExplorerLink } from '../../functions/explorer'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 
 const ConfirmOrLoadingWrapper = styled.div`
   width: 100%;
@@ -47,7 +47,7 @@ export function SubmittedView({
   hash: string | undefined
 }) {
   const theme = useContext(ThemeContext)
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   return (
     <ConfirmOrLoadingWrapper>

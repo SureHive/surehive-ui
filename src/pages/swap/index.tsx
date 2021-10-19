@@ -7,7 +7,6 @@ import SwapPanel from '../../features/swap/swap/SwapPanel'
 import SwapGraph from '../../features/swap/swap/SwapGraph'
 import SwapTransactionLog from '../../features/swap/swap/SwapTransactionLog'
 import { useTheme } from 'next-themes'
-import { useMobileHeader } from '../../state/application/hooks'
 import SwapSettings from '../../features/swap/swap/SwapSettings'
 
 export default function Swap(): JSX.Element {
@@ -15,16 +14,10 @@ export default function Swap(): JSX.Element {
   const { systemTheme, theme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
   const [showSwapPreference, setShowSwapPreference] = useState<boolean>(false)
-  const [pageHeaderDetails, updatePageHeader] = useMobileHeader()
 
+  let headerLabel = 'Swap'
   if (showSwapPreference) {
-    if (pageHeaderDetails.name !== 'Swap Preferences') {
-      updatePageHeader({ name: 'Swap Preferences', isSubPage: true })
-    }
-  } else {
-    if (pageHeaderDetails.name !== 'Swap') {
-      updatePageHeader({ name: 'Swap', isSubPage: false })
-    }
+    headerLabel = 'Swap Preferences'
   }
 
   return (
@@ -38,7 +31,7 @@ export default function Swap(): JSX.Element {
         />
       </Head>
       <Container
-        headerLabel="Swap"
+        headerLabel={headerLabel}
         showBackButton={showSwapPreference}
         backFunc={() => {
           setShowSwapPreference(false)
@@ -57,7 +50,7 @@ export default function Swap(): JSX.Element {
           )}
           {!showSwapPreference && (
             <>
-              <div className="mobile:w-full mobile:order-last w-538">
+              <div className="w-screen sm:w-auto order-last sm:order-first">
                 <SwapPanel currentTheme={currentTheme} setShowSwapPreference={setShowSwapPreference} />
               </div>
               <div className="md:flex-grow">

@@ -1,10 +1,10 @@
 import { getAverageBlockTime, getOneDayBlock, getOneWeekBlock, getCustomDayBlock } from '../fetchers'
 
-import { useActiveWeb3React } from '../../../hooks'
+import { useWalletManager } from '../../../hooks'
 import useSWR from 'swr'
 
 export function useOneDayBlock(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const { data } = useSWR(chainId ? ['oneDayBlock', chainId] : null, (_, chainId) => getOneDayBlock(chainId), swrConfig)
 
@@ -12,7 +12,7 @@ export function useOneDayBlock(swrConfig = undefined) {
 }
 
 export function useOneWeekBlock(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const { data } = useSWR(
     chainId ? ['oneWeekBlock', chainId] : null,
@@ -24,7 +24,7 @@ export function useOneWeekBlock(swrConfig = undefined) {
 }
 
 export function useCustomDayBlock(days: number, swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const { data } = useSWR(
     chainId ? ['customDayBlock', chainId, days] : null,
@@ -36,7 +36,7 @@ export function useCustomDayBlock(days: number, swrConfig = undefined) {
 }
 
 export function useAverageBlockTime(swrConfig = undefined) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
 
   const { data } = useSWR(
     chainId ? ['averageBlockTime', chainId] : null,

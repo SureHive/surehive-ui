@@ -10,7 +10,7 @@ import { useLingui, Trans } from '@lingui/react'
 import { t } from '@lingui/macro'
 import HeadlessUIModal from '../../components/Modal/HeadlessUIModal'
 import NavLink from '../../components/NavLink'
-import { useActiveWeb3React } from '../../hooks'
+import { useWalletManager } from '../../hooks'
 
 interface NetworkGuardProps {
   networks: ChainId[]
@@ -19,7 +19,7 @@ interface NetworkGuardProps {
 const Component: FC<NetworkGuardProps> = ({ children, networks = [] }) => {
   const { i18n } = useLingui()
   const { chainId, account } = useWalletManager()
-  const { library } = useActiveWeb3React()
+  const { library } = useWalletManager()
 
   const link = (
     <NavLink href="/swap">

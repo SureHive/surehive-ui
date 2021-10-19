@@ -25,7 +25,7 @@ import { ParsedQs } from 'qs'
 import { SwapState } from './reducer'
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../../functions/parse'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useWalletManager } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useCurrencyBalances } from '../wallet/hooks'
 import useENS from '../../hooks/useENS'
@@ -126,7 +126,7 @@ export function useDerivedSwapInfo(doArcher = false): {
 } {
   const { i18n } = useLingui()
 
-  const { account, chainId, library } = useActiveWeb3React()
+  const { account, chainId, library } = useWalletManager()
 
   const [singleHopOnly] = useUserSingleHopOnly()
 
@@ -366,7 +366,7 @@ export function useDefaultsFromURLSearch():
       outputCurrencyId: string | undefined
     }
   | undefined {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useWalletManager()
   const dispatch = useAppDispatch()
   const parsedQs = useParsedQueryString()
   const [result, setResult] = useState<
