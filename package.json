@@ -143,6 +143,7 @@
     ]
   },
   "dependencies": {
+    "@blockfrost/blockfrost-js": "^2.0.2",
     "@emurgo/cardano-serialization-lib-asmjs": "^9.1.0",
     "@emurgo/cardano-serialization-lib-browser": "^9.1.0",
     "@visx/event": "^2.1.0",

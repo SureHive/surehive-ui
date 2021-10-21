@@ -19,7 +19,7 @@ import { t } from '@lingui/macro'
 import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAppDispatch } from '../../state/hooks'
 import useENSName from '../../hooks/useENSName'
-import { useETHBalances } from '../../state/wallet/hooks'
+import { useNativeCoinBalances } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 
 // we want the latest one to come first, so return negative if a is after b
@@ -30,7 +30,7 @@ function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
 export default function Me() {
   const { i18n } = useLingui()
   const { chainId, account } = useWalletManager()
-  const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
+  const userEthBalance = useNativeCoinBalances(account ? [account] : [])?.[account ?? '']
   const dispatch = useAppDispatch()
 
   const { ENSName } = useENSName(account ?? undefined)

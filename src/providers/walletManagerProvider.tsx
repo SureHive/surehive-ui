@@ -1,14 +1,14 @@
 import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
-import { AbstractConnector } from '@web3-react/abstract-connector'
 import { SUPPORTED_WALLETS } from '../constants'
 import ReactGA from 'react-ga'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { nami } from '../connectors'
 import { normalizeAccount, normalizeChainId } from '../functions'
 import invariant from 'tiny-invariant'
+import { AbstractWalletConnector } from '../connectors/abstract-connector'
 
 interface WalletManagerState {
-  connector?: AbstractConnector
+  connector?: AbstractWalletConnector
   provider?: any
   chainId?: number
   account?: null | string
@@ -44,7 +44,7 @@ function reducer(state: WalletManagerState, { type, payload }: Action) {
 
 interface WalletManagerReturn extends WalletManagerState {
   activate: (
-    connector: (() => Promise<AbstractConnector>) | AbstractConnector | undefined
+    connector: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector | undefined
   ) => Promise<WalletManagerState>
   setError: (error: Error) => void
 }
@@ -55,7 +55,7 @@ function _useWalletManager(): WalletManagerReturn {
 
   const activate = useCallback(
     async (
-      connector: (() => Promise<AbstractConnector>) | AbstractConnector | undefined
+      connector: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector | undefined
     ): Promise<WalletManagerState> => {
       let name = ''
       let conn = typeof connector === 'function' ? await connector() : connector

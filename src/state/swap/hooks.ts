@@ -116,7 +116,7 @@ function involvesAddress(trade: V2Trade<Currency, Currency, TradeType>, checksum
 }
 
 // from the current swap inputs, compute the best trade and return it.
-export function useDerivedSwapInfo(doArcher = false): {
+export function useDerivedSwapInfo(): {
   currencies: { [field in Field]?: Currency }
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   parsedAmount: CurrencyAmount<Currency> | undefined
@@ -126,7 +126,7 @@ export function useDerivedSwapInfo(doArcher = false): {
 } {
   const { i18n } = useLingui()
 
-  const { account, chainId, library } = useWalletManager()
+  const { account, chainId, connector } = useWalletManager()
 
   const [singleHopOnly] = useUserSingleHopOnly()
 
@@ -142,9 +142,9 @@ export function useDerivedSwapInfo(doArcher = false): {
 
   const outputCurrency = useCurrency(outputCurrencyId)
 
-  const recipientLookup = useENS(recipient ?? undefined)
+  // const recipientLookup = useENS(recipient ?? undefined)
 
-  const to: string | null = (recipient === null ? account : recipientLookup.address) ?? null
+  const to: string | null = (recipient === null ? account : recipient) ?? null
 
   const relevantTokenBalances = useCurrencyBalances(account ?? undefined, [
     inputCurrency ?? undefined,

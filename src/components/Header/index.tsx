@@ -9,7 +9,7 @@ import Web3Network from '../Web3Network'
 import Web3Status from '../Web3Status'
 import { t } from '@lingui/macro'
 import { useWalletManager } from '../../hooks'
-import { useETHBalances } from '../../state/wallet/hooks'
+import { useNativeCoinBalances } from '../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon } from '@heroicons/react/outline'
@@ -25,7 +25,7 @@ function AppBar(): JSX.Element {
     setMounted(true)
   }, [])
 
-  const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
+  const userEthBalance = useNativeCoinBalances(account ? [account] : [])?.[account ?? '']
 
   const renderThemeChanger = () => {
     if (!mounted) return null

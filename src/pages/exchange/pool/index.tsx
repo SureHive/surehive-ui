@@ -22,7 +22,7 @@ import Typography from '../../../components/Typography'
 import Web3Connect from '../../../components/Web3Connect'
 import { t } from '@lingui/macro'
 import { useWalletManager } from '../../../hooks'
-import { useETHBalances } from '../../../state/wallet/hooks'
+import { useNativeCoinBalances } from '../../../state/wallet/hooks'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
 import { useTokenBalancesWithLoadingIndicator } from '../../../state/wallet/hooks'
@@ -33,7 +33,7 @@ export default function Pool() {
   const router = useRouter()
   const { account, chainId } = useWalletManager()
 
-  const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
+  const userEthBalance = useNativeCoinBalances(account ? [account] : [])?.[account ?? '']
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()

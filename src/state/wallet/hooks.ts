@@ -13,10 +13,10 @@ import { useMulticall2Contract } from '../../hooks/useContract'
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
  */
-export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
+export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
 } {
-  const { chainId } = useWalletManager()
+  const { chainId, connector } = useWalletManager()
   const multicallContract = useMulticall2Contract()
 
   const addresses: string[] = useMemo(
@@ -30,16 +30,25 @@ export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
     [uncheckedAddresses]
   )
 
-  const results = useSingleContractMultipleData(
-    multicallContract,
-    'getEthBalance',
-    addresses.map((address) => [address])
-  )
+  // const results = useSingleContractMultipleData(
+  //   multicallContract,
+  //   'getEthBalance',
+  //   addresses.map((address) => [address])
+  // )
+  const results = useMemo(async () => {
+    addresses.map(async (address) => {
+      try {
+        return await connector.getBalance(address)
+      } catch (e) {
+        return null
+      }
+    })
+  }, [addresses, connector])
 
   return useMemo(
     () =>
       addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address, i) => {
-        const value = results?.[i]?.result?.[0]
+        const value = results?.[i]
         if (value && chainId)
           memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(value.toString()))
         return memo
@@ -112,6 +121,8 @@ export function useCurrencyBalances(
   account?: string,
   currencies?: (Currency | undefined)[]
 ): (CurrencyAmount<Currency> | undefined)[] {
+  const { connector } = useWalletManager()
+
   const tokens = useMemo(
     () => currencies?.filter((currency): currency is Token => currency?.isToken ?? false) ?? [],
     [currencies]
@@ -119,7 +130,7 @@ export function useCurrencyBalances(
 
   const tokenBalances = useTokenBalances(account, tokens)
   const containsETH: boolean = useMemo(() => currencies?.some((currency) => currency?.isNative) ?? false, [currencies])
-  const ethBalance = useETHBalances(containsETH ? [account] : [])
+  const ethBalance = useNativeCoinBalances(containsETH ? [account] : [])
 
   return useMemo(
     () =>

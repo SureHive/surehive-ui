@@ -1,4 +1,3 @@
-import { AbstractConnector } from '@web3-react/abstract-connector'
 import {
   TransactionUnspentOutput,
   Value,
@@ -9,6 +8,8 @@ import {
   Address,
 } from '@emurgo/cardano-serialization-lib-asmjs'
 import { ConnectorUpdate } from '@web3-react/types'
+import { BlockFrostAPI } from '@blockfrost/blockfrost-js'
+import { AbstractWalletConnector } from './abstract-connector'
 
 interface CardanoProvider {
   enable(): Promise<boolean>
@@ -27,14 +28,18 @@ interface CardanoProvider {
   submitTx(tx: Transaction): Promise<string>
 }
 
-export class NamiWalletConnector extends AbstractConnector {
+export class NamiWalletConnector extends AbstractWalletConnector {
   private readonly provider: CardanoProvider
+  private readonly api: BlockFrostAPI
 
   constructor() {
     super()
     if (typeof window !== 'undefined') {
       // @ts-ignore
       this.provider = window.cardano
+      this.api = new BlockFrostAPI({
+        projectId: process.env.BLOCKFROST_API_KEY,
+      })
     }
   }
 
@@ -68,5 +73,12 @@ export class NamiWalletConnector extends AbstractConnector {
 
   async getProvider(): Promise<CardanoProvider> {
     return this.provider
+  }
+
+  async getBalance(account: string): Promise<string | null> {
+    return this.api
+      .addresses(account)
+      .then((result) => result.amount.find((amt) => amt.unit === 'lovelace'))
+      .then((amount) => (amount ? amount.quantity : null))
   }
 }

@@ -52,25 +52,19 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
   // get custom setting values for user
   const [ttl] = useUserTransactionTTL()
   const userSlippageTolerance = useUserSlippageTolerance()
-  const [useArcher] = useUserArcherUseRelay()
-  const [archerETHTip] = useUserArcherETHTip()
-  const [userGasPrice] = useUserArcherGasPrice()
+  // const [useArcher] = useUserArcherUseRelay()
+  // const [archerETHTip] = useUserArcherETHTip()
+  // const [userGasPrice] = useUserArcherGasPrice()
 
   // archer
-  const archerRelay = chainId ? ARCHER_RELAY_URI?.[chainId] : undefined
-  const doArcher = archerRelay !== undefined && useArcher
+  // const archerRelay = chainId ? ARCHER_RELAY_URI?.[chainId] : undefined
+  // const doArcher = archerRelay !== undefined && useArcher
 
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const dependentField: Field = independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT
 
-  const {
-    v2Trade,
-    currencyBalances,
-    parsedAmount,
-    currencies,
-    inputError: swapInputError,
-  } = useDerivedSwapInfo(doArcher)
+  const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
 
   const {
     wrapType,
