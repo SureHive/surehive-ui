@@ -10,6 +10,7 @@ import {
 import { ConnectorUpdate } from '@web3-react/types'
 import { BlockFrostAPI } from '@blockfrost/blockfrost-js'
 import { AbstractWalletConnector } from './abstract-connector'
+import { Token } from '../entities'
 
 interface CardanoProvider {
   enable(): Promise<boolean>
@@ -31,6 +32,7 @@ interface CardanoProvider {
 export class NamiWalletConnector extends AbstractWalletConnector {
   private readonly provider: CardanoProvider
   private readonly api: BlockFrostAPI
+  public readonly nativeCoin: string = 'ADA'
 
   constructor() {
     super()
@@ -80,5 +82,18 @@ export class NamiWalletConnector extends AbstractWalletConnector {
       .addresses(account)
       .then((result) => result.amount.find((amt) => amt.unit === 'lovelace'))
       .then((amount) => (amount ? amount.quantity : null))
+  }
+
+  isAddress(address: string): string | false {
+    /// TODO: check valid address
+    return address
+  }
+
+  async getTokenBalances(account: string, tokens: Token[]): Promise<string[]> {
+    const result = await this.api.addresses(account)
+    return tokens.map((t) => {
+      const amount = result.amount.find((amt) => amt.unit === t.address)
+      return amount ? amount.quantity : null
+    })
   }
 }

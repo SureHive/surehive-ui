@@ -3,6 +3,7 @@ import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink,
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { BigNumber } from 'ethers'
+import { AbstractWalletConnector } from '../connectors/abstract-connector'
 
 export const RPC = {
   [ChainId.MAINNET]: 'https://eth-mainnet.alchemyapi.io/v2/q1gSNoSMEzJms47Qn93f9-9Xg5clkmEC',
@@ -77,7 +78,7 @@ export const MERKLE_ROOT =
 // }
 
 export interface WalletInfo {
-  connector?: (() => Promise<AbstractConnector>) | AbstractConnector
+  connector?: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector
   name: string
   iconName: string
   description: string

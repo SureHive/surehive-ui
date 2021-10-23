@@ -46,3 +46,5 @@ declare module 'jazzicon' {
 }
 
 declare module 'react-tradingview-widget'
+
+declare module '@blockfrost/blockfrost-js'

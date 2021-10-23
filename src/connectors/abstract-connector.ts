@@ -1,10 +1,15 @@
 import { EventEmitter } from 'events'
-import { AbstractConnectorArguments, ConnectorUpdate } from '@web3-react/types'
+import { Token } from '../entities'
 
-export declare abstract class AbstractWalletConnector extends EventEmitter {
+export interface ConnectorUpdate {
+  provider?: any
+  chainId?: number
+  account?: null | string
+}
+
+export abstract class AbstractWalletConnector extends EventEmitter {
   readonly supportedChainIds?: number[]
-
-  protected constructor({ supportedChainIds }?: AbstractConnectorArguments)
+  public readonly nativeCoin: string
 
   abstract activate(): Promise<ConnectorUpdate>
 
@@ -17,4 +22,8 @@ export declare abstract class AbstractWalletConnector extends EventEmitter {
   abstract deactivate(): void
 
   abstract getBalance(account: string): Promise<null | string>
+
+  abstract isAddress(address: string): string | false
+
+  abstract getTokenBalances(account: string, tokens: Token[]): Promise<string[]>
 }

@@ -1,14 +1,12 @@
-import { Currency, CurrencyAmount, Ether, JSBI, Token } from '@sushiswap/sdk'
+import { CurrencyAmount, Currency, NativeCurrency, Token } from '../../entities'
 import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
 
 import ERC20_ABI from '../../constants/abis/erc20.json'
 import { Interface } from '@ethersproject/abi'
-import { SURE } from './../../constants'
-import { isAddress } from '../../functions/validate'
+import { isAddress } from '../../functions'
 import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useMemo } from 'react'
-import { useMulticall2Contract } from '../../hooks/useContract'
 
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
@@ -17,7 +15,6 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
   [address: string]: CurrencyAmount<Currency> | undefined
 } {
   const { chainId, connector } = useWalletManager()
-  const multicallContract = useMulticall2Contract()
 
   const addresses: string[] = useMemo(
     () =>
@@ -30,11 +27,6 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
     [uncheckedAddresses]
   )
 
-  // const results = useSingleContractMultipleData(
-  //   multicallContract,
-  //   'getEthBalance',
-  //   addresses.map((address) => [address])
-  // )
   const results = useMemo(async () => {
     addresses.map(async (address) => {
       try {
@@ -50,10 +42,13 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
       addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address, i) => {
         const value = results?.[i]
         if (value && chainId)
-          memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(value.toString()))
+          memo[address] = CurrencyAmount.fromRawAmount(
+            NativeCurrency.onChain(chainId, connector.nativeCoin),
+            value.toString()
+          )
         return memo
       }, {}),
-    [addresses, chainId, results]
+    [addresses, chainId, results, connector]
   )
 }
 
@@ -64,23 +59,16 @@ export function useTokenBalancesWithLoadingIndicator(
   address?: string,
   tokens?: (Token | undefined)[]
 ): [{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }, boolean] {
+  const { connector } = useWalletManager()
+
   const validatedTokens: Token[] = useMemo(
-    () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false) ?? [],
-    [tokens]
+    () => tokens?.filter((t?: Token): t is Token => connector.isAddress(t?.address) !== false) ?? [],
+    [connector, tokens]
   )
 
-  const validatedTokenAddresses = useMemo(() => validatedTokens.map((vt) => vt.address), [validatedTokens])
-  const ERC20Interface = new Interface(ERC20_ABI)
-  const balances = useMultipleContractSingleData(
-    validatedTokenAddresses,
-    ERC20Interface,
-    'balanceOf',
-    [address],
-    undefined,
-    100_000
-  )
-
-  const anyLoading: boolean = useMemo(() => balances.some((callState) => callState.loading), [balances])
+  const balances = useMemo(async () => {
+    return connector.getTokenBalances(address, validatedTokens)
+  }, [validatedTokens, address, connector])
 
   return [
     useMemo(
@@ -89,8 +77,8 @@ export function useTokenBalancesWithLoadingIndicator(
           ? validatedTokens.reduce<{
               [tokenAddress: string]: CurrencyAmount<Token> | undefined
             }>((memo, token, i) => {
-              const value = balances?.[i]?.result?.[0]
-              const amount = value ? JSBI.BigInt(value.toString()) : undefined
+              const value = balances?.[i]
+              const amount = value ? value.toString() : undefined
               if (amount) {
                 memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
               }
@@ -99,7 +87,7 @@ export function useTokenBalancesWithLoadingIndicator(
           : {},
       [address, validatedTokens, balances]
     ),
-    anyLoading,
+    false,
   ]
 }
 

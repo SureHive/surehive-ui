@@ -66,6 +66,9 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
 
   const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
 
+  console.log(currencyBalances)
+  console.log(parsedAmount)
+
   const {
     wrapType,
     execute: onWrap,
@@ -199,16 +202,16 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
         value={'0.000012 ETH'}
         logo={'/images/global/icon-liquidity-provider-fees-blue.svg'}
       />
-      <SwapLabelValuePair
-        className="flex justify-between tracking-normal font-normal p-1  px-3"
-        label={'Gas Cost'}
-        value={
-          userGasPrice
-            ? `${getGasCostLevel(userGasPrice)} - ${ethers.utils.formatUnits(userGasPrice, 'gwei')} gwei`
-            : '--'
-        }
-        logo={'/images/global/icon-gas-costs-blue.svg'}
-      />
+      {/*<SwapLabelValuePair*/}
+      {/*  className="flex justify-between tracking-normal font-normal p-1  px-3"*/}
+      {/*  label={'Gas Cost'}*/}
+      {/*  value={*/}
+      {/*    userGasPrice*/}
+      {/*      ? `${getGasCostLevel(userGasPrice)} - ${ethers.utils.formatUnits(userGasPrice, 'gwei')} gwei`*/}
+      {/*      : '--'*/}
+      {/*  }*/}
+      {/*  logo={'/images/global/icon-gas-costs-blue.svg'}*/}
+      {/*/>*/}
       <div className={styles.line} />
       <SwapLabelValuePair
         className="flex justify-between tracking-normal font-normal p-1 px-3"

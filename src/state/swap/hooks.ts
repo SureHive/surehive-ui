@@ -187,7 +187,7 @@ export function useDerivedSwapInfo(): {
     inputError = inputError ?? i18n._(t`Select a token`)
   }
 
-  const formattedTo = isAddress(to)
+  const formattedTo = connector.isAddress(to)
   if (!to || !formattedTo) {
     inputError = inputError ?? i18n._(t`Enter a recipient`)
   } else {
@@ -209,88 +209,88 @@ export function useDerivedSwapInfo(): {
     inputError = i18n._(t`Insufficient ${amountIn.currency.symbol} balance`)
   }
 
-  const swapCalls = useSwapCallArguments(v2Trade, allowedSlippage, to, undefined, doArcher)
-
-  const [, setUserETHTip] = useUserArcherETHTip()
-  const [userGasEstimate, setUserGasEstimate] = useUserArcherGasEstimate()
-  const [userGasPrice] = useUserArcherGasPrice()
-  const [userTipManualOverride, setUserTipManualOverride] = useUserArcherTipManualOverride()
-
-  useEffect(() => {
-    if (doArcher) {
-      setUserTipManualOverride(false)
-      setUserETHTip(DEFAULT_ARCHER_ETH_TIP.toString())
-      setUserGasEstimate(DEFAULT_ARCHER_GAS_ESTIMATE.toString())
-    }
-  }, [doArcher, setUserTipManualOverride, setUserETHTip, setUserGasEstimate])
-
-  useEffect(() => {
-    if (doArcher && !userTipManualOverride) {
-      setUserETHTip(JSBI.multiply(JSBI.BigInt(userGasEstimate), JSBI.BigInt(userGasPrice)).toString())
-    }
-  }, [doArcher, userGasEstimate, userGasPrice, userTipManualOverride, setUserETHTip])
-
-  useEffect(() => {
-    async function estimateGas() {
-      const estimatedCalls: EstimatedSwapCall[] = await Promise.all(
-        swapCalls.map((call) => {
-          const { address, calldata, value } = call
-
-          const tx =
-            !value || isZero(value)
-              ? { from: account, to: address, data: calldata }
-              : {
-                  from: account,
-                  to: address,
-                  data: calldata,
-                  value,
-                }
-
-          return library
-            .estimateGas(tx)
-            .then((gasEstimate) => {
-              return {
-                call,
-                gasEstimate,
-              }
-            })
-            .catch((gasError) => {
-              console.debug('Gas estimate failed, trying eth_call to extract error', call)
-
-              return library
-                .call(tx)
-                .then((result) => {
-                  console.debug('Unexpected successful call after failed estimate gas', call, gasError, result)
-                  return {
-                    call,
-                    error: new Error('Unexpected issue with estimating the gas. Please try again.'),
-                  }
-                })
-                .catch((callError) => {
-                  console.debug('Call threw error', call, callError)
-                  return {
-                    call,
-                    error: new Error(swapErrorToUserReadableMessage(callError)),
-                  }
-                })
-            })
-        })
-      )
-
-      // a successful estimation is a bignumber gas estimate and the next call is also a bignumber gas estimate
-      const successfulEstimation = estimatedCalls.find(
-        (el, ix, list): el is SuccessfulCall =>
-          'gasEstimate' in el && (ix === list.length - 1 || 'gasEstimate' in list[ix + 1])
-      )
-
-      if (successfulEstimation) {
-        setUserGasEstimate(successfulEstimation.gasEstimate.toString())
-      }
-    }
-    if (doArcher && v2Trade && swapCalls && !userTipManualOverride) {
-      estimateGas()
-    }
-  }, [doArcher, v2Trade, swapCalls, userTipManualOverride, library, setUserGasEstimate])
+  // const swapCalls = useSwapCallArguments(v2Trade, allowedSlippage, to, undefined, doArcher)
+  //
+  // const [, setUserETHTip] = useUserArcherETHTip()
+  // const [userGasEstimate, setUserGasEstimate] = useUserArcherGasEstimate()
+  // const [userGasPrice] = useUserArcherGasPrice()
+  // const [userTipManualOverride, setUserTipManualOverride] = useUserArcherTipManualOverride()
+  //
+  // useEffect(() => {
+  //   if (doArcher) {
+  //     setUserTipManualOverride(false)
+  //     setUserETHTip(DEFAULT_ARCHER_ETH_TIP.toString())
+  //     setUserGasEstimate(DEFAULT_ARCHER_GAS_ESTIMATE.toString())
+  //   }
+  // }, [doArcher, setUserTipManualOverride, setUserETHTip, setUserGasEstimate])
+  //
+  // useEffect(() => {
+  //   if (doArcher && !userTipManualOverride) {
+  //     setUserETHTip(JSBI.multiply(JSBI.BigInt(userGasEstimate), JSBI.BigInt(userGasPrice)).toString())
+  //   }
+  // }, [doArcher, userGasEstimate, userGasPrice, userTipManualOverride, setUserETHTip])
+  //
+  // useEffect(() => {
+  //   async function estimateGas() {
+  //     const estimatedCalls: EstimatedSwapCall[] = await Promise.all(
+  //       swapCalls.map((call) => {
+  //         const { address, calldata, value } = call
+  //
+  //         const tx =
+  //           !value || isZero(value)
+  //             ? { from: account, to: address, data: calldata }
+  //             : {
+  //                 from: account,
+  //                 to: address,
+  //                 data: calldata,
+  //                 value,
+  //               }
+  //
+  //         return library
+  //           .estimateGas(tx)
+  //           .then((gasEstimate) => {
+  //             return {
+  //               call,
+  //               gasEstimate,
+  //             }
+  //           })
+  //           .catch((gasError) => {
+  //             console.debug('Gas estimate failed, trying eth_call to extract error', call)
+  //
+  //             return library
+  //               .call(tx)
+  //               .then((result) => {
+  //                 console.debug('Unexpected successful call after failed estimate gas', call, gasError, result)
+  //                 return {
+  //                   call,
+  //                   error: new Error('Unexpected issue with estimating the gas. Please try again.'),
+  //                 }
+  //               })
+  //               .catch((callError) => {
+  //                 console.debug('Call threw error', call, callError)
+  //                 return {
+  //                   call,
+  //                   error: new Error(swapErrorToUserReadableMessage(callError)),
+  //                 }
+  //               })
+  //           })
+  //       })
+  //     )
+  //
+  //     // a successful estimation is a bignumber gas estimate and the next call is also a bignumber gas estimate
+  //     const successfulEstimation = estimatedCalls.find(
+  //       (el, ix, list): el is SuccessfulCall =>
+  //         'gasEstimate' in el && (ix === list.length - 1 || 'gasEstimate' in list[ix + 1])
+  //     )
+  //
+  //     if (successfulEstimation) {
+  //       setUserGasEstimate(successfulEstimation.gasEstimate.toString())
+  //     }
+  //   }
+  //   if (doArcher && v2Trade && swapCalls && !userTipManualOverride) {
+  //     estimateGas()
+  //   }
+  // }, [doArcher, v2Trade, swapCalls, userTipManualOverride, library, setUserGasEstimate])
 
   return {
     currencies,

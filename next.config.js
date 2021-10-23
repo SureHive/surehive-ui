@@ -11,6 +11,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer(
   withPWA({
+    webpack: (config, { isServer }) => {
+      if (!isServer) {
+        config.resolve.fallback.fs = false
+      }
+      return config
+    },
     pwa: {
       dest: 'public',
       runtimeCaching,
