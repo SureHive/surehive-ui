@@ -142,8 +142,6 @@ export function useDerivedSwapInfo(): {
 
   const outputCurrency = useCurrency(outputCurrencyId)
 
-  // const recipientLookup = useENS(recipient ?? undefined)
-
   const to: string | null = (recipient === null ? account : recipient) ?? null
 
   const relevantTokenBalances = useCurrencyBalances(account ?? undefined, [
@@ -186,6 +184,9 @@ export function useDerivedSwapInfo(): {
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
     inputError = inputError ?? i18n._(t`Select a token`)
   }
+
+  console.log('connector')
+  console.log(connector)
 
   const formattedTo = connector.isAddress(to)
   if (!to || !formattedTo) {

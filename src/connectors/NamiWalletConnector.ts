@@ -6,7 +6,7 @@ import {
   Transaction,
   TransactionWitnessSet,
   Address,
-} from '@emurgo/cardano-serialization-lib-asmjs'
+} from '@emurgo/cardano-serialization-lib-browser'
 import { ConnectorUpdate } from '@web3-react/types'
 import { BlockFrostAPI } from '@blockfrost/blockfrost-js'
 import { AbstractWalletConnector } from './abstract-connector'
@@ -30,19 +30,21 @@ interface CardanoProvider {
 }
 
 export class NamiWalletConnector extends AbstractWalletConnector {
-  private readonly provider: CardanoProvider
-  private readonly api: BlockFrostAPI
+  private provider: CardanoProvider
+  private api: BlockFrostAPI
   public readonly nativeCoin: string = 'ADA'
 
   constructor() {
-    super()
-    if (typeof window !== 'undefined') {
-      // @ts-ignore
-      this.provider = window.cardano
-      this.api = new BlockFrostAPI({
-        projectId: process.env.BLOCKFROST_API_KEY,
-      })
-    }
+    super({ supportedChainIds: [1, 2] })
+    this.getAddress = this.getAddress.bind(this)
+    this.activate = this.activate.bind(this)
+    this.deactivate = this.deactivate.bind(this)
+    this.getAccount = this.getAccount.bind(this)
+    this.getChainId = this.getChainId.bind(this)
+    this.getProvider = this.getProvider.bind(this)
+    this.getBalance = this.getBalance.bind(this)
+    this.isAddress = this.isAddress.bind(this)
+    this.getTokenBalances = this.getTokenBalances.bind(this)
   }
 
   private async getAddress() {
@@ -52,6 +54,17 @@ export class NamiWalletConnector extends AbstractWalletConnector {
   }
 
   async activate(): Promise<ConnectorUpdate<number>> {
+    console.log('nami activate')
+    // @ts-ignore
+    if (!window.cardano) {
+      throw new Error('No Cardano Provider')
+    }
+    // @ts-ignore
+    this.provider = window.cardano
+    this.api = new BlockFrostAPI({
+      projectId: process.env.BLOCKFROST_API_KEY,
+    })
+
     const result = await this.provider.enable()
     if (result) {
       return {

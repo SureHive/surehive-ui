@@ -23,18 +23,18 @@ import ReactGA from 'react-ga'
 import { Provider as ReduxProvider } from 'react-redux'
 import TransactionUpdater from '../state/transactions/updater'
 import UserUpdater from '../state/user/updater'
-import Web3ReactManager from '../components/Web3ReactManager'
-import { Web3ReactProvider } from '@web3-react/core'
-import dynamic from 'next/dynamic'
-import getLibrary from '../functions/getLibrary'
+//import Web3ReactManager from '../components/Web3ReactManager'
+//import { Web3ReactProvider } from '@web3-react/core'
+//import dynamic from 'next/dynamic'
+//import getLibrary from '../functions/getLibrary'
 import { i18n } from '@lingui/core'
-import { persistStore } from 'redux-persist'
+//import { persistStore } from 'redux-persist'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ThemeProvider } from 'next-themes'
 import { WalletManagerProvider } from '../providers/walletManagerProvider'
 
-const Web3ProviderNetwork = dynamic(() => import('../components/Web3ProviderNetwork'), { ssr: false })
+//const Web3ProviderNetwork = dynamic(() => import('../components/Web3ProviderNetwork'), { ssr: false })
 
 if (typeof window !== 'undefined' && !!window.ethereum) {
   window.ethereum.autoRefreshOnNetworkChange = false

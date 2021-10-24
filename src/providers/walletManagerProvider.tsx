@@ -1,8 +1,7 @@
-import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
+import React, { createContext, useCallback, useContext, useReducer } from 'react'
 import { SUPPORTED_WALLETS } from '../constants'
 import ReactGA from 'react-ga'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { nami } from '../connectors'
 import { normalizeAccount, normalizeChainId } from '../functions'
 import invariant from 'tiny-invariant'
 import { AbstractWalletConnector } from '../connectors/abstract-connector'
@@ -53,54 +52,38 @@ function _useWalletManager(): WalletManagerReturn {
   const [state, dispatch] = useReducer(reducer, {})
   const { connector, provider, chainId, account, error } = state
 
-  const activate = useCallback(
-    async (
-      connector: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector | undefined
-    ): Promise<WalletManagerState> => {
-      let name = ''
-      let conn = typeof connector === 'function' ? await connector() : connector
+  const activate = useCallback(async (conn: AbstractWalletConnector | undefined): Promise<WalletManagerState> => {
+    // if the connector is walletConnect and the user has already tried to connect, manually reset the connector
+    if (conn instanceof WalletConnectConnector && conn.walletConnectProvider?.wc?.uri) {
+      conn.walletConnectProvider = undefined
+    }
 
-      Object.keys(SUPPORTED_WALLETS).map((key) => {
-        if (connector === SUPPORTED_WALLETS[key].connector) {
-          return (name = SUPPORTED_WALLETS[key].name)
+    console.log('activation')
+    console.log(conn)
+
+    if (conn) {
+      try {
+        const result = await conn.activate()
+        console.log('activate results')
+        console.log(result)
+        const provider = result.provider === undefined ? await conn.getProvider() : result.provider
+        const chainId = result.chainId === undefined ? await conn.getChainId() : result.chainId
+        const account = result.account === undefined ? await conn.getAccount() : result.account
+
+        const update = {
+          connector: conn,
+          provider,
+          chainId: conn.nativeCoin === 'ADA' ? Number(chainId) : normalizeChainId(chainId),
+          account: conn.nativeCoin === 'ADA' ? account : normalizeAccount(account),
         }
-        return true
-      })
-      // log selected wallet
-      ReactGA.event({
-        category: 'Wallet',
-        action: 'Change Wallet',
-        label: name,
-      })
-
-      // if the connector is walletConnect and the user has already tried to connect, manually reset the connector
-      if (conn instanceof WalletConnectConnector && conn.walletConnectProvider?.wc?.uri) {
-        conn.walletConnectProvider = undefined
+        dispatch({ type: ActionType.SET_ACTIVE_WALLET, payload: update })
+        return update
+      } catch (error) {
+        dispatch({ type: ActionType.ERROR, payload: { connector: conn, error } })
+        throw error
       }
-
-      if (conn) {
-        try {
-          const result = await conn.activate()
-          const provider = result.provider === undefined ? await conn.getProvider() : result.provider
-          const chainId = result.chainId === undefined ? await conn.getChainId() : result.chainId
-          const account = result.account === undefined ? await conn.getAccount() : result.account
-
-          const update = {
-            connector: conn,
-            provider,
-            chainId: conn === nami ? Number(chainId) : normalizeChainId(chainId),
-            account: conn === nami ? account : normalizeAccount(account),
-          }
-          dispatch({ type: ActionType.SET_ACTIVE_WALLET, payload: update })
-          return update
-        } catch (error) {
-          dispatch({ type: ActionType.ERROR, payload: { connector: conn, error } })
-          throw error
-        }
-      }
-    },
-    []
-  )
+    }
+  }, [])
 
   const setError = useCallback((error: Error): void => {
     dispatch({ type: ActionType.ERROR, payload: { error } })
@@ -138,6 +121,10 @@ export function createWalletManagerProvider() {
 
       error,
     } = _useWalletManager()
+
+    console.log('wallet manager')
+    console.log(connector)
+    console.log(provider)
     const active = connector !== undefined && chainId !== undefined && account !== undefined && !!!error
     const walletManagerContext: WalletManagerContextInterface = {
       connector,

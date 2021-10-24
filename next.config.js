@@ -5,16 +5,37 @@ const linguiConfig = require('./lingui.config.js')
 
 const { locales, sourceLocale } = linguiConfig
 
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
 module.exports = withBundleAnalyzer(
   withPWA({
+    webpack5: true,
     webpack: (config, { isServer }) => {
       if (!isServer) {
         config.resolve.fallback.fs = false
       }
+
+      if (!config.resolve.fallback) {
+        config.resolve.fallback = { util: require.resolve('util') }
+      } else {
+        config.resolve.fallback.util = require.resolve('util')
+      }
+
+      config.experiments = {
+        asyncWebAssembly: true,
+      }
+      config.module.rules.push({ test: /\.wasm$/, type: 'webassembly/async' })
+
+      if (config.plugins) {
+        config.plugins.push(new NodePolyfillPlugin())
+      } else {
+        config.plugins = [new NodePolyfillPlugin()]
+      }
+
       return config
     },
     pwa: {

@@ -1,7 +1,6 @@
 import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
-import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink, nami } from '../connectors'
+import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink } from '../connectors'
 
-import { AbstractConnector } from '@web3-react/abstract-connector'
 import { BigNumber } from 'ethers'
 import { AbstractWalletConnector } from '../connectors/abstract-connector'
 
@@ -91,13 +90,34 @@ export interface WalletInfo {
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   Nami: {
-    connector: nami,
+    connector: async () => {
+      const NamiConnector = (await import('../connectors/NamiWalletConnector')).NamiWalletConnector
+      console.log('constant nami')
+      console.log(NamiConnector)
+      return new NamiConnector()
+    },
     name: 'Nami',
     iconName: 'nami.svg',
     description: 'Login using nami browser extension wallet',
     href: null,
     color: '#315CF5',
   },
+  // LATTICE: {
+  //   connector: async () => {
+  //     const LatticeConnector = (await import('@web3-react/lattice-connector')).LatticeConnector
+  //     return new LatticeConnector({
+  //       chainId: 1,
+  //       url: RPC[ChainId.MAINNET],
+  //       appName: 'SushiSwap',
+  //     })
+  //   },
+  //   name: 'Lattice',
+  //   iconName: 'lattice.png',
+  //   description: 'Connect to GridPlus Wallet.',
+  //   href: null,
+  //   color: '#40a9ff',
+  //   mobile: true,
+  // },
   // INJECTED: {
   //   connector: injected,
   //   name: 'Injected',
@@ -122,22 +142,6 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   //   description: 'Connect to Trust Wallet, Rainbow Wallet and more...',
   //   href: null,
   //   color: '#4196FC',
-  //   mobile: true,
-  // },
-  // LATTICE: {
-  //   connector: async () => {
-  //     const LatticeConnector = (await import('@web3-react/lattice-connector')).LatticeConnector
-  //     return new LatticeConnector({
-  //       chainId: 1,
-  //       url: RPC[ChainId.MAINNET],
-  //       appName: 'SushiSwap',
-  //     })
-  //   },
-  //   name: 'Lattice',
-  //   iconName: 'lattice.png',
-  //   description: 'Connect to GridPlus Wallet.',
-  //   href: null,
-  //   color: '#40a9ff',
   //   mobile: true,
   // },
   // WALLET_LINK: {

@@ -11,6 +11,11 @@ export abstract class AbstractWalletConnector extends EventEmitter {
   readonly supportedChainIds?: number[]
   public readonly nativeCoin: string
 
+  constructor({ supportedChainIds }: { supportedChainIds?: number[] } = {}) {
+    super()
+    this.supportedChainIds = supportedChainIds
+  }
+
   abstract activate(): Promise<ConnectorUpdate>
 
   abstract getProvider(): Promise<any>

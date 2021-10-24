@@ -2,18 +2,42 @@ import styles from './wallet.module.css'
 import Back from '../../components/Back'
 import { SUPPORTED_WALLETS } from '../../constants'
 import WalletOption from './WalletOption'
-import { nami } from '../../connectors'
-import { AbstractConnector } from '@web3-react/abstract-connector'
+import { AbstractWalletConnector } from '../../connectors/abstract-connector'
 import { UnsupportedChainIdError } from '@web3-react/core'
 import { useRouter } from 'next/router'
 import { useWalletManager } from '../../providers/walletManagerProvider'
+import ReactGA from 'react-ga'
 
 const ConnectWallet = ({}) => {
   const router = useRouter()
   const { activate } = useWalletManager()
 
-  const tryActivation = async (connector: (() => Promise<AbstractConnector>) | AbstractConnector | undefined) => {
-    activate(connector)
+  const tryActivation = async (
+    connector: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector | undefined
+  ) => {
+    console.log('connect wallet')
+    console.log(connector)
+
+    let name = ''
+    let conn = typeof connector === 'function' ? await connector() : connector
+
+    console.log('connect wallet connector')
+    console.log(conn)
+
+    Object.keys(SUPPORTED_WALLETS).map((key) => {
+      if (connector === SUPPORTED_WALLETS[key].connector) {
+        return (name = SUPPORTED_WALLETS[key].name)
+      }
+      return true
+    })
+    // log selected wallet
+    ReactGA.event({
+      category: 'Wallet',
+      action: 'Change Wallet',
+      label: name,
+    })
+
+    activate(conn)
       .then(() => {
         router.push('/wallet')
       })
@@ -32,9 +56,11 @@ const ConnectWallet = ({}) => {
 
       // nami connector requires injected cardano in window
       // @ts-ignore
-      if (option.connector === nami && !window.cardano) {
+      if (option.name === 'Nami' && !window.cardano) {
         return null
       }
+
+      console.log(option)
 
       return (
         <WalletOption

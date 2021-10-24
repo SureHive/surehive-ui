@@ -25,14 +25,14 @@
   },
   "resolutions": {
     "@walletconnect/web3-provider": "1.5.0-rc.5",
-    "bn.js": "^4.1.0"
+    "bn.js": "^4.1.0",
+    "@emurgo/cardano-serialization-lib-nodejs": "^9.1.0"
   },
   "devDependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
     "@blockfrost/blockfrost-js": "^2.0.2",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "@emurgo/cardano-serialization-lib-asmjs": "^9.1.0",
     "@emurgo/cardano-serialization-lib-browser": "^9.1.0",
     "@ethereumjs/common": "^2.3.0",
     "@ethereumjs/tx": "^3.2.0",
@@ -146,11 +146,15 @@
     ]
   },
   "dependencies": {
+    "@emurgo/cardano-serialization-lib-nodejs": "^9.1.0",
     "@visx/event": "^2.1.0",
     "@visx/grid": "^2.1.1",
     "@visx/responsive": "^2.1.1",
     "@visx/tooltip": "^2.1.0",
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "next-themes": "^0.0.15",
-    "tailwindcss-border-gradients": "^2.0.3"
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "tailwindcss-border-gradients": "^2.0.3",
+    "util": "^0.12.4"
   }
 }

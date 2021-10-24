@@ -3,7 +3,7 @@ import { One, Zero } from '@ethersproject/constants'
 import { formatBalance, parseBalance } from '../functions'
 
 import { Fraction as SDKFraction } from '@sushiswap/sdk'
-import { isEmptyValue } from '../functions/validate'
+import { isEmptyValue } from '../functions'
 
 class Fraction {
   static BASE = BigNumber.from(10).pow(18)
