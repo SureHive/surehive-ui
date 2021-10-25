@@ -9,6 +9,7 @@ import { PortisConnector } from '@web3-react/portis-connector'
 import { TorusConnector } from '@web3-react/torus-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
+import { NamiWalletConnector } from './NamiWalletConnector'
 
 const RPC = {
   [ChainId.MAINNET]: 'https://eth-mainnet.alchemyapi.io/v2/q1gSNoSMEzJms47Qn93f9-9Xg5clkmEC',
@@ -111,5 +112,4 @@ export const torus = new TorusConnector({
 // binance only
 export const binance = new BscConnector({ supportedChainIds: [56] })
 
-// @ts-ignore
-// export const nami = new NamiWalletConnector()
+export const nami = new NamiWalletConnector()

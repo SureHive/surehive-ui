@@ -250,38 +250,38 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
       <div className="flex flex-row pl-3 mobile:hidden">
         <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
       </div>
-      <SidePanelBox className="relative">
-        {showSettings && (
-          <div
-            className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"
-            style={{
-              boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',
-              borderRadius: '9px',
-            }}
-          >
-            <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />
-          </div>
-        )}
-        <RatePanel />
-        <div className="flex flex-col gap-y-3 px-4">
-          <FromOption />
-          <div className={styles.balanceBox}>
-            <SwapBalance
-              inputCurrency={currencies[Field.INPUT]}
-              outputCurrency={currencies[Field.OUTPUT]}
-              currentTheme={currentTheme}
-            />
-          </div>
-          <div className={styles.balanceDropdown}>
-            <div style={{ cursor: 'pointer' }}>
-              <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />
-            </div>
-          </div>
-          <ToOption />
-          <SwapSettingsValues />
-          <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>
-        </div>
-      </SidePanelBox>
+      {/*<SidePanelBox className="relative">*/}
+      {/*  {showSettings && (*/}
+      {/*    <div*/}
+      {/*      className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"*/}
+      {/*      style={{*/}
+      {/*        boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',*/}
+      {/*        borderRadius: '9px',*/}
+      {/*      }}*/}
+      {/*    >*/}
+      {/*      <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />*/}
+      {/*    </div>*/}
+      {/*  )}*/}
+      {/*  <RatePanel />*/}
+      {/*  <div className="flex flex-col gap-y-3 px-4">*/}
+      {/*    <FromOption />*/}
+      {/*    <div className={styles.balanceBox}>*/}
+      {/*      <SwapBalance*/}
+      {/*        inputCurrency={currencies[Field.INPUT]}*/}
+      {/*        outputCurrency={currencies[Field.OUTPUT]}*/}
+      {/*        currentTheme={currentTheme}*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*    <div className={styles.balanceDropdown}>*/}
+      {/*      <div style={{ cursor: 'pointer' }}>*/}
+      {/*        <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*    <ToOption />*/}
+      {/*    <SwapSettingsValues />*/}
+      {/*    <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>*/}
+      {/*  </div>*/}
+      {/*</SidePanelBox>*/}
     </SidePanelContainer>
   )
 }

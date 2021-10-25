@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@blockfrost/blockfrost-js": "^2.0.2",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@emurgo/cardano-serialization-lib-asmjs": "^9.1.0",
     "@emurgo/cardano-serialization-lib-browser": "^9.1.0",
     "@ethereumjs/common": "^2.3.0",
     "@ethereumjs/tx": "^3.2.0",
@@ -80,6 +80,7 @@
     "@web3-react/walletconnect-connector": "^6.2.0",
     "@web3-react/walletlink-connector": "^6.2.2",
     "@welldone-software/why-did-you-render": "^6.2.0",
+    "axios": "^0.23.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^1.13.1",
     "cookie-cutter": "^0.2.0",

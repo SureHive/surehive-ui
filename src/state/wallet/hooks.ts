@@ -6,10 +6,10 @@ import { Interface } from '@ethersproject/abi'
 import { isAddress } from '../../functions'
 import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 /**
- * Returns a map of the given addresses to their eventually consistent ETH balances.
+ * Returns a map of the given addresses to their eventually consistent balances.
  */
 export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
@@ -20,27 +20,40 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
     () =>
       uncheckedAddresses
         ? uncheckedAddresses
-            .map(isAddress)
+            .map(connector.isAddress)
             .filter((a): a is string => a !== false)
             .sort()
         : [],
     [uncheckedAddresses]
   )
 
-  const results = useMemo(async () => {
-    addresses.map(async (address) => {
-      try {
-        return await connector.getBalance(address)
-      } catch (e) {
-        return null
-      }
-    })
-  }, [addresses, connector])
-
+  const [result, setResult] = useState([])
+  const resultMemo = useMemo(() => result, [result])
+  useEffect(() => {
+    async function fetchBalance() {
+      const value = await Promise.all(
+        addresses.map(async (address) => {
+          try {
+            return await connector.getBalance(address)
+          } catch (e) {
+            return null
+          }
+        })
+      )
+      setResult(value)
+    }
+    console.log('use effect')
+    fetchBalance().catch((err) => console.error(err))
+  }, [])
+  console.log('native')
+  console.log(addresses)
+  console.log(uncheckedAddresses)
   return useMemo(
     () =>
       addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address, i) => {
-        const value = results?.[i]
+        const value = resultMemo?.[i]
+        console.log('use memo')
+        console.log(resultMemo)
         if (value && chainId)
           memo[address] = CurrencyAmount.fromRawAmount(
             NativeCurrency.onChain(chainId, connector.nativeCoin),
@@ -48,7 +61,7 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
           )
         return memo
       }, {}),
-    [addresses, chainId, results, connector]
+    [addresses, chainId, resultMemo]
   )
 }
 
@@ -68,7 +81,7 @@ export function useTokenBalancesWithLoadingIndicator(
 
   const balances = useMemo(async () => {
     return connector.getTokenBalances(address, validatedTokens)
-  }, [validatedTokens, address, connector])
+  }, [validatedTokens, address])
 
   return [
     useMemo(
@@ -95,7 +108,8 @@ export function useTokenBalances(
   address?: string,
   tokens?: (Token | undefined)[]
 ): { [tokenAddress: string]: CurrencyAmount<Token> | undefined } {
-  return useTokenBalancesWithLoadingIndicator(address, tokens)[0]
+  //return useTokenBalancesWithLoadingIndicator(address, tokens)[0]
+  return null
 }
 
 // get the balance for a single token/account combo
@@ -109,26 +123,29 @@ export function useCurrencyBalances(
   account?: string,
   currencies?: (Currency | undefined)[]
 ): (CurrencyAmount<Currency> | undefined)[] {
-  const { connector } = useWalletManager()
-
   const tokens = useMemo(
     () => currencies?.filter((currency): currency is Token => currency?.isToken ?? false) ?? [],
     [currencies]
   )
 
+  console.log('currencies')
+  console.log(currencies)
   const tokenBalances = useTokenBalances(account, tokens)
-  const containsETH: boolean = useMemo(() => currencies?.some((currency) => currency?.isNative) ?? false, [currencies])
-  const ethBalance = useNativeCoinBalances(containsETH ? [account] : [])
+  const containsNative: boolean = useMemo(
+    () => currencies?.some((currency) => currency?.isNative) ?? false,
+    [currencies]
+  )
+  const balance = useNativeCoinBalances(containsNative ? [account] : [])
 
   return useMemo(
     () =>
       currencies?.map((currency) => {
         if (!account || !currency) return undefined
         if (currency.isToken) return tokenBalances[currency.address]
-        if (currency.isNative) return ethBalance[account]
+        if (currency.isNative) return balance[account]
         return undefined
       }) ?? [],
-    [account, currencies, ethBalance, tokenBalances]
+    [account, currencies, balance, tokenBalances]
   )
 }
 

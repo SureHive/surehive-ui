@@ -1,5 +1,5 @@
 import { ChainId, JSBI, Percent } from '@sushiswap/sdk'
-import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink } from '../connectors'
+import { binance, fortmatic, injected, portis, torus, walletconnect, walletlink, nami } from '../connectors'
 
 import { BigNumber } from 'ethers'
 import { AbstractWalletConnector } from '../connectors/abstract-connector'
@@ -90,12 +90,7 @@ export interface WalletInfo {
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   Nami: {
-    connector: async () => {
-      const NamiConnector = (await import('../connectors/NamiWalletConnector')).NamiWalletConnector
-      console.log('constant nami')
-      console.log(NamiConnector)
-      return new NamiConnector()
-    },
+    connector: nami,
     name: 'Nami',
     iconName: 'nami.svg',
     description: 'Login using nami browser extension wallet',

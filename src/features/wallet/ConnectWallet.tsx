@@ -7,6 +7,7 @@ import { UnsupportedChainIdError } from '@web3-react/core'
 import { useRouter } from 'next/router'
 import { useWalletManager } from '../../providers/walletManagerProvider'
 import ReactGA from 'react-ga'
+import { nami } from '../../connectors'
 
 const ConnectWallet = ({}) => {
   const router = useRouter()
@@ -15,14 +16,8 @@ const ConnectWallet = ({}) => {
   const tryActivation = async (
     connector: (() => Promise<AbstractWalletConnector>) | AbstractWalletConnector | undefined
   ) => {
-    console.log('connect wallet')
-    console.log(connector)
-
     let name = ''
     let conn = typeof connector === 'function' ? await connector() : connector
-
-    console.log('connect wallet connector')
-    console.log(conn)
 
     Object.keys(SUPPORTED_WALLETS).map((key) => {
       if (connector === SUPPORTED_WALLETS[key].connector) {
@@ -46,6 +41,8 @@ const ConnectWallet = ({}) => {
           activate(connector) // a little janky...can't use setError because the connector isn't set
         } else {
           ///TODO: show error
+          console.log('error connect wallet')
+          console.error(error)
         }
       })
   }
@@ -56,11 +53,9 @@ const ConnectWallet = ({}) => {
 
       // nami connector requires injected cardano in window
       // @ts-ignore
-      if (option.name === 'Nami' && !window.cardano) {
+      if (option.connector === nami && !window.cardano) {
         return null
       }
-
-      console.log(option)
 
       return (
         <WalletOption

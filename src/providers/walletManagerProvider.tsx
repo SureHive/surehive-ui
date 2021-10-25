@@ -1,10 +1,9 @@
-import React, { createContext, useCallback, useContext, useReducer } from 'react'
-import { SUPPORTED_WALLETS } from '../constants'
-import ReactGA from 'react-ga'
+import React, { createContext, useCallback, useContext, useEffect, useReducer, useState } from 'react'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { normalizeAccount, normalizeChainId } from '../functions'
 import invariant from 'tiny-invariant'
 import { AbstractWalletConnector } from '../connectors/abstract-connector'
+import { nami } from '../connectors'
 
 interface WalletManagerState {
   connector?: AbstractWalletConnector
@@ -48,9 +47,22 @@ interface WalletManagerReturn extends WalletManagerState {
   setError: (error: Error) => void
 }
 
+function initializer(initialValue = {}) {
+  if (typeof window !== 'undefined') {
+    const value = JSON.parse(localStorage.getItem('wallet_manager')) || initialValue
+    value.connector = nami
+    return value
+  }
+  return initialValue
+}
+
 function _useWalletManager(): WalletManagerReturn {
-  const [state, dispatch] = useReducer(reducer, {})
+  const [state, dispatch] = useReducer(reducer, {}, initializer)
   const { connector, provider, chainId, account, error } = state
+
+  useEffect(() => {
+    localStorage.setItem('wallet_manager', JSON.stringify(state))
+  }, [state])
 
   const activate = useCallback(async (conn: AbstractWalletConnector | undefined): Promise<WalletManagerState> => {
     // if the connector is walletConnect and the user has already tried to connect, manually reset the connector
@@ -58,14 +70,9 @@ function _useWalletManager(): WalletManagerReturn {
       conn.walletConnectProvider = undefined
     }
 
-    console.log('activation')
-    console.log(conn)
-
     if (conn) {
       try {
         const result = await conn.activate()
-        console.log('activate results')
-        console.log(result)
         const provider = result.provider === undefined ? await conn.getProvider() : result.provider
         const chainId = result.chainId === undefined ? await conn.getChainId() : result.chainId
         const account = result.account === undefined ? await conn.getAccount() : result.account
@@ -73,8 +80,8 @@ function _useWalletManager(): WalletManagerReturn {
         const update = {
           connector: conn,
           provider,
-          chainId: conn.nativeCoin === 'ADA' ? Number(chainId) : normalizeChainId(chainId),
-          account: conn.nativeCoin === 'ADA' ? account : normalizeAccount(account),
+          chainId: conn === nami ? Number(chainId) : normalizeChainId(chainId),
+          account: conn === nami ? account : normalizeAccount(account),
         }
         dispatch({ type: ActionType.SET_ACTIVE_WALLET, payload: update })
         return update
@@ -122,9 +129,6 @@ export function createWalletManagerProvider() {
       error,
     } = _useWalletManager()
 
-    console.log('wallet manager')
-    console.log(connector)
-    console.log(provider)
     const active = connector !== undefined && chainId !== undefined && account !== undefined && !!!error
     const walletManagerContext: WalletManagerContextInterface = {
       connector,

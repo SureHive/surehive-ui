@@ -6,9 +6,9 @@ import {
   Transaction,
   TransactionWitnessSet,
   Address,
-} from '@emurgo/cardano-serialization-lib-browser'
+} from '@emurgo/cardano-serialization-lib-asmjs'
 import { ConnectorUpdate } from '@web3-react/types'
-import { BlockFrostAPI } from '@blockfrost/blockfrost-js'
+import axios, { AxiosInstance, AxiosResponse } from 'axios'
 import { AbstractWalletConnector } from './abstract-connector'
 import { Token } from '../entities'
 
@@ -31,11 +31,18 @@ interface CardanoProvider {
 
 export class NamiWalletConnector extends AbstractWalletConnector {
   private provider: CardanoProvider
-  private api: BlockFrostAPI
+  private readonly api: AxiosInstance
   public readonly nativeCoin: string = 'ADA'
 
   constructor() {
     super({ supportedChainIds: [1, 2] })
+
+    this.api = axios.create({
+      baseURL: process.env.NEXT_PUBLIC_BLOCKFROST_API_BASE_URL,
+      timeout: 1000,
+      headers: { project_id: process.env.NEXT_PUBLIC_BLOCKFROST_API_KEY },
+    })
+
     this.getAddress = this.getAddress.bind(this)
     this.activate = this.activate.bind(this)
     this.deactivate = this.deactivate.bind(this)
@@ -54,16 +61,12 @@ export class NamiWalletConnector extends AbstractWalletConnector {
   }
 
   async activate(): Promise<ConnectorUpdate<number>> {
-    console.log('nami activate')
     // @ts-ignore
     if (!window.cardano) {
       throw new Error('No Cardano Provider')
     }
     // @ts-ignore
     this.provider = window.cardano
-    this.api = new BlockFrostAPI({
-      projectId: process.env.BLOCKFROST_API_KEY,
-    })
 
     const result = await this.provider.enable()
     if (result) {
@@ -92,8 +95,13 @@ export class NamiWalletConnector extends AbstractWalletConnector {
 
   async getBalance(account: string): Promise<string | null> {
     return this.api
-      .addresses(account)
-      .then((result) => result.amount.find((amt) => amt.unit === 'lovelace'))
+      .get(`/addresses/${account}`, { responseType: 'json' })
+      .then((result: AxiosResponse<Record<string, any>>) => {
+        if (result && result.data && result.data.amount) {
+          return result.data.amount.find((amt) => amt.unit === 'lovelace')
+        }
+        return null
+      })
       .then((amount) => (amount ? amount.quantity : null))
   }
 
@@ -103,9 +111,14 @@ export class NamiWalletConnector extends AbstractWalletConnector {
   }
 
   async getTokenBalances(account: string, tokens: Token[]): Promise<string[]> {
-    const result = await this.api.addresses(account)
+    const result: AxiosResponse<Record<string, any>> = await this.api.get(`/addresses/${account}`, {
+      responseType: 'json',
+    })
     return tokens.map((t) => {
-      const amount = result.amount.find((amt) => amt.unit === t.address)
+      if (!result || !result.data || !result.data.amount) {
+        return null
+      }
+      const amount = result.data.amount.find((amt) => amt.unit === t.address)
       return amount ? amount.quantity : null
     })
   }

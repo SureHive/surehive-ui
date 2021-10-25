@@ -148,6 +148,8 @@ export function useDerivedSwapInfo(): {
     inputCurrency ?? undefined,
     outputCurrency ?? undefined,
   ])
+  console.log('relevantTokenBalances')
+  console.log(relevantTokenBalances)
 
   const isExactIn: boolean = independentField === Field.INPUT
   const parsedAmount = tryParseAmount(typedValue, (isExactIn ? inputCurrency : outputCurrency) ?? undefined)
@@ -184,9 +186,6 @@ export function useDerivedSwapInfo(): {
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
     inputError = inputError ?? i18n._(t`Select a token`)
   }
-
-  console.log('connector')
-  console.log(connector)
 
   const formattedTo = connector.isAddress(to)
   if (!to || !formattedTo) {

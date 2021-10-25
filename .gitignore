@@ -3,7 +3,7 @@
 /node_modules
 
 .DS_Store
-.env
+.env.local
 
 npm-debug.log*
 yarn-debug.log*
@@ -22,6 +22,6 @@ public/workbox*.js.map
 /locale/_build/
 /locale/**/*.js
 
-.env
+.env.local
 
 lokalise.yaml
