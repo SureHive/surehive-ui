@@ -6,14 +6,17 @@ import { Interface } from '@ethersproject/abi'
 import { isAddress } from '../../functions'
 import { useWalletManager } from '../../providers/walletManagerProvider'
 import { useAllTokens } from '../../hooks/Tokens'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 /**
  * Returns a map of the given addresses to their eventually consistent balances.
  */
 export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
-} {
+}[] {
+  console.log('uncheckedAddresses')
+  console.log(uncheckedAddresses)
+  const [balances, setBalances] = useState([])
   const { chainId, connector } = useWalletManager()
 
   const addresses: string[] = useMemo(
@@ -27,42 +30,30 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
     [uncheckedAddresses]
   )
 
-  const [result, setResult] = useState([])
-  const resultMemo = useMemo(() => result, [result])
+  const fetchBalances = useCallback(async () => {
+    const results = await Promise.all(addresses.map((address) => connector.getBalance(address).catch((error) => null)))
+
+    const amounts = []
+    addresses.forEach((address, i) => {
+      const value = results?.[i]
+      if (value && chainId) {
+        amounts[address] = CurrencyAmount.fromRawAmount(
+          NativeCurrency.onChain(chainId, connector.nativeCoin),
+          value.toString()
+        )
+      }
+    })
+
+    setBalances(amounts)
+  }, [addresses])
+
   useEffect(() => {
-    async function fetchBalance() {
-      const value = await Promise.all(
-        addresses.map(async (address) => {
-          try {
-            return await connector.getBalance(address)
-          } catch (e) {
-            return null
-          }
-        })
-      )
-      setResult(value)
+    if (addresses) {
+      fetchBalances()
     }
-    console.log('use effect')
-    fetchBalance().catch((err) => console.error(err))
-  }, [])
-  console.log('native')
-  console.log(addresses)
-  console.log(uncheckedAddresses)
-  return useMemo(
-    () =>
-      addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address, i) => {
-        const value = resultMemo?.[i]
-        console.log('use memo')
-        console.log(resultMemo)
-        if (value && chainId)
-          memo[address] = CurrencyAmount.fromRawAmount(
-            NativeCurrency.onChain(chainId, connector.nativeCoin),
-            value.toString()
-          )
-        return memo
-      }, {}),
-    [addresses, chainId, resultMemo]
-  )
+  }, [addresses])
+
+  return balances
 }
 
 /**
@@ -128,8 +119,6 @@ export function useCurrencyBalances(
     [currencies]
   )
 
-  console.log('currencies')
-  console.log(currencies)
   const tokenBalances = useTokenBalances(account, tokens)
   const containsNative: boolean = useMemo(
     () => currencies?.some((currency) => currency?.isNative) ?? false,
