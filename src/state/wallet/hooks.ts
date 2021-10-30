@@ -14,9 +14,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
 }[] {
-  console.log('uncheckedAddresses')
-  console.log(uncheckedAddresses)
-  const [balances, setBalances] = useState([])
+  const [balances, setBalances] = useState(null)
   const { chainId, connector } = useWalletManager()
 
   const addresses: string[] = useMemo(
@@ -27,31 +25,32 @@ export function useNativeCoinBalances(uncheckedAddresses?: (string | undefined)[
             .filter((a): a is string => a !== false)
             .sort()
         : [],
-    [uncheckedAddresses]
+    [connector.isAddress, uncheckedAddresses]
   )
 
-  const fetchBalances = useCallback(async () => {
-    const results = await Promise.all(addresses.map((address) => connector.getBalance(address).catch((error) => null)))
-
-    const amounts = []
-    addresses.forEach((address, i) => {
-      const value = results?.[i]
-      if (value && chainId) {
-        amounts[address] = CurrencyAmount.fromRawAmount(
-          NativeCurrency.onChain(chainId, connector.nativeCoin),
-          value.toString()
-        )
-      }
-    })
-
-    setBalances(amounts)
-  }, [addresses])
-
   useEffect(() => {
+    const fetchBalances = async () => {
+      const results = await Promise.all(
+        addresses.map((address) => connector.getBalance(address).catch((error) => null))
+      )
+
+      const balances = addresses.reduce((memo, address, i) => {
+        const value = results?.[i]
+        if (value)
+          memo[address] = CurrencyAmount.fromRawAmount(
+            NativeCurrency.onChain(chainId, connector.nativeCoin),
+            value.toString()
+          )
+        return memo
+      }, {})
+
+      setBalances(balances)
+    }
+
     if (addresses) {
       fetchBalances()
     }
-  }, [addresses])
+  }, [])
 
   return balances
 }
@@ -131,7 +130,7 @@ export function useCurrencyBalances(
       currencies?.map((currency) => {
         if (!account || !currency) return undefined
         if (currency.isToken) return tokenBalances[currency.address]
-        if (currency.isNative) return balance[account]
+        if (currency.isNative) return balance?.[account]
         return undefined
       }) ?? [],
     [account, currencies, balance, tokenBalances]

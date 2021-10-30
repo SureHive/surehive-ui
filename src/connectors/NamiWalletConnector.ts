@@ -1,16 +1,16 @@
 import {
-  TransactionUnspentOutput,
-  Value,
+  Address,
   BaseAddress,
   RewardAddress,
   Transaction,
+  TransactionUnspentOutput,
   TransactionWitnessSet,
-  Address,
+  Value,
 } from '@emurgo/cardano-serialization-lib-asmjs'
 import { ConnectorUpdate } from '@web3-react/types'
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
 import { AbstractWalletConnector } from './abstract-connector'
-import { Token } from '../entities'
+import { NativeCurrency, Token } from '../entities'
 
 interface CardanoProvider {
   enable(): Promise<boolean>
@@ -29,17 +29,20 @@ interface CardanoProvider {
   submitTx(tx: Transaction): Promise<string>
 }
 
+type Response = AxiosResponse<Record<string, any>>
+
 export class NamiWalletConnector extends AbstractWalletConnector {
   private provider: CardanoProvider
   private readonly api: AxiosInstance
   public readonly nativeCoin: string = 'ADA'
+  public readonly nativeAddress: string = 'lovelace'
 
   constructor() {
-    super({ supportedChainIds: [1, 2] })
+    super({ supportedChainIds: [0, 1] })
 
     this.api = axios.create({
       baseURL: process.env.NEXT_PUBLIC_BLOCKFROST_API_BASE_URL,
-      timeout: 1000,
+      timeout: 5000,
       headers: { project_id: process.env.NEXT_PUBLIC_BLOCKFROST_API_KEY },
     })
 
@@ -111,9 +114,7 @@ export class NamiWalletConnector extends AbstractWalletConnector {
   }
 
   async getTokenBalances(account: string, tokens: Token[]): Promise<string[]> {
-    const result: AxiosResponse<Record<string, any>> = await this.api.get(`/addresses/${account}`, {
-      responseType: 'json',
-    })
+    const result: Response = await this.api.get(`/addresses/${account}`, { responseType: 'json' })
     return tokens.map((t) => {
       if (!result || !result.data || !result.data.amount) {
         return null
@@ -121,5 +122,56 @@ export class NamiWalletConnector extends AbstractWalletConnector {
       const amount = result.data.amount.find((amt) => amt.unit === t.address)
       return amount ? amount.quantity : null
     })
+  }
+
+  async getToken(address: string): Promise<Token> {
+    const result: Response = await this.api.get(`/assets/${address}`, { responseType: 'json' })
+    if (!result || !result.data) {
+      return null
+    }
+    return new Token(
+      await this.getChainId(),
+      address,
+      result.data.metadata.decimals,
+      result.data.metadata.ticker.toUpperCase(),
+      result.data.metadata.name
+    )
+  }
+
+  async getTokens(): Promise<Token[]> {
+    const results: Response = await this.api.get('assets', { responseType: 'json' })
+    if (!results || !results.data) {
+      return []
+    }
+
+    // let current = Promise.resolve()
+    //
+    // const tokens = await Promise.all(results.data.map(({ asset }) => {
+    //   current = current.then(() => {
+    //     return this.getToken(asset).catch(error => null)
+    //   }).then(async result => {
+    //     await new Promise(r => setTimeout(r, 500))
+    //     return result
+    //   })
+    //   return current
+    // })) as Token[]
+    //
+    // const assets
+    // const tokens = results.data.map(async ({ asset }) => {
+    //   try {
+    //     return await this.getToken(asset)
+    //   } catch (error) {
+    //     /// TODO: handle error
+    //     //console.error(error)
+    //     return null
+    //   }
+    // })
+    const tokens = []
+
+    return tokens.filter((t) => t)
+  }
+
+  getNativeCurrency(chainId: number): NativeCurrency {
+    return new NativeCurrency(chainId, 6, '', 'ADA')
   }
 }

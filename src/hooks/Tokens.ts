@@ -1,21 +1,22 @@
-import { ChainId, Currency, NATIVE, Token, WNATIVE, currencyEquals } from '@sushiswap/sdk'
+import { ChainId, NATIVE, WNATIVE, currencyEquals } from '@sushiswap/sdk'
 import { ExtendedEther, WETH9_EXTENDED } from '../constants'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { TokenAddressMap, useAllLists, useInactiveListUrls, useUnsupportedTokenList } from './../state/lists/hooks'
 import { createTokenFilterFunction, filterTokens } from '../functions/filtering'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
 
+import { Currency, Token } from '../entities'
 import { WrappedTokenInfo } from './../state/lists/wrappedTokenInfo'
 import { arrayify } from 'ethers/lib/utils'
 import { isAddress } from '../functions/validate'
 import { parseBytes32String } from '@ethersproject/strings'
 import { useWalletManager } from '../providers/walletManagerProvider'
 import { useCombinedActiveList } from '../state/lists/hooks'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useUserAddedTokens } from '../state/user/hooks'
 
 // reduce token map into standard address <-> Token mapping, optionally include user added tokens
-function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean): { [address: string]: Token } {
+function useTokensFromMap(tokens: Token[], includeUserAdded: boolean): { [address: string]: Token } {
   const { chainId } = useWalletManager()
   const userAddedTokens = useUserAddedTokens()
 
@@ -23,10 +24,8 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
     if (!chainId) return {}
 
     // reduce to just tokens
-    const mapWithoutUrls = Object.keys(tokenMap[chainId]).reduce<{
-      [address: string]: Token
-    }>((newMap, address) => {
-      newMap[address] = tokenMap[chainId][address].token
+    const mapWithoutUrls = Object.values(tokens).reduce<{ [address: string]: Token }>((newMap, token) => {
+      newMap[token.address] = token
       return newMap
     }, {})
 
@@ -47,22 +46,56 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
     }
 
     return mapWithoutUrls
-  }, [chainId, userAddedTokens, tokenMap, includeUserAdded])
+  }, [chainId, userAddedTokens, tokens, includeUserAdded])
 }
 
 export function useAllTokens(): { [address: string]: Token } {
-  const allTokens = useCombinedActiveList()
+  const { connector } = useWalletManager()
+  const [allTokens, setAllTokens] = useState([])
+
+  useEffect(() => {
+    const fetchTokens = () => {
+      connector
+        .getTokens()
+        .then((tokens) => setAllTokens(tokens))
+        .catch((error) => console.error(error)) ///TODO: handle error
+    }
+
+    fetchTokens()
+  }, [])
   return useTokensFromMap(allTokens, true)
 }
 
 export function useTokens(): { [address: string]: Token } {
-  const allTokens = useCombinedActiveList()
+  //const allTokens = useCombinedActiveList()
+  const { connector } = useWalletManager()
+  const [allTokens, setAllTokens] = useState([])
+
+  const fetchTokens = () => {
+    connector
+      .getTokens()
+      .then((tokens) => setAllTokens(tokens))
+      .catch((error) => console.error(error)) ///TODO: handle error
+  }
+
+  fetchTokens()
   return useTokensFromMap(allTokens, false)
 }
 
 export function useUnsupportedTokens(): { [address: string]: Token } {
-  const unsupportedTokensMap = useUnsupportedTokenList()
-  return useTokensFromMap(unsupportedTokensMap, false)
+  //const unsupportedTokensMap = useUnsupportedTokenList()
+  const { connector } = useWalletManager()
+  const [unsupportedTokens, setUnsupportedTokens] = useState([])
+
+  const fetchTokens = () => {
+    connector
+      .getTokens()
+      .then((tokens) => setUnsupportedTokens(tokens))
+      .catch((error) => console.error(error)) ///TODO: handle error
+  }
+
+  fetchTokens()
+  return useTokensFromMap(unsupportedTokens, false)
 }
 
 export function useSearchInactiveTokenLists(search: string | undefined, minResults = 10): WrappedTokenInfo[] {
@@ -130,78 +163,40 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 // null if loading
 // otherwise returns the token
 export function useToken(tokenAddress?: string): Token | undefined | null {
-  const { chainId } = useWalletManager()
+  const { chainId, connector } = useWalletManager()
   const tokens = useAllTokens()
 
-  const address = isAddress(tokenAddress)
+  const address = connector.isAddress(tokenAddress)
 
-  const tokenContract = useTokenContract(address ? address : undefined, false)
-  const tokenContractBytes32 = useBytes32TokenContract(address ? address : undefined, false)
+  // const tokenContract = useTokenContract(address ? address : undefined, false)
+  // const tokenContractBytes32 = useBytes32TokenContract(address ? address : undefined, false)
   const token: Token | undefined = address ? tokens[address] : undefined
 
-  const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
-  const tokenNameBytes32 = useSingleCallResult(
-    token ? undefined : tokenContractBytes32,
-    'name',
-    undefined,
-    NEVER_RELOAD
-  )
-  const symbol = useSingleCallResult(token ? undefined : tokenContract, 'symbol', undefined, NEVER_RELOAD)
-  const symbolBytes32 = useSingleCallResult(token ? undefined : tokenContractBytes32, 'symbol', undefined, NEVER_RELOAD)
-  const decimals = useSingleCallResult(token ? undefined : tokenContract, 'decimals', undefined, NEVER_RELOAD)
+  // const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
+  // const tokenNameBytes32 = useSingleCallResult(
+  //   token ? undefined : tokenContractBytes32,
+  //   'name',
+  //   undefined,
+  //   NEVER_RELOAD
+  // )
+  // const symbol = useSingleCallResult(token ? undefined : tokenContract, 'symbol', undefined, NEVER_RELOAD)
+  // const symbolBytes32 = useSingleCallResult(token ? undefined : tokenContractBytes32, 'symbol', undefined, NEVER_RELOAD)
+  // const decimals = useSingleCallResult(token ? undefined : tokenContract, 'decimals', undefined, NEVER_RELOAD)
 
   return useMemo(() => {
     if (token) return token
-    if (!chainId || !address) return undefined
-    if (decimals.loading || symbol.loading || tokenName.loading) return null
-    if (decimals.result) {
-      return new Token(
-        chainId,
-        address,
-        decimals.result[0],
-        parseStringOrBytes32(symbol.result?.[0], symbolBytes32.result?.[0], 'UNKNOWN'),
-        parseStringOrBytes32(tokenName.result?.[0], tokenNameBytes32.result?.[0], 'Unknown Token')
-      )
-    }
     return undefined
-  }, [
-    address,
-    chainId,
-    decimals.loading,
-    decimals.result,
-    symbol.loading,
-    symbol.result,
-    symbolBytes32.result,
-    token,
-    tokenName.loading,
-    tokenName.result,
-    tokenNameBytes32.result,
-  ])
+  }, [address, chainId, token])
 }
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
-  const { chainId } = useWalletManager()
+  const { chainId, connector } = useWalletManager()
 
-  const isETH = currencyId?.toUpperCase() === 'ETH'
-
-  const isDual = [ChainId.CELO].includes(chainId)
-
-  const useNative = isETH && !isDual
-
-  if (isETH && isDual) {
-    currencyId = WNATIVE[chainId].address
-  }
+  const useNative = currencyId?.toUpperCase() === connector.nativeCoin.toUpperCase()
 
   const token = useToken(useNative ? undefined : currencyId)
 
-  // const extendedEther = useMemo(() => (chainId ? ExtendedEther.onChain(chainId) : undefined), [chainId])
-  // const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
-
-  const native = useMemo(() => (chainId ? NATIVE[chainId] : undefined), [chainId])
-
-  const wnative = chainId ? WNATIVE[chainId] : undefined
-
-  if (wnative?.address?.toLowerCase() === currencyId?.toLowerCase()) return wnative
+  const native = useMemo(() => connector.getNativeCurrency(chainId), [chainId])
 
   return useNative ? native : token
 }

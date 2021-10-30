@@ -50,16 +50,13 @@ export function useSwapActionHandlers(): {
   onChangeRecipient: (recipient: string | null) => void
 } {
   const dispatch = useAppDispatch()
+  const { connector } = useWalletManager()
   const onCurrencySelection = useCallback(
     (field: Field, currency: Currency) => {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency.isToken
-            ? currency.address
-            : currency.isNative && currency.chainId !== ChainId.CELO
-            ? 'ETH'
-            : '',
+          currencyId: currency.isToken ? currency.address : connector.nativeCoin,
         })
       )
     },
@@ -148,8 +145,6 @@ export function useDerivedSwapInfo(): {
     inputCurrency ?? undefined,
     outputCurrency ?? undefined,
   ])
-  console.log('relevantTokenBalances')
-  console.log(relevantTokenBalances)
 
   const isExactIn: boolean = independentField === Field.INPUT
   const parsedAmount = tryParseAmount(typedValue, (isExactIn ? inputCurrency : outputCurrency) ?? undefined)
@@ -329,16 +324,11 @@ function validatedRecipient(recipient: any): string | null {
   if (ADDRESS_REGEX.test(recipient)) return recipient
   return null
 }
-export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId = ChainId.MAINNET): SwapState {
+export function queryParametersToSwapState(parsedQs: ParsedQs, nativeCoin: string): SwapState {
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   if (inputCurrency === '' && outputCurrency === '') {
-    if (chainId === ChainId.CELO) {
-      inputCurrency = WNATIVE[chainId].address
-    } else {
-      // default to ETH input
-      inputCurrency = 'ETH'
-    }
+    inputCurrency = nativeCoin.toUpperCase()
   } else if (inputCurrency === outputCurrency) {
     // clear output if identical
     outputCurrency = ''
@@ -366,7 +356,7 @@ export function useDefaultsFromURLSearch():
       outputCurrencyId: string | undefined
     }
   | undefined {
-  const { chainId } = useWalletManager()
+  const { connector } = useWalletManager()
   const dispatch = useAppDispatch()
   const parsedQs = useParsedQueryString()
   const [result, setResult] = useState<
@@ -378,8 +368,7 @@ export function useDefaultsFromURLSearch():
   >()
 
   useEffect(() => {
-    if (!chainId) return
-    const parsed = queryParametersToSwapState(parsedQs, chainId)
+    const parsed = queryParametersToSwapState(parsedQs, connector.nativeCoin)
 
     dispatch(
       replaceSwapState({
@@ -396,7 +385,7 @@ export function useDefaultsFromURLSearch():
       outputCurrencyId: parsed[Field.OUTPUT].currencyId,
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, chainId])
+  }, [dispatch])
 
   return result
 }

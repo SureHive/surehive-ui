@@ -96,6 +96,10 @@ function _useWalletManager(): WalletManagerReturn {
     dispatch({ type: ActionType.ERROR, payload: { error } })
   }, [])
 
+  useEffect(() => {
+    activate(state.connector)
+  }, [])
+
   return { activate, connector, provider, chainId, account, error, setError }
 }
 

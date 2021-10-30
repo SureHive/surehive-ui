@@ -35,65 +35,53 @@ import SwapRatePanel from './SwapRatePanel'
 import SwapSettings from './SwapSettings'
 import { SidePanelContainer, SidePanelBox, SidePanelCurrencyBox } from '../../../components/SidePanel'
 
+import { CurrencyOption, SwapSettingsValues, RatePanel } from './const'
+
 const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
+  const { account, chainId } = useWalletManager()
   const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
   const [showSettings, setShowSettings] = useState<boolean>(false)
 
   const { i18n } = useLingui()
-  const { account, chainId } = useWalletManager()
-
   const loadedUrlParams = useDefaultsFromURLSearch()
-
   const [loadedInputCurrency, loadedOutputCurrency] = [
     useCurrency(loadedUrlParams?.inputCurrencyId),
     useCurrency(loadedUrlParams?.outputCurrencyId),
   ]
 
-  // get custom setting values for user
+  // // get custom setting values for user
   const [ttl] = useUserTransactionTTL()
   const userSlippageTolerance = useUserSlippageTolerance()
-  // const [useArcher] = useUserArcherUseRelay()
-  // const [archerETHTip] = useUserArcherETHTip()
-  // const [userGasPrice] = useUserArcherGasPrice()
 
-  // archer
-  // const archerRelay = chainId ? ARCHER_RELAY_URI?.[chainId] : undefined
-  // const doArcher = archerRelay !== undefined && useArcher
-
-  // swap state
+  // // const [useArcher] = useUserArcherUseRelay()
+  // // const [archerETHTip] = useUserArcherETHTip()
+  // // const [userGasPrice] = useUserArcherGasPrice()
+  //
+  // // archer
+  // // const archerRelay = chainId ? ARCHER_RELAY_URI?.[chainId] : undefined
+  // // const doArcher = archerRelay !== undefined && useArcher
+  //
+  // // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const dependentField: Field = independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT
 
   const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
-
+  console.log('currencyBalances')
   console.log(currencyBalances)
-  console.log(parsedAmount)
-
-  const {
-    wrapType,
-    execute: onWrap,
-    inputError: wrapInputError,
-  } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
-
-  const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
-  const trade = showWrap ? undefined : v2Trade
 
   const parsedAmounts = useMemo(
-    () =>
-      showWrap
-        ? {
-            [Field.INPUT]: parsedAmount,
-            [Field.OUTPUT]: parsedAmount,
-          }
-        : {
-            [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-            [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-          },
-    [independentField, parsedAmount, showWrap, trade]
+    () => ({
+      [Field.INPUT]: parsedAmount,
+      [Field.OUTPUT]: parsedAmount,
+    }),
+    [parsedAmount]
   )
   const fiatValueInput = useUSDCValue(parsedAmounts[Field.INPUT])
   const fiatValueOutput = useUSDCValue(parsedAmounts[Field.OUTPUT])
   const priceImpact = computeFiatValuePriceImpact(fiatValueInput, fiatValueOutput)
+
+  /// TODO: useWrapCallback
+  const showWrap = true
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
 
@@ -104,10 +92,6 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
     },
     [onCurrencySelection]
   )
-
-  // const handleMaxInput = useCallback(() => {
-  //   maxInputAmount && onUserInput(Field.INPUT, maxInputAmount.toExact())
-  // }, [maxInputAmount, onUserInput])
 
   const handleOutputSelect = useCallback(
     (outputCurrency) => onCurrencySelection(Field.OUTPUT, outputCurrency),
@@ -145,145 +129,135 @@ const SwapPanel = ({ currentTheme, setShowSwapPreference }) => {
   const dropDownImage =
     currentTheme === 'dark' ? '/images/global/icon-swap-arrow.svg' : '/images/global/icon-swap-arrow-light.svg'
 
-  const FromOption = () => (
-    <>
-      <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
-      <SidePanelCurrencyBox>
-        <CurrencySelectorPanel
-          currency={currencies[Field.INPUT]}
-          otherCurrency={currencies[Field.OUTPUT]}
-          onCurrencySelect={handleInputSelect}
-          value={formattedAmounts[Field.INPUT]}
-          onUserInput={handleTypeInput}
-          onMax={handleMaxInput}
-          showMaxButton={showMaxButton}
-          showCommonBases={true}
-          currentTheme={currentTheme}
-        />
-      </SidePanelCurrencyBox>
-    </>
-  )
-
-  const ToOption = () => (
-    <>
-      <p className="font-normal tracking-normal">{i18n._(t`TO (Estimated)`)}</p>
-      <SidePanelCurrencyBox>
-        <CurrencySelectorPanel
-          currency={currencies[Field.OUTPUT]}
-          otherCurrency={currencies[Field.INPUT]}
-          onCurrencySelect={handleOutputSelect}
-          value={formattedAmounts[Field.OUTPUT]}
-          onUserInput={handleTypeOutput}
-          showMaxButton={false}
-          showCommonBases={true}
-          currentTheme={currentTheme}
-        />
-      </SidePanelCurrencyBox>
-    </>
-  )
-
-  const SwapSettingsValues = () => (
-    <>
-      <SwapLabelValuePair
-        className="flex justify-between text-xs tracking-tight font-normal p-1"
-        label={'Minimum Received'}
-        value={'2,953.35 USDC'}
-      />
-      <div className={styles.line} />
-      <SwapLabelValuePair
-        className="flex justify-between tracking-normal font-normal p-1 px-3"
-        label={'nSure Fee'}
-        value={'0.00002 ETH'}
-        logo={'/images/global/icon-nsure-blue.svg'}
-      />
-      <SwapLabelValuePair
-        className="flex justify-between tracking-normal font-normal p-1  px-3"
-        label={'Liquidity Provider Fee'}
-        value={'0.000012 ETH'}
-        logo={'/images/global/icon-liquidity-provider-fees-blue.svg'}
-      />
-      {/*<SwapLabelValuePair*/}
-      {/*  className="flex justify-between tracking-normal font-normal p-1  px-3"*/}
-      {/*  label={'Gas Cost'}*/}
-      {/*  value={*/}
-      {/*    userGasPrice*/}
-      {/*      ? `${getGasCostLevel(userGasPrice)} - ${ethers.utils.formatUnits(userGasPrice, 'gwei')} gwei`*/}
-      {/*      : '--'*/}
-      {/*  }*/}
-      {/*  logo={'/images/global/icon-gas-costs-blue.svg'}*/}
-      {/*/>*/}
-      <div className={styles.line} />
-      <SwapLabelValuePair
-        className="flex justify-between tracking-normal font-normal p-1 px-3"
-        label={'Transaction Deadline'}
-        value={getTtlForDisplay(ttl)}
-        logo={'/images/global/icon-deadline-blue.svg'}
-      />
-      <SwapLabelValuePair
-        className="flex justify-between tracking-normal font-normal p-1 px-3"
-        label={'Slippage Tolerance'}
-        value={userSlippageTolerance instanceof Percent ? `${userSlippageTolerance?.toFixed()} %` : '--'}
-        logo={'/images/global/icon-slippage-blue.svg'}
-      />
-      <SwapLabelValuePair
-        className={styles.priceImpact}
-        label={'Price Impact'}
-        value={'+ 12 %'}
-        logo={'/images/global/icon-price-impact-blue.svg'}
-      />
-    </>
-  )
-
-  const RatePanel = () => (
-    <div className={styles.ratePanel}>
-      <SwapRatePanel
-        showSettings={showSettings}
-        setShowSettings={setShowSettings}
-        setShowSwapPreference={setShowSwapPreference}
-        currentTheme={currentTheme}
-      />
-    </div>
-  )
-
   return (
     <SidePanelContainer className="sm:px-10 sm:pt-5 sm:pb-10 sm:space-y-5">
       <div className="flex flex-row pl-3 mobile:hidden">
         <span className={styles.swapLabel}>{i18n._(t`Swap`)}</span>
       </div>
-      {/*<SidePanelBox className="relative">*/}
-      {/*  {showSettings && (*/}
-      {/*    <div*/}
-      {/*      className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"*/}
-      {/*      style={{*/}
-      {/*        boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',*/}
-      {/*        borderRadius: '9px',*/}
-      {/*      }}*/}
-      {/*    >*/}
-      {/*      <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />*/}
-      {/*    </div>*/}
-      {/*  )}*/}
-      {/*  <RatePanel />*/}
-      {/*  <div className="flex flex-col gap-y-3 px-4">*/}
-      {/*    <FromOption />*/}
-      {/*    <div className={styles.balanceBox}>*/}
-      {/*      <SwapBalance*/}
-      {/*        inputCurrency={currencies[Field.INPUT]}*/}
-      {/*        outputCurrency={currencies[Field.OUTPUT]}*/}
-      {/*        currentTheme={currentTheme}*/}
-      {/*      />*/}
-      {/*    </div>*/}
-      {/*    <div className={styles.balanceDropdown}>*/}
-      {/*      <div style={{ cursor: 'pointer' }}>*/}
-      {/*        <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*    <ToOption />*/}
-      {/*    <SwapSettingsValues />*/}
-      {/*    <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>*/}
-      {/*  </div>*/}
-      {/*</SidePanelBox>*/}
+      <SidePanelBox className="relative">
+        {showSettings && (
+          <div
+            className="flex w-full bg-white dark:bg-dark-600 rounded absolute -right-full top-7 -mr-12 z-10 p-8"
+            style={{
+              boxShadow: '0 64px 64px 0 rgba(0,0,0,0.12)',
+              borderRadius: '9px',
+            }}
+          >
+            <SwapSettings setShowSettings={setShowSettings} currentTheme={currentTheme} />
+          </div>
+        )}
+        <RatePanel
+          showSettings={showSettings}
+          setShowSettings={setShowSettings}
+          setShowSwapPreference={setShowSwapPreference}
+          currentTheme={currentTheme}
+        />
+        <div className="flex flex-col gap-y-3 px-4">
+          <CurrencyOption
+            label={i18n._(t`FROM`)}
+            currency={currencies[Field.INPUT]}
+            otherCurrency={currencies[Field.OUTPUT]}
+            onCurrencySelect={handleInputSelect}
+            value={formattedAmounts[Field.INPUT]}
+            onUserInput={handleTypeInput}
+            onMax={handleMaxInput}
+            showMaxButton={showMaxButton}
+            currentTheme={currentTheme}
+          />
+          <div className={styles.balanceBox}>
+            <SwapBalance
+              inputCurrency={currencies[Field.INPUT]}
+              outputCurrency={currencies[Field.OUTPUT]}
+              currentTheme={currentTheme}
+            />
+          </div>
+          <div className={styles.balanceDropdown}>
+            <div style={{ cursor: 'pointer' }}>
+              <Image src={dropDownImage} alt={'icon-swap-arrow.svg'} width={'50px'} height={'50px'} />
+            </div>
+          </div>
+          <CurrencyOption
+            label={i18n._(t`TO`)}
+            currency={currencies[Field.OUTPUT]}
+            otherCurrency={currencies[Field.INPUT]}
+            onCurrencySelect={handleInputSelect}
+            value={formattedAmounts[Field.OUTPUT]}
+            onUserInput={handleTypeInput}
+            onMax={handleMaxInput}
+            showMaxButton={showMaxButton}
+            currentTheme={currentTheme}
+          />
+          <SwapSettingsValues ttl={ttl} userSlippageTolerance={userSlippageTolerance} gasCost={'Moderate - 18 gwei'} />
+          <Button className={styles.ConfirmSwapButton}>{i18n._(t`Confirm Swap`)}</Button>
+        </div>
+      </SidePanelBox>
     </SidePanelContainer>
   )
 }
+
+//
+// const {
+//   wrapType,
+//   execute: onWrap,
+//   inputError: wrapInputError,
+// } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
+//
+// const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
+// const trade = showWrap ? undefined : v2Trade
+//
+// const parsedAmounts = useMemo(
+//   () =>
+//     showWrap
+//       ? {
+//           [Field.INPUT]: parsedAmount,
+//           [Field.OUTPUT]: parsedAmount,
+//         }
+//       : {
+//           [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+//           [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
+//         },
+//   [independentField, parsedAmount, showWrap, trade]
+// )
+// +
+//
+// const FromOption = () => (
+//   <>
+//     <p className="font-normal tracking-normal">{i18n._(t`FROM`)}</p>
+//     <SidePanelCurrencyBox>
+//       <CurrencySelectorPanel
+//         currency={currencies[Field.INPUT]}
+//         otherCurrency={currencies[Field.OUTPUT]}
+//         onCurrencySelect={handleInputSelect}
+//         value={formattedAmounts[Field.INPUT]}
+//         onUserInput={handleTypeInput}
+//         onMax={handleMaxInput}
+//         showMaxButton={showMaxButton}
+//         showCommonBases={true}
+//         currentTheme={currentTheme}
+//       />
+//     </SidePanelCurrencyBox>
+//   </>
+// )
+//
+// const ToOption = () => (
+//   <>
+//     <p className="font-normal tracking-normal">{i18n._(t`TO (Estimated)`)}</p>
+//     <SidePanelCurrencyBox>
+//       <CurrencySelectorPanel
+//         currency={currencies[Field.OUTPUT]}
+//         otherCurrency={currencies[Field.INPUT]}
+//         onCurrencySelect={handleOutputSelect}
+//         value={formattedAmounts[Field.OUTPUT]}
+//         onUserInput={handleTypeOutput}
+//         showMaxButton={false}
+//         showCommonBases={true}
+//         currentTheme={currentTheme}
+//       />
+//     </SidePanelCurrencyBox>
+//   </>
+// )
+//
+//
+//
 
 export default SwapPanel
