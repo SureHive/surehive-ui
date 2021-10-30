@@ -909,8 +909,8 @@ msgstr "Swap To (est.):"
 msgid "Swap To:"
 msgstr "Swap To:"
 
-msgid "TO (Estimated)"
-msgstr "TO (Estimated)"
+msgid "TO"
+msgstr "TO"
 
 msgid "TRANSACTION DEADLINE"
 msgstr "TRANSACTION DEADLINE"

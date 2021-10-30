@@ -897,7 +897,7 @@ msgstr "Scambia in (stimato):"
 msgid "Swap To:"
 msgstr "Scambia in:"
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"

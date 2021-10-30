@@ -898,7 +898,7 @@ msgstr "Hoán đổi sang (ước tính):"
 msgid "Swap To:"
 msgstr "Hoán đổi sang:"
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"

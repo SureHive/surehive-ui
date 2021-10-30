@@ -898,7 +898,7 @@ msgstr "다음으로 스왑(예상):"
 msgid "Swap To:"
 msgstr "다음으로 스왑:"
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"

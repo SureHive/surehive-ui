@@ -900,7 +900,7 @@ msgstr "Обменять на (прибл.):"
 msgid "Swap To:"
 msgstr "Обменять на:"
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"

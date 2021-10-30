@@ -900,7 +900,7 @@ msgstr "Swap la (est.):"
 msgid "Swap To:"
 msgstr "Swap la:"
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"

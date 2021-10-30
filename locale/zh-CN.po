@@ -886,7 +886,7 @@ msgstr "交换至（估算）："
 msgid "Swap To:"
 msgstr "交换至："
 
-msgid "TO (Estimated)"
+msgid "TO"
 msgstr ""
 
 msgid "TRANSACTION DEADLINE"
